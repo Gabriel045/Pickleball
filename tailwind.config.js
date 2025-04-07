@@ -1,20 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./**.{php,html,js}","./template-parts/*.{php,html,js}","./blocks/*/**.{php,html,js}"],
+  content: [
+    "./**.{php,html,js}",
+    "./template-parts/*.{php,html,js}",
+    "./blocks/*/**.{php,html,js}",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        'Montserrat': ['Montserrat', 'sans-serif'],
+        Inter: ["Inter", "sans-serif"],
       },
 
       colors: {
+        "berkley-blue": "#0D375E",
+        "caribbean-green": "#0D5E5D",
+        "mustard-yellow": "#FC0",
+        "rich-black": "#0B141D",
       },
-      height: {
-      },
+      height: {},
 
-      maxWidth:{
-      }
+      maxWidth: {},
     },
   },
-  plugins: []
+  plugins: [],
 };
