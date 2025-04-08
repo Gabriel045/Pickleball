@@ -1,0 +1,22 @@
+{
+    "name": "acf/product-slider",
+    "title": "Product Slider",
+    "description": "A custom Product Slider for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Product Slider"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "product-slider.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/product-slider/screenshot.png"
+            }
+        }
+    }
+}

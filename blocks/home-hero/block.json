@@ -1,0 +1,22 @@
+{
+    "name": "acf/home-hero",
+    "title": "Home Hero",
+    "description": "A custom Home Hero for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Home Hero"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "home-hero.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/home-hero/screenshot.png"
+            }
+        }
+    }
+}

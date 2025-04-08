@@ -1,0 +1,22 @@
+{
+    "name": "acf/text-image",
+    "title": "Text Image",
+    "description": "A custom Text Image for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Text Image"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "text-image.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/text-image/screenshot.png"
+            }
+        }
+    }
+}
