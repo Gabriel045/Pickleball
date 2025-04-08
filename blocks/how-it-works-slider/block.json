@@ -1,0 +1,22 @@
+{
+    "name": "acf/how-it-works-slider",
+    "title": "How It Works Slider",
+    "description": "A custom How It Works Slider for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "How It Works Slider"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "how-it-works-slider.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/how-it-works-slider/screenshot.png"
+            }
+        }
+    }
+}
