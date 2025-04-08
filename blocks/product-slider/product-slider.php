@@ -15,7 +15,7 @@ $product_query = $product_query->posts;
 <section id="product-slider" class="">
     <div class="block_content py-[100px] px-[60px]">
         <div class="[_&_span]:text-[16px] [_&_span]:text-[#0C5E5D] [_&_span]:font-[600] [_&_h2]:font-[600] [_&_h2]:text-[36px] [_&_h2]:text-rich-black
-            [_&_p]:text-[#475467] [_&_p]:text-[20px]">
+            [_&_p]:text-gray-paragrah [_&_p]:text-[20px]">
             <?php echo $text ?>
         </div>
         <div id="multiple-items" class="mt-[60px]">
@@ -37,7 +37,7 @@ $product_query = $product_query->posts;
                         <p class="text-rich-black text-[20px] font-semibold leading-normal">
                             <?php echo $product->get_name() ?>
                         </p>
-                        <p class="text-[#475467] text-[16px] leading-normal">
+                        <p class="text-gray-paragrah text-[16px] leading-normal">
                             <?php echo $product->get_description() ?> </p>
                         <div class="my-[15px] flex items-center">
                             <span

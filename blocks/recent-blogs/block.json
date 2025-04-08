@@ -1,0 +1,22 @@
+{
+    "name": "acf/recent-blogs",
+    "title": "Recent Blogs",
+    "description": "A custom Recent Blogs for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Recent Blogs"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "recent-blogs.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/recent-blogs/screenshot.png"
+            }
+        }
+    }
+}

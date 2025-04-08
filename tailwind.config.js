@@ -17,6 +17,7 @@ module.exports = {
         "caribbean-green": "#0D5E5D",
         "mustard-yellow": "#FC0",
         "rich-black": "#0B141D",
+        "gray-paragrah": "#475467",
       },
       height: {},
 
