@@ -30,6 +30,8 @@ function af_add_theme_scripts()
     wp_enqueue_style(
         'tailwind',
         get_template_directory_uri() . '/src/output.css',
+        [],
+        theme_version
     );
 
     // slick
