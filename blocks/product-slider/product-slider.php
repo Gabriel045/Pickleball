@@ -26,7 +26,9 @@ $product_query = $product_query->posts;
                 $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full'); ?>
                 <article>
                     <figure>
-                        <img class="rounded-xl" src="<?php echo $product_image[0] ?>" alt="">
+                        <a href="<?php echo get_permalink($item->ID); ?>">
+                            <img class="rounded-xl" src="<?php echo $product_image[0] ?>" alt="">
+                        </a>
                     </figure>
                     <div class="mt-[24px]">
                         <div class="flex items-center gap-[10px]">
@@ -35,7 +37,9 @@ $product_query = $product_query->posts;
                                 Reviews)</span>
                         </div>
                         <p class="text-rich-black text-[20px] font-semibold leading-normal">
-                            <?php echo $product->get_name() ?>
+                            <a href="<?php echo get_permalink($item->ID); ?>" class="text-rich-black hover:underline">
+                                <?php echo $product->get_name() ?>
+                            </a>
                         </p>
                         <p class="text-gray-paragrah text-[16px] leading-normal">
                             <?php echo $product->get_description() ?> </p>
@@ -62,52 +66,10 @@ $product_query = $product_query->posts;
 
 
 <script>
-    jQuery(document).ready(function($) {
-        "use strict";
-        $('.custom_add_to_cart').click(function(e) {
-            e.preventDefault();
-            var id = $(this).next().next().attr('value');
-            // Data to be sent to the server
-            var data = {
-                quantity: 1,
-                product_id: id,
-            };
-            $(this).text('Loading...');
-            $.ajax({
-                url: wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%',
-                    'add_to_cart'),
-                type: 'POST',
-                data: data,
-                success: function(response) {
-                    if (!response) {
-                        console.log('No response from server');
-                        return;
-                    }
-                    if (response.error) {
-                        console.log(response);
-                        return;
-                    }
-                    if (response) {
-                        console.log("product added to cart");
-                        $('#slide-cart').addClass('active');
-                        $('.custom_add_to_cart').text('+ Add to Cart');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', error);
-                    console.error('Status:', status);
-                    console.error('Response:', xhr.responseText);
-                }
-            });
-
-        });
-    });
-</script>
-<script>
     jQuery(document).ready(() => {
         jQuery('#multiple-items').slick({
             infinite: true,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 4000,
             slidesToShow: 4,
             slidesToScroll: 1,

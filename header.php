@@ -16,7 +16,7 @@
         <div class="bg-black px-[167px] py-[10px]">
             <p class="text-white text-[12px] font-semibold text-center">24/7 support Lorem ipsum dolor sit amet</p>
         </div>
-        <div class="flex justify-between w-full px-[60px] py-[15px]">
+        <div class="block_content m-auto flex justify-between w-full px-[60px] py-[15px]">
             <div class="flex gap-10 w-2/3">
                 <div class="text-berkley-blue font-bold text-[30px] tracking-[-0.6px] leading-[30px] flex items-center">
                     <a href="/">PickleballHub</a>
@@ -59,7 +59,7 @@
             <?php
             wp_nav_menu(array(
                 'menu'   => 'Header menu',
-                'menu_class' => 'menu_header flex gap-[10px]',
+                'menu_class' => 'menu_header flex gap-[10px] block_content m-auto',
                 'container' => false,
             ));
             ?>
