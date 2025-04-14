@@ -659,6 +659,16 @@ video {
   margin-bottom: 15px;
 }
 
+.my-\[20px\] {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.my-\[24px\] {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
 .\!mt-\[32px\] {
   margin-top: 32px !important;
 }
@@ -827,6 +837,10 @@ video {
   min-height: 300px;
 }
 
+.min-h-\[360px\] {
+  min-height: 360px;
+}
+
 .\!w-\[128px\] {
   width: 128px !important;
 }
@@ -845,6 +859,10 @@ video {
 
 .w-1\/4 {
   width: 25%;
+}
+
+.w-1\/5 {
+  width: 20%;
 }
 
 .w-12 {
@@ -867,8 +885,16 @@ video {
   width: 60%;
 }
 
+.w-4\/5 {
+  width: 80%;
+}
+
 .w-\[30\%\] {
   width: 30%;
+}
+
+.w-\[300px\] {
+  width: 300px;
 }
 
 .w-\[370px\] {
@@ -910,6 +936,10 @@ video {
 
 .max-w-\[460px\] {
   max-width: 460px;
+}
+
+.max-w-\[720px\] {
+  max-width: 720px;
 }
 
 .max-w-\[768px\] {
@@ -997,6 +1027,10 @@ video {
   gap: 14px;
 }
 
+.gap-\[15px\] {
+  gap: 15px;
+}
+
 .gap-\[2\%\] {
   gap: 2%;
 }
@@ -1025,6 +1059,10 @@ video {
   overflow-y: auto;
 }
 
+.rounded-\[15px\] {
+  border-radius: 15px;
+}
+
 .rounded-\[20px\] {
   border-radius: 20px;
 }
@@ -1043,6 +1081,10 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded-\[32px\] {
+  border-radius: 32px;
 }
 
 .border {
@@ -1168,6 +1210,10 @@ video {
 
 .p-\[50px\] {
   padding: 50px;
+}
+
+.p-\[32px\] {
+  padding: 32px;
 }
 
 .\!px-\[40px\] {
@@ -1354,6 +1400,14 @@ video {
 
 .pt-\[50px\] {
   padding-top: 50px;
+}
+
+.pb-\[180px\] {
+  padding-bottom: 180px;
+}
+
+.pt-\[100px\] {
+  padding-top: 100px;
 }
 
 .text-center {
@@ -1561,6 +1615,10 @@ video {
 .text-\[\#D0D5DD\] {
   --tw-text-opacity: 1;
   color: rgb(208 213 221 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#FFFFFF99\] {
+  color: #FFFFFF99;
 }
 
 .text-\[rgba\(71\2c 84\2c 103\2c 0\.60\)\] {
@@ -2148,6 +2206,13 @@ form.woocommerce-checkout #billing_phone_field {
   width: 23.5% !important;
 }
 
+#blog-background {
+  position: relative;
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1440" height="247" viewBox="0 0 1440 247" fill="none"%3E%3Cmask id="mask0_1_9" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="247"%3E%3Crect width="1440" height="247" fill="%23D9D9D9"/%3E%3C/mask%3E%3Cg mask="url(%23mask0_1_9)"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M1439.75 36.0363L1404.95 47.7376C1371.35 59.4389 1302.95 82.8415 1234.55 86.7419C1164.95 90.6424 1096.55 75.0406 1028.15 63.3393C959.749 51.638 891.349 43.8371 822.949 43.8371C754.549 43.8371 684.949 51.638 616.549 75.0406C548.149 98.4432 479.749 137.448 411.349 164.751C342.949 192.054 274.549 207.655 204.949 192.054C136.549 176.452 68.1491 129.647 34.5491 106.244L-0.250897 82.8414L-0.250912 246.66L34.5491 246.66C68.1491 246.66 136.549 246.66 204.949 246.66C274.549 246.66 342.949 246.66 411.349 246.66C479.749 246.66 548.149 246.66 616.549 246.66C684.949 246.66 754.549 246.66 822.949 246.66C891.349 246.66 959.749 246.66 1028.15 246.66C1096.55 246.66 1164.95 246.66 1234.55 246.66C1302.95 246.66 1371.35 246.66 1404.95 246.66L1439.75 246.66L1439.75 36.0363Z" fill="%230E375E" fill-opacity="0.02"/%3E%3Cpath d="M1510.64 115.691L1484.5 112.122C1459.22 108.39 1407.79 101.089 1359.08 107.68C1309.51 114.437 1263.49 134.922 1216.94 152.628C1170.38 170.334 1123.28 185.262 1075.1 194.632C1026.92 204.002 976.819 207.98 925.398 200.679C873.976 193.378 820.394 174.963 768.432 164.883C716.47 154.803 666.13 153.06 619.268 173.709C573.251 194.193 531.557 236.907 511.133 258.181L489.863 279.62" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/%3E%3Cpath d="M1568.22 78.778L1539.6 74.8707C1511.91 70.7833 1455.61 62.7886 1402.26 70.0067C1347.98 77.4049 1297.6 99.8359 1246.61 119.224C1195.63 138.613 1144.06 154.959 1091.31 165.219C1038.55 175.48 983.684 179.836 927.378 171.841C871.071 163.846 812.398 143.681 755.499 132.644C698.601 121.607 643.478 119.697 592.164 142.308C541.775 164.739 496.12 211.511 473.755 234.806L450.465 258.282" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/%3E%3C/g%3E%3C/svg%3E');
+  background-repeat: no-repeat !important;
+  background-position: bottom center !important;
+}
+
 .before\:h-\[20px\]::before {
   content: var(--tw-content);
   height: 20px;
@@ -2203,6 +2268,10 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 @media (min-width: 1024px) {
+  .lg\:gap-\[64px\] {
+    gap: 64px;
+  }
+
   .lg\:px-\[75px\] {
     padding-left: 75px;
     padding-right: 75px;
@@ -2217,6 +2286,11 @@ form.woocommerce-checkout #billing_phone_field {
 .\[_\&_h2\]\:my-4 h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.\[_\&_h2\]\:my-\[20px\] h2 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .\[_\&_h2\]\:text-4xl h2 {
@@ -2244,6 +2318,10 @@ form.woocommerce-checkout #billing_phone_field {
   line-height: 38px;
 }
 
+.\[_\&_h2\]\:leading-\[45px\] h2 {
+  line-height: 45px;
+}
+
 .\[_\&_h2\]\:leading-\[60px\] h2 {
   line-height: 60px;
 }
@@ -2265,6 +2343,11 @@ form.woocommerce-checkout #billing_phone_field {
   color: rgb(11 20 29 / var(--tw-text-opacity, 1));
 }
 
+.\[_\&_h2\]\:text-black h2 {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
 .\[_\&_h2\]\:text-rich-black h2 {
   --tw-text-opacity: 1;
   color: rgb(11 20 29 / var(--tw-text-opacity, 1));
@@ -2273,6 +2356,11 @@ form.woocommerce-checkout #billing_phone_field {
 .\[_\&_h2\]\:text-white h2 {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.\[_\&_h3\]\:my-\[20px\] h3 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .\[_\&_h3\]\:mb-2 h3 {
@@ -2292,12 +2380,57 @@ form.woocommerce-checkout #billing_phone_field {
   font-weight: 600;
 }
 
+.\[_\&_h3\]\:leading-\[38px\] h3 {
+  line-height: 38px;
+}
+
+.\[_\&_h3\]\:text-black h3 {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.\[_\&_h4\]\:my-\[20px\] h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .\[_\&_h4\]\:text-\[20px\] h4 {
   font-size: 20px;
 }
 
+.\[_\&_h4\]\:text-\[24px\] h4 {
+  font-size: 24px;
+}
+
 .\[_\&_h4\]\:font-\[600\] h4 {
   font-weight: 600;
+}
+
+.\[_\&_h4\]\:font-semibold h4 {
+  font-weight: 600;
+}
+
+.\[_\&_h4\]\:leading-\[32px\] h4 {
+  line-height: 32px;
+}
+
+.\[_\&_h4\]\:text-black h4 {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.\[_\&_hr\]\:my-\[24px\] hr {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.\[_\&_img\]\:my-\[40px\] img {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.\[_\&_img\]\:rounded-\[12px\] img {
+  border-radius: 12px;
 }
 
 .\[_\&_li\]\:mb-3 li {
@@ -2332,6 +2465,19 @@ form.woocommerce-checkout #billing_phone_field {
 .\[_\&_li\]\:text-gray-paragrah li {
   --tw-text-opacity: 1;
   color: rgb(71 84 103 / var(--tw-text-opacity, 1));
+}
+
+.\[_\&_ol\]\:my-\[15px\] ol {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.\[_\&_ol\]\:list-inside ol {
+  list-style-position: inside;
+}
+
+.\[_\&_ol\]\:list-decimal ol {
+  list-style-type: decimal;
 }
 
 .\[_\&_p\]\:text-\[16px\] p {
@@ -2421,4 +2567,17 @@ form.woocommerce-checkout #billing_phone_field {
 
 .\[_\&_span\]\:text-\[\#FFFFFF99\] span {
   color: #FFFFFF99;
+}
+
+.\[_\&_ul\]\:my-\[15px\] ul {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.\[_\&_ul\]\:list-inside ul {
+  list-style-position: inside;
+}
+
+.\[_\&_ul\]\:list-decimal ul {
+  list-style-type: decimal;
 }

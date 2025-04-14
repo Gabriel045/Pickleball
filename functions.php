@@ -60,11 +60,20 @@ function af_add_theme_scripts()
             'strategy' => 'defer'
         )
     );
-
     if (is_page('shop')) {
         wp_enqueue_script(
             'page-shop-script',
             get_template_directory_uri() . '/resources/js/pageShopScrip.js',
+            ['jquery'],
+            theme_version,
+            true
+        );
+    }
+
+    if (is_singular('instructor')) {
+        wp_enqueue_script(
+            'page-shop-script',
+            get_template_directory_uri() . '/resources/js/pageSingleInstructor.js',
             ['jquery'],
             theme_version,
             true
