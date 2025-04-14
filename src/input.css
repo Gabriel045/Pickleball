@@ -77,6 +77,24 @@ section {
     line-height: 24px !important;
 }
 
+.btn-green {
+    display: flex;
+    padding: 10px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--caribbean-green);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
 .btn:hover {
     background: var(--mustard-yellow) !important;
     color: var(--rich-black) !important;
@@ -85,7 +103,8 @@ section {
 
 .btn:hover,
 .btn-primary:hover,
-.btn-2:hover {
+.btn-2:hover,
+.btn-green:hover {
     transform: translateY(-2px);
     transition: transform 0.3s ease;
 }
@@ -466,4 +485,9 @@ form.woocommerce-checkout #billing_phone_field {
 
 .woocommerce a.remove:hover {
     background-color: transparent !important;
+}
+
+
+.w-\[23\.5\%\] {
+    width: 23.5% !important;
 }

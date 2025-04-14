@@ -4,7 +4,6 @@
 function addToSideCart() {
   "use strict";
   jQuery(".custom_add_to_cart").click(function (e) {
-    console.log("clicked");
     e.preventDefault();
     var id = jQuery(this).next().next().attr("value");
     // Data to be sent to the server
@@ -25,6 +24,8 @@ function addToSideCart() {
           return;
         }
         if (response.error) {
+          console.log(response);
+          jQuery(".custom_add_to_cart").text("+ Add to Cart");
           return;
         }
         if (response) {
