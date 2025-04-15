@@ -44,5 +44,4 @@ $author_name = get_the_author_meta('display_name', $author_id);
 </main>
 
 
-
 <?php get_footer(); ?>

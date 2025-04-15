@@ -89,6 +89,16 @@ function af_add_theme_scripts()
             true
         );
     }
+
+    if (is_page('blogs')) {
+        wp_enqueue_script(
+            'page-blog-script',
+            get_template_directory_uri() . '/resources/js/pageBlogScript.js',
+            ['jquery'],
+            theme_version,
+            true
+        );
+    }
 }
 
 //Register ACF blocks
