@@ -914,6 +914,10 @@ video {
   width: 100%;
 }
 
+.max-w-\[1050px\] {
+  max-width: 1050px;
+}
+
 .max-w-\[1080px\] {
   max-width: 1080px;
 }
@@ -932,10 +936,6 @@ video {
 
 .max-w-\[890px\] {
   max-width: 890px;
-}
-
-.max-w-\[1050px\] {
-  max-width: 1050px;
 }
 
 .translate-x-\[800px\] {
@@ -1023,6 +1023,10 @@ video {
   gap: 15px;
 }
 
+.gap-\[18px\] {
+  gap: 18px;
+}
+
 .gap-\[2\%\] {
   gap: 2%;
 }
@@ -1051,10 +1055,6 @@ video {
   gap: 8px;
 }
 
-.gap-\[18px\] {
-  gap: 18px;
-}
-
 .gap-y-10 {
   row-gap: 2.5rem;
 }
@@ -1063,16 +1063,16 @@ video {
   row-gap: 30px;
 }
 
+.gap-y-\[32px\] {
+  row-gap: 32px;
+}
+
 .gap-y-\[60px\] {
   row-gap: 60px;
 }
 
 .gap-y-\[80px\] {
   row-gap: 80px;
-}
-
-.gap-y-\[32px\] {
-  row-gap: 32px;
 }
 
 .overflow-auto {
@@ -1085,6 +1085,10 @@ video {
 
 .overflow-x-clip {
   overflow-x: clip;
+}
+
+.rounded-\[10px\] {
+  border-radius: 10px;
 }
 
 .rounded-\[15px\] {
@@ -1113,10 +1117,6 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
-}
-
-.rounded-\[10px\] {
-  border-radius: 10px;
 }
 
 .border {
@@ -1153,6 +1153,11 @@ video {
   border-color: rgb(208 213 221 / var(--tw-border-opacity, 1));
 }
 
+.border-\[\#E0E0E0\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(224 224 224 / var(--tw-border-opacity, 1));
+}
+
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
@@ -1165,6 +1170,10 @@ video {
 
 .border-white\/30 {
   border-color: rgb(255 255 255 / 0.3);
+}
+
+.bg-\[\#00000059\] {
+  background-color: #00000059;
 }
 
 .bg-\[\#0B141D80\] {
@@ -1217,10 +1226,6 @@ video {
   background-color: rgb(255 255 255 / 0.2);
 }
 
-.bg-\[\#00000059\] {
-  background-color: #00000059;
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
@@ -1246,10 +1251,6 @@ video {
 
 .p-\[32px\] {
   padding: 32px;
-}
-
-.p-\[50px\] {
-  padding: 50px;
 }
 
 .\!px-\[20px\] {
@@ -1387,12 +1388,26 @@ video {
   padding-bottom: 80px;
 }
 
+.px-\[64px\] {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+
+.py-\[96px\] {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
 
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pb-\[60px\] {
@@ -1986,7 +2001,8 @@ section {
 
 #product-slider,
 #recent-blog_posts,
-#cart {
+#cart,
+#faq {
   background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="294" viewBox="0 0 1440 294" fill="none"><mask id="mask0_2_3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="294"><rect width="1440" height="294" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_2_3)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 210.623L34.8 198.922C68.4 187.221 136.8 163.818 205.2 159.918C274.8 156.017 343.2 171.619 411.6 183.32C480 195.022 548.4 202.823 616.8 202.823C685.2 202.823 754.8 195.022 823.2 171.619C891.6 148.216 960 109.212 1028.4 81.9091C1096.8 54.6061 1165.2 39.0043 1234.8 54.6061C1303.2 70.2078 1371.6 117.013 1405.2 140.416L1440 163.818V0H1405.2C1371.6 0 1303.2 0 1234.8 0C1165.2 0 1096.8 0 1028.4 0C960 0 891.6 0 823.2 0C754.8 0 685.2 0 616.8 0C548.4 0 480 0 411.6 0C343.2 0 274.8 0 205.2 0C136.8 0 68.4 0 34.8 0H0V210.623Z" fill="%230E375E" fill-opacity="0.02"/><path d="M-70.8875 130.969L-44.7543 134.537C-19.4663 138.27 31.9549 145.571 80.674 138.979C130.238 132.223 176.255 111.738 222.813 94.032C269.37 76.3258 316.468 61.3982 364.647 52.0277C412.826 42.6573 462.93 38.6796 514.352 45.9806C565.773 53.2817 619.356 71.6971 671.317 81.7767C723.279 91.8563 773.619 93.6002 820.481 72.951C866.499 52.4662 908.192 9.75278 928.616 -11.5217L949.886 -32.9606" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M-128.47 167.882L-99.8535 171.789C-72.163 175.876 -15.8565 183.871 37.4913 176.653C91.7646 169.255 142.154 146.824 193.134 127.435C244.115 108.047 295.688 91.7012 348.444 81.4405C401.2 71.1798 456.065 66.8242 512.371 74.8189C568.678 82.8136 627.351 102.979 684.25 114.016C741.148 125.053 796.271 126.963 847.586 104.352C897.975 81.9206 943.63 35.1491 965.994 11.8534L989.284 -11.6224" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></g></svg>');
   background-repeat: no-repeat;
   background-position: top center;
@@ -2469,6 +2485,35 @@ form.woocommerce-checkout #billing_phone_field {
   background-size: contain;
 }
 
+#faq summary::marker {
+  content: none;
+}
+
+#faq summary {
+  position: relative;
+  padding-right: 30px;
+  /* Add padding to make space for the icon */
+}
+
+#faq summary::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  width: 25px;
+  height: 24px;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="24" y="24" width="24" height="24" rx="12" transform="rotate(180 24 24)" fill="%23E9EAED" fill-opacity="0.866667"/><path d="M17 14L12 9L7 14" stroke="%23404D61" stroke-opacity="0.6" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: transform 0.3s ease;
+}
+
+#faq details[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+  transition: transform 0.3s ease;
+}
+
 @media screen and (min-width:1200px) {
   .xl\:w-\[23\.5\%\] {
     width: 23.5% !important;
@@ -2646,12 +2691,12 @@ form.woocommerce-checkout #billing_phone_field {
     width: 49%;
   }
 
-  .md\:w-\[500px\] {
-    width: 500px;
-  }
-
   .md\:w-\[49\.5\%\] {
     width: 49.5%;
+  }
+
+  .md\:w-\[500px\] {
+    width: 500px;
   }
 
   .md\:flex-nowrap {
@@ -2700,16 +2745,16 @@ form.woocommerce-checkout #billing_phone_field {
     height: 300px;
   }
 
+  .lg\:h-\[415px\] {
+    height: 415px;
+  }
+
   .lg\:h-\[516px\] {
     height: 516px;
   }
 
   .lg\:h-full {
     height: 100%;
-  }
-
-  .lg\:h-\[415px\] {
-    height: 415px;
   }
 
   .lg\:min-h-\[360px\] {
@@ -2834,6 +2879,11 @@ form.woocommerce-checkout #billing_phone_field {
     padding-right: 167px;
   }
 
+  .lg\:px-\[300px\] {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+
   .lg\:px-\[32px\] {
     padding-left: 32px;
     padding-right: 32px;
@@ -2874,6 +2924,16 @@ form.woocommerce-checkout #billing_phone_field {
     padding-bottom: 80px;
   }
 
+  .lg\:px-\[90px\] {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+
+  .lg\:py-\[96px\] {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
   .lg\:pb-\[180px\] {
     padding-bottom: 180px;
   }
@@ -2896,6 +2956,10 @@ form.woocommerce-checkout #billing_phone_field {
 
   .lg\:text-\[20px\] {
     font-size: 20px;
+  }
+
+  .lg\:text-\[24px\] {
+    font-size: 24px;
   }
 
   .lg\:text-\[30px\] {
@@ -3196,6 +3260,10 @@ form.woocommerce-checkout #billing_phone_field {
     font-size: 18px;
   }
 
+  .\[_\&_p\]\:lg\:text-\[20px\] p {
+    font-size: 20px;
+  }
+
   .lg\:\[_\&_p\]\:text-\[18px\] p {
     font-size: 18px;
   }
@@ -3207,10 +3275,6 @@ form.woocommerce-checkout #billing_phone_field {
   .lg\:\[_\&_p\]\:text-lg p {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .\[_\&_p\]\:lg\:text-\[20px\] p {
-    font-size: 20px;
   }
 }
 

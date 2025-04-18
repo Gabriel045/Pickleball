@@ -1,0 +1,22 @@
+{
+    "name": "acf/faq",
+    "title": "FAQ",
+    "description": "A custom FAQ for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "FAQ"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "faq.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/faq/screenshot.png"
+            }
+        }
+    }
+}
