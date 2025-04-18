@@ -19,7 +19,7 @@ $recent_blogs = $query->posts;
 <main id="shop">
     <section
         style="background: linear-gradient(358deg, #0E375E 1.21%, #0B2C4A 98.39%), linear-gradient(180deg, #060843 0%, #02031B 100%)">
-        <div class="block_content px-[100px] py-[64px]">
+        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
             <h1 class="text-[36px] text-white font-semibold tracking-tight">Blogs</h1>
             <p class="mt-[24px] text-[#FFFFFF99] text-[14px] font-normal leading-[30px]">
                 <?php echo get_field("hero-title") ?>
@@ -28,7 +28,7 @@ $recent_blogs = $query->posts;
     </section>
     <section>
         <div class="block_content">
-            <div class="py-[100px] px-[60px]">
+            <div class="py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">
                 <form id="search-blogs" class="relative flex gap-4">
                     <input type="text" class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
                         placeholder="Search">
@@ -47,8 +47,8 @@ $recent_blogs = $query->posts;
                     <!-- print videos -->
                 </div>
 
-                <div class="flex w-full gap-[32px] px-[32px] pb-[60px]">
-                    <div class="w-1/2">
+                <div class="flex w-full flex-wrap md:flex-nowrap gap-[32px] lg:px-[32px] pb-[60px]">
+                    <div class="w-full md:w-1/2">
                         <figure>
                             <a href="<?php echo get_permalink($recent_blogs[0]->ID); ?>">
                                 <img class="rounded-[20px] object-cover w-full lg:h-[300px]"
@@ -83,16 +83,16 @@ $recent_blogs = $query->posts;
                             <?php echo get_the_excerpt($recent_blogs[0]->ID); ?>
                         </p>
                     </div>
-                    <div class="w-1/2 flex flex-col gap-[32px] ">
+                    <div class="w-full md:w-1/2 flex flex-col gap-[32px] ">
                         <?php for ($i = 1; $i < 3; $i++) : ?>
-                        <div class="flex gap-[24px]">
-                            <figure class="w-1/2">
+                        <div class="flex flex-wrap md:flex-nowrap gap-[24px]">
+                            <figure class="w-full md:w-1/2">
                                 <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
                                     <img class="rounded-[20px] object-cover"
                                         src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
                                 </a>
                             </figure>
-                            <div class="w-1/2">
+                            <div class="w-full md:w-1/2">
                                 <div class="flex gap-3">
                                     <p class="text-sm font-semibold text-[#47546799]">
                                         <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>
@@ -118,11 +118,7 @@ $recent_blogs = $query->posts;
                     </div>
                 </div>
                 <div id="blogs-container" class="flex flex-wrap gap-[2%] mt-[60px] gap-y-[60px]">
-                    <?php for ($i = 3; $i < count($recent_blogs); $i++) : ?>
-                    <div class="w-[32%]">
 
-                    </div>
-                    <?php endfor ?>
                 </div>
             </div>
     </section>

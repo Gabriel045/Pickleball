@@ -40,13 +40,22 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(container, {
     childList: true,
   });
+
+  // Add event listener for opening and closing a modal or dropdown
+  const openCloseButton = document.querySelector("#open-close");
+  if (openCloseButton) {
+    openCloseButton.addEventListener("click", function () {
+      openCloseButton.classList.toggle("active");
+      document.querySelector("#video-categories").classList.toggle("hidde");
+    });
+  }
 });
 
 // Fetch videos when the form is submitted
-const form = document.querySelector("#search-videos");
+const form = document.querySelector(".search-videos");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const searchInput = form.querySelector('#search-videos input[type="text"]');
+  const searchInput = form.querySelector('.search-videos input[type="text"]');
   fetchAndDisplayVideos(searchInput.value);
   // Adds an item to the side cart. located on /resources/js/main.js
   const observer = new MutationObserver((mutationsList, observer) => {
@@ -88,7 +97,7 @@ categories.forEach((category) => {
 function print_products(data) {
   const container = document.querySelector("#videos-container");
   const article = document.createElement("article");
-  article.classList.add("w-[23.5%]");
+  article.classList.add("w-full", "xl:w-[23.5%]", "lg:w-[49%]");
   article.innerHTML = `
             <figure>
                 <a href="${data.link}">

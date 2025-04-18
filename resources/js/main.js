@@ -45,4 +45,16 @@ function addToSideCart() {
 
 jQuery(document).ready(function () {
   addToSideCart();
+
+  document.querySelector("#nav-icon4").addEventListener("click", function () {
+    this.classList.toggle("open");
+    document.querySelector("#mobile-side-menu").classList.toggle("active");
+    if (this.classList.contains("open")) {
+      document.querySelector(".menu-text").innerHTML = "Close";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.querySelector(".menu-text").innerHTML = "Menu";
+      document.body.style.overflow = "auto";
+    }
+  });
 });

@@ -12,16 +12,16 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    <header>
-        <div class="bg-black px-[167px] py-[10px]">
+    <header class="relative overflow-x-clip">
+        <div class=" bg-black lg:px-[167px] py-[10px]">
             <p class="text-white text-[12px] font-semibold text-center">24/7 support Lorem ipsum dolor sit amet</p>
         </div>
-        <div class="block_content m-auto flex justify-between w-full px-[60px] py-[15px]">
+        <div class="block_content m-auto flex justify-between w-full px-[30px] lg:px-[60px] py-[20px]">
             <div class="flex gap-10 w-2/3">
                 <div class="text-berkley-blue font-bold text-[30px] tracking-[-0.6px] leading-[30px] flex items-center">
                     <a href="/">PickleballHub</a>
                 </div>
-                <form role="search" method="get" class="search-form flex max-w-[460px] w-full relative"
+                <form role="search" method="get" class="hidden lg:flex search-form  max-w-[460px] w-full relative"
                     action="<?php echo home_url('/'); ?>">
                     <input type="search"
                         class="search-field w-full border-[1px] border-[#D0D5DD] rounded-lg pl-[50px] px-[14px] py-[5px] text-[16px] text-[#667085]"
@@ -36,7 +36,8 @@
                     </button>
                 </form>
             </div>
-            <div class="flex gap-10 items-center">
+            <!-- Desktop -->
+            <div class="hidden lg:flex gap-10 items-center lg:w-full lg:justify-end">
                 <a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
                         <path
@@ -54,16 +55,29 @@
                     <span>View Cart</span>
                 </a>
             </div>
+            <!-- Mobile -->
+            <div class="flex gap-3 items-center">
+                <span class="block lg:hidden menu-text text-gray-paragrah text-opacity-60 font-semibold">Menu</span>
+                <span class="z-[99] relative nline-block lg:hidden cursor-pointer menu-mobile">
+                    <div class="" id="nav-icon4">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="px-[60px]">
-            <?php
-            wp_nav_menu(array(
-                'menu'   => 'Header menu',
-                'menu_class' => 'menu_header flex gap-[10px] block_content m-auto',
-                'container' => false,
-            ));
-            ?>
+        <div class="hidden lg:block" style=" background: linear-gradient(0deg, #FAFBFC 0%, #FAFBFC 100%), #FFF;">
+            <div class=" px-[60px]">
+                <?php
+                wp_nav_menu(array(
+                    'menu'   => 'Header menu',
+                    'menu_class' => 'menu_header flex gap-[10px] block_content m-auto',
+                    'container' => false,
+                ));
+                ?>
+            </div>
         </div>
-
+        <?php get_template_part('template-parts/mobile-menu'); ?>
         <?php get_template_part('template-parts/slide-cart'); ?>
     </header>

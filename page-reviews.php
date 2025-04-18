@@ -15,10 +15,10 @@ $reviews_query = $reviews_query->posts;
 <main id="shop">
     <section
         style="background: linear-gradient(358deg, #0E375E 1.21%, #0B2C4A 98.39%), linear-gradient(180deg, #060843 0%, #02031B 100%)">
-        <div class="block_content px-[100px] py-[64px]">
-            <div class="flex justify-between items-center gap-[40px]">
+        <div class="block_content px-[30px] lg:px-[100px] py-[64px]">
+            <div class="flex justify-between flex-wrap lg:flex-nowrap items-center gap-[40px]">
                 <div>
-                    <h1 class="text-[36px] text-white font-semibold tracking-tight ">Reviews</h1>
+                    <h1 class="text-[30px] lg:text-[36px] text-white font-semibold tracking-tight ">Reviews</h1>
                     <p class="text-[#FFFFFF99] text-[14px] leading-[20px] mb-[20px] mt-[10px]">
                         Lorem ipsum dolor sitamet consectetur. Felis gravida lobortis erat auctor.
                     </p>
@@ -31,7 +31,7 @@ $reviews_query = $reviews_query->posts;
                 </div>
                 <div>
                     <a
-                        class="cursor-pointer rounded-lg bg-white font-semibold shadow-sm shadow-[rgba(16,24,40,0.05)] flex w-fit px-[18px] py-[10px] justify-center items-center gap-[8px] hover:transform hover:translate-y-[-2px] transition-transform duration-300 ease-in-out">
+                        class="cursor-pointer rounded-lg bg-white font-semibold shadow-sm shadow-[rgba(16,24,40,0.05)] flex w-full lg:w-fit px-[18px] py-[10px] justify-center items-center gap-[8px] hover:transform hover:translate-y-[-2px] transition-transform duration-300 ease-in-out">
                         Write a Review
                     </a>
                 </div>
@@ -39,12 +39,14 @@ $reviews_query = $reviews_query->posts;
         </div>
     </section>
     <section>
-        <div class="block_content px-[60px] py-[100px]">
+        <div class="block_content px-[30px] lg:px-[60px] py-[60px] lg:py-[100px]">
             <div class="flex flex-wrap gap-[1%] gap-y-[30px]">
                 <?php foreach ($reviews_query as $key => $card) : ?>
-                <article class="w-[24%] flex flex-col items-start gap-6 py-10 px-6 rounded-lg bg-gray-50">
+                <article
+                    class="w-full md:w-[49%] lg:w-[24%] flex flex-col items-start gap-6 py-10 px-6 rounded-lg bg-gray-50">
                     <span class="stars before:w-[117px] before:h-[20px]"></span>
-                    <p class="text-gray-paragrah text-[20px] font-normal leading-8 mt-4 mb-5">
+                    <p
+                        class="text-gray-paragrah text-[18px] lg:text-[20px] font-normal leading-6 lg:leading-8 mt-4 mb-5">
                         <?php echo get_field("text", $card->ID) ?>
                     </p>
                     <div class="flex w-full justify-between">

@@ -11,10 +11,10 @@ $recent_blogs = $recent_blogs->posts;
 ?>
 
 <section id="recent-blog_posts" class="">
-    <div class="block_content py-[60px] px-[60px]">
+    <div class="block_content py-[60px] px-[30px] lg:px-[60px]">
         <p class="text-[#0C5E5D] text-2xl font-semibold leading-8 mb-8">Recent blog posts</p>
-        <div class="flex w-full gap-[32px]">
-            <div class="w-1/2">
+        <div class="flex flex-wrap lg:flex-nowrap w-full gap-[32px]">
+            <div class="w-full lg:w-1/2">
                 <figure>
                     <img class="rounded-[20px]"
                         src="<?php echo get_the_post_thumbnail_url($recent_blogs[0]->ID, 'full') ?>">
@@ -43,16 +43,16 @@ $recent_blogs = $recent_blogs->posts;
                     <?php echo get_the_excerpt($recent_blogs[0]->ID); ?>
                 </p>
             </div>
-            <div class="w-1/2 flex flex-col gap-[32px] ">
+            <div class="w-full lg:w-1/2 flex flex-col gap-[32px] ">
                 <?php for ($i = 1; $i < count($recent_blogs); $i++) : ?>
-                <div class="flex gap-[24px]">
-                    <figure class="w-1/2">
+                <div class="flex lg:flex-nowrap flex-wrap gap-[24px]">
+                    <figure class="w-full lg:w-1/2">
                         <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
                             <img class="rounded-[20px]"
                                 src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
                         </a>
                     </figure>
-                    <div class="w-1/2">
+                    <div class="w-full lg:w-1/2">
                         <div class="flex gap-3">
                             <p class="text-sm font-semibold text-[#47546799]">
                                 <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>

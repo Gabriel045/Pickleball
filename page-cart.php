@@ -3,8 +3,9 @@
 
 <main>
     <section id="cart">
-        <div class="block_content px-52 py-16">
-            <h1 class="text-[#0B141D] text-3xl font-semibold leading-[60px] tracking-[-0.72px] mb-16">Your Order</h1>
+        <div class="block_content px-[30px] lg:px-52 py-[60px] lg:py-16">
+            <h1 class="text-[#0B141D] text-3xl font-semibold leading-[60px] tracking-[-0.72px] mb-12 lg:mb-16">Your
+                Order</h1>
 
             <div id="cart-container" class="min-h-[300px]">
                 <!-- Render the products -->

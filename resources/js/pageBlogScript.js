@@ -46,7 +46,7 @@ form.addEventListener("submit", function (event) {
 function print_Blogs(data) {
   const container = document.querySelector("#blogs-container");
   const article = document.createElement("article");
-  article.classList.add("w-[32%]");
+  article.classList.add("md:w-[32%]", "w-full");
   article.innerHTML = `
             <figure>
                 <a href="${data.link}">

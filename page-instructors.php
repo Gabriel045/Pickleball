@@ -3,12 +3,12 @@
 <main>
     <section
         style="background: linear-gradient(358deg, #0E375E 1.21%, #0B2C4A 98.39%), linear-gradient(180deg, #060843 0%, #02031B 100%)">
-        <div class="block_content px-[100px] py-[64px]">
-            <h1 class="text-[36px] text-white font-semibold tracking-tight ">All Instructors</h1>
+        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
+            <h1 class="text-[30px] lg:text-[36px] text-white font-semibold tracking-tight ">All Instructors</h1>
         </div>
     </section>
     <section>
-        <div class="block_content py-[100px] px-[60px]">
+        <div class="block_content py-[30px] lg:py-[100px] px-[30px] lg:px-[60px]">
             <form id="search-instructors" class="relative flex gap-4">
                 <input type="text" class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
                     placeholder="Search">
