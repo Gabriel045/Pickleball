@@ -43,7 +43,8 @@ section {
 }
 
 
-.btn-primary {
+.btn-primary,
+#gform_submit_button_1 {
     cursor: pointer !important;
     display: flex !important;
     padding: 10px 18px !important;
@@ -689,6 +690,58 @@ form.woocommerce-checkout #billing_phone_field {
     transition: all 0.3s ease;
 }
 
+#form .gform-theme--foundation .gform_fields {
+    row-gap: 20px;
+}
+
+#form .gform-field-label {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+#form .ginput_container_text input,
+#form .ginput_container_email input,
+#form .ginput_container_select select {
+    font-size: 14px;
+    color: var(--rich-black);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+    display: flex;
+    padding: 5px 14px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid #D0D5DD;
+    background: #FFF;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+}
+
+#form .ginput_container_email {
+    position: relative;
+}
+
+#form .ginput_container_email input {
+    padding-left: 40px !important;
+}
+
+#form .ginput_container_email::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"%3E%3Cpath d="M1.66602 5.83331L8.47012 10.5962C9.02109 10.9819 9.29658 11.1747 9.59624 11.2494C9.86093 11.3154 10.1378 11.3154 10.4025 11.2494C10.7021 11.1747 10.9776 10.9819 11.5286 10.5962L18.3327 5.83331M5.66602 16.6666H14.3327C15.7328 16.6666 16.4329 16.6666 16.9677 16.3942C17.4381 16.1545 17.8205 15.772 18.0602 15.3016C18.3327 14.7668 18.3327 14.0668 18.3327 12.6666V7.33331C18.3327 5.93318 18.3327 5.23312 18.0602 4.69834C17.8205 4.22793 17.4381 3.84548 16.9677 3.6058C16.4329 3.33331 15.7328 3.33331 14.3327 3.33331H5.66602C4.26588 3.33331 3.56582 3.33331 3.03104 3.6058C2.56063 3.84548 2.17818 4.22793 1.9385 4.69834C1.66602 5.23312 1.66602 5.93318 1.66602 7.33331V12.6666C1.66602 14.0668 1.66602 14.7668 1.9385 15.3016C2.17818 15.772 2.56063 16.1545 3.03104 16.3942C3.56582 16.6666 4.26588 16.6666 5.66602 16.6666Z" stroke="%23667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 
 @media screen and (min-width:1200px) {
     .xl\:w-\[23\.5\%\] {
@@ -743,5 +796,9 @@ form.woocommerce-checkout #billing_phone_field {
         left: 0px !important;
         bottom: -90px !important;
         top: auto !important;
+    }
+
+    #form #gform_submit_button_1 {
+        width: 100% !important;
     }
 }

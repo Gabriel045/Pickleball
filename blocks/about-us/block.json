@@ -1,0 +1,22 @@
+{
+    "name": "acf/camps",
+    "title": "Camps",
+    "description": "A custom Camps for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Camps"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "camps.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/camps/screenshot.png"
+            }
+        }
+    }
+}

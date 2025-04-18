@@ -1,0 +1,22 @@
+{
+    "name": "acf/about-us",
+    "title": "About Us",
+    "description": "A custom About Us for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "About Us"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "about-us.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/about-us/screenshot.png"
+            }
+        }
+    }
+}
