@@ -38,25 +38,25 @@ foreach ($product_ids as $product_id) {
 ?>
 
 
-<div class="py-[30px] lg:py-[60px] px-[30px] lg:px-[80px]">
+<div class="">
     <h3 class="text-[24px] text-rich-black font-semibold">My Videos Library </h3>
     <div class="mt-10 flex flex-wrap gap-[2%] gap-y-[40px]">
         <?php foreach ($videos as $video) : ?>
-        <div class="w-full md:w-[49%] lg:w-[31.33%]">
-            <figure>
-                <img class="rounded-[10px]" src="<?php echo $video['image'] ?>">
-            </figure>
-            <div class="flex items-center gap-[10px] mt-6">
-                <span class="stars"></span>
-                <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
-                    Reviews)</span>
+            <div class="w-full md:w-[49%] lg:w-[31.33%]">
+                <figure>
+                    <img class="rounded-[10px]" src="<?php echo $video['image'] ?>">
+                </figure>
+                <div class="flex items-center gap-[10px] mt-6">
+                    <span class="stars"></span>
+                    <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
+                        Reviews)</span>
+                </div>
+                <p class="text-[20px] text-rich-black font-semibold"><?php echo $video['title'] ?></p>
+                <p class="mt-2 text-gray-paragrah"><?php echo $video['excerpt'] ?></p>
+                <a href="<?php echo esc_url(home_url('/course/' . $video["slug"])); ?>" class="btn">
+                    See Course
+                </a>
             </div>
-            <p class="text-[20px] text-rich-black font-semibold"><?php echo $video['title'] ?></p>
-            <p class="mt-2 text-gray-paragrah"><?php echo $video['excerpt'] ?></p>
-            <a href="<?php echo esc_url(home_url('/course/' . $video["slug"])); ?>" class="btn">
-                Ver Curso
-            </a>
-        </div>
         <?php endforeach; ?>
     </div>
 </div>

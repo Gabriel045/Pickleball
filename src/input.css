@@ -873,7 +873,8 @@ form.woocommerce-checkout #billing_phone_field {
     vertical-align: top;
 }
 
-#my-account .woocommerce {
+
+.logged-in #my-account .woocommerce {
     display: flex !important;
     width: 100% !important;
 }
@@ -889,6 +890,14 @@ form.woocommerce-checkout #billing_phone_field {
 
 #my-account .woocommerce-MyAccount-content {
     width: 75% !important;
+}
+
+.woocommerce-MyAccount-content {
+
+    @apply py-[30px];
+    @apply lg:py-[60px];
+    @apply px-[30px];
+    @apply lg:px-[80px];
 }
 
 @media screen and (min-width:1200px) {

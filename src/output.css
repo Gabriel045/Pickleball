@@ -2611,7 +2611,7 @@ form.woocommerce-checkout #billing_phone_field {
   vertical-align: top;
 }
 
-#my-account .woocommerce {
+.logged-in #my-account .woocommerce {
   display: flex !important;
   width: 100% !important;
 }
@@ -2627,6 +2627,30 @@ form.woocommerce-checkout #billing_phone_field {
 
 #my-account .woocommerce-MyAccount-content {
   width: 75% !important;
+}
+
+.woocommerce-MyAccount-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-MyAccount-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.woocommerce-MyAccount-content {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-MyAccount-content {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 @media screen and (min-width:1200px) {
@@ -3034,11 +3058,6 @@ form.woocommerce-checkout #billing_phone_field {
     padding-right: 75px;
   }
 
-  .lg\:px-\[80px\] {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
   .lg\:px-\[90px\] {
     padding-left: 90px;
     padding-right: 90px;
@@ -3057,11 +3076,6 @@ form.woocommerce-checkout #billing_phone_field {
   .lg\:py-\[100px\] {
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-
-  .lg\:py-\[60px\] {
-    padding-top: 60px;
-    padding-bottom: 60px;
   }
 
   .lg\:py-\[80px\] {
