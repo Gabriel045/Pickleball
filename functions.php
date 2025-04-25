@@ -159,7 +159,7 @@ add_action('woocommerce_checkout_payment_hook', 'woocommerce_checkout_payment', 
 add_filter('woocommerce_enable_order_notes_field', '__return_false', 10000);
 
 // Disable the use of coupons in WooCommerce
-add_filter('woocommerce_coupons_enabled', '__return_false');
+// add_filter('woocommerce_coupons_enabled', '__return_false');
 
 
 
@@ -179,3 +179,110 @@ function correct_redirect()
 
 // Register a custom endpoints 
 include_once get_template_directory() . '/endpoint/endpoints.php';
+
+
+
+/**
+ * Register New Endpoint.
+ *
+ * @return void.
+ */
+function register_new_item_endpoint()
+{
+    add_rewrite_endpoint('my-videos', EP_ROOT | EP_PAGES);
+}
+add_action('init', 'register_new_item_endpoint');
+
+
+/**
+ * Add content to the new tab.
+ *
+ * @return  string.
+ */
+function add_my_videos_content()
+{
+    get_template_part('/template-parts/my-videos');
+}
+add_action('woocommerce_account_my-videos_endpoint', 'add_my_videos_content');
+
+
+
+add_filter('woocommerce_account_menu_items', 'customize_account_menu_items');
+
+function customize_account_menu_items($items)
+{
+    // Remove an item from the menu (e.g., "Downloads")
+    unset($items['downloads']);
+    unset($items['edit-account']);
+    unset($items['customer-logout']);
+    unset($items['edit-address']);
+
+
+    // Change the name of a menu item (e.g., "Dashboard")
+    if (isset($items['dashboard'])) {
+        $items['dashboard'] = __('Home', 'woocommerce');
+    }
+
+
+    // Add a new item to the menu
+    $items['my-videos'] = __('My Videos', 'woocommerce');
+
+    // Reorder the menu items to make "My Videos" the second item
+    $position = 1; // Position where "My Videos" should appear (0-based index)
+
+    if (isset($items['my-videos'])) {
+        $my_videos = array('my-videos' => $items['my-videos']);
+        unset($items['my-videos']);
+        $items = array_slice($items, 0, $position, true) + $my_videos + array_slice($items, $position, null, true);
+    }
+
+    // echo "<pre>";
+    // print_r($items);
+    // echo "</pre>";
+
+    return $items;
+}
+
+
+add_filter('woocommerce_payment_gateway_supports', 'filter_payment_gateway_supports', 10, 3);
+function filter_payment_gateway_supports($supports, $feature, $payment_gateway)
+{
+    // Here in the array, set the allowed payment method IDs (slugs)
+    $allowed_payment_method_ids = array('bacs', 'cheque', 'cod');
+
+    if (in_array($payment_gateway->id, $allowed_payment_method_ids) && $feature === 'add_payment_method') {
+        $supports = true;
+    }
+    return $supports;
+}
+
+
+
+function register_course_rewrite_rule()
+{
+    add_rewrite_rule(
+        '^course/([^/]*)/?$', // Estructura de la URL personalizada
+        'index.php?course_name=$matches[1]', // Query var para capturar el nombre del curso
+        'top'
+    );
+}
+add_action('init', 'register_course_rewrite_rule');
+
+
+function add_course_query_var($vars)
+{
+    $vars[] = 'course_name'; // Agregar la query var personalizada
+    return $vars;
+}
+add_filter('query_vars', 'add_course_query_var');
+
+
+function load_course_template($template)
+{
+    if (get_query_var('course_name')) {
+        // Ruta al archivo de la plantilla personalizada
+        return get_template_directory() . '/template-parts/single-course.php';
+    }
+    return $template;
+}
+add_filter('template_include', 'load_course_template');

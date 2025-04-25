@@ -43,7 +43,7 @@ form.addEventListener("submit", function (event) {
 function print_Instructors(data) {
   const container = document.querySelector("#instructor-container");
   const article = document.createElement("article");
-  article.classList.add("w-[23.5%]");
+  article.classList.add("w-full", "xl:w-[23.5%]", "lg:w-[49%]");
   article.innerHTML = `
             <figure>
                 <a href="${data.link}">

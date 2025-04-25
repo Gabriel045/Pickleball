@@ -15,34 +15,43 @@
 </main>
 
 <script>
-jQuery(document).ready(function($) {
-    "use strict";
+    jQuery(document).ready(function($) {
+        "use strict";
 
-    function fetchCartContents() {
-        $.ajax({
-            url: wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%',
-                'get_refreshed_fragments'),
-            type: 'POST',
-            success: function(response) {
-                if (response.fragments) {
-                    const itemsContainer = $('#cart-container');
-                    itemsContainer.empty(); // Clear existing items
-                    itemsContainer.append(response.fragments[
-                        'div.widget_shopping_cart_content']);
-                } else {
-                    console.error('Error fetching cart contents:', response);
+        function fetchCartContents() {
+            $.ajax({
+                url: wc_add_to_cart_params.wc_ajax_url.toString().replace('%%endpoint%%',
+                    'get_refreshed_fragments'),
+                type: 'POST',
+                success: function(response) {
+                    if (response.fragments) {
+                        const itemsContainer = $('#cart-container');
+                        itemsContainer.empty(); // Clear existing items
+                        itemsContainer.append(response.fragments[
+                            'div.widget_shopping_cart_content']);
+                    } else {
+                        console.error('Error fetching cart contents:', response);
+                    }
+                },
+                error: function(error) {
+                    console.error('AJAX Error:', error);
                 }
-            },
-            error: function(error) {
-                console.error('AJAX Error:', error);
-            }
-        });
+            });
+        }
+
+        // First fetch cart contents when the page loads
+        fetchCartContents();
+    });
+</script>
+<style>
+    .more-recommended {
+        display: none !important;
     }
 
-    // First fetch cart contents when the page loads
-    fetchCartContents();
-});
-</script>
+    .checkout-btn {
+        padding: 120px 0px 0px 0px;
+    }
+</style>
 
 
 <?php get_footer(); ?>
