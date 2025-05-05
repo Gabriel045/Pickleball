@@ -624,6 +624,10 @@ video {
   top: 50%;
 }
 
+.top-\[-35px\] {
+  top: -35px;
+}
+
 .top-\[0px\] {
   top: 0px;
 }
@@ -734,6 +738,10 @@ video {
   margin-bottom: 30px;
 }
 
+.mb-\[50px\] {
+  margin-bottom: 50px;
+}
+
 .mb-\[60px\] {
   margin-bottom: 60px;
 }
@@ -826,6 +834,10 @@ video {
   margin-top: 60px;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -846,16 +858,12 @@ video {
   display: none;
 }
 
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
-.aspect-\[1\.6\] {
-  aspect-ratio: 1.6;
-}
-
 .aspect-\[1\.46\] {
   aspect-ratio: 1.46;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
 }
 
 .h-12 {
@@ -876,6 +884,11 @@ video {
 
 .h-auto {
   height: auto;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .h-full {
@@ -1005,6 +1018,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-0 {
+  gap: 0px;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
@@ -1089,16 +1106,16 @@ video {
   gap: 8px;
 }
 
-.gap-0 {
-  gap: 0px;
-}
-
 .gap-y-10 {
   row-gap: 2.5rem;
 }
 
 .gap-y-5 {
   row-gap: 1.25rem;
+}
+
+.gap-y-\[20px\] {
+  row-gap: 20px;
 }
 
 .gap-y-\[30px\] {
@@ -1185,6 +1202,10 @@ video {
   border-bottom-width: 2px;
 }
 
+.border-r {
+  border-right-width: 1px;
+}
+
 .border-r-\[1px\] {
   border-right-width: 1px;
 }
@@ -1214,6 +1235,11 @@ video {
 .border-\[\#E0E0E0\] {
   --tw-border-opacity: 1;
   border-color: rgb(224 224 224 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#EAECF0\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(234 236 240 / var(--tw-border-opacity, 1));
 }
 
 .border-black {
@@ -1255,6 +1281,11 @@ video {
 .bg-\[\#0E375E\] {
   --tw-bg-opacity: 1;
   background-color: rgb(14 55 94 / var(--tw-bg-opacity, 1));
+}
+
+.bg-\[\#8F97A2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(143 151 162 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#F9FAFB\] {
@@ -1332,10 +1363,6 @@ video {
 
 .p-\[32px\] {
   padding: 32px;
-}
-
-.p-\[60px\] {
-  padding: 60px;
 }
 
 .\!px-\[20px\] {
@@ -1612,6 +1639,10 @@ video {
   line-height: 1.25rem;
 }
 
+.text-\[22px\] {
+  font-size: 22px;
+}
+
 .\!font-\[400\] {
   font-weight: 400 !important;
 }
@@ -1845,6 +1876,12 @@ video {
 
 .opacity-\[0\.6\] {
   opacity: 0.6;
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-sm {
@@ -2730,11 +2767,11 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 #my-account .woocommerce-MyAccount-navigation {
-  width: 25% !important;
+  width: 20% !important;
 }
 
 #my-account .woocommerce-MyAccount-content {
-  width: 75% !important;
+  width: 80% !important;
 }
 
 .woocommerce-MyAccount-content {
@@ -2756,8 +2793,8 @@ form.woocommerce-checkout #billing_phone_field {
 
 @media (min-width: 1024px) {
   .woocommerce-MyAccount-content {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
   }
 }
 
@@ -2922,12 +2959,12 @@ form.woocommerce-checkout #billing_phone_field {
     width: 150px;
   }
 
-  .max-\[1024px\]\:w-full {
-    width: 100%;
-  }
-
   .max-\[1024px\]\:w-\[72px\] {
     width: 72px;
+  }
+
+  .max-\[1024px\]\:w-full {
+    width: 100%;
   }
 
   .max-\[1024px\]\:items-end {
@@ -2988,6 +3025,10 @@ form.woocommerce-checkout #billing_phone_field {
 @media (min-width: 1024px) {
   .lg\:absolute {
     position: absolute;
+  }
+
+  .lg\:top-0 {
+    top: 0px;
   }
 
   .lg\:mb-0 {
@@ -3102,6 +3143,10 @@ form.woocommerce-checkout #billing_phone_field {
     width: 55%;
   }
 
+  .lg\:w-\[60\%\] {
+    width: 60%;
+  }
+
   .lg\:w-\[65\%\] {
     width: 65%;
   }
@@ -3131,6 +3176,14 @@ form.woocommerce-checkout #billing_phone_field {
     justify-content: flex-end;
   }
 
+  .lg\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+
   .lg\:gap-\[100px\] {
     gap: 100px;
   }
@@ -3141,14 +3194,6 @@ form.woocommerce-checkout #billing_phone_field {
 
   .lg\:gap-\[80px\] {
     gap: 80px;
-  }
-
-  .lg\:gap-2 {
-    gap: 0.5rem;
-  }
-
-  .lg\:gap-4 {
-    gap: 1rem;
   }
 
   .lg\:gap-y-\[80px\] {
@@ -3267,6 +3312,14 @@ form.woocommerce-checkout #billing_phone_field {
     padding-top: 100px;
   }
 
+  .lg\:\!pt-\[24px\] {
+    padding-top: 24px !important;
+  }
+
+  .lg\:pt-\[24px\] {
+    padding-top: 24px;
+  }
+
   .lg\:text-\[18px\] {
     font-size: 18px;
   }
@@ -3299,6 +3352,11 @@ form.woocommerce-checkout #billing_phone_field {
   }
 }
 
+.\[\&\.is-active\]\:bg-\[\#F9FAFB\].is-active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
+}
+
 .\[\&\.is-active\]\:bg-white.is-active {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
@@ -3314,12 +3372,12 @@ form.woocommerce-checkout #billing_phone_field {
   margin-bottom: 2.5rem;
 }
 
-.\[\&_h3\]\:text-\[24px\] h3 {
-  font-size: 24px;
-}
-
 .\[\&_h3\]\:text-\[20px\] h3 {
   font-size: 20px;
+}
+
+.\[\&_h3\]\:text-\[24px\] h3 {
+  font-size: 24px;
 }
 
 .\[\&_h3\]\:font-semibold h3 {
@@ -3336,17 +3394,9 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 @media (min-width: 1024px) {
-  .\[\&_h3\]\:lg\:text-\[20px\] h3 {
-    font-size: 20px;
-  }
-
   .\[\&_h3\]\:lg\:text-\[24px\] h3 {
     font-size: 24px;
   }
-}
-
-.\[\&_img\]\:h-\[570px\] img {
-  height: 570px;
 }
 
 .\[\&_img\]\:object-cover img {
@@ -3381,10 +3431,6 @@ form.woocommerce-checkout #billing_phone_field {
   color: rgb(11 20 29 / var(--tw-text-opacity, 1));
 }
 
-.\[\&_p\]\:text-\[18px\] p {
-  font-size: 18px;
-}
-
 .\[\&_p\]\:text-\[16px\] p {
   font-size: 16px;
 }
@@ -3399,10 +3445,6 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 @media (min-width: 1024px) {
-  .\[\&_p\]\:lg\:text-\[16px\] p {
-    font-size: 16px;
-  }
-
   .\[\&_p\]\:lg\:text-\[18px\] p {
     font-size: 18px;
   }
@@ -3551,6 +3593,18 @@ form.woocommerce-checkout #billing_phone_field {
   margin-bottom: 20px;
 }
 
+.\[_\&_h4\]\:mb-\[15px\] h4 {
+  margin-bottom: 15px;
+}
+
+.\[_\&_h4\]\:w-full h4 {
+  width: 100%;
+}
+
+.\[_\&_h4\]\:text-\[18px\] h4 {
+  font-size: 18px;
+}
+
 .\[_\&_h4\]\:text-\[20px\] h4 {
   font-size: 20px;
 }
@@ -3574,6 +3628,17 @@ form.woocommerce-checkout #billing_phone_field {
 .\[_\&_h4\]\:text-black h4 {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.\[_\&_h4\]\:text-rich-black h4 {
+  --tw-text-opacity: 1;
+  color: rgb(11 20 29 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .\[_\&_h4\]\:lg\:text-\[20px\] h4 {
+    font-size: 20px;
+  }
 }
 
 .\[_\&_hr\]\:my-\[24px\] hr {
@@ -3643,6 +3708,10 @@ form.woocommerce-checkout #billing_phone_field {
   list-style-type: decimal;
 }
 
+.\[_\&_p\]\:text-\[14px\] p {
+  font-size: 14px;
+}
+
 .\[_\&_p\]\:text-\[16px\] p {
   font-size: 16px;
 }
@@ -3682,6 +3751,10 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 @media (min-width: 1024px) {
+  .\[_\&_p\]\:lg\:text-\[16px\] p {
+    font-size: 16px;
+  }
+
   .\[_\&_p\]\:lg\:text-\[18px\] p {
     font-size: 18px;
   }

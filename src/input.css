@@ -890,11 +890,11 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 #my-account .woocommerce-MyAccount-navigation {
-    width: 25% !important;
+    width: 20% !important;
 }
 
 #my-account .woocommerce-MyAccount-content {
-    width: 75% !important;
+    width: 80% !important;
 }
 
 .woocommerce-MyAccount-content {
@@ -902,7 +902,7 @@ form.woocommerce-checkout #billing_phone_field {
     @apply py-[30px];
     @apply lg:py-[60px];
     @apply px-[30px];
-    @apply lg:px-[80px];
+    @apply lg:px-[60px];
 }
 
 

@@ -16,7 +16,10 @@ $contents = get_field('contents', $post->ID);
 $text_image = get_field('text_image', $post->ID);
 $text_image_2 = get_field('text_image_2', $post->ID);
 $best_seller_title = get_field('best_seller_title', $post->ID);
-$faqs = get_field('faqs', $post->ID); ?>
+$faqs = get_field('faqs', $post->ID);
+$volumes = get_field('volumes', $post->ID);
+
+?>
 
 <main>
     <section>
@@ -149,37 +152,41 @@ $faqs = get_field('faqs', $post->ID); ?>
                         <span class="text-[14px] text-gray-paragrah">Expant all Sections</span>
                     </div>
                     <div id="course-tabs">
-                        <details open class="bg-white py-[23px] px-[40px]">
-                            <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
-                                Volume 1
-                            </summary>
-                            <div class="sumary content mt-5">
-                                <table class="table-fixed w-full border-collapse">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="border-r-[1px]  border-black text-left font-semibold p-[10px] text-rich-black opacity-[0.6]">
-                                                Chapter Title</th>
-                                            <th
-                                                class="text-center font-semibold p-[10px] text-rich-black opacity-[0.6]">
-                                                Start Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php for ($i = 0; $i < 7; $i++) { ?>
+                        <?php foreach ($volumes as $key => $volume) {  ?>
+                            <details class="bg-white py-[23px] px-[40px]">
+                                <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
+                                    Volume <?php echo $key + 1 ?>
+                                </summary>
+                                <div class="sumary content mt-5">
+                                    <table class="table-fixed w-full border-collapse">
+                                        <thead>
                                             <tr>
-                                                <td
-                                                    class="border-r-[1px]  border-black p-[10px] opacity-[0.6] text-gray-paragrah">
-                                                    Lorem
-                                                    Ipsum Dolor</td>
-                                                <td class=" text-gray-paragrah p-[10px] text-center">9am to 10am
-                                                </td>
+                                                <th
+                                                    class="border-r-[1px]  border-black text-left font-semibold p-[10px] text-rich-black opacity-[0.6]">
+                                                    Chapter Title</th>
+                                                <th
+                                                    class="text-center font-semibold p-[10px] text-rich-black opacity-[0.6]">
+                                                    Start Time</th>
                                             </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </details>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($volume["volumes"] as $key => $value) { ?>
+                                                <tr>
+                                                    <td
+                                                        class="border-r-[1px]  border-black p-[10px] opacity-[0.6] text-gray-paragrah">
+                                                        <?php echo $value["chapter"] ?>
+                                                    </td>
+                                                    <td class=" text-gray-paragrah p-[10px] text-center">
+                                                        <?php echo $value["hours"] ?>
+
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </details>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="w-1/2">
@@ -263,6 +270,11 @@ $faqs = get_field('faqs', $post->ID); ?>
 
 
         });
+
+
+        const volume = document.querySelector('#course-tabs details');
+        volume.setAttribute('open', '');
+
     });
 </script>
 

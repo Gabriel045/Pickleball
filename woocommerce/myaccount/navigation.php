@@ -23,12 +23,12 @@ if (! defined('ABSPATH')) {
 do_action('woocommerce_before_account_navigation');
 ?>
 
-<nav class="woocommerce-MyAccount-navigation bg-[#F9FAFB] py-[32px] px-[24px] h-auto lg:min-h-[800px] flex flex-col justify-between"
+<nav class="woocommerce-MyAccount-navigation py-[32px] px-[24px] h-auto lg:min-h-[800px] flex flex-col justify-between border-r border-[#EAECF0]"
     aria-label="<?php esc_html_e('Account pages', 'woocommerce'); ?>">
     <ul>
         <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
             <li
-                class="p-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold [&.is-active]:shadow-sm [&.is-active]:bg-white <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
+                class="p-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold [&.is-active]:shadow-sm [&.is-active]:bg-[#F9FAFB] <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
                 <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"
                     <?php echo wc_is_current_account_menu_item($endpoint) ? 'aria-current="page"' : ''; ?>>
                     <?php echo esc_html($label); ?>
@@ -44,7 +44,7 @@ do_action('woocommerce_before_account_navigation');
             <li class="woocommerce-settings [&.is-active]:bg-white [&.is-active]:shadow-sm">
                 <a href="/my-account/edit-account/">Settings</a>
             </li>
-            <li class="flex justify-between">
+            <li class="flex justify-between border-t border-[#EAECF0] mt-6 lg:!pt-[24px]">
                 <div class="flex flex-col">
                     <span
                         class="text-[18px] font-[600] text-rich-black"><?php echo esc_html(wp_get_current_user()->display_name); ?></span>

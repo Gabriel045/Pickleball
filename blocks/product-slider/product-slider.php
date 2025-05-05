@@ -44,7 +44,7 @@ $product_query = $product_query->posts;
                             </a>
                         </p>
                         <p class="text-gray-paragrah text-[16px] leading-normal">
-                            <?php echo wp_trim_words($product->get_description(), 12, '...'); ?> </p>
+                            <?php echo $product->get_short_description(); ?> </p>
                         <div class="my-[15px] flex items-center">
                             <span
                                 class="mr-4 text-[#8498AB] text-[18px] line-through">$<?php echo $product->get_price() * 2 ?></span>

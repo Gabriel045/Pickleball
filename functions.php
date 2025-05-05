@@ -190,6 +190,7 @@ include_once get_template_directory() . '/endpoint/endpoints.php';
 function register_new_item_endpoint()
 {
     add_rewrite_endpoint('my-videos', EP_ROOT | EP_PAGES);
+    add_rewrite_endpoint('my-lessons', EP_ROOT | EP_PAGES);
 }
 add_action('init', 'register_new_item_endpoint');
 
@@ -204,6 +205,12 @@ function add_my_videos_content()
     get_template_part('/template-parts/my-videos');
 }
 add_action('woocommerce_account_my-videos_endpoint', 'add_my_videos_content');
+
+function add_my_lessons_content()
+{
+    get_template_part('/template-parts/my-lessons');
+}
+add_action('woocommerce_account_my-lessons_endpoint', 'add_my_lessons_content');
 
 
 
@@ -227,6 +234,7 @@ function customize_account_menu_items($items)
     // Add a new item to the menu
     $items['my-videos'] = __('My Videos', 'woocommerce');
 
+
     // Reorder the menu items to make "My Videos" the second item
     $position = 1; // Position where "My Videos" should appear (0-based index)
 
@@ -235,10 +243,6 @@ function customize_account_menu_items($items)
         unset($items['my-videos']);
         $items = array_slice($items, 0, $position, true) + $my_videos + array_slice($items, $position, null, true);
     }
-
-    // echo "<pre>";
-    // print_r($items);
-    // echo "</pre>";
 
     return $items;
 }
@@ -258,31 +262,31 @@ function filter_payment_gateway_supports($supports, $feature, $payment_gateway)
 
 
 
-function register_course_rewrite_rule()
-{
-    add_rewrite_rule(
-        '^course/([^/]*)/?$', // Estructura de la URL personalizada
-        'index.php?course_name=$matches[1]', // Query var para capturar el nombre del curso
-        'top'
-    );
-}
-add_action('init', 'register_course_rewrite_rule');
+// function register_course_rewrite_rule()
+// {
+//     add_rewrite_rule(
+//         '^course/([^/]*)/?$', // Estructura de la URL personalizada
+//         'index.php?course_name=$matches[1]', // Query var para capturar el nombre del curso
+//         'top'
+//     );
+// }
+// add_action('init', 'register_course_rewrite_rule');
 
 
-function add_course_query_var($vars)
-{
-    $vars[] = 'course_name'; // Agregar la query var personalizada
-    return $vars;
-}
-add_filter('query_vars', 'add_course_query_var');
+// function add_course_query_var($vars)
+// {
+//     $vars[] = 'course_name'; // Agregar la query var personalizada
+//     return $vars;
+// }
+// add_filter('query_vars', 'add_course_query_var');
 
 
-function load_course_template($template)
-{
-    if (get_query_var('course_name')) {
-        // Ruta al archivo de la plantilla personalizada
-        return get_template_directory() . '/template-parts/single-course.php';
-    }
-    return $template;
-}
-add_filter('template_include', 'load_course_template');
+// function load_course_template($template)
+// {
+//     if (get_query_var('course_name')) {
+//         // Ruta al archivo de la plantilla personalizada
+//         return get_template_directory() . '/template-parts/single-course.php';
+//     }
+//     return $template;
+// }
+// add_filter('template_include', 'load_course_template');
