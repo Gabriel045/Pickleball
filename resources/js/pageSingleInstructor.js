@@ -124,7 +124,7 @@ function print_products(data) {
                     <span class="stars"></span>
                     <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59 Reviews)</span>
                 </div>
-                <p class="text-rich-black text-[20px] font-semibold leading-normal">
+                <p class="text-rich-black text-[20px] font-semibold leading-[20px] my-2">
                     <a href="${data.link}" class="text-rich-black hover:underline">
                         ${data.title}
                     </a>

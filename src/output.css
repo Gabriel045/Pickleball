@@ -604,6 +604,10 @@ video {
   bottom: 4rem;
 }
 
+.left-1\/2 {
+  left: 50%;
+}
+
 .left-16 {
   left: 4rem;
 }
@@ -614,6 +618,10 @@ video {
 
 .right-0 {
   right: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
 }
 
 .top-\[0px\] {
@@ -662,6 +670,11 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .my-\[15px\] {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -670,6 +683,11 @@ video {
 .my-\[24px\] {
   margin-top: 24px;
   margin-bottom: 24px;
+}
+
+.my-\[30px\] {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .\!mt-\[32px\] {
@@ -706,10 +724,6 @@ video {
 
 .mb-8 {
   margin-bottom: 2rem;
-}
-
-.mb-\[15px\] {
-  margin-bottom: 15px;
 }
 
 .mb-\[20px\] {
@@ -868,6 +882,11 @@ video {
   width: 128px !important;
 }
 
+.\!w-fit {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
 .\!w-full {
   width: 100% !important;
 }
@@ -931,6 +950,14 @@ video {
 
 .max-w-\[890px\] {
   max-width: 890px;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+.border-collapse {
+  border-collapse: collapse;
 }
 
 .translate-x-\[800px\] {
@@ -1002,6 +1029,10 @@ video {
   gap: 1%;
 }
 
+.gap-\[100px\] {
+  gap: 100px;
+}
+
 .gap-\[10px\] {
   gap: 10px;
 }
@@ -1054,6 +1085,10 @@ video {
   row-gap: 2.5rem;
 }
 
+.gap-y-5 {
+  row-gap: 1.25rem;
+}
+
 .gap-y-\[30px\] {
   row-gap: 30px;
 }
@@ -1102,6 +1137,10 @@ video {
   border-radius: 32px;
 }
 
+.rounded-\[5px\] {
+  border-radius: 5px;
+}
+
 .rounded-\[8px\] {
   border-radius: 8px;
 }
@@ -1128,6 +1167,14 @@ video {
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-r-\[1px\] {
+  border-right-width: 1px;
 }
 
 .border-t {
@@ -1157,9 +1204,28 @@ video {
   border-color: rgb(224 224 224 / var(--tw-border-opacity, 1));
 }
 
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
+
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity, 1));
+}
+
+.border-rich-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(11 20 29 / var(--tw-border-opacity, 1));
+}
+
+.border-transparent {
+  border-color: transparent;
 }
 
 .border-white\/30 {
@@ -1244,12 +1310,20 @@ video {
      object-fit: cover;
 }
 
+.p-\[10px\] {
+  padding: 10px;
+}
+
 .p-\[30px\] {
   padding: 30px;
 }
 
 .p-\[32px\] {
   padding: 32px;
+}
+
+.p-\[60px\] {
+  padding: 60px;
 }
 
 .\!px-\[20px\] {
@@ -1357,6 +1431,11 @@ video {
   padding-bottom: 20px;
 }
 
+.py-\[23px\] {
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+
 .py-\[30px\] {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1443,6 +1522,10 @@ video {
 
 .pt-\[60px\] {
   padding-top: 60px;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -1571,6 +1654,10 @@ video {
 
 .leading-\[20px\] {
   line-height: 20px;
+}
+
+.leading-\[22px\] {
+  line-height: 22px;
 }
 
 .leading-\[24px\] {
@@ -1742,6 +1829,10 @@ video {
 .placeholder-gray-400::placeholder {
   --tw-placeholder-opacity: 1;
   color: rgb(156 163 175 / var(--tw-placeholder-opacity, 1));
+}
+
+.opacity-\[0\.6\] {
+  opacity: 0.6;
 }
 
 .shadow-sm {
@@ -2506,17 +2597,20 @@ form.woocommerce-checkout #billing_phone_field {
   background-size: contain;
 }
 
-#faq summary::marker {
+#faq summary::marker,
+#course-tabs summary::marker {
   content: none;
 }
 
-#faq summary {
+#faq summary,
+#course-tabs summary {
   position: relative;
   padding-right: 30px;
   /* Add padding to make space for the icon */
 }
 
-#faq summary::after {
+#faq summary::after,
+#course-tabs summary::after {
   content: '';
   position: absolute;
   right: 0;
@@ -2530,7 +2624,8 @@ form.woocommerce-checkout #billing_phone_field {
   transition: transform 0.3s ease;
 }
 
-#faq details[open] summary::after {
+#faq details[open] summary::after,
+#course-tabs details[open] summary::after {
   transform: translateY(-50%) rotate(90deg);
   transition: transform 0.3s ease;
 }
@@ -2653,6 +2748,25 @@ form.woocommerce-checkout #billing_phone_field {
   }
 }
 
+.woocommerce-order-details,
+.woocommerce-customer-details {
+  display: block !important;
+}
+
+.product-featured-video iframe {
+  width: 100%;
+  aspect-ratio: 1 / 0.6;
+  height: auto;
+}
+
+.active-tab {
+  font-weight: 600;
+}
+
+.leading-\[20px\] {
+  line-height: 20px;
+}
+
 @media screen and (min-width:1200px) {
   .xl\:w-\[23\.5\%\] {
     width: 23.5% !important;
@@ -2704,6 +2818,18 @@ form.woocommerce-checkout #billing_phone_field {
   }
 
   #form #gform_submit_button_1 {
+    width: 100% !important;
+  }
+
+  .logged-in #my-account .woocommerce {
+    flex-wrap: wrap;
+  }
+
+  #my-account .woocommerce-MyAccount-navigation {
+    width: 100% !important;
+  }
+
+  #my-account .woocommerce-MyAccount-content {
     width: 100% !important;
   }
 }
@@ -2972,6 +3098,14 @@ form.woocommerce-checkout #billing_phone_field {
     width: 100%;
   }
 
+  .lg\:w-\[30\%\] {
+    width: 30%;
+  }
+
+  .lg\:w-\[70\%\] {
+    width: 70%;
+  }
+
   .lg\:flex-nowrap {
     flex-wrap: nowrap;
   }
@@ -3134,6 +3268,81 @@ form.woocommerce-checkout #billing_phone_field {
     padding-left: 50px;
     padding-right: 50px;
   }
+}
+
+.\[\&\.is-active\]\:bg-white.is-active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.\[\&\.is-active\]\:shadow-sm.is-active {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.\[\&_h3\]\:mb-10 h3 {
+  margin-bottom: 2.5rem;
+}
+
+.\[\&_h3\]\:text-\[24px\] h3 {
+  font-size: 24px;
+}
+
+.\[\&_h3\]\:font-semibold h3 {
+  font-weight: 600;
+}
+
+.\[\&_h3\]\:leading-\[28px\] h3 {
+  line-height: 28px;
+}
+
+.\[\&_h3\]\:text-rich-black h3 {
+  --tw-text-opacity: 1;
+  color: rgb(11 20 29 / var(--tw-text-opacity, 1));
+}
+
+.\[\&_img\]\:h-\[570px\] img {
+  height: 570px;
+}
+
+.\[\&_img\]\:object-cover img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.\[\&_li\]\:rounded-\[5px\] li {
+  border-radius: 5px;
+}
+
+.\[\&_li\]\:p-\[10px\] li {
+  padding: 10px;
+}
+
+.\[\&_li\]\:text-\[18px\] li {
+  font-size: 18px;
+}
+
+.\[\&_li\]\:font-semibold li {
+  font-weight: 600;
+}
+
+.\[\&_li\]\:text-rich-black li {
+  --tw-text-opacity: 1;
+  color: rgb(11 20 29 / var(--tw-text-opacity, 1));
+}
+
+.\[\&_p\]\:text-\[18px\] p {
+  font-size: 18px;
+}
+
+.\[\&_p\]\:leading-7 p {
+  line-height: 1.75rem;
+}
+
+.\[\&_p\]\:text-gray-paragrah p {
+  --tw-text-opacity: 1;
+  color: rgb(71 84 103 / var(--tw-text-opacity, 1));
 }
 
 .\[_\&_h2\]\:my-4 h2 {

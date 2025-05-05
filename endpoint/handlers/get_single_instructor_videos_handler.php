@@ -44,7 +44,7 @@ function get_single_instructor_videos_handler($request)
             'link' => get_permalink($post->ID),
             'thumbnail' =>  $product_image,
             'title' =>  $product->get_name(),
-            'description' => $product->get_description(),
+            'description' => wp_trim_words($product->get_description(), 12, '...'),
             'price' => $product_price,
         );
     };

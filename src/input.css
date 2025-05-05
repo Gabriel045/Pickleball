@@ -767,17 +767,20 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 
-#faq summary::marker {
+#faq summary::marker,
+#course-tabs summary::marker {
     content: none;
 }
 
-#faq summary {
+#faq summary,
+#course-tabs summary {
     position: relative;
     padding-right: 30px;
     /* Add padding to make space for the icon */
 }
 
-#faq summary::after {
+#faq summary::after,
+#course-tabs summary::after {
     content: '';
     position: absolute;
     right: 0;
@@ -792,7 +795,8 @@ form.woocommerce-checkout #billing_phone_field {
 
 }
 
-#faq details[open] summary::after {
+#faq details[open] summary::after,
+#course-tabs details[open] summary::after {
     transform: translateY(-50%) rotate(90deg);
     transition: transform 0.3s ease;
 }
@@ -900,6 +904,27 @@ form.woocommerce-checkout #billing_phone_field {
     @apply lg:px-[80px];
 }
 
+
+.woocommerce-order-details,
+.woocommerce-customer-details {
+    display: block !important;
+}
+
+.product-featured-video iframe {
+    width: 100%;
+    aspect-ratio: 1 / 0.6;
+    height: auto;
+}
+
+.active-tab {
+    font-weight: 600;
+}
+
+.leading-\[20px\] {
+    line-height: 20px;
+}
+
+
 @media screen and (min-width:1200px) {
     .xl\:w-\[23\.5\%\] {
         width: 23.5% !important;
@@ -955,6 +980,18 @@ form.woocommerce-checkout #billing_phone_field {
     }
 
     #form #gform_submit_button_1 {
+        width: 100% !important;
+    }
+
+    .logged-in #my-account .woocommerce {
+        flex-wrap: wrap;
+    }
+
+    #my-account .woocommerce-MyAccount-navigation {
+        width: 100% !important;
+    }
+
+    #my-account .woocommerce-MyAccount-content {
         width: 100% !important;
     }
 }

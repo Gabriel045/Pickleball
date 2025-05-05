@@ -140,13 +140,13 @@ do_action('woocommerce_before_mini_cart'); ?>
                             <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                 Reviews)</span>
                         </div>
-                        <p class="text-rich-black text-[20px] font-semibold leading-normal">
+                        <p class="text-rich-black text-[20px] font-semibold leading-[20px] my-2">
                             <a class="hover:underline" href="<?php echo esc_url(get_permalink($item->ID)); ?>">
                                 <?php echo $product->get_name(); ?>
                             </a>
                         </p>
                         <p class="text-gray-paragrah text-[16px] leading-normal">
-                            <?php echo $product->get_description() ?> </p>
+                            <?php echo wp_trim_words($product->get_description(), 12, '...'); ?> </p>
                         <div class="my-[15px] flex items-center gap-[10px]">
                             <span
                                 class="mr-4 text-[#8498AB] text-[16px] lg:text-[18px] line-through">$<?php echo $product->get_price() * 2 ?></span>

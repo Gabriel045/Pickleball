@@ -125,7 +125,7 @@ $most_selling_products = wc_get_products(array(
                                         </a>
                                     </p>
                                     <p class="text-gray-paragrah text-[16px] leading-normal">
-                                        <?php echo $product->get_short_description(); ?>
+                                        <?php echo wp_trim_words($product->get_short_description(), 15, '...'); ?>
                                     </p>
                                     <div class="my-[15px] flex items-center">
                                         <span

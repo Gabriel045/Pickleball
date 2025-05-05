@@ -28,7 +28,7 @@ do_action('woocommerce_before_account_navigation');
     <ul>
         <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
             <li
-                class="mb-[15px] text-rich-black text-[18px] font-semibold <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
+                class="p-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold [&.is-active]:shadow-sm [&.is-active]:bg-white <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
                 <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"
                     <?php echo wc_is_current_account_menu_item($endpoint) ? 'aria-current="page"' : ''; ?>>
                     <?php echo esc_html($label); ?>
@@ -37,11 +37,11 @@ do_action('woocommerce_before_account_navigation');
         <?php endforeach; ?>
     </ul>
     <div>
-        <ul>
-            <li class="woocommerce-support mb-[15px] text-rich-black text-[18px] font-semibold ">
+        <ul class="[&_li]:p-[10px] [&_li]:rounded-[5px] [&_li]:text-rich-black [&_li]:text-[18px] [&_li]:font-semibold">
+            <li class="woocommerce-support ">
                 <a href="/contact">Support</a>
             </li>
-            <li class="woocommerce-settings mb-[15px] text-rich-black text-[18px] font-semibold ">
+            <li class="woocommerce-settings [&.is-active]:bg-white [&.is-active]:shadow-sm">
                 <a href="/my-account/edit-account/">Settings</a>
             </li>
             <li class="flex justify-between">
@@ -63,5 +63,15 @@ do_action('woocommerce_before_account_navigation');
         </ul>
     </div>
 </nav>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentUrl = window.location.href;
+        const settingsMenuItem = document.querySelector('.woocommerce-settings');
+
+        if (currentUrl.includes('/edit-account/')) {
+            settingsMenuItem.classList.add('is-active');
+        }
+    });
+</script>
 
 <?php do_action('woocommerce_after_account_navigation'); ?>
