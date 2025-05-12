@@ -59,7 +59,7 @@ $recent_products = $recent_products->posts;
                                 </a>
                             </p>
                             <p class="text-gray-paragrah text-[16px] leading-normal">
-                                <?php echo wp_trim_words($product->get_description(), 15, '...'); ?>
+                                <?php echo $product->get_short_description(); ?>
                             </p>
                             <div class="my-[15px] flex items-center">
                                 <span

@@ -38,7 +38,7 @@ function get_videos_handler($request)
             'link' => get_permalink($post->ID),
             'thumbnail' =>  $product_image,
             'title' =>  $product->get_name(),
-            'description' => wp_trim_words($product->get_description(), 12, '...'),
+            'description' => $product->get_short_description(),
             'price' => $product_price,
         );
     };
