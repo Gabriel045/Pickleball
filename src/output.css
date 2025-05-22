@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -8,19 +10,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -28,28 +30,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 ::backdrop {
@@ -62,19 +64,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x:  ;
-  --tw-pan-y:  ;
-  --tw-pinch-zoom:  ;
+  --tw-pan-x: ;
+  --tw-pan-y: ;
+  --tw-pinch-zoom: ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
-  --tw-ordinal:  ;
-  --tw-slashed-zero:  ;
-  --tw-numeric-figure:  ;
-  --tw-numeric-spacing:  ;
-  --tw-numeric-fraction:  ;
-  --tw-ring-inset:  ;
+  --tw-gradient-from-position: ;
+  --tw-gradient-via-position: ;
+  --tw-gradient-to-position: ;
+  --tw-ordinal: ;
+  --tw-slashed-zero: ;
+  --tw-numeric-figure: ;
+  --tw-numeric-spacing: ;
+  --tw-numeric-fraction: ;
+  --tw-ring-inset: ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -82,28 +84,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur:  ;
-  --tw-brightness:  ;
-  --tw-contrast:  ;
-  --tw-grayscale:  ;
-  --tw-hue-rotate:  ;
-  --tw-invert:  ;
-  --tw-saturate:  ;
-  --tw-sepia:  ;
-  --tw-drop-shadow:  ;
-  --tw-backdrop-blur:  ;
-  --tw-backdrop-brightness:  ;
-  --tw-backdrop-contrast:  ;
-  --tw-backdrop-grayscale:  ;
-  --tw-backdrop-hue-rotate:  ;
-  --tw-backdrop-invert:  ;
-  --tw-backdrop-opacity:  ;
-  --tw-backdrop-saturate:  ;
-  --tw-backdrop-sepia:  ;
-  --tw-contain-size:  ;
-  --tw-contain-layout:  ;
-  --tw-contain-paint:  ;
-  --tw-contain-style:  ;
+  --tw-blur: ;
+  --tw-brightness: ;
+  --tw-contrast: ;
+  --tw-grayscale: ;
+  --tw-hue-rotate: ;
+  --tw-invert: ;
+  --tw-saturate: ;
+  --tw-sepia: ;
+  --tw-drop-shadow: ;
+  --tw-backdrop-blur: ;
+  --tw-backdrop-brightness: ;
+  --tw-backdrop-contrast: ;
+  --tw-backdrop-grayscale: ;
+  --tw-backdrop-hue-rotate: ;
+  --tw-backdrop-invert: ;
+  --tw-backdrop-opacity: ;
+  --tw-backdrop-saturate: ;
+  --tw-backdrop-sepia: ;
+  --tw-contain-size: ;
+  --tw-contain-layout: ;
+  --tw-contain-paint: ;
+  --tw-contain-style: ;
 }
 
 /*
@@ -152,7 +154,7 @@ html,
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -197,7 +199,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /*
@@ -486,7 +488,8 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder, textarea::-moz-placeholder {
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -632,8 +635,8 @@ video {
   top: 0px;
 }
 
-.top-\[105px\] {
-  top: 105px;
+.top-\[108px\] {
+  top: 108px;
 }
 
 .top-\[10px\] {
@@ -712,6 +715,10 @@ video {
 
 .mb-14 {
   margin-bottom: 3.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mb-4 {
@@ -830,12 +837,12 @@ video {
   margin-top: 50px;
 }
 
-.mt-\[60px\] {
-  margin-top: 60px;
+.mt-\[5px\] {
+  margin-top: 5px;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
+.mt-\[60px\] {
+  margin-top: 60px;
 }
 
 .block {
@@ -866,12 +873,24 @@ video {
   aspect-ratio: 16 / 9;
 }
 
+.\!h-\[210px\] {
+  height: 210px !important;
+}
+
+.\!h-\[85px\] {
+  height: 85px !important;
+}
+
 .h-12 {
   height: 3rem;
 }
 
 .h-\[100vh\] {
   height: 100vh;
+}
+
+.h-\[210px\] {
+  height: 210px;
 }
 
 .h-\[4px\] {
@@ -916,8 +935,12 @@ video {
   width: 50%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[280px\] {
+  width: 280px;
 }
 
 .w-\[30\%\] {
@@ -953,8 +976,8 @@ video {
   max-width: 1050px;
 }
 
-.max-w-\[1080px\] {
-  max-width: 1080px;
+.max-w-\[1240px\] {
+  max-width: 1240px;
 }
 
 .max-w-\[460px\] {
@@ -1283,11 +1306,6 @@ video {
   background-color: rgb(14 55 94 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[\#8F97A2\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(143 151 162 / var(--tw-bg-opacity, 1));
-}
-
 .bg-\[\#F9FAFB\] {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity, 1));
@@ -1303,7 +1321,12 @@ video {
 }
 
 .bg-\[rgba\(255\2c 255\2c 255\2c 0\.33\)\] {
-  background-color: rgba(255,255,255,0.33);
+  background-color: rgba(255, 255, 255, 0.33);
+}
+
+.bg-berkley-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 55 94 / var(--tw-bg-opacity, 1));
 }
 
 .bg-black {
@@ -1350,7 +1373,7 @@ video {
 
 .object-cover {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .p-\[10px\] {
@@ -1398,6 +1421,11 @@ video {
 .px-7 {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
+}
+
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .px-\[14px\] {
@@ -1463,11 +1491,6 @@ video {
 .py-\[10px\] {
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-.py-\[20px\] {
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .py-\[23px\] {
@@ -1571,6 +1594,10 @@ video {
   text-align: center;
 }
 
+.text-start {
+  text-align: start;
+}
+
 .text-end {
   text-align: end;
 }
@@ -1609,6 +1636,10 @@ video {
   font-size: 20px;
 }
 
+.text-\[22px\] {
+  font-size: 22px;
+}
+
 .text-\[24px\] {
   font-size: 24px;
 }
@@ -1637,10 +1668,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-\[22px\] {
-  font-size: 22px;
 }
 
 .\!font-\[400\] {
@@ -1723,10 +1750,6 @@ video {
   line-height: 38px;
 }
 
-.leading-\[40px\] {
-  line-height: 40px;
-}
-
 .leading-\[60px\] {
   line-height: 60px;
 }
@@ -1799,7 +1822,7 @@ video {
 }
 
 .text-\[rgba\(71\2c 84\2c 103\2c 0\.60\)\] {
-  color: rgba(71,84,103,0.60);
+  color: rgba(71, 84, 103, 0.60);
 }
 
 .text-berkley-blue {
@@ -1852,6 +1875,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.text-white\/40 {
+  color: rgb(255 255 255 / 0.4);
+}
+
 .text-opacity-40 {
   --tw-text-opacity: 0.4;
 }
@@ -1891,7 +1918,7 @@ video {
 }
 
 .shadow-\[rgba\(16\2c 24\2c 40\2c 0\.05\)\] {
-  --tw-shadow-color: rgba(16,24,40,0.05);
+  --tw-shadow-color: rgba(16, 24, 40, 0.05);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -1924,10 +1951,46 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@font-face {
-  font-family: 'Inter';
+/* @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/inter/Inter-VariableFont.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+} */
 
-  src: url('../assets/fonts/inter/Inter-VariableFont.woff2') format('woff2');
+/* @font-face {
+    font-family: 'Geom_Graphic';
+    src: url('../assets/fonts/Geom_Graphic/Geom_Graphic_Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geom_Graphic';
+    src: url('../assets/fonts/Geom_Graphic/Geom_Graphic_SemiBold.otf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Roboto';
+
+  src: url('../assets/fonts/Roboto/Roboto-VariableFont_wdth.ttf');
+
+  font-weight: 100 900;
+
+  font-style: normal;
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM_Sans';
+
+  src: url('../assets/fonts/DM_Sans/DMSans-VariableFontwght.ttf');
 
   font-weight: 100 900;
 
@@ -1945,9 +2008,8 @@ video {
 }
 
 body {
-  font-family: 'Inter';
+  font-family: 'Roboto';
   font-weight: normal;
-  font-family: Inter;
   overflow-x: hidden;
 }
 
@@ -1959,13 +2021,41 @@ section {
   z-index: 1;
 }
 
+h1 {
+  font-family: 'DM_Sans' !important;
+}
+
+h2 {
+  font-family: 'DM_Sans' !important;
+}
+
+h3 {
+  font-family: 'DM_Sans' !important;
+}
+
+h4 {
+  font-family: 'DM_Sans' !important;
+}
+
 .block_content {
   max-width: 1440px;
   width: 100%;
 }
 
+.order-again {
+  display: none !important;
+}
+
+.btn,
 .btn-primary,
-#gform_submit_button_1 {
+#gform_submit_button_1,
+.woocommerce-form-login .woocommerce-button,
+.woocommerce-form-register .woocommerce-button,
+.woocommerce-ResetPassword .woocommerce-Button,
+.woocommerce-EditAccountForm .woocommerce-Button,
+.woocommerce-orders-table__cell-order-actions a,
+.woocommerce-button--next,
+.woocommerce-button--previous {
   cursor: pointer !important;
   display: flex !important;
   padding: 10px 18px !important;
@@ -1982,21 +2072,28 @@ section {
   line-height: 24px !important;
 }
 
-.btn {
-  border-radius: 8px !important;
-  background: #FAFBFC !important;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+.woocommerce-orders-table__cell a {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  font-size: 12px !important;
+  padding: 4px 12px !important;
+}
+
+.woocommerce-button--next,
+.woocommerce-button--previous,
+.order-again a {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
+.woocommerce-form-login .woocommerce-button,
+.woocommerce-form-register .woocommerce-button {
+  margin-top: 20px !important;
+}
+
+.woocommerce-pagination--without-numbers {
   display: flex !important;
-  padding: 10px 18px !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 8px !important;
-  align-self: stretch !important;
-  cursor: pointer !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 600 !important;
-  line-height: 24px !important;
+  gap: 20px !important;
 }
 
 .btn-green {
@@ -2010,30 +2107,54 @@ section {
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   cursor: pointer;
   color: #FFF;
-  font-family: Inter;
+  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: 24px;
 }
 
-.btn:hover {
-  background: var(--mustard-yellow) !important;
-  color: var(--rich-black) !important;
-  transition: transform 0.3s ease !important;
-}
-
 .btn:hover,
 .btn-primary:hover,
 .btn-2:hover,
-.btn-green:hover {
+.btn-green:hover,
+.woocommerce-form-login .woocommerce-button:hover,
+.woocommerce-form-register .woocommerce-button:hover,
+.woocommerce-orders-table__cell a:hover {
   transform: translateY(-2px);
   transition: transform 0.3s ease;
 }
 
+.woocommerce-form-login .woocommerce-button {
+  margin-bottom: 20px !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+
+.woocommerce-form-login .form-row .woocommerce-form__label {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.woocommerce-LostPassword {
+  font-weight: 600 !important;
+}
+
+.woocommerce-customer-details .woocommerce-column__title,
+.woocommerce-order-details .woocommerce-order-details__title {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
+}
+
+.woocommerce-order-details .woocommerce-order-details__title {
+  margin-top: 30px;
+}
+
 .menu_header li a {
   color: rgba(71, 84, 103, 0.60);
-  font-family: Inter;
+  font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -2046,6 +2167,30 @@ section {
   padding-bottom: 15px;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+.woocommerce-ResetPassword {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-ResetPassword {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+}
+
+.woocommerce-ResetPassword {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+@media (min-width: 1024px) {
+  .woocommerce-ResetPassword {
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+  }
 }
 
 .menu_header .menu-item-has-children::after {
@@ -2090,7 +2235,7 @@ section {
 .menu_header .menu-item-has-children>ul {
   min-width: 130px;
   margin-top: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   padding: 10px 20px;
   background: white;
   border-radius: 8px;
@@ -2601,29 +2746,42 @@ form.woocommerce-checkout #billing_phone_field {
   row-gap: 20px;
 }
 
-#form .gform-field-label {
+#form .gform-field-label,
+.woocommerce-form-login label,
+.woocommerce-form-register label,
+.woocommerce-ResetPassword label,
+.woocommerce-EditAccountForm label {
   color: #344054;
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
 }
 
+.woocommerce-form-register,
+.woocommerce-form-login,
+.woocommerce-ResetPassword p {
+  color: #475467;
+}
+
+.woocommerce-form-register input,
+.woocommerce-form-login input,
+.woocommerce-EditAccountForm input,
 #form .ginput_container_text input,
 #form .ginput_container_email input,
 #form .ginput_container_select select {
-  color: var(--rich-black);
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  display: flex;
-  padding: 5px 14px;
-  align-items: center;
-  gap: 8px;
-  align-self: stretch;
-  border-radius: 8px;
-  border: 1px solid #D0D5DD;
-  background: #FFF;
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  color: var(--rich-black) !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  display: flex !important;
+  padding: 5px 14px !important;
+  align-items: center !important;
+  gap: 8px !important;
+  align-self: stretch !important;
+  border-radius: 8px !important;
+  border: 1px solid #D0D5DD !important;
+  background: #FFF !important;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
 }
 
 #form .ginput_container_email {
@@ -2660,7 +2818,8 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 #faq summary::after,
-#course-tabs summary::after {
+#course-tabs summary::after,
+#account-accordion::after {
   content: '';
   position: absolute;
   right: 0;
@@ -2675,26 +2834,27 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 #faq details[open] summary::after,
-#course-tabs details[open] summary::after {
+#course-tabs details[open] summary::after,
+#account-accordion.open::after {
   transform: translateY(-50%) rotate(90deg);
   transition: transform 0.3s ease;
 }
 
 /* My Account users*/
 
-.woocommerce-MyAccount-navigation-link--dashboard::before {
-  content: '';
-  display: inline-block;
-  width: 25px;
-  height: 24px;
-  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M8.5 17H16.5M11.5177 2.76403L4.73539 8.03916C4.28202 8.39178 4.05534 8.56809 3.89203 8.78889C3.74737 8.98447 3.6396 9.20481 3.57403 9.43908C3.5 9.70355 3.5 9.99073 3.5 10.5651V17.8C3.5 18.9201 3.5 19.4802 3.71799 19.908C3.90973 20.2843 4.21569 20.5903 4.59202 20.782C5.01984 21 5.57989 21 6.7 21H18.3C19.4201 21 19.9802 21 20.408 20.782C20.7843 20.5903 21.0903 20.2843 21.282 19.908C21.5 19.4802 21.5 18.9201 21.5 17.8V10.5651C21.5 9.99073 21.5 9.70355 21.426 9.43908C21.3604 9.20481 21.2526 8.98447 21.108 8.78889C20.9447 8.56809 20.718 8.39178 20.2646 8.03916L13.4823 2.76403C13.131 2.49078 12.9553 2.35415 12.7613 2.30163C12.5902 2.25529 12.4098 2.25529 12.2387 2.30163C12.0447 2.35415 11.869 2.49078 11.5177 2.76403Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 8px;
-  vertical-align: middle;
-}
+/* .woocommerce-MyAccount-navigation-link--dashboard::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M8.5 17H16.5M11.5177 2.76403L4.73539 8.03916C4.28202 8.39178 4.05534 8.56809 3.89203 8.78889C3.74737 8.98447 3.6396 9.20481 3.57403 9.43908C3.5 9.70355 3.5 9.99073 3.5 10.5651V17.8C3.5 18.9201 3.5 19.4802 3.71799 19.908C3.90973 20.2843 4.21569 20.5903 4.59202 20.782C5.01984 21 5.57989 21 6.7 21H18.3C19.4201 21 19.9802 21 20.408 20.782C20.7843 20.5903 21.0903 20.2843 21.282 19.908C21.5 19.4802 21.5 18.9201 21.5 17.8V10.5651C21.5 9.99073 21.5 9.70355 21.426 9.43908C21.3604 9.20481 21.2526 8.98447 21.108 8.78889C20.9447 8.56809 20.718 8.39178 20.2646 8.03916L13.4823 2.76403C13.131 2.49078 12.9553 2.35415 12.7613 2.30163C12.5902 2.25529 12.4098 2.25529 12.2387 2.30163C12.0447 2.35415 11.869 2.49078 11.5177 2.76403Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+} */
 
-.woocommerce-MyAccount-navigation-link--my-videos::before {
+.woocommerce-MyAccount-navigation-link--dashboard::before {
   content: '';
   display: inline-block;
   width: 25px;
@@ -2817,6 +2977,16 @@ form.woocommerce-checkout #billing_phone_field {
   line-height: 20px;
 }
 
+.lg\:\!h-\[150px\] {
+  height: 150px !important;
+}
+
+.woocommerce-EditAccountForm fieldset legend {
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  padding-top: 30px !important;
+}
+
 @media screen and (min-width:1200px) {
   .xl\:w-\[23\.5\%\] {
     width: 23.5% !important;
@@ -2836,10 +3006,11 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 @media screen and (max-width:1023px) {
+
   #product-slider,
-    #recent-blog_posts,
-    #cart,
-    #text-image {
+  #recent-blog_posts,
+  #cart,
+  #text-image {
     background-image: none;
   }
 
@@ -2881,6 +3052,41 @@ form.woocommerce-checkout #billing_phone_field {
 
   #my-account .woocommerce-MyAccount-content {
     width: 100% !important;
+  }
+
+  #account-settings {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+    transition: all 0.3s ease;
+  }
+
+  #account-settings.active {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 0.6s ease;
+  }
+
+  #other-settings {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+    transition: all 0.3s ease;
+  }
+
+  #other-settings.active {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 0.6s ease;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .woocommerce-orders-table__cell-order-actions {
+    display: flex !important;
+    justify-content: space-between !important;
   }
 }
 
@@ -3005,6 +3211,10 @@ form.woocommerce-checkout #billing_phone_field {
     width: 50%;
   }
 
+  .md\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .md\:w-\[49\%\] {
     width: 49%;
   }
@@ -3061,6 +3271,10 @@ form.woocommerce-checkout #billing_phone_field {
 
   .lg\:hidden {
     display: none;
+  }
+
+  .lg\:\!h-\[215px\] {
+    height: 215px !important;
   }
 
   .lg\:h-\[300px\] {
@@ -3127,8 +3341,16 @@ form.woocommerce-checkout #billing_phone_field {
     width: 24%;
   }
 
+  .lg\:w-\[300px\] {
+    width: 300px;
+  }
+
   .lg\:w-\[31\.33\%\] {
     width: 31.33%;
+  }
+
+  .lg\:w-\[32\.6\%\] {
+    width: 32.6%;
   }
 
   .lg\:w-\[35\%\] {
@@ -3158,10 +3380,6 @@ form.woocommerce-checkout #billing_phone_field {
   .lg\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
-  }
-
-  .lg\:w-full {
-    width: 100%;
   }
 
   .lg\:flex-row {
@@ -3202,10 +3420,6 @@ form.woocommerce-checkout #billing_phone_field {
 
   .lg\:border-l {
     border-left-width: 1px;
-  }
-
-  .lg\:p-\[100px\] {
-    padding: 100px;
   }
 
   .lg\:p-\[50px\] {
@@ -3296,6 +3510,10 @@ form.woocommerce-checkout #billing_phone_field {
     padding-bottom: 96px;
   }
 
+  .lg\:\!pt-\[24px\] {
+    padding-top: 24px !important;
+  }
+
   .lg\:pb-\[180px\] {
     padding-bottom: 180px;
   }
@@ -3312,12 +3530,8 @@ form.woocommerce-checkout #billing_phone_field {
     padding-top: 100px;
   }
 
-  .lg\:\!pt-\[24px\] {
-    padding-top: 24px !important;
-  }
-
-  .lg\:pt-\[24px\] {
-    padding-top: 24px;
+  .lg\:text-\[14px\] {
+    font-size: 14px;
   }
 
   .lg\:text-\[18px\] {
@@ -3401,7 +3615,7 @@ form.woocommerce-checkout #billing_phone_field {
 
 .\[\&_img\]\:object-cover img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media (min-width: 1024px) {
@@ -3448,6 +3662,10 @@ form.woocommerce-checkout #billing_phone_field {
   .\[\&_p\]\:lg\:text-\[18px\] p {
     font-size: 18px;
   }
+}
+
+.\[_\&_figcaption\]\:mt-\[-30px\] figcaption {
+  margin-top: -30px;
 }
 
 .\[_\&_h2\]\:my-4 h2 {
@@ -3671,6 +3889,10 @@ form.woocommerce-checkout #billing_phone_field {
   align-items: center;
 }
 
+.\[_\&_li\]\:pb-\[10px\] li {
+  padding-bottom: 10px;
+}
+
 .\[_\&_li\]\:text-\[16px\] li {
   font-size: 16px;
 }
@@ -3706,6 +3928,10 @@ form.woocommerce-checkout #billing_phone_field {
 
 .\[_\&_ol\]\:list-decimal ol {
   list-style-type: decimal;
+}
+
+.\[_\&_p\]\:pb-\[15px\] p {
+  padding-bottom: 15px;
 }
 
 .\[_\&_p\]\:text-\[14px\] p {

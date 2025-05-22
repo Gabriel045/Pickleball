@@ -2,8 +2,8 @@
 $product_id = $_GET["course"];
 $lesson = $_GET["lesson"];
 $lessons_id = get_field('lessons', $product_id);
-$highest_lesson_key = max(array_keys($lessons_id));
-
+$highest_lesson_key = !empty(get_field('lessons', $product_id)) ? max(array_keys($lessons_id)) : 0;
+$video_iframe = get_field('video_iframe', $lessons_id[$lesson]);
 $purchased_products = [];
 $current_user_id = get_current_user_id();
 
@@ -28,22 +28,26 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
         <div class="flex gap-[10px]">
             <?php if ($lesson > 0): ?>
                 <a href="?course=<?php echo $product_id; ?>&lesson=<?php echo $lesson - 1; ?>"
-                    class="h-fit cursor-pointer text-white font-semibold bg-[#8F97A2] flex py-[10px] px-[18px] shadow-md rounded-[8px]">
+                    class="h-fit cursor-pointer text-white font-semibold bg-berkley-blue flex py-[10px] px-[18px] shadow-md rounded-[8px] hover:translate-y-[-2px] transition-transform">
                     ← Prev Lesson
                 </a>
             <?php endif; ?>
             <?php if ($lesson != $highest_lesson_key): ?>
                 <a href="?course=<?php echo $product_id; ?>&lesson=<?php echo $lesson + 1; ?>"
-                    class="h-fit cursor-pointer text-white font-semibold bg-[#8F97A2] flex py-[10px] px-[18px] shadow-md rounded-[8px]">
+                    class="h-fit cursor-pointer text-white font-semibold bg-berkley-blue flex py-[10px] px-[18px] shadow-md rounded-[8px] hover:translate-y-[-2px] transition-transform">
                     Next Lesson →
                 </a>
             <?php endif; ?>
         </div>
     </div>
     <div class="mt-10 mb-[50px]">
-        <figure>
-            <img src="/wp-content/uploads/2025/05/Frame-1000006416.png">
-        </figure>
+        <?php if (empty($video_iframe)): ?>
+            <figure>
+                <img src="/wp-content/uploads/2025/05/Frame-1000006416.png">
+            </figure>
+        <?php else: ?>
+            <?php echo $video_iframe; ?>
+        <?php endif; ?>
     </div>
 
     <div class="[_&_h4]:w-full [_&_h4]lg::w-[70%] [_&_h4]:lg:text-[20px] [_&_h4]:text-[18px] [_&_h4]:font-semibold [_&_h4]:text-rich-black [_&_h4]:mb-[15px]
@@ -67,7 +71,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                     $excerpt = $product->get_short_description(); ?>
                     <div class="w-full md:w-[49%] lg:w-[31.33%]">
                         <figure>
-                            <img class="rounded-[10px]" src="<?php echo esc_url($image); ?>">
+                            <img class="lg:!h-[215px] object-cover w-full rounded-[10px]" src="<?php echo esc_url($image); ?>">
                         </figure>
                         <div class="flex items-center gap-[10px] mt-6">
                             <span class="stars"></span>
@@ -87,6 +91,20 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
 }
 ?>
 
+<style>
+    iframe {
+        width: 100% !important;
+        height: 577px !important;
+    }
+
+    @media screen and (max-width: 768px) {
+        iframe {
+            height: auto !important;
+            aspect-ratio: 4 / 3 !important;
+
+        }
+    }
+</style>
 
 
 <script>

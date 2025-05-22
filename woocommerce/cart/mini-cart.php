@@ -54,7 +54,7 @@ do_action('woocommerce_before_mini_cart'); ?>
                     <?php else : ?>
                         <a href="<?php echo esc_url($product_permalink); ?>">
                             <figure>
-                                <img class='!w-[128px] rounded-lg !m-0' src='<?php echo ($thumbnail[0])  ?>'>
+                                <img class='!w-[128px] !h-[85px] rounded-lg !m-0 object-cover' src='<?php echo ($thumbnail[0])  ?>'>
                             </figure>
                         </a>
                     <?php endif; ?>
@@ -64,11 +64,11 @@ do_action('woocommerce_before_mini_cart'); ?>
                     // echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
                     ?>
                     <div class="flex flex-col w-1/2">
-                        <p class="product-name text-gray-900 text-[16px] font-semibold leading-[20px]">
+                        <h4 class="product-name text-gray-900 text-[16px] font-semibold leading-[20px]">
                             <a class="hover:underline" href="<?php echo esc_url($product_permalink); ?>">
                                 <?php echo esc_html($product_name); ?>
                             </a>
-                        </p>
+                        </h4>
                         <p class="text-gray-600 text-[14px] font-normal leading-[20px] my-2">Expiry 06/2024</p>
 
                         <div class="flex items-center gap-[10px]">
@@ -140,11 +140,11 @@ do_action('woocommerce_before_mini_cart'); ?>
                             <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                 Reviews)</span>
                         </div>
-                        <p class="text-rich-black text-[20px] font-semibold leading-[20px] my-2">
+                        <h3 class="text-rich-black text-[20px] font-semibold leading-[20px] my-2">
                             <a class="hover:underline" href="<?php echo esc_url(get_permalink($item->ID)); ?>">
                                 <?php echo $product->get_name(); ?>
                             </a>
-                        </p>
+                        </h3>
                         <p class="text-gray-paragrah text-[16px] leading-normal">
                             <?php echo $product->get_short_description(); ?> </p>
                         <div class="my-[15px] flex items-center gap-[10px]">

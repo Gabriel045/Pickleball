@@ -53,11 +53,11 @@ $recent_products = $recent_products->posts;
                                 <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                     Reviews)</span>
                             </div>
-                            <p class="text-rich-black text-[20px] font-semibold leading-normal mt-3">
+                            <h4 class="text-rich-black text-[20px] font-semibold leading-normal mt-3">
                                 <a href="<?php echo get_permalink($item->ID); ?>">
                                     <?php echo $product->get_name() ?>
                                 </a>
-                            </p>
+                            </h4>
                             <p class="text-gray-paragrah text-[16px] leading-normal">
                                 <?php echo $product->get_short_description(); ?>
                             </p>

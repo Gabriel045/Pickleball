@@ -3,9 +3,43 @@
 @tailwind utilities;
 
 
-@font-face {
+/* @font-face {
     font-family: 'Inter';
     src: url('../assets/fonts/inter/Inter-VariableFont.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+/* @font-face {
+    font-family: 'Geom_Graphic';
+    src: url('../assets/fonts/Geom_Graphic/Geom_Graphic_Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geom_Graphic';
+    src: url('../assets/fonts/Geom_Graphic/Geom_Graphic_SemiBold.otf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto/Roboto-VariableFont_wdth.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM_Sans';
+    src: url('../assets/fonts/DM_Sans/DMSans-VariableFontwght.ttf');
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -22,10 +56,8 @@
 }
 
 body {
-    font-family: 'Inter';
+    font-family: 'Roboto';
     font-weight: normal;
-    overflow-x: hidden;
-    font-family: Inter;
     overflow-x: hidden;
 }
 
@@ -37,14 +69,43 @@ section {
     z-index: 1;
 }
 
+
+h1 {
+    font-family: 'DM_Sans' !important;
+}
+
+h2 {
+    font-family: 'DM_Sans' !important;
+}
+
+h3 {
+    font-family: 'DM_Sans' !important;
+}
+
+h4 {
+    font-family: 'DM_Sans' !important;
+}
+
+
 .block_content {
     max-width: 1440px;
     width: 100%;
 }
 
+.order-again {
+    display: none !important;
+}
 
+.btn,
 .btn-primary,
-#gform_submit_button_1 {
+#gform_submit_button_1,
+.woocommerce-form-login .woocommerce-button,
+.woocommerce-form-register .woocommerce-button,
+.woocommerce-ResetPassword .woocommerce-Button,
+.woocommerce-EditAccountForm .woocommerce-Button,
+.woocommerce-orders-table__cell-order-actions a,
+.woocommerce-button--next,
+.woocommerce-button--previous {
     cursor: pointer !important;
     display: flex !important;
     padding: 10px 18px !important;
@@ -61,21 +122,27 @@ section {
     line-height: 24px !important;
 }
 
-.btn {
-    border-radius: 8px !important;
-    background: #FAFBFC !important;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+.woocommerce-orders-table__cell a {
+    width: fit-content !important;
+    font-size: 12px !important;
+    padding: 4px 12px !important;
+
+}
+
+.woocommerce-button--next,
+.woocommerce-button--previous,
+.order-again a {
+    width: fit-content !important;
+}
+
+.woocommerce-form-login .woocommerce-button,
+.woocommerce-form-register .woocommerce-button {
+    margin-top: 20px !important;
+}
+
+.woocommerce-pagination--without-numbers {
     display: flex !important;
-    padding: 10px 18px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important;
-    align-self: stretch !important;
-    cursor: pointer !important;
-    font-size: 16px !important;
-    font-style: normal !important;
-    font-weight: 600 !important;
-    line-height: 24px !important;
+    gap: 20px !important;
 }
 
 .btn-green {
@@ -89,30 +156,55 @@ section {
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
     cursor: pointer;
     color: #FFF;
-    font-family: Inter;
+    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
 }
 
-.btn:hover {
-    background: var(--mustard-yellow) !important;
-    color: var(--rich-black) !important;
-    transition: transform 0.3s ease !important;
-}
-
 .btn:hover,
 .btn-primary:hover,
 .btn-2:hover,
-.btn-green:hover {
+.btn-green:hover,
+.woocommerce-form-login .woocommerce-button:hover,
+.woocommerce-form-register .woocommerce-button:hover,
+.woocommerce-orders-table__cell a:hover {
     transform: translateY(-2px);
     transition: transform 0.3s ease;
 }
 
+.woocommerce-form-login .woocommerce-button {
+    margin-bottom: 20px !important;
+    width: fit-content !important;
+}
+
+.woocommerce-form-login .form-row .woocommerce-form__label {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.woocommerce-LostPassword {
+    font-weight: 600 !important;
+}
+
+.woocommerce-customer-details .woocommerce-column__title,
+.woocommerce-order-details .woocommerce-order-details__title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+}
+
+.woocommerce-order-details .woocommerce-order-details__title {
+    margin-top: 30px;
+
+}
+
 .menu_header li a {
     color: rgba(71, 84, 103, 0.60);
-    font-family: Inter;
+    font-family: Roboto;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
@@ -123,6 +215,13 @@ section {
     position: relative;
     @apply py-[15px];
     @apply px-[20px];
+}
+
+.woocommerce-ResetPassword {
+    @apply py-[40px] !important;
+    @apply lg:py-[80px] !important;
+    @apply px-[30px] !important;
+    @apply lg:px-[60px] !important;
 }
 
 .menu_header .menu-item-has-children::after {
@@ -168,7 +267,7 @@ section {
 .menu_header .menu-item-has-children>ul {
     min-width: 130px;
     margin-top: 10px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     padding: 10px 20px;
     background: white;
     border-radius: 8px;
@@ -719,31 +818,46 @@ form.woocommerce-checkout #billing_phone_field {
     row-gap: 20px;
 }
 
-#form .gform-field-label {
+#form .gform-field-label,
+.woocommerce-form-login label,
+.woocommerce-form-register label,
+.woocommerce-ResetPassword label,
+.woocommerce-EditAccountForm label {
     color: #344054;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
 }
 
+.woocommerce-form-register,
+.woocommerce-form-login,
+.woocommerce-ResetPassword p {
+    color: #475467;
+}
+
+
+
+.woocommerce-form-register input,
+.woocommerce-form-login input,
+.woocommerce-EditAccountForm input,
 #form .ginput_container_text input,
 #form .ginput_container_email input,
 #form .ginput_container_select select {
-    font-size: 14px;
-    color: var(--rich-black);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
+    font-size: 14px !important;
+    color: var(--rich-black) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
 
-    display: flex;
-    padding: 5px 14px;
-    align-items: center;
-    gap: 8px;
-    align-self: stretch;
-    border-radius: 8px;
-    border: 1px solid #D0D5DD;
-    background: #FFF;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    display: flex !important;
+    padding: 5px 14px !important;
+    align-items: center !important;
+    gap: 8px !important;
+    align-self: stretch !important;
+    border-radius: 8px !important;
+    border: 1px solid #D0D5DD !important;
+    background: #FFF !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
 }
 
 #form .ginput_container_email {
@@ -781,7 +895,8 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 #faq summary::after,
-#course-tabs summary::after {
+#course-tabs summary::after,
+#account-accordion::after {
     content: '';
     position: absolute;
     right: 0;
@@ -797,14 +912,15 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 #faq details[open] summary::after,
-#course-tabs details[open] summary::after {
+#course-tabs details[open] summary::after,
+#account-accordion.open::after {
     transform: translateY(-50%) rotate(90deg);
     transition: transform 0.3s ease;
 }
 
 
 /* My Account users*/
-.woocommerce-MyAccount-navigation-link--dashboard::before {
+/* .woocommerce-MyAccount-navigation-link--dashboard::before {
     content: '';
     display: inline-block;
     width: 25px;
@@ -814,9 +930,9 @@ form.woocommerce-checkout #billing_phone_field {
     background-size: contain;
     margin-right: 8px;
     vertical-align: middle;
-}
+} */
 
-.woocommerce-MyAccount-navigation-link--my-videos::before {
+.woocommerce-MyAccount-navigation-link--dashboard::before {
     content: '';
     display: inline-block;
     width: 25px;
@@ -925,6 +1041,17 @@ form.woocommerce-checkout #billing_phone_field {
     line-height: 20px;
 }
 
+.lg\:\!h-\[150px\] {
+    height: 150px !important;
+}
+
+
+.woocommerce-EditAccountForm fieldset legend {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    padding-top: 30px !important;
+
+}
 
 @media screen and (min-width:1200px) {
     .xl\:w-\[23\.5\%\] {
@@ -994,5 +1121,42 @@ form.woocommerce-checkout #billing_phone_field {
 
     #my-account .woocommerce-MyAccount-content {
         width: 100% !important;
+    }
+
+
+    #account-settings {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0px;
+        transition: all 0.3s ease;
+    }
+
+    #account-settings.active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 1000px;
+        transition: all 0.6s ease;
+    }
+
+    #other-settings {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0px;
+        transition: all 0.3s ease;
+    }
+
+    #other-settings.active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 1000px;
+        transition: all 0.6s ease;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+    .woocommerce-orders-table__cell-order-actions {
+        display: flex !important;
+        justify-content: space-between !important;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+$logo = get_field('logo', 'option');
 $text_blue_section = get_field('text', 'option');
 $logos = get_field('logos', 'option');
 $instagram = get_field('instagram', 'option')['url'];
@@ -34,7 +35,11 @@ $facebook = get_field('facebook', 'option')['url'];
         <div class="block_content py-[60px] px-[30px] lg:px-16">
             <div class="flex flex-wrap lg:flex-nowrap">
                 <div class="w-full lg:w-1/4 flex flex-col justify-between gap-7 mr-[65px]">
-                    <h3 class="text-white text-3xl font-bold leading-[40px] tracking-[-0.6px]">PickleBallPros</h3>
+                    <a href="/">
+                        <figure>
+                            <img class="w-[280px]" src="<?php echo $logo ?>">
+                        </figure>
+                    </a>
                     <div class="">
                         <p class="text-[14px] font-semibold mb-4 text-[#D0D5DD]">Follow</p>
                         <div class="flex gap-[15px]">

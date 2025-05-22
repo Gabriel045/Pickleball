@@ -25,7 +25,10 @@ do_action('woocommerce_before_account_navigation');
 
 <nav class="woocommerce-MyAccount-navigation py-[32px] px-[24px] h-auto lg:min-h-[800px] flex flex-col justify-between border-r border-[#EAECF0]"
     aria-label="<?php esc_html_e('Account pages', 'woocommerce'); ?>">
-    <ul>
+    <p id="account-accordion"
+        class="block lg:hidden relative px-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold">
+        Account</p>
+    <ul id="account-settings">
         <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
             <li
                 class="p-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold [&.is-active]:shadow-sm [&.is-active]:bg-[#F9FAFB] <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
@@ -37,7 +40,8 @@ do_action('woocommerce_before_account_navigation');
         <?php endforeach; ?>
     </ul>
     <div>
-        <ul class="[&_li]:p-[10px] [&_li]:rounded-[5px] [&_li]:text-rich-black [&_li]:text-[18px] [&_li]:font-semibold">
+        <ul id="other-settings"
+            class="[&_li]:p-[10px] [&_li]:rounded-[5px] [&_li]:text-rich-black [&_li]:text-[18px] [&_li]:font-semibold">
             <li class="woocommerce-support ">
                 <a href="/contact">Support</a>
             </li>
@@ -71,6 +75,15 @@ do_action('woocommerce_before_account_navigation');
         if (currentUrl.includes('/edit-account/')) {
             settingsMenuItem.classList.add('is-active');
         }
+
+        const accountAccordion = document.getElementById('account-accordion');
+        accountAccordion.addEventListener('click', function() {
+            accountAccordion.classList.toggle('open');
+            const accountSetting = document.getElementById('account-settings');
+            accountSetting.classList.toggle('active');
+            const accountSetting2 = document.getElementById('other-settings');
+            accountSetting2.classList.toggle('active');
+        });
     });
 </script>
 

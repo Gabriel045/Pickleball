@@ -42,8 +42,8 @@ $categories = get_terms(array(
                 </div>
                 <div
                     class="w-full lg:w-1/4 bg-[#FAFBFC] py-[30px] lg:py-[100px] px-[30px] xl:px-[50px] max-[1024px]:mx-[30px] max-[1024px]:rounded-[20px]">
-                    <p class="text-caribbean-green  font-semibold mb-5 flex justify-between">
-                        Categories
+                    <h3 class="text-caribbean-green  font-semibold mb-5 flex justify-between">
+                        Skill Level
 
                         <span id="open-close" class="block lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -54,12 +54,19 @@ $categories = get_terms(array(
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
-                    </p>
+                    </h3>
 
                     <ul id="video-categories">
-                        <?php foreach ($categories as $key => $cat) {
-                            echo '<li class="py-[10px]"><a value="' . $cat->slug . '" class="cursor-pointer text-gray-paragrah font-semibold">' . $cat->name . '</a></li>';
-                        } ?>
+                        <li class="py-[10px]">
+                            <a value="Beginner" class="cursor-pointer text-gray-paragrah font-semibold">Beginner</a>
+                        </li>
+                        <li class="py-[10px]">
+                            <a value="Intermediate"
+                                class="cursor-pointer text-gray-paragrah font-semibold">Intermediate</a>
+                        </li>
+                        <li class="py-[10px]">
+                            <a value="Advanced" class="cursor-pointer text-gray-paragrah font-semibold">Advanced</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="w-full lg:w-3/4 py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">

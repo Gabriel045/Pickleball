@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Inter: ["Inter", "sans-serif"],
+        Roboto: ["Roboto", "sans-serif"],
+        DM_Sans: ["DM_Sans", "sans-serif"],
       },
 
       colors: {

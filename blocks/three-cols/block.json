@@ -1,0 +1,22 @@
+{
+    "name": "acf/three-cols",
+    "title": "Three Cols",
+    "description": "A custom Three Cols for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Three Cols"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "three-cols.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/three-cols/screenshot.png"
+            }
+        }
+    }
+}

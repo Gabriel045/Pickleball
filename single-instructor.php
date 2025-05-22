@@ -156,7 +156,7 @@ $social_media = get_field('social_media');
                 </div>
                 <div
                     class="w-full lg:w-1/4 bg-[#FAFBFC] py-[30px] lg:py-[100px] px-[30px] xl:px-[50px] max-[1024px]:mx-[30px] max-[1024px]:rounded-[20px]">
-                    <p class="text-caribbean-green  font-semibold mb-5 flex justify-between">
+                    <h3 class="text-caribbean-green  font-semibold mb-5 flex justify-between">
                         Categories
                         <span id="open-close" class="block lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -167,7 +167,7 @@ $social_media = get_field('social_media');
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span>
-                    </p>
+                    </h3>
                     <ul id="video-categories">
                         <?php foreach ($course_categories as $key => $cat) {
                             echo '<li class="py-[10px]"><a value="' . $cat . '" class="cursor-pointer text-gray-paragrah font-semibold">' . $cat . '</a></li>';

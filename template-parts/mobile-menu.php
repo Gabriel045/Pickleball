@@ -1,7 +1,7 @@
 <?php ?>
 <!-- Mobile Side Menu new file-->
 <div id="mobile-side-menu"
-    class="block lg:hidden py-10 px-[30px] w-full h-[calc(100vh-84px)] absolute top-[105px] z-[9999999] overflow-auto"
+    class="block lg:hidden py-10 px-[30px] w-full h-[calc(100vh-84px)] absolute top-[108px] z-[9999999] overflow-auto"
     style="background: linear-gradient(0deg, #FAFBFC 0%, #FAFBFC 100%), #FFF;">
     <div>
         <form role="search" method="get" class="flex search-form  max-w-[460px] w-full relative"
@@ -48,13 +48,13 @@
     </div>
 </div>
 <script>
-document.querySelectorAll('.menu-mobile .menu-item-has-children').forEach(function(menuItem) {
-    const arrow = document.createElement('span');
-    arrow.classList.add('arrow');
-    menuItem.appendChild(arrow);
+    document.querySelectorAll('.menu-mobile .menu-item-has-children').forEach(function(menuItem) {
+        const arrow = document.createElement('span');
+        arrow.classList.add('arrow');
+        menuItem.appendChild(arrow);
 
-    menuItem.addEventListener('click', function(event) {
-        menuItem.classList.toggle('active');
+        menuItem.addEventListener('click', function(event) {
+            menuItem.classList.toggle('active');
+        });
     });
-});
 </script>

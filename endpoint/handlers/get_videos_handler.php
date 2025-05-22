@@ -12,11 +12,11 @@ function get_videos_handler($request)
     );
 
     if ($category && $category != 'all') {
-        $args['tax_query'] = array(
+        $args['meta_query'] = array(
             array(
-                'taxonomy' => 'product_cat',
-                'field' => 'slug',
-                'terms' => $category,
+                'key' => 'skill_level',
+                'value' => $category,
+                'compare' => '=',
             ),
         );
     }

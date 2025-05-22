@@ -176,7 +176,6 @@ function correct_redirect()
 }
 
 
-
 // Register a custom endpoints 
 include_once get_template_directory() . '/endpoint/endpoints.php';
 
@@ -189,7 +188,7 @@ include_once get_template_directory() . '/endpoint/endpoints.php';
  */
 function register_new_item_endpoint()
 {
-    add_rewrite_endpoint('my-videos', EP_ROOT | EP_PAGES);
+    // add_rewrite_endpoint('my-videos', EP_ROOT | EP_PAGES);
     add_rewrite_endpoint('my-lessons', EP_ROOT | EP_PAGES);
 }
 add_action('init', 'register_new_item_endpoint');
@@ -200,17 +199,27 @@ add_action('init', 'register_new_item_endpoint');
  *
  * @return  string.
  */
-function add_my_videos_content()
-{
-    get_template_part('/template-parts/my-videos');
-}
-add_action('woocommerce_account_my-videos_endpoint', 'add_my_videos_content');
+// function add_my_videos_content()
+// {
+//     get_template_part('/template-parts/my-videos');
+// }
+// add_action('woocommerce_account_my-videos_endpoint', 'add_my_videos_content');
 
 function add_my_lessons_content()
 {
     get_template_part('/template-parts/my-lessons');
 }
 add_action('woocommerce_account_my-lessons_endpoint', 'add_my_lessons_content');
+
+
+
+
+// Sobrescribe el contenido del dashboard de WooCommerce
+remove_action('woocommerce_account_dashboard', 'woocommerce_account_dashboard', 10);
+
+add_action('woocommerce_account_dashboard', function () {
+    get_template_part('/template-parts/my-videos');
+});
 
 
 
@@ -227,25 +236,27 @@ function customize_account_menu_items($items)
 
     // Change the name of a menu item (e.g., "Dashboard")
     if (isset($items['dashboard'])) {
-        $items['dashboard'] = __('Home', 'woocommerce');
+        $items['dashboard'] = __('My Videos', 'woocommerce');
     }
 
 
     // Add a new item to the menu
-    $items['my-videos'] = __('My Videos', 'woocommerce');
+    // $items['my-videos'] = __('My Videos', 'woocommerce');
 
 
     // Reorder the menu items to make "My Videos" the second item
-    $position = 1; // Position where "My Videos" should appear (0-based index)
+    // $position = 1; // Position where "My Videos" should appear (0-based index)
 
-    if (isset($items['my-videos'])) {
-        $my_videos = array('my-videos' => $items['my-videos']);
-        unset($items['my-videos']);
-        $items = array_slice($items, 0, $position, true) + $my_videos + array_slice($items, $position, null, true);
-    }
+    // if (isset($items['my-videos'])) {
+    //     $my_videos = array('my-videos' => $items['my-videos']);
+    //     unset($items['my-videos']);
+    //     $items = array_slice($items, 0, $position, true) + $my_videos + array_slice($items, $position, null, true);
+    // }
+
 
     return $items;
 }
+
 
 
 add_filter('woocommerce_payment_gateway_supports', 'filter_payment_gateway_supports', 10, 3);
@@ -261,32 +272,12 @@ function filter_payment_gateway_supports($supports, $feature, $payment_gateway)
 }
 
 
-
-// function register_course_rewrite_rule()
-// {
-//     add_rewrite_rule(
-//         '^course/([^/]*)/?$', // Estructura de la URL personalizada
-//         'index.php?course_name=$matches[1]', // Query var para capturar el nombre del curso
-//         'top'
-//     );
-// }
-// add_action('init', 'register_course_rewrite_rule');
-
-
-// function add_course_query_var($vars)
-// {
-//     $vars[] = 'course_name'; // Agregar la query var personalizada
-//     return $vars;
-// }
-// add_filter('query_vars', 'add_course_query_var');
-
-
-// function load_course_template($template)
-// {
-//     if (get_query_var('course_name')) {
-//         // Ruta al archivo de la plantilla personalizada
-//         return get_template_directory() . '/template-parts/single-course.php';
-//     }
-//     return $template;
-// }
-// add_filter('template_include', 'load_course_template');
+add_action('wp_footer', function () {
+    if (is_account_page() && is_wc_endpoint_url('orders')) { ?>
+        <script>
+            document.querySelectorAll(".woocommerce-orders-table__cell-order-actions a").forEach(function(el) {
+                el.textContent = "View details";
+            });
+        </script>
+<?php }
+});

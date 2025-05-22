@@ -3,6 +3,7 @@
 <?php
 $author_id = $post->post_author;
 $author_name = get_the_author_meta('display_name', $author_id);
+$read_time =  get_field('read_time');
 
 
 $args = array(
@@ -39,23 +40,28 @@ $most_selling_products = wc_get_products(array(
             <p class="text-white font-inter text-[16px] lg:text-[18px] font-semibold leading-[28px]">
                 <?php echo $author_name ?> • <?php echo get_the_date('d M Y'); ?>
             </p>
+            <p class="text-white font-inter text-[12px] lg:text-[14px] font-semibold leading-[28px]">
+                Estimate read time: <?php echo $read_time ?>
+            </p>
         </div>
     </section>
-    <section id="blog-background">
+    <section id="">
         <div class="block_content pt-[60px] lg:pt-[100px] pb-[60px] lg:pb-[180px] px-[30px] lg:px-[100px]">
             <div class="flex flex-wrap lg:flex-nowrap lg:gap-[80px]">
                 <div class="w-full lg:w-[65%]">
-                    <div class="text-gray-paragrah text-[16px] lg:text-[18px] leading-[28px] [_&_hr]:my-[24px]
+                    <div
+                        class="text-gray-paragrah text-[16px] lg:text-[18px] leading-[28px] [_&_hr]:my-[24px]
                              [_&_ul]:my-[15px] [_&_ol]:my-[15px] [_&_ul]:list-decimal [_&_ul]:list-inside  
                              [_&_ol]:list-decimal [_&_ol]:list-inside
                            [_&_h4]:text-black [_&_h4]:text-[24px]  [_&_h4]:font-semibold  [_&_h4]:leading-[32px] [_&_h4]:my-[20px]
                            [_&_h3]:text-black [_&_h3]:text-[30px]  [_&_h3]:font-semibold  [_&_h3]:leading-[38px] [_&_h3]:my-[20px]
                            [_&_h2]:text-black [_&_h2]:text-[36px]  [_&_h2]:font-semibold  [_&_h2]:leading-[45px] [_&_h2]:my-[20px]
-                             [_&_img]:rounded-[12px] [_&_img]:my-[40px]">
+                             [_&_p]:pb-[15px] [_&_li]:pb-[10px] [_&_img]:rounded-[12px] [_&_img]:my-[40px] [_&_figcaption]:mt-[-30px]">
                         <?php the_content(); ?>
                     </div>
-                    <div
-                        class="conclution p-[32px] rounded-[32px] bg-[#FAFBFC] mt-12  text-[16px] lg:text-[18px] text-gray-paragrah leading-[28px]">
+                    <div class="conclution p-[32px] rounded-[32px] bg-[#FAFBFC] mt-12  text-[16px] 
+                        lg:text-[18px] text-gray-paragrah leading-[28px]
+                        [_&_p]:pb-[15px] [_&_li]:pb-[10px]">
                         <h3 class="text-black text-[30px]  font-semibold  leading-[38px] mb-[20px]">Conclusion</h3>
                         <?php echo get_field('conclusion'); ?>
                     </div>
@@ -118,12 +124,12 @@ $most_selling_products = wc_get_products(array(
                                             (59
                                             Reviews)</span>
                                     </div>
-                                    <p class="text-rich-black text-[20px] font-semibold leading-normal">
+                                    <h4 class="text-rich-black text-[20px] font-semibold leading-normal">
                                         <a href="<?php echo get_permalink($product->get_id()); ?>"
                                             class="text-rich-black hover:underline" tabindex="0">
                                             <?php echo $product->get_name(); ?>
                                         </a>
-                                    </p>
+                                    </h4>
                                     <p class="text-gray-paragrah text-[16px] leading-normal">
                                         <?php echo wp_trim_words($product->get_short_description(), 15, '...'); ?>
                                     </p>

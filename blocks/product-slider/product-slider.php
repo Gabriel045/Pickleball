@@ -20,7 +20,7 @@ $product_query = $product_query->posts;
             [_&_p]:text-gray-paragrah [_&_p]:text-[20px]">
             <?php echo $text ?>
         </div>
-        <div id="multiple-items" class="mt-[60px]">
+        <div id="multiple-items" class="mt-[60px] ">
             <?php foreach ($product_query as $key => $item) :
                 global $product;
                 $product = wc_get_product($item->ID);
@@ -29,7 +29,8 @@ $product_query = $product_query->posts;
                 <article>
                     <figure>
                         <a href="<?php echo get_permalink($item->ID); ?>">
-                            <img class="rounded-xl" src="<?php echo $product_image[0] ?>" alt="">
+                            <img class="h-[210px] object-cover w-full rounded-xl " src="<?php echo $product_image[0] ?>"
+                                alt="">
                         </a>
                     </figure>
                     <div class="mt-[24px]">
@@ -38,11 +39,11 @@ $product_query = $product_query->posts;
                             <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                 Reviews)</span>
                         </div>
-                        <p class="text-rich-black text-[20px] font-semibold leading-[22px] py-[10px]">
+                        <h4 class="text-rich-black text-[20px] font-semibold leading-[22px] py-[10px]">
                             <a href="<?php echo get_permalink($item->ID); ?>" class="text-rich-black hover:underline">
                                 <?php echo $product->get_name() ?>
                             </a>
-                        </p>
+                        </h4>
                         <p class="text-gray-paragrah text-[16px] leading-normal">
                             <?php echo $product->get_short_description(); ?> </p>
                         <div class="my-[15px] flex items-center">

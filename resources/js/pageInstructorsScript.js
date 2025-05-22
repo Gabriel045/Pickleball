@@ -51,11 +51,11 @@ function print_Instructors(data) {
                 </a>
             </figure>
             <div class="mt-[24px]">
-                <p class="text-rich-black text-[20px] font-semibold leading-normal">
+                <h4 class="text-rich-black text-[20px] font-semibold leading-normal">
                     <a href="${data.link}" class="text-rich-black hover:underline">
                         ${data.name}
                     </a>
-                </p>
+                </h4>
                 <p class="text-gray-paragrah text-[16px] leading-normal">
                     ${data.role}
                 </p>
