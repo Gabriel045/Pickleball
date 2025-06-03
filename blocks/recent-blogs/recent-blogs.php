@@ -30,10 +30,11 @@ $recent_blogs = $recent_blogs->posts;
                 </div>
                 <div class="flex justify-between my-3">
                     <a href="<?php echo get_permalink($recent_blogs[0]->ID); ?>"
-                        class="flex justify-between w-full hover:translate-x-[2px] hover:translate-y-[-2px] transition-transform">
+                        class="flex justify-between w-full group ">
                         <h3 class="text-rich-black text-[24px] font-semibold leading-[32px]">
                             <?php echo get_the_title($recent_blogs[0]->ID); ?></h3>
-                        <svg xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <svg class="group-hover:translate-x-[2px] group-hover:translate-y-[-2px] transition-transform"
+                            xmlns=" http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="#0B141D" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" />
                         </svg>
@@ -69,7 +70,14 @@ $recent_blogs = $recent_blogs->posts;
                                 </a>
                             </h3>
                             <p class="text-gray-paragrah text-[16px] mt-2">
-                                <?php echo get_the_excerpt($recent_blogs[$i]->ID); ?>
+                                <?php
+                                $excerpt = get_the_excerpt($recent_blogs[$i]->ID);
+                                $words = explode(' ', wp_strip_all_tags($excerpt));
+                                if (count($words) > 20) {
+                                    $excerpt = implode(' ', array_slice($words, 0, 20)) . '...';
+                                }
+                                echo $excerpt;
+                                ?>
                             </p>
                         </div>
                     </div>

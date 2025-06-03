@@ -47,7 +47,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 
         ?>
                 <li
-                    class="woocommerce-mini-cart-item flex items-center gap-5 border-t border-gray-200 pt-5 <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
+                    class="woocommerce-mini-cart-item  first:pt-[35px] flex items-center gap-5 border-t border-gray-200 pt-5 <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>">
                     <?php if (empty($product_permalink)) : ?>
                         <?php echo $thumbnail . wp_kses_post($product_name); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
                         ?>
@@ -64,13 +64,11 @@ do_action('woocommerce_before_mini_cart'); ?>
                     // echo apply_filters('woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf('%s &times; %s', $cart_item['quantity'], $product_price) . '</span>', $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
                     ?>
                     <div class="flex flex-col w-1/2">
-                        <h4 class="product-name text-gray-900 text-[16px] font-semibold leading-[20px]">
+                        <h4 class="product-name text-gray-900 text-[16px] font-semibold leading-[18px]">
                             <a class="hover:underline" href="<?php echo esc_url($product_permalink); ?>">
                                 <?php echo esc_html($product_name); ?>
                             </a>
                         </h4>
-                        <p class="text-gray-600 text-[14px] font-normal leading-[20px] my-2">Expiry 06/2024</p>
-
                         <div class="flex items-center gap-[10px]">
                             <p class="text-[#8498AB] text-[16px]">
                                 <s>$<?php echo $product->get_price() * 2 ?></s>
@@ -109,74 +107,11 @@ do_action('woocommerce_before_mini_cart'); ?>
         ?>
     </ul>
 
-    <?php $args = array(
-        'post_type' => 'product',
-        'posts_per_page' => 3,
-        'meta_key' => 'total_sales',
-        'orderby' => 'meta_value_num',
-        'order' => 'DESC',
-    );
-    $product_query = new WP_Query($args);
-    $product_query = $product_query->posts; ?>
 
-    <div class="more-recommended bg-[#FAFBFC] px-[30px] lg:px-[40px] py-[40px] mt-[50px]">
-        <h2 class="text-[#060843] text-center text-[24px] font-semibold leading-[38px] tracking-[-0.48px]">
-            More Recommended</h2>
-        <div id="multiple-items" class="mt-[30px] flex-wrap lg:flex-nowrap">
-            <?php foreach ($product_query as $key => $item) :
-                global $product;
-                $product = wc_get_product($item->ID);
-                $product_price = $product->get_price_html();
-                $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full'); ?>
-                <article class="lg:mb-[40px] last:mb-0">
-                    <figure>
-                        <a href="<?php echo esc_url(get_permalink($item->ID)); ?>">
-                            <img class="rounded-xl aspect-video object-cover" src="<?php echo $product_image[0] ?>" alt="">
-                        </a>
-                    </figure>
-                    <div class="mt-[24px]">
-                        <div class="flex items-center gap-[10px]">
-                            <span class="stars"></span>
-                            <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
-                                Reviews)</span>
-                        </div>
-                        <h3 class="text-rich-black text-[20px] font-semibold leading-[20px] my-2">
-                            <a class="hover:underline" href="<?php echo esc_url(get_permalink($item->ID)); ?>">
-                                <?php echo $product->get_name(); ?>
-                            </a>
-                        </h3>
-                        <p class="text-gray-paragrah text-[16px] leading-normal">
-                            <?php echo $product->get_short_description(); ?> </p>
-                        <div class="my-[15px] flex items-center gap-[10px]">
-                            <span
-                                class="mr-4 text-[#8498AB] text-[16px] lg:text-[18px] line-through">$<?php echo $product->get_price() * 2 ?></span>
-                            <span
-                                class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $product_price ?></span>
-                        </div>
-                    </div>
-                </article>
-            <?php endforeach; ?>
-        </div>
-    </div>
-
-    <!-- 
-	<p class="woocommerce-mini-cart__total total">
-		<?php
-        /**
-         * Hook: woocommerce_widget_shopping_cart_total.
-         *
-         * @hooked woocommerce_widget_shopping_cart_subtotal - 10
-         */
-        do_action('woocommerce_widget_shopping_cart_total');
-        ?>
-	</p> -->
-
-    <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
-
-    <div class="checkout-btn woocommerce-mini-cart__buttons buttons pt-[40px] lg:px-[40px] ">
-        <a href="/checkout/" class="btn-primary button checkout wc-forward">Procees to Checkout →</a>
+    <div class="checkout-btn woocommerce-mini-cart__buttons buttons pt-[60px] lg:px-[40px] ">
+        <a href="/checkout/" class="btn-primary button checkout wc-forward">Proceed to Checkout →</a>
         <figure class="mt-2 hidden lg:block">
-            <svg xmlns="http://www.w3.org/2000/svg" width="117" height="18" viewBox="0 0 117 18" fill="none">
+            <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="117" height="18" viewBox="0 0 117 18" fill="none">
                 <rect x="0.580155" y="0.925248" width="23.1679" height="16.1474" rx="2.45721" fill="white" />
                 <rect x="0.580155" y="0.925248" width="23.1679" height="16.1474" rx="2.45721" stroke="#F2F4F7"
                     stroke-width="0.702059" />
@@ -220,6 +155,71 @@ do_action('woocommerce_before_mini_cart'); ?>
             Shopping</a>
     </div>
 
+
+
+    <?php $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => 3,
+        'meta_key' => 'total_sales',
+        'orderby' => 'meta_value_num',
+        'order' => 'DESC',
+    );
+    $product_query = new WP_Query($args);
+    $product_query = $product_query->posts; ?>
+
+    <div class="more-recommended bg-[#FAFBFC] px-[30px] lg:px-[40px] py-[40px] mt-[50px]">
+        <h2 class="text-[#060843] text-center text-[24px] font-semibold leading-[38px] tracking-[-0.48px]">
+            More Recommended</h2>
+        <div id="multiple-items" class="mt-[30px] flex-wrap lg:flex-nowrap">
+            <?php foreach ($product_query as $key => $item) :
+                global $product;
+                $product = wc_get_product($item->ID);
+                $product_price = $product->get_price_html();
+                $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full'); ?>
+                <article class="lg:mb-[40px] last:mb-0">
+                    <figure>
+                        <a href="<?php echo esc_url(get_permalink($item->ID)); ?>">
+                            <img class="rounded-xl aspect-video object-cover" src="<?php echo $product_image[0] ?>" alt="">
+                        </a>
+                    </figure>
+                    <div class="mt-[24px]">
+                        <div class="flex items-center gap-[10px]">
+                            <span class="stars"></span>
+                            <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
+                                Reviews)</span>
+                        </div>
+                        <h3 class="text-rich-black text-[20px] font-semibold leading-[20px]">
+                            <a class="hover:underline" href="<?php echo esc_url(get_permalink($item->ID)); ?>">
+                                <?php echo $product->get_name(); ?>
+                            </a>
+                        </h3>
+                        <p class="text-gray-paragrah text-[16px] leading-normal">
+                            <?php echo $product->get_short_description(); ?> </p>
+                        <div class="flex items-center gap-[10px]">
+                            <span
+                                class="mr-4 text-[#8498AB] text-[16px] lg:text-[18px] line-through">$<?php echo $product->get_price() * 2 ?></span>
+                            <span
+                                class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $product_price ?></span>
+                        </div>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- 
+	<p class="woocommerce-mini-cart__total total">
+		<?php
+        /**
+         * Hook: woocommerce_widget_shopping_cart_total.
+         *
+         * @hooked woocommerce_widget_shopping_cart_subtotal - 10
+         */
+        do_action('woocommerce_widget_shopping_cart_total');
+        ?>
+	</p> -->
+
+    <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
 
     <?php do_action('woocommerce_widget_shopping_cart_after_buttons'); ?>
 

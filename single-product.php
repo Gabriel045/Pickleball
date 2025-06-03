@@ -7,7 +7,7 @@ $product = wc_get_product($post->ID);
 
 $product_price = $product ? $product->get_price_html() : '';
 $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0];
-$trailer_video =  get_field('trailer_video', $post->ID)["url"];
+$trailer_video =  get_field('trailer_video', $post->ID);
 $description_list_title = get_field('description_list_title', $post->ID);
 $description_list = get_field('description_list', $post->ID);
 $details_content = get_field('details_content', $post->ID);
@@ -16,34 +16,21 @@ $contents = get_field('contents', $post->ID);
 $text_image = get_field('text_image', $post->ID);
 $text_image_2 = get_field('text_image_2', $post->ID);
 $best_seller_title = get_field('best_seller_title', $post->ID);
-$faqs = get_field('faqs', $post->ID);
 $volumes = get_field('volumes', $post->ID);
-
+$video_iframe = get_field('video_iframe', $post->ID);
 ?>
 
 <main>
-    <section>
+    <section class="bg-[#F9FAFB]">
         <div class="block_content">
             <div class="flex lg:flex-nowrap flex-wrap lg:flex-row flex-col-reverse">
                 <!-- Right Side  -->
                 <div class="w-full lg:w-1/2">
                     <div class="hidden lg:block">
                         <?php
-                        if (!empty($trailer_video)) { ?>
-                            <div class="relative cursor-pointer">
-                                <svg id="play-icon" class="absolute top-1/2 left-1/2"
-                                    style="transform: translate(-50%, -50%);" xmlns="http://www.w3.org/2000/svg" width="68"
-                                    height="78" viewBox="0 0 68 78" fill="none">
-                                    <path d="M67.3047 39L0.847416 77.3691L0.847419 0.630879L67.3047 39Z" fill="white" />
-                                </svg>
-
-                                <video id="product-video" class="h-auto aspect-[1.46] object-cover" controls
-                                    poster="<?php echo esc_url($product_image) ?>">
-                                    <source src="<?php echo esc_url($trailer_video) ?>" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        <?php  } else {
+                        if (!empty($trailer_video)) {
+                            echo $trailer_video;
+                        } else {
                             echo '<img src="' . esc_url($product_image) . '" alt="' . esc_attr(get_the_title($product_id)) . '"
                         class="featured-image">';
                         } ?>
@@ -105,9 +92,9 @@ $volumes = get_field('volumes', $post->ID);
                         class="featured-image">';
                         } ?>
                     </div>
-                    <p class="text-[18px] text-gray-paragrah leading-[28px]">
-                        <?php echo esc_html(get_the_content($post->ID)); ?>
-                    </p>
+                    <div class="text-[18px] text-gray-paragrah leading-[28px]">
+                        <?php echo get_the_content($post->ID); ?>
+                    </div>
                     <div class="my-[30px] flex items-center">
                         <span
                             class="mr-4 text-[#8498AB] text-[20px] line-through">$<?php echo $product->get_price() * 2 ?></span>
@@ -128,14 +115,15 @@ $volumes = get_field('volumes', $post->ID);
 
                         ?>
                             <li class="flex gap-3 lg:gap-2">
-                                <svg class="max-[1024px]:w-[72px]" xmlns="http://www.w3.org/2000/svg" width="28" height="29"
-                                    viewBox="0 0 28 29" fill="none">
+                                <svg class="max-[1024px]:w-[72px] w-[4%]" xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="29" viewBox="0 0 28 29" fill="none">
                                     <rect y="0.5" width="28" height="28" rx="14" fill="#0B141D" fill-opacity="0.09" />
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M19.9476 9.12169L11.5943 17.1834L9.37763 14.815C8.9693 14.43 8.32763 14.4067 7.86096 14.7334C7.40596 15.0717 7.27763 15.6667 7.55763 16.145L10.1826 20.415C10.4393 20.8117 10.8826 21.0567 11.3843 21.0567C11.8626 21.0567 12.3176 20.8117 12.5743 20.415C12.9943 19.8667 21.0093 10.3117 21.0093 10.3117C22.0593 9.23836 20.7876 8.29336 19.9476 9.11002V9.12169Z"
                                         fill="#0B141D" />
                                 </svg>
-                                <div class="text-[18px] text-gray-paragrah leading-7"><?php echo $item["items"] ?></div>
+                                <div class="text-[18px] text-gray-paragrah leading-7 lg:w-[96%]">
+                                    <?php echo $item["items"] ?></div>
                             </li>
                         <?php } ?>
                     </ul>
@@ -143,21 +131,21 @@ $volumes = get_field('volumes', $post->ID);
             </div>
         </div>
     </section>
-    <section class="bg-[#F9FAFB] hidden lg:block">
+    <section class="bg-[#F9FAFB] hidden lg:flex">
         <div class="block_content py-[80px] px-[60px]">
             <div class="gap-[100px] flex">
                 <div class="w-1/2">
                     <div class="flex justify-between mb-10">
                         <h3 class="text-[24px] font-semibold text-rich-black">Course Content</h3>
-                        <span class="text-[14px] text-gray-paragrah">Expant all Sections</span>
+                        <span class="text-[14px] text-gray-paragrah">Expand all Sections</span>
                     </div>
-                    <div id="course-tabs">
+                    <div id="course-tabs" class='py-[25px] px-[40px] bg-white'>
                         <?php foreach ($volumes as $key => $volume) {  ?>
-                            <details class="bg-white py-[23px] px-[40px]">
+                            <details class=" pb-[15px] last:pb-0">
                                 <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
-                                    Volume <?php echo $key + 1 ?>
+                                    Module <?php echo $key + 1 ?>
                                 </summary>
-                                <div class="sumary content mt-5">
+                                <div class="sumary content mt-2">
                                     <table class="table-fixed w-full border-collapse">
                                         <thead>
                                             <tr>
@@ -193,6 +181,7 @@ $volumes = get_field('volumes', $post->ID);
                     <div
                         class="[&_h3]:text-rich-black [&_h3]:font-semibold [&_h3]:text-[24px] [&_h3]:leading-[28px] [&_h3]:mb-10">
                         <?php echo  $text_image ?>
+                        <?php echo $video_iframe; ?>
                     </div>
                 </div>
             </div>
@@ -202,7 +191,8 @@ $volumes = get_field('volumes', $post->ID);
         <div class="block_content py-[80px] lg:px-[60px] px-[30px]">
             <div class="[&_h3]:text-rich-black [&_h3]:font-semibold [&_h3]:text-[20px] [&_h3]:lg:text-[24px] [&_h3]:leading-[28px]
             [&_p]:text-[16px] [&_p]:lg:text-[18px] [&_p]:text-gray-paragrah [&_p]:leading-7
-            [&_img]:lg:h-[570px] [&_img]:object-cover">
+            [&_img]:lg:h-[570px] [&_img]:object-cover [&_img]:lg:rounded-[10px]
+            [&_li]:text-[16px] [&_li]:lg:text-[18px]  [&_li]:text-gray-paragrah">
                 <?php echo $text_image_2 ?>
             </div>
         </div>
@@ -218,7 +208,7 @@ $volumes = get_field('volumes', $post->ID);
         </div>
     </section>
     <?php
-    get_template_part('/blocks/faq/faq', null, array('faqs' => $faqs));
+    get_template_part('/blocks/faq/faq');
     ?>
 </main>
 

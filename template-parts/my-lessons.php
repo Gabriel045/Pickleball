@@ -95,6 +95,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
     iframe {
         width: 100% !important;
         height: 577px !important;
+        border-radius: 20px;
     }
 
     @media screen and (max-width: 768px) {

@@ -96,6 +96,10 @@ h4 {
     display: none !important;
 }
 
+.woocommerce-EditAccountForm .woocommerce-Button {
+    margin-top: 30px !important;
+}
+
 .btn,
 .btn-primary,
 #gform_submit_button_1,
@@ -1051,6 +1055,10 @@ form.woocommerce-checkout #billing_phone_field {
     font-weight: 600 !important;
     padding-top: 30px !important;
 
+}
+
+ol {
+    list-style: number inside;
 }
 
 @media screen and (min-width:1200px) {

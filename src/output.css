@@ -1,6 +1,4 @@
-*,
-::before,
-::after {
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -10,19 +8,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position: ;
-  --tw-gradient-via-position: ;
-  --tw-gradient-to-position: ;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -30,28 +28,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
-  --tw-contain-size: ;
-  --tw-contain-layout: ;
-  --tw-contain-paint: ;
-  --tw-contain-style: ;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
 }
 
 ::backdrop {
@@ -64,19 +62,19 @@
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position: ;
-  --tw-gradient-via-position: ;
-  --tw-gradient-to-position: ;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -84,28 +82,28 @@
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
-  --tw-contain-size: ;
-  --tw-contain-layout: ;
-  --tw-contain-paint: ;
-  --tw-contain-style: ;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
 }
 
 /*
@@ -154,7 +152,7 @@ html,
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-  tab-size: 4;
+     tab-size: 4;
   /* 3 */
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 4 */
@@ -199,7 +197,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -488,8 +486,7 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -641,6 +638,10 @@ video {
 
 .top-\[10px\] {
   top: 10px;
+}
+
+.z-20 {
+  z-index: 20;
 }
 
 .z-\[99999999\] {
@@ -865,10 +866,6 @@ video {
   display: none;
 }
 
-.aspect-\[1\.46\] {
-  aspect-ratio: 1.46;
-}
-
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
@@ -949,6 +946,10 @@ video {
 
 .w-\[300px\] {
   width: 300px;
+}
+
+.w-\[4\%\] {
+  width: 4%;
 }
 
 .w-\[70\%\] {
@@ -1321,7 +1322,7 @@ video {
 }
 
 .bg-\[rgba\(255\2c 255\2c 255\2c 0\.33\)\] {
-  background-color: rgba(255, 255, 255, 0.33);
+  background-color: rgba(255,255,255,0.33);
 }
 
 .bg-berkley-blue {
@@ -1373,7 +1374,7 @@ video {
 
 .object-cover {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 .p-\[10px\] {
@@ -1493,9 +1494,9 @@ video {
   padding-bottom: 10px;
 }
 
-.py-\[23px\] {
-  padding-top: 23px;
-  padding-bottom: 23px;
+.py-\[25px\] {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .py-\[30px\] {
@@ -1550,6 +1551,10 @@ video {
   padding-bottom: 2rem;
 }
 
+.pb-\[15px\] {
+  padding-bottom: 15px;
+}
+
 .pb-\[60px\] {
   padding-bottom: 60px;
 }
@@ -1572,10 +1577,6 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-\[40px\] {
-  padding-top: 40px;
 }
 
 .pt-\[50px\] {
@@ -1702,6 +1703,10 @@ video {
   font-weight: 600;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .\!leading-5 {
   line-height: 1.25rem !important;
 }
@@ -1720,6 +1725,10 @@ video {
 
 .leading-8 {
   line-height: 2rem;
+}
+
+.leading-\[18px\] {
+  line-height: 18px;
 }
 
 .leading-\[20px\] {
@@ -1822,7 +1831,7 @@ video {
 }
 
 .text-\[rgba\(71\2c 84\2c 103\2c 0\.60\)\] {
-  color: rgba(71, 84, 103, 0.60);
+  color: rgba(71,84,103,0.60);
 }
 
 .text-berkley-blue {
@@ -1887,6 +1896,10 @@ video {
   --tw-text-opacity: 0.6;
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 .line-through {
   text-decoration-line: line-through;
 }
@@ -1918,8 +1931,12 @@ video {
 }
 
 .shadow-\[rgba\(16\2c 24\2c 40\2c 0\.05\)\] {
-  --tw-shadow-color: rgba(16, 24, 40, 0.05);
+  --tw-shadow-color: rgba(16,24,40,0.05);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.outline {
+  outline-style: solid;
 }
 
 .blur {
@@ -2044,6 +2061,10 @@ h4 {
 
 .order-again {
   display: none !important;
+}
+
+.woocommerce-EditAccountForm .woocommerce-Button {
+  margin-top: 30px !important;
 }
 
 .btn,
@@ -2987,6 +3008,10 @@ form.woocommerce-checkout #billing_phone_field {
   padding-top: 30px !important;
 }
 
+ol {
+  list-style: number inside;
+}
+
 @media screen and (min-width:1200px) {
   .xl\:w-\[23\.5\%\] {
     width: 23.5% !important;
@@ -3006,11 +3031,10 @@ form.woocommerce-checkout #billing_phone_field {
 }
 
 @media screen and (max-width:1023px) {
-
   #product-slider,
-  #recent-blog_posts,
-  #cart,
-  #text-image {
+    #recent-blog_posts,
+    #cart,
+    #text-image {
     background-image: none;
   }
 
@@ -3100,8 +3124,16 @@ form.woocommerce-checkout #billing_phone_field {
   width: 117px;
 }
 
+.first\:pt-\[35px\]:first-child {
+  padding-top: 35px;
+}
+
 .last\:mb-0:last-child {
   margin-bottom: 0px;
+}
+
+.last\:pb-0:last-child {
+  padding-bottom: 0px;
 }
 
 .hover\:translate-x-\[2px\]:hover {
@@ -3141,6 +3173,16 @@ form.woocommerce-checkout #billing_phone_field {
 .focus\:ring-blue-500:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1));
+}
+
+.group:hover .group-hover\:translate-x-\[2px\] {
+  --tw-translate-x: 2px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:translate-y-\[-2px\] {
+  --tw-translate-y: -2px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media (max-width: 1024px) {
@@ -3211,10 +3253,6 @@ form.woocommerce-checkout #billing_phone_field {
     width: 50%;
   }
 
-  .md\:w-2\/3 {
-    width: 66.666667%;
-  }
-
   .md\:w-\[49\%\] {
     width: 49%;
   }
@@ -3225,6 +3263,10 @@ form.woocommerce-checkout #billing_phone_field {
 
   .md\:w-\[500px\] {
     width: 500px;
+  }
+
+  .md\:w-\[82\%\] {
+    width: 82%;
   }
 
   .md\:flex-nowrap {
@@ -3337,6 +3379,10 @@ form.woocommerce-checkout #billing_phone_field {
     width: 80%;
   }
 
+  .lg\:w-\[18\%\] {
+    width: 18%;
+  }
+
   .lg\:w-\[24\%\] {
     width: 24%;
   }
@@ -3371,6 +3417,10 @@ form.woocommerce-checkout #billing_phone_field {
 
   .lg\:w-\[65\%\] {
     width: 65%;
+  }
+
+  .lg\:w-\[96\%\] {
+    width: 96%;
   }
 
   .lg\:w-auto {
@@ -3615,12 +3665,16 @@ form.woocommerce-checkout #billing_phone_field {
 
 .\[\&_img\]\:object-cover img {
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 
 @media (min-width: 1024px) {
   .\[\&_img\]\:lg\:h-\[570px\] img {
     height: 570px;
+  }
+
+  .\[\&_img\]\:lg\:rounded-\[10px\] img {
+    border-radius: 10px;
   }
 }
 
@@ -3632,6 +3686,10 @@ form.woocommerce-checkout #billing_phone_field {
   padding: 10px;
 }
 
+.\[\&_li\]\:text-\[16px\] li {
+  font-size: 16px;
+}
+
 .\[\&_li\]\:text-\[18px\] li {
   font-size: 18px;
 }
@@ -3640,9 +3698,20 @@ form.woocommerce-checkout #billing_phone_field {
   font-weight: 600;
 }
 
+.\[\&_li\]\:text-gray-paragrah li {
+  --tw-text-opacity: 1;
+  color: rgb(71 84 103 / var(--tw-text-opacity, 1));
+}
+
 .\[\&_li\]\:text-rich-black li {
   --tw-text-opacity: 1;
   color: rgb(11 20 29 / var(--tw-text-opacity, 1));
+}
+
+@media (min-width: 1024px) {
+  .\[\&_li\]\:lg\:text-\[18px\] li {
+    font-size: 18px;
+  }
 }
 
 .\[\&_p\]\:text-\[16px\] p {

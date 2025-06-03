@@ -17,7 +17,7 @@
             <p class="text-white text-[12px] font-semibold text-center">24/7 support Lorem ipsum dolor sit amet</p>
         </div>
         <div class="block_content m-auto flex justify-between w-full px-[30px] lg:px-[60px] py-4">
-            <div class="flex gap-10 items-center w-[70%] md:w-2/3">
+            <div class="flex gap-10 items-center w-[70%] md:w-[82%]">
                 <div class="text-berkley-blue font-bold text-[30px] tracking-[-0.6px] leading-[30px] flex items-center">
                     <a href="/">
                         <figure>
@@ -25,7 +25,7 @@
                         </figure>
                     </a>
                 </div>
-                <form role="search" method="get" class="hidden lg:flex search-form  max-w-[460px] w-full relative"
+                <form role="search" method="get" class="hidden lg:flex search-form  w-[70%] relative"
                     action="<?php echo home_url('/'); ?>">
                     <input type="search"
                         class="search-field w-full border-[1px] border-[#D0D5DD] rounded-lg pl-[50px] px-[14px] py-2 text-[16px] text-[#667085]"
@@ -41,7 +41,7 @@
                 </form>
             </div>
             <!-- Desktop -->
-            <div class="hidden lg:flex gap-10 items-center lg:w-1/3 w-full lg:justify-end  ">
+            <div class="hidden lg:flex gap-10 items-center lg:w-[18%] w-full lg:justify-end  ">
                 <a href="/my-account">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="22" viewBox="0 0 23 22" fill="none">
                         <path

@@ -43,7 +43,7 @@ do_action('woocommerce_before_account_navigation');
         <ul id="other-settings"
             class="[&_li]:p-[10px] [&_li]:rounded-[5px] [&_li]:text-rich-black [&_li]:text-[18px] [&_li]:font-semibold">
             <li class="woocommerce-support ">
-                <a href="/contact">Support</a>
+                <a href="/faq">Support</a>
             </li>
             <li class="woocommerce-settings [&.is-active]:bg-white [&.is-active]:shadow-sm">
                 <a href="/my-account/edit-account/">Settings</a>

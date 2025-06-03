@@ -270,14 +270,3 @@ function filter_payment_gateway_supports($supports, $feature, $payment_gateway)
     }
     return $supports;
 }
-
-
-add_action('wp_footer', function () {
-    if (is_account_page() && is_wc_endpoint_url('orders')) { ?>
-        <script>
-            document.querySelectorAll(".woocommerce-orders-table__cell-order-actions a").forEach(function(el) {
-                el.textContent = "View details";
-            });
-        </script>
-<?php }
-});
