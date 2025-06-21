@@ -87,7 +87,7 @@ $categories = get_terms(array(
                         </button>
                     </form>
                     <div class="lg:mt-20">
-                        <div id="videos-container" class="flex flex-wrap gap-[2%] gap-y-10 lg:gap-y-[80px]"></div>
+                        <div id="videos-container" class="flex  flex-wrap gap-[2%] gap-y-10 lg:gap-y-[60px]"></div>
                         <!-- print videos -->
                     </div>
                 </div>

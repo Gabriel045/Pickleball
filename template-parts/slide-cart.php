@@ -52,7 +52,7 @@
         // Fetch cart contents after adding a product to the cart
         $(document).ajaxComplete(function(event, xhr, settings) {
             if (settings.url.indexOf('wc-ajax=add_to_cart') !== -1) {
-                console.log('Product added to cart via AJAX.');
+                console.log('Product added to the side cart.');
                 fetchCartContents();
             }
         });

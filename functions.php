@@ -270,3 +270,30 @@ function filter_payment_gateway_supports($supports, $feature, $payment_gateway)
     }
     return $supports;
 }
+
+
+
+add_action('woocommerce_before_calculate_totals', function ($cart) {
+    if (is_admin() && !defined('DOING_AJAX')) return;
+
+    $discount = get_field('discount_percentage', 'options');
+    $discount = $discount / 100;
+
+    $found = false;
+    // Check if there is at least one product in the cart
+    if (count($cart->get_cart()) > 0 && !empty($discount)) {
+        $found = true;
+    }
+
+    // If found, change the price of all products
+    if ($found) {
+        foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
+            $product_ids_in_cart = array_column($cart->get_cart(), 'product_id');
+            $product_ids_in_cart =  [$product_ids_in_cart[0]];
+            // If the current product is NOT in the cart, change the price
+            if (!in_array($cart_item['product_id'], $product_ids_in_cart)) {
+                $cart_item['data']->set_price($cart_item['data']->get_price() * (1 - $discount));
+            }
+        }
+    }
+});

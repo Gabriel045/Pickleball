@@ -4,7 +4,7 @@ $text = get_field('text');
 ?>
 
 <section id="text-image">
-    <div class="block_content">
+    <div class="">
         <div class="flex flex-wrap lg:flex-nowrap items-center h-full">
             <div class="w-full lg:w-1/2 lg:h-full">
                 <figure class="lg:h-full">

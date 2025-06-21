@@ -99,37 +99,42 @@ categories.forEach((category) => {
 function print_products(data) {
   const container = document.querySelector("#videos-container");
   const article = document.createElement("article");
-  article.classList.add("w-full", "xl:w-[23.5%]", "lg:w-[49%]");
+  article.classList.add(
+    "xl:w-[23.5%]",
+    "md:w-[32%]",
+    "w-[49%]",
+    "flex",
+    "flex-col",
+    "gap-[10px]",
+    "justify-between"
+  );
   article.innerHTML = `
-            <figure>
-                <a href="${data.link}">
-                    <img class="lg:!h-[150px] object-cover w-full rounded-xl" src="${data.thumbnail}" alt="">
-                </a>
-            </figure>
-            <div class="mt-[24px]">
-                <div class="flex items-center gap-[10px]">
-                    <span class="stars"></span>
-                    <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59 Reviews)</span>
-                </div>
-                <h3 class="text-rich-black text-[20px] font-semibold my-2 leading-[20px]">
-                    <a href="${data.link}" class="text-rich-black hover:underline">
-                        ${data.title}
-                    </a>
-                </h3>
-                <p class="text-gray-paragrah text-[16px] leading-normal">
-                    ${data.description}
-                </p>
-                <div class="my-[15px] flex items-center">
-                    <span class="mr-4 text-[#8498AB] text-[18px] line-through">$${data.price}</span>
-                    <span class="text-[#13A513] text-[28px] font-semibold leading-[32px]">$${data.price}</span>
-                </div>
-                <div class="woocommerce-variation-add-to-cart variations_button">
-                    <button type="submit" class="custom_add_to_cart btn !w-full single_add_to_cart_button button">+ Add to Cart</button>
-                    <input type="hidden" name="add-to-cart" value="${data.id}" />
-                    <input type="hidden" name="product_id" value="${data.id}" />
-                    <input type="hidden" name="variation_id" class="variation_id" value="0" />
-                </div>
-            </div>
-        `;
+      <figure>
+          <a href="${data.link}">
+              <img class="rounded-xl aspect-[0.8] object-cover" src="${data.thumbnail}" alt="">
+          </a>
+      </figure>
+          <div class="flex items-center gap-[10px] flex-wrap ">
+              <span class="stars"></span>
+              <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59 Reviews)</span>
+          </div>
+          <h3 class="text-rich-black text-[16px] lg:text-[20px] font-semibold leading-[20px]">
+              <a href="${data.link}" class="text-rich-black hover:underline">
+                  ${data.title}
+              </a>
+          </h3>
+          <p class="text-gray-paragrah text-[14px] lg:text-[18px] leading-[20px]">
+              ${data.description}
+          </p>
+          <div class="flex items-center">
+              <span class="mr-2 lg:mr-4 text-[#8498AB] text-[18px] line-through">${data.regular_price}</span>
+              <span class="text-[#13A513] text-[22px] lg:text-[28px] font-semibold leading-[32px]">${data.sale_price}</span>
+          </div>
+          <div class="woocommerce-variation-add-to-cart variations_button">
+              <button type="submit" class="custom_add_to_cart btn !w-full single_add_to_cart_button button">+ Add to Cart</button>
+              <input type="hidden" name="add-to-cart" value="${data.id}" />
+              <input type="hidden" name="product_id" value="${data.id}" />
+              <input type="hidden" name="variation_id" class="variation_id" value="0" />
+          </div>`;
   container.appendChild(article);
 }

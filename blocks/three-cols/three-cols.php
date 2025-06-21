@@ -3,7 +3,7 @@ $columns = get_field('columns');
 ?>
 
 <section id="three-cols" class="">
-    <div class="">
+    <div class="w-full">
         <div class="flex flex-wrap lg:flex-nowrap ">
             <?php foreach ($columns as $key => $col) : ?>
                 <div class="w-full lg:w-1/3 py-[60px] lg:py-[80px] px-[30px] lg:px-[60px]  !bg-cover"
