@@ -297,3 +297,78 @@ add_action('woocommerce_before_calculate_totals', function ($cart) {
         }
     }
 });
+
+
+
+
+/**
+ * WooCommerce Coupon Generation for New and Returning Users
+ *
+ * This code automatically generates a unique WooCommerce coupon for users upon registration or first login.
+ * 
+ * - On user registration (`user_register`), a unique coupon is created and assigned to the user.
+ * - On user login (`wp_login`), if the user does not already have a coupon, one is generated.
+ * - Coupons are unique per user,  and are restricted to the user's email.
+ * - The generated coupon code is stored in user meta under 'coupon_generated'.
+ *
+ * Functions:
+ * - generate_unique_coupon_code($user_id): Generates a unique coupon code for a given user.
+ * - create_coupon_for_user($user_id): Creates a WooCommerce coupon post and assigns it to the user.
+ * - create_coupon_on_user_register($user_id): Action hook to generate coupon on registration.
+ * - create_coupon_on_user_login($user_login, $user): Action hook to generate coupon on first login if not already present.
+ */
+function generate_unique_coupon_code($user_id)
+{
+    $prefix = 'USER';
+    $code = $prefix . '_' . substr(md5(uniqid(rand(), true)), 0, 10); // Generate a unique code
+    return $code;
+}
+
+function create_coupon_for_user($user_id)
+{
+    $coupon_code = generate_unique_coupon_code($user_id);
+    $amount = '15'; // Discount amount
+    $discount_type = 'percent';
+    $coupon = array(
+        'post_title'   => $coupon_code,
+        'post_content' => '',
+        'post_status'  => 'publish',
+        'post_author'  => 1,
+        'post_type'    => 'shop_coupon'
+    );
+
+    $new_coupon_id = wp_insert_post($coupon);
+
+    // Coupon meta data (use correct meta keys with underscores)
+    update_post_meta($new_coupon_id, 'discount_type', $discount_type);
+    update_post_meta($new_coupon_id, '_discount_type', $discount_type);
+    update_post_meta($new_coupon_id, '_coupon_amount', $amount);
+    update_post_meta($new_coupon_id, 'coupon_amount', $amount);
+    update_post_meta($new_coupon_id, 'individual_use', 'yes');
+    update_post_meta($new_coupon_id, '_individual_use', 'yes'); // No combining with other coupons
+    update_post_meta($new_coupon_id, 'usage_limit', 1);
+    update_post_meta($new_coupon_id, '_usage_limit', 1);
+    update_post_meta($new_coupon_id, 'customer_email', get_userdata($user_id)->user_email);
+    update_post_meta($new_coupon_id, '_customer_email', get_userdata($user_id)->user_email); // Restrict to user's email
+
+    return $coupon_code;
+}
+
+
+// Automatically generate a coupon when the user registers or logs in for the first time
+add_action('user_register', 'create_coupon_on_user_register');
+function create_coupon_on_user_register($user_id)
+{
+    $coupon_code = create_coupon_for_user($user_id);
+    update_user_meta($user_id, 'coupon_generated', $coupon_code);
+}
+
+add_action('wp_login', 'create_coupon_on_user_login', 10, 2);
+function create_coupon_on_user_login($user_login, $user)
+{
+    $user_id = $user->ID;
+    if (empty(get_user_meta($user_id, 'coupon_generated', true))) {
+        $coupon_code = create_coupon_for_user($user_id);
+        update_user_meta($user_id, 'coupon_generated', $coupon_code);
+    }
+}

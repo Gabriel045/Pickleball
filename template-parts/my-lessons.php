@@ -71,6 +71,11 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                                 class="tab-btn py-2 px-4 font-semibold text-rich-black border-b-2 border-transparent focus:outline-none"
                                 data-tab="recommended">Recommended</button>
                         </li>
+                        <li>
+                            <button
+                                class="tab-btn py-2 px-4 font-semibold text-rich-black border-b-2 border-transparent focus:outline-none"
+                                data-tab="offer">Special Offer</button>
+                        </li>
                     </ul>
 
                     <div class="tab-content hidden" id="tab-recommended">
@@ -134,6 +139,25 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                             </div>
                             <?php echo get_the_content(null, false, $lessons_id[$lesson]); ?>
                         </div>
+                    </div>
+                    <div class="tab-content hidden" id="tab-offer">
+                        <?php
+                        $current_user_id = get_current_user_id();
+                        $cupon_code = get_user_meta($current_user_id, 'coupon_generated', true);
+                        ?>
+                        <p class="text-[16px] text-gray-paragrah my-4">
+                            Unlock exclusive savings! Use your special coupon code below to get a discount on your next
+                            purchase. This offer is available only for our valued members.
+                        </p>
+                        <?php if ($cupon_code): ?>
+                            <div class="bg-[#f0f8e8] border border-[#13A513] rounded p-4 mb-4">
+                                <strong>Your Coupon Code:</strong>
+                                <span class="text-[#13A513] font-bold text-lg"><?php echo esc_html($cupon_code); ?></span>
+                            </div>
+                        <?php else: ?>
+                            <p class="text-[16px] text-gray-paragrah">No special coupon available at this time. Please check back
+                                later!</p>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="lg:w-[30%]">
