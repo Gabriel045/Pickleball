@@ -59,7 +59,7 @@ $most_selling_products = wc_get_products(array(
                                         </path>
                                     </svg>
                                     <span
-                                        class="copy-tooltip hidden fixed top-[160px] left-1/2 -translate-x-1/2 bg-[#0E375E] text-white text-lg rounded px-2 py-1 z-10 whitespace-nowrap">Link
+                                        class="copy-tooltip hidden fixed top-[160px] left-1/2 -translate-x-1/2 bg-black text-white text-lg rounded px-2 py-1 z-10 whitespace-nowrap">Link
                                         Copied</span>
                                 </button>
                                 <a class="bg-[#1A94DA] w-[44px] h-[44px] rounded-full flex justify-center items-center"

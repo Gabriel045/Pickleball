@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<!-- instructor -->
 <?php
 $categories = get_terms(array(
     'taxonomy' => 'product_cat',
@@ -28,9 +28,8 @@ $social_media = get_field('social_media');
 
 
 <main id="shop">
-    <section
-        style="background: linear-gradient(358deg, #0E375E 1.21%, #0B2C4A 98.39%), linear-gradient(180deg, #060843 0%, #02031B 100%)">
-        <div class="block_content  px-[30px] lg:px-[100px] py-[64px]">
+    <section class="bg-black">
+        <div class="block_content px-[30px] lg:px-[50px] py-[30px]">
             <div class="flex flex-wrap lg:flex-nowrap lg:gap-[64px]">
                 <div class="w-full lg:w-1/5  max-[1024px]:mb-14">
                     <figure>
@@ -136,13 +135,13 @@ $social_media = get_field('social_media');
     <section>
         <div class="block_content">
             <div class="flex flex-wrap lg:flex-nowrap">
-                <div class="block lg:hidden py-[60px] px-[30px] w-full">
+                <!-- <div class="block lg:hidden py-[60px] px-[30px] w-full">
                     <form class="search-videos flex relative gap-4">
                         <input type="text"
                             class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
                             placeholder="Search">
                         <button type="submit"
-                            class="flex items-center gap-2 bg-[#0E375E] rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
+                            class="flex items-center gap-2 bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
                             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18"
                                 fill="none">
                                 <path
@@ -173,26 +172,37 @@ $social_media = get_field('social_media');
                             echo '<li class="py-[10px]"><a value="' . $cat . '" class="cursor-pointer text-gray-paragrah font-semibold">' . $cat . '</a></li>';
                         } ?>
                     </ul>
-                </div>
-                <div class="w-full lg:w-3/4 py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">
-                    <form class="search-videos hidden lg:flex relative gap-4">
-                        <input type="text"
-                            class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
-                            placeholder="Search">
-                        <input type="hidden" name="instructor_id" value="<?php echo get_the_ID(); ?>">
-                        <button type="submit"
-                            class="flex items-center gap-2 bg-[#0E375E] rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18"
-                                fill="none">
-                                <path
-                                    d="M16 16.5L13.0834 13.5833M15.1667 8.58333C15.1667 12.4954 11.9954 15.6667 8.08333 15.6667C4.17132 15.6667 1 12.4954 1 8.58333C1 4.67132 4.17132 1.5 8.08333 1.5C11.9954 1.5 15.1667 4.67132 15.1667 8.58333Z"
-                                    stroke="white" stroke-width="1.66667" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            Search
-                        </button>
-                    </form>
-                    <div class="lg:mt-20">
+                </div> -->
+                <div class="w-full py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">
+                    <div class="flex gap-8 gap-y-4 flex-wrap">
+                        <form class="search-videos w-full md:w-[75%] search-videos flex relative gap-4">
+                            <input type="text"
+                                class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
+                                placeholder="Search">
+                            <input type="hidden" name="instructor_id" value="<?php echo get_the_ID(); ?>">
+                            <button type="submit"
+                                class="flex items-center gap-2 bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18"
+                                    fill="none">
+                                    <path
+                                        d="M16 16.5L13.0834 13.5833M15.1667 8.58333C15.1667 12.4954 11.9954 15.6667 8.08333 15.6667C4.17132 15.6667 1 12.4954 1 8.58333C1 4.67132 4.17132 1.5 8.08333 1.5C11.9954 1.5 15.1667 4.67132 15.1667 8.58333Z"
+                                        stroke="white" stroke-width="1.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                Search
+                            </button>
+                        </form>
+                        <div class="select-wrapper w-fit md:w-[22%] lg:justify-end justify-start flex relative">
+                            <select id="video-categories"
+                                class="border border-[#D0D5DD] rounded-[8px] px-5 py-3 text-gray-paragrah font-semibold pr-8">
+                                <option value="">Select Category</option>
+                                <?php foreach ($course_categories as $key => $cat) {
+                                    echo '<option value="' . esc_attr($cat) . '">' . esc_html($cat) . '</option>';
+                                } ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mt-20">
                         <div id="videos-container" class="flex  flex-wrap gap-[2%] gap-y-10 lg:gap-y-[60px]"></div>
                         <!-- print videos -->
                     </div>

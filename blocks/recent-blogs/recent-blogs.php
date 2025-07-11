@@ -12,7 +12,7 @@ $recent_blogs = $recent_blogs->posts;
 
 <section id="recent-blog_posts" class="">
     <div class="block_content py-[60px] px-[30px] lg:px-[60px]">
-        <h3 class="text-[#0C5E5D] text-2xl font-semibold leading-8 mb-8">Recent blog posts</h3>
+        <h3 class=" text-[36px] font-semibold leading-8 mb-8">Recent blog posts</h3>
         <div class="flex flex-wrap lg:flex-nowrap w-full gap-[32px]">
             <div class="w-full lg:w-1/2">
                 <figure>

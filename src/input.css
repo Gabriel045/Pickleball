@@ -327,10 +327,7 @@ h4 {
 #cart,
 #faq,
 #reviews {
-    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="294" viewBox="0 0 1440 294" fill="none"><mask id="mask0_2_3" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="294"><rect width="1440" height="294" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_2_3)"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 210.623L34.8 198.922C68.4 187.221 136.8 163.818 205.2 159.918C274.8 156.017 343.2 171.619 411.6 183.32C480 195.022 548.4 202.823 616.8 202.823C685.2 202.823 754.8 195.022 823.2 171.619C891.6 148.216 960 109.212 1028.4 81.9091C1096.8 54.6061 1165.2 39.0043 1234.8 54.6061C1303.2 70.2078 1371.6 117.013 1405.2 140.416L1440 163.818V0H1405.2C1371.6 0 1303.2 0 1234.8 0C1165.2 0 1096.8 0 1028.4 0C960 0 891.6 0 823.2 0C754.8 0 685.2 0 616.8 0C548.4 0 480 0 411.6 0C343.2 0 274.8 0 205.2 0C136.8 0 68.4 0 34.8 0H0V210.623Z" fill="%230E375E" fill-opacity="0.02"/><path d="M-70.8875 130.969L-44.7543 134.537C-19.4663 138.27 31.9549 145.571 80.674 138.979C130.238 132.223 176.255 111.738 222.813 94.032C269.37 76.3258 316.468 61.3982 364.647 52.0277C412.826 42.6573 462.93 38.6796 514.352 45.9806C565.773 53.2817 619.356 71.6971 671.317 81.7767C723.279 91.8563 773.619 93.6002 820.481 72.951C866.499 52.4662 908.192 9.75278 928.616 -11.5217L949.886 -32.9606" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M-128.47 167.882L-99.8535 171.789C-72.163 175.876 -15.8565 183.871 37.4913 176.653C91.7646 169.255 142.154 146.824 193.134 127.435C244.115 108.047 295.688 91.7012 348.444 81.4405C401.2 71.1798 456.065 66.8242 512.371 74.8189C568.678 82.8136 627.351 102.979 684.25 114.016C741.148 125.053 796.271 126.963 847.586 104.352C897.975 81.9206 943.63 35.1491 965.994 11.8534L989.284 -11.6224" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></g></svg>');
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: contain;
+    background-color: #F6F6F6;
 }
 
 #thanks-page {
@@ -352,21 +349,15 @@ h4 {
 }
 
 #multiple-items .slick-next {
-    right: -8px !important;
+    right: -10px !important;
     top: 205px !important;
 }
 
-#multiple-items .slick-next::before,
-.slick-prev::before {
-    content: "" !important;
-}
 
 #multiple-items .slick-prev {
     left: -25px !important;
     top: 205px !important;
 }
-
-
 
 #multiples-items .slick-next {
     right: 16px !important;
@@ -374,8 +365,12 @@ h4 {
     bottom: -100px !important;
 }
 
-#multiples-items .slick-next::before,
-.slick-prev::before {
+.multiples-items .slick-next {
+    right: -8px !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
     content: "" !important;
 }
 
@@ -464,13 +459,14 @@ h4 {
 }
 
 #text-image {
-    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="295" viewBox="0 0 1440 295" fill="none"><mask id="mask0_2_6" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="295"><rect width="1440" height="295" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_2_6)"><path fill-rule="evenodd" clip-rule="evenodd" d="M1440.49 83.9219L1405.69 95.6232C1372.09 107.325 1303.69 130.727 1235.29 134.628C1165.69 138.528 1097.29 122.926 1028.89 111.225C960.492 99.5236 892.092 91.7227 823.692 91.7227C755.292 91.7227 685.692 99.5236 617.292 122.926C548.892 146.329 480.492 185.333 412.092 212.636C343.692 239.939 275.292 255.541 205.692 239.939C137.292 224.337 68.892 177.532 35.292 154.13L0.49208 130.727L0.492065 294.545L35.292 294.545C68.892 294.545 137.292 294.545 205.692 294.545C275.292 294.545 343.692 294.545 412.092 294.545C480.492 294.545 548.892 294.545 617.292 294.545C685.692 294.545 755.292 294.545 823.692 294.545C892.092 294.545 960.492 294.545 1028.89 294.545C1097.29 294.545 1165.69 294.545 1235.29 294.545C1303.69 294.545 1372.09 294.545 1405.69 294.545L1440.49 294.545L1440.49 83.9219Z" fill="%230E375E" fill-opacity="0.02"/><path d="M1511.38 163.576L1485.25 160.008C1459.96 156.275 1408.54 148.974 1359.82 155.566C1310.25 162.322 1264.24 182.807 1217.68 200.513C1171.12 218.22 1124.02 233.147 1075.85 242.518C1027.67 251.888 977.562 255.866 926.141 248.565C874.719 241.264 821.136 222.848 769.175 212.769C717.213 202.689 666.873 200.945 620.011 221.594C573.994 242.079 532.3 284.793 511.876 306.067L490.606 327.506" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M1568.96 126.664L1540.35 122.756C1512.66 118.669 1456.35 110.674 1403 117.892C1348.73 125.291 1298.34 147.721 1247.36 167.11C1196.38 186.498 1144.8 202.844 1092.05 213.105C1039.29 223.366 984.427 227.721 928.121 219.726C871.814 211.732 813.141 191.567 756.242 180.53C699.344 169.492 644.221 167.583 592.906 190.194C542.517 212.625 496.863 259.396 474.498 282.692L451.208 306.168" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></g></svg>');
+    /* background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="295" viewBox="0 0 1440 295" fill="none"><mask id="mask0_2_6" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="295"><rect width="1440" height="295" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_2_6)"><path fill-rule="evenodd" clip-rule="evenodd" d="M1440.49 83.9219L1405.69 95.6232C1372.09 107.325 1303.69 130.727 1235.29 134.628C1165.69 138.528 1097.29 122.926 1028.89 111.225C960.492 99.5236 892.092 91.7227 823.692 91.7227C755.292 91.7227 685.692 99.5236 617.292 122.926C548.892 146.329 480.492 185.333 412.092 212.636C343.692 239.939 275.292 255.541 205.692 239.939C137.292 224.337 68.892 177.532 35.292 154.13L0.49208 130.727L0.492065 294.545L35.292 294.545C68.892 294.545 137.292 294.545 205.692 294.545C275.292 294.545 343.692 294.545 412.092 294.545C480.492 294.545 548.892 294.545 617.292 294.545C685.692 294.545 755.292 294.545 823.692 294.545C892.092 294.545 960.492 294.545 1028.89 294.545C1097.29 294.545 1165.69 294.545 1235.29 294.545C1303.69 294.545 1372.09 294.545 1405.69 294.545L1440.49 294.545L1440.49 83.9219Z" fill="%230E375E" fill-opacity="0.02"/><path d="M1511.38 163.576L1485.25 160.008C1459.96 156.275 1408.54 148.974 1359.82 155.566C1310.25 162.322 1264.24 182.807 1217.68 200.513C1171.12 218.22 1124.02 233.147 1075.85 242.518C1027.67 251.888 977.562 255.866 926.141 248.565C874.719 241.264 821.136 222.848 769.175 212.769C717.213 202.689 666.873 200.945 620.011 221.594C573.994 242.079 532.3 284.793 511.876 306.067L490.606 327.506" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M1568.96 126.664L1540.35 122.756C1512.66 118.669 1456.35 110.674 1403 117.892C1348.73 125.291 1298.34 147.721 1247.36 167.11C1196.38 186.498 1144.8 202.844 1092.05 213.105C1039.29 223.366 984.427 227.721 928.121 219.726C871.814 211.732 813.141 191.567 756.242 180.53C699.344 169.492 644.221 167.583 592.906 190.194C542.517 212.625 496.863 259.396 474.498 282.692L451.208 306.168" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></g></svg>');
     background-repeat: no-repeat;
-    background-position: bottom right;
+    background-position: bottom right; */
 }
 
 
-#text-image ul li::before {
+#text-image ul li::before,
+#cuw-ppu-offer .bullet-container li::before {
     content: '';
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="14" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M19.9458 8.62169L11.5925 16.6834L9.37583 14.315C8.9675 13.93 8.32583 13.9067 7.85916 14.2334C7.40416 14.5717 7.27583 15.1667 7.55583 15.645L10.1808 19.915C10.4375 20.3117 10.8808 20.5567 11.3825 20.5567C11.8608 20.5567 12.3158 20.3117 12.5725 19.915C12.9925 19.3667 21.0075 9.81169 21.0075 9.81169C22.0575 8.73836 20.7858 7.79336 19.9458 8.61002V8.62169Z" fill="%238498AB"/></svg>');
     background-repeat: no-repeat;
@@ -820,7 +816,7 @@ form.woocommerce-checkout #billing_phone_field {
     transition: transform 0.3s ease;
 }
 
-#video-categories {
+/* #video-categories {
     opacity: 1;
     visibility: visible;
     max-height: 1000px;
@@ -832,6 +828,30 @@ form.woocommerce-checkout #billing_phone_field {
     visibility: hidden;
     max-height: 0px;
     transition: all 0.3s ease;
+} */
+
+#video-categories {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    background-color: #fff;
+    position: relative;
+}
+
+.select-wrapper::before {
+    content: '';
+    background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10L12 15L17 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #000;
+    z-index: 99;
 }
 
 #form .gform-theme--foundation .gform_fields {
@@ -1179,6 +1199,177 @@ ol {
 }
 
 
+
+/* Upsale page */
+#cuw-ppu-offer {
+    max-width: 1024px !important;
+    width: 100% !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    padding-bottom: 100px !important;
+    padding-top: 50px !important;
+    margin: auto !important;
+}
+
+#cuw-ppu-offer h3 {
+    color: #111827 !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+    font-size: 20px !important;
+}
+
+#cuw-ppu-offer h2 {
+    color: #111827 !important;
+    font-weight: 700 !important;
+    line-height: 46px !important;
+    font-size: 36px !important;
+    margin-bottom: 12px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-price del .woocommerce-Price-amount {
+    color: #8498AB !important;
+    font-size: 18px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-price ins .woocommerce-Price-amount {
+    color: #13A513 !important;
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    line-height: 32px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-price ins {
+    text-decoration: none !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-image img {
+    border-radius: 10px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-order-totals-table tr th {
+    display: flex;
+    padding: 10px 0px !important;
+}
+
+#cuw-ppu-offer .wp-container-core-group-is-layout-9649a0d9 {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#cuw-ppu-offer .cuw-ppu-order-details {
+    display: none !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-offer-description {
+    display: none !important;
+}
+
+
+#cuw-ppu-offer .title-price {
+    font-size: 30px !important;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+#cuw-ppu-offer .title-price .offer-arrow::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10.605" height="15.555"><path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#cuw-ppu-offer .new-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 85px 0px 30px 0px;
+}
+
+#cuw-ppu-offer .cuw-ppu-button {
+    display: none !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-offer-timer {
+    justify-content: center !important;
+    padding: 26px !important;
+    font-size: 22px !important;
+    margin-bottom: 60px !important;
+}
+
+#cuw-ppu-offer .wp-container-core-group-is-layout-9649a0d9 {
+    display: none !important;
+}
+
+#cuw-ppu-offer .wp-container-core-columns-is-layout-9d6595d7 {
+    margin-bottom: 0px !important;
+}
+
+.\!w-\[70\%\] {
+    width: 70% !important;
+}
+
+.w-\[250px\] {
+    width: 250px;
+}
+
+#cuw-ppu-offer .wp-block-spacer {
+    height: 0px !important;
+}
+
+
+#cuw-ppu-offer .bullet-container {
+    padding-top: 40px;
+}
+
+#cuw-ppu-offer .bullet-container ul {
+    max-width: 440px;
+    margin: auto;
+    list-style: none;
+    list-style-position: inside;
+}
+
+#cuw-ppu-offer .bullet-container li {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--gray-paragrah);
+}
+
+/* get access form */
+
+#gform_2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+#gform_2 .gform_footer {
+    margin: 0px;
+}
+
+#gform_2 .gform_footer input[type="submit"] {
+    margin: 0px;
+    @apply rounded-lg border bg-black text-white shadow-sm px-4 py-2 font-medium text-[16px] h-11
+}
+
+#gform_2 #input_2_1 {
+    @apply w-full lg:w-[280px] rounded-lg bg-white/20 border-[1px] border-black shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none px-4 py-2 h-11 placeholder-black text-[16px]
+}
+
+.gform_validation_errors {
+    display: none !important;
+}
+
 @media screen and (min-width:1200px) {
     .xl\:w-\[23\.5\%\] {
         width: 23.5% !important;
@@ -1285,6 +1476,25 @@ ol {
         transition: all 0.6s ease;
     }
 
+
+    #cuw-ppu-offer {
+        padding: 50px 30px !important;
+    }
+
+
+    #cuw-ppu-offer h2 {
+        line-height: 30px !important;
+        font-size: 25px !important;
+    }
+
+    #cuw-ppu-offer .title-price {
+        font-size: 20px !important;
+
+    }
+
+    #cuw-ppu-offer .bullet-container li {
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width:768px) {

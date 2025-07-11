@@ -27,7 +27,7 @@ do_action('woocommerce_before_account_navigation');
     aria-label="<?php esc_html_e('Account pages', 'woocommerce'); ?>">
 
     <span id="toogle-sidebar"
-        class="hidden lg:flex w-[25px] h-[25px] bg-berkley-blue rounded-lg absolute top-[50px] right-[-12px] text-white justify-center items-center cursor-pointer">
+        class="hidden lg:flex w-[25px] h-[25px] bg-black rounded-lg absolute top-[50px] right-[-12px] text-white justify-center items-center cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="12px" width="12px"
             version="1.1" id="Capa_1" viewBox="0 0 185.343 185.343" xml:space="preserve" fill="#000000">
             <g id="SVGRepo_bgCarrier" stroke-width="0" />

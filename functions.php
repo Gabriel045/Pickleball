@@ -372,3 +372,5 @@ function create_coupon_on_user_login($user_login, $user)
         update_user_meta($user_id, 'coupon_generated', $coupon_code);
     }
 }
+
+include_once get_template_directory() . '/inc/add-shortcodes-cuw.php';

@@ -38,6 +38,8 @@ $recent_products = $recent_products->posts;
                     global $product;
                     $product = wc_get_product($item->ID);
                     $product_price = $product->get_price_html();
+                    $regular_price = wc_price($product->get_regular_price());
+                    $sale_price = wc_price($product->get_sale_price());
                     $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full');
 
                 ?>
@@ -63,9 +65,9 @@ $recent_products = $recent_products->posts;
                             </p>
                             <div class="my-[15px] flex items-center">
                                 <span
-                                    class="mr-4 text-[#8498AB] text-[18px] line-through">$<?php echo $product->get_price() * 2 ?></span>
+                                    class="mr-4 text-[#8498AB] text-[18px] line-through">$<?php echo $regular_price  ?></span>
                                 <span
-                                    class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $product_price ?></span>
+                                    class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                             </div>
 
                             <div class="woocommerce-variation-add-to-cart variations_button">

@@ -1,6 +1,7 @@
 <?php
 $image = get_field('image');
 $text = get_field('text');
+$cta = get_field('cta');
 ?>
 
 <section id="text-image">
@@ -17,7 +18,12 @@ $text = get_field('text');
                 [_&_p]:text-[16px]  lg:[_&_p]:text-lg [_&_p]:font-normal [_&_p]:leading-7 [_&_li]:text-gray-paragrah
                 [_&_li]:text-[16px]  lg:[_&_li]:text-lg [_&_li]:font-normal [_&_li]:leading-7 [_&_li]:mb-3">
                 <?php echo $text ?>
-                <a href="/" class="btn-primary mt-[40px] lg:w-fit">Learn More</a>
+
+                <?php if ($cta) : ?>
+                    <a href="<?php echo esc_url($cta['url']); ?>" class="btn-primary mt-[40px] lg:w-fit">
+                        <?php echo esc_html($cta['title']); ?>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

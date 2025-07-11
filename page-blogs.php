@@ -17,23 +17,22 @@ $recent_blogs = $query->posts;
 ?>
 
 <main id="shop">
-    <section
-        style="background: linear-gradient(358deg, #0E375E 1.21%, #0B2C4A 98.39%), linear-gradient(180deg, #060843 0%, #02031B 100%)">
-        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
-            <h1 class="text-[36px] text-white font-semibold tracking-tight">Blogs</h1>
-            <p class="mt-[24px] text-[#FFFFFF99] text-[14px] font-normal leading-[30px]">
+    <section>
+        <div class="block_content px-[30px] lg:px-[50px]  py-[30px]">
+            <h1 class="text-[36px] font-semibold tracking-tight">Blogs</h1>
+            <p class="mt-[4px] text-[14px] font-normal leading-[30px]">
                 <?php echo get_field("hero-title") ?>
             </p>
         </div>
     </section>
     <section>
         <div class="block_content">
-            <div class="py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">
+            <div class="py-[30px] px-[30px] lg:px-[60px]">
                 <form id="search-blogs" class="relative flex gap-4">
                     <input type="text" class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
                         placeholder="Search">
                     <button type="submit"
-                        class="flex items-center gap-2 bg-[#0E375E] rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
+                        class="flex items-center gap-2  bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
                             <path
                                 d="M16 16.5L13.0834 13.5833M15.1667 8.58333C15.1667 12.4954 11.9954 15.6667 8.08333 15.6667C4.17132 15.6667 1 12.4954 1 8.58333C1 4.67132 4.17132 1.5 8.08333 1.5C11.9954 1.5 15.1667 4.67132 15.1667 8.58333Z"
@@ -85,35 +84,35 @@ $recent_blogs = $query->posts;
                     </div>
                     <div class="w-full md:w-1/2 flex flex-col gap-[32px] ">
                         <?php for ($i = 1; $i < 3; $i++) : ?>
-                            <div class="flex flex-wrap md:flex-nowrap gap-[24px]">
-                                <figure class="w-full md:w-1/2">
-                                    <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
-                                        <img class="rounded-[20px] object-cover"
-                                            src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
-                                    </a>
-                                </figure>
-                                <div class="w-full md:w-1/2">
-                                    <div class="flex gap-3">
-                                        <p class="text-sm font-semibold text-[#47546799]">
-                                            <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>
-                                        </p>
-                                        <span
-                                            class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
-                                        <p class="text-sm font-semibold text-[#47546799]">
-                                            <?php echo get_the_date('d M Y', $recent_blogs[$i]->ID); ?>
-                                        </p>
-                                    </div>
-                                    <h3 class="text-rich-black text-[20px] font-semibold leading-[28px] mt-2">
-                                        <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>"
-                                            class="hover:underline">
-                                            <?php echo get_the_title($recent_blogs[$i]->ID); ?>
-                                        </a>
-                                    </h3>
-                                    <p class="text-gray-paragrah text-[16px] mt-2">
-                                        <?php echo get_the_excerpt($recent_blogs[$i]->ID); ?>
+                        <div class="flex flex-wrap md:flex-nowrap gap-[24px]">
+                            <figure class="w-full md:w-1/2">
+                                <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
+                                    <img class="rounded-[20px] object-cover"
+                                        src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
+                                </a>
+                            </figure>
+                            <div class="w-full md:w-1/2">
+                                <div class="flex gap-3">
+                                    <p class="text-sm font-semibold text-[#47546799]">
+                                        <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>
+                                    </p>
+                                    <span
+                                        class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                                    <p class="text-sm font-semibold text-[#47546799]">
+                                        <?php echo get_the_date('d M Y', $recent_blogs[$i]->ID); ?>
                                     </p>
                                 </div>
+                                <h3 class="text-rich-black text-[20px] font-semibold leading-[28px] mt-2">
+                                    <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>"
+                                        class="hover:underline">
+                                        <?php echo get_the_title($recent_blogs[$i]->ID); ?>
+                                    </a>
+                                </h3>
+                                <p class="text-gray-paragrah text-[16px] mt-2">
+                                    <?php echo get_the_excerpt($recent_blogs[$i]->ID); ?>
+                                </p>
                             </div>
+                        </div>
                         <?php endfor ?>
                     </div>
                 </div>

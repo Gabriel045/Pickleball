@@ -6,7 +6,7 @@ $columns = get_field('columns');
 
 ?>
 
-<section class="bg-gradient-to-b from-[#0E375E] to-[#082541]">
+<section class=" bg-black">
     <div class="block_content py-[60px] lg:py-24 px-[30px] lg:px-[60px]">
         <div class="[_&_h2]:text-white  [_&_h2]:text-[30px] lg:[_&_h2]:text-[36px] [_&_h2]:font-semibold [_&_h2]:leading-[60px] 
             [_&_h2]:tracking-tight [_&_p]:text-white [_&_p]:text-[16px] lg:[_&_p]:text-[20px]
@@ -17,7 +17,7 @@ $columns = get_field('columns');
             <div id="how-it-works-slider" class="slider-container relative">
                 <?php foreach ($steps as $key => $step) : ?>
                     <div class="w-full h-auto lg:h-[516px] slider-item rounded-[20px] <?php echo $key === 0 ? 'active' : ''; ?>"
-                        style="background: linear-gradient(180deg, rgba(9, 40, 68, 0.13) 0%, rgba(14, 55, 94, 0.76) 100%), url(<?php echo $step["image"] ?>) lightgray 50% / cover no-repeat;">
+                        style="background: linear-gradient(180deg, rgba(9, 40, 68, 0.13) 0%, rgba(14, 55, 94, 0.76) 100%), url(<?php echo $step["image"]['sizes']['large']; ?>) lightgray 50% / cover no-repeat;">
                         <div
                             class="text-content max-    [1024px]:flex  max-[1024px]:items-end lg:absolute bottom-16 left-16 text-white max-w-[890px]">
                             <div class="max-[1024px]:px-6 max-[1024px]:py-10 [_&_h2]:text-[24px] lg:[_&_h2]:text-[36px] [_&_h2]:font-semibold [_&_h2]:tracking-tight 
@@ -83,7 +83,7 @@ $columns = get_field('columns');
 
         // Start autoplay
         function startAutoplay() {
-            autoplayInterval = setInterval(nextSlide, 4000); // Change slide every 4000ms
+            autoplayInterval = setInterval(nextSlide, 7000); // Change slide every 7000ms
         }
 
         // Stop autoplay

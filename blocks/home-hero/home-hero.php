@@ -8,16 +8,32 @@ $repeater           = get_field('repeater');
 
 <section class="">
     <div class="video-wrapper flex w-full items-center justify-center">
-        <div class="video-overlay"></div>
-        <iframe
-            src="https://player.vdocipher.com/v2/?otp=20160313versUSE323gV5CCV8WiTGVLmpLWwNW36mzrzWSLKTrVXrFKmJ2mzwvkm&loop=true&controls=off&autoplay=true&playbackInfo=eyJ2aWRlb0lkIjoiNDU0YmYzNDU1OTQ4NDQzMTk0YmFhZDEyZjlhMTEzMGIifQ=="
-            allowFullScreen="true" allow="encrypted-media"></iframe>
+        <div class=""></div>
+        <?php
+        // Detect Safari browser
+        $is_safari = false;
+        if (isset($_SERVER['HTTP_USER_AGENT'])) {
+            $ua = $_SERVER['HTTP_USER_AGENT'];
+            if (strpos($ua, 'Safari') !== false && strpos($ua, 'Chrome') === false && strpos($ua, 'Chromium') === false) {
+                $is_safari = true;
+            }
+        }
+        ?>
+
+        <?php if ($is_safari): ?>
+            <img src="<?php echo esc_url($background_image); ?>" alt="Background"
+                style="width:100%;height:100%;object-fit:cover;">
+        <?php else: ?>
+            <iframe
+                src="https://player.vdocipher.com/v2/?otp=20160313versUSE323gV5CCV8WiTGVLmpLWwNW36mzrzWSLKTrVXrFKmJ2mzwvkm&loop=true&muted=true&controls=off&autoplay=true&playbackInfo=eyJ2aWRlb0lkIjoiNDU0YmYzNDU1OTQ4NDQzMTk0YmFhZDEyZjlhMTEzMGIifQ=="
+                allowFullScreen="true" allow="autoplay;encrypted-media"></iframe>
+        <?php endif; ?>
         <div class="absolute z-20 block_content max-[1024px]:px-[30px] max-[1024px]:py-[50px] lg:p-[60px]">
             <div class="max-w-[700px] p-[30px] lg:p-[50px] rounded-[20px] bg-[#0B141D80] [_&_h2]:text-white [_&_h2]:text-[30px] lg:[_&_h2]:text-[60px] [_&_h2]:font-semibold [_&_h2]:leading-normal lg:[_&_h2]:leading-[60px]
                     lg:[_&_p]:text-[20px] [_&_p]:text-[16px]  [_&_p]:text-[#FFFFFF99]">
                 <?php echo $text ?>
                 <a href="/shop/"
-                    class="btn2 cursor-pointer text-white text-[18px] font-semibold leading-[28px] mt-[30px] w-full lg:w-fit flex px-7 py-4 justify-center items-center gap-3 rounded-lg bg-[rgba(255,255,255,0.33)] backdrop-blur-[6.65px]">
+                    class="btn2 cursor-pointer text-white text-[18px] font-semibold leading-[28px] mt-[30px] w-full lg:w-fit flex px-7 py-4 justify-center items-center gap-3 rounded-lg bg-[#506DB5] backdrop-blur-[6.65px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
                             d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"

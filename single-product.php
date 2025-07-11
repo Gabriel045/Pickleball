@@ -137,7 +137,8 @@ $video_iframe = get_field('video_iframe', $post->ID);
                 <div class="w-1/2">
                     <div class="flex justify-between mb-10">
                         <h3 class="text-[24px] font-semibold text-rich-black">Course Content</h3>
-                        <span class="text-[14px] text-gray-paragrah">Expand all Sections</span>
+                        <span id="expand-all" class="text-[14px] text-gray-paragrah cursor-pointer">Expand all
+                            Sections</span>
                     </div>
                     <div id="course-tabs" class='py-[25px] px-[40px] bg-white'>
                         <?php foreach ($volumes as $key => $volume) {  ?>
@@ -216,7 +217,6 @@ $video_iframe = get_field('video_iframe', $post->ID);
 document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.tab-item');
     const panes = document.querySelectorAll('.tab-pane');
-
     tabs.forEach(tab => {
         tab.addEventListener('click', function() {
             tabs.forEach(t => t.classList.remove('active-tab',
@@ -228,6 +228,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'hidden');
         });
     });
+
+
 });
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -260,6 +262,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     });
+
+
+    const expandAll = document.getElementById('expand-all');
+    const modules = document.querySelectorAll('#course-tabs details');
+    expandAll.addEventListener("click", () => {
+        const allOpen = Array.from(modules).every(mod => mod.hasAttribute('open'));
+        modules.forEach((mod) => {
+            if (allOpen) {
+                mod.removeAttribute('open');
+            } else {
+                mod.setAttribute('open', '');
+            }
+        });
+    });
+
 
 
     const volume = document.querySelector('#course-tabs details');

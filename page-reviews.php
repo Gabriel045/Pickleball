@@ -13,25 +13,24 @@ $reviews_query = $reviews_query->posts;
 ?>
 
 <main id="shop">
-    <section
-        style="background: linear-gradient(358deg, #0E375E 1.21%, #0B2C4A 98.39%), linear-gradient(180deg, #060843 0%, #02031B 100%)">
-        <div class="block_content px-[30px] lg:px-[100px] py-[64px]">
+    <section>
+        <div class="block_content px-[30px] lg:px-[50px] py-[30px]">
             <div class="flex justify-between flex-wrap lg:flex-nowrap items-center gap-[40px]">
                 <div>
-                    <h1 class="text-[30px] lg:text-[36px] text-white font-semibold tracking-tight ">Reviews</h1>
-                    <p class="text-[#FFFFFF99] text-[14px] leading-[20px] mb-[20px] mt-[10px]">
+                    <h1 class="text-[30px] lg:text-[36px]  font-semibold tracking-tight ">Reviews</h1>
+                    <p class="text-[14px] leading-[20px] mb-[20px] mt-[10px]">
                         Lorem ipsum dolor sitamet consectetur. Felis gravida lobortis erat auctor.
                     </p>
                     <div class="flex gap-3 items-center">
-                        <span id="white-stars"></span>
-                        <span class="text-white text-[12px] font-semibold leading-[28px]">
+                        <span class="stars"></span>
+                        <span class="text-[12px] font-semibold leading-[28px]">
                             5.0 (59 reviews)
                         </span>
                     </div>
                 </div>
                 <div>
                     <a
-                        class="cursor-pointer rounded-lg bg-white font-semibold shadow-sm shadow-[rgba(16,24,40,0.05)] flex w-full lg:w-fit px-[18px] py-[10px] justify-center items-center gap-[8px] hover:transform hover:translate-y-[-2px] transition-transform duration-300 ease-in-out">
+                        class="cursor-pointer rounded-lg bg-black text-white font-semibold shadow-sm shadow-[rgba(16,24,40,0.05)] flex w-full lg:w-fit px-[18px] py-[10px] justify-center items-center gap-[8px] hover:transform hover:translate-y-[-2px] transition-transform duration-300 ease-in-out">
                         Write a Review
                     </a>
                 </div>
@@ -39,7 +38,7 @@ $reviews_query = $reviews_query->posts;
         </div>
     </section>
     <section>
-        <div class="block_content px-[30px] lg:px-[60px] py-[60px] lg:py-[100px]">
+        <div class="block_content px-[30px] lg:px-[60px] py-[40px]">
             <div class="flex flex-wrap gap-[1%] gap-y-[30px]">
                 <?php foreach ($reviews_query as $key => $card) : ?>
                 <article

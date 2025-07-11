@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add event listener for opening and closing a modal or dropdown
-  const openCloseButton = document.querySelector("#open-close");
-  if (openCloseButton) {
-    openCloseButton.addEventListener("click", function () {
-      openCloseButton.classList.toggle("active");
-      document.querySelector("#video-categories").classList.toggle("hidde");
-    });
-  }
+  // const openCloseButton = document.querySelector("#open-close");
+  // if (openCloseButton) {
+  //   openCloseButton.addEventListener("click", function () {
+  //     openCloseButton.classList.toggle("active");
+  //     document.querySelector("#video-categories").classList.toggle("hidde");
+  //   });
+  // }
 });
 
 // Fetch videos when the form is submitted
@@ -74,10 +74,10 @@ forms.forEach((form) => {
   });
 });
 
-const categories = document.querySelectorAll("#video-categories li a");
-categories.forEach((category) => {
-  category.addEventListener("click", function () {
-    const categoryValue = this.getAttribute("value");
+const categorySelect = document.querySelector("#video-categories");
+if (categorySelect) {
+  categorySelect.addEventListener("change", function () {
+    const categoryValue = this.value;
     fetchAndDisplayVideos("", categoryValue);
     // Adds an item to the side cart. located on /resources/js/main.js
     const observer = new MutationObserver((mutationsList, observer) => {
@@ -93,21 +93,13 @@ categories.forEach((category) => {
       childList: true,
     });
   });
-});
+}
 
 // Function to print products
 function print_products(data) {
   const container = document.querySelector("#videos-container");
   const article = document.createElement("article");
-  article.classList.add(
-    "xl:w-[23.5%]",
-    "md:w-[32%]",
-    "w-[49%]",
-    "flex",
-    "flex-col",
-    "gap-[10px]",
-    "justify-between"
-  );
+  article.classList.add("xl:w-[23.5%]", "md:w-[32%]", "w-[49%]", "flex", "flex-col", "gap-[10px]", "justify-between");
   article.innerHTML = `
       <figure>
           <a href="${data.link}">

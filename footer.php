@@ -9,29 +9,30 @@ $facebook = get_field('facebook', 'option')['url'];
 ?>
 
 <footer>
-    <section
-        style="background: linear-gradient(179deg, #0E375E 1.53%, #082541 98.27%), linear-gradient(358deg, #060843 1.21%, #02031B 98.39%), #060843;">
-        <div class="block_content py-[80px] px-14 lg:px-16">
+    <section>
+        <div class="block_content pb-[60px] pt-[30px] mt-[60px] border-t-[1px] border-[#767676]  px-14 lg:px-16 ">
             <div class="flex flex-wrap lg:flex-nowrap gap-[32px]">
                 <div
-                    class="w-full lg:w-3/5 text-white [_&_h3]:mb-2  [_&_h3]:text-[24px  ] lg:[_&_h3]:text-3xl [_&_h3]:font-semibold [_&_p]:text-[16px]">
+                    class="w-full lg:w-3/5 [_&_h3]:mb-2  [_&_h3]:text-[24px  ] lg:[_&_h3]:text-3xl [_&_h3]:font-semibold [_&_p]:text-[16px]">
                     <?php echo $text_blue_section ?>
                 </div>
-                <div class="w-full lg:w-2/5">
-                    <form class="flex gap-4 flex-wrap lg:flex-nowrap" action="#" method="">
+                <div class="w-full lg:w-2/5 flex items-center">
+                    <form class="hidden gap-4 flex-wrap lg:flex-nowrap" action="#" method="">
                         <input
                             class="w-full lg:w-auto
-                        rounded-lg bg-white/20 shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none px-4 py-2 text-white placeholder-gray-400"
+                        rounded-lg bg-white/20 border-[1px] border-black shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none px-4 py-2  placeholder-black"
                             type="email" name="email" placeholder="Enter your email" required>
                         <button
-                            class="w-full lg:w-auto rounded-lg border border-[#060843] bg-white shadow-sm px-4 py-2 text-[#060843] font-medium hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                            type="submit">Subscribe</button>
+                            class="w-full lg:w-auto rounded-lg border bg-black text-white shadow-sm px-4 py-2  font-medium"
+                            type="submit">Get Access</button>
                     </form>
+
+                    <?php echo do_shortcode('[gravityform id="2" title="false" ajax="true"]'); ?>
                 </div>
             </div>
         </div>
     </section>
-    <section class="bg-rich-black">
+    <section class="bg-black">
         <div class="block_content py-[60px] px-[30px] lg:px-16">
             <div class="flex flex-wrap lg:flex-nowrap">
                 <div class="w-full lg:w-1/4 flex flex-col justify-between gap-7 mr-[65px]">
@@ -124,20 +125,20 @@ $facebook = get_field('facebook', 'option')['url'];
                             ?>
                         </div>
                         <div class="w-1/2 lg:w-1/3">
-                            <p class="text-[14px] font-semibold mb-4 text-[#D0D5DD]">Learn</p>
+                            <p class="text-[14px] font-semibold mb-4 text-[#D0D5DD]">Blog</p>
                             <?php
                             wp_nav_menu(array(
-                                'menu'   => 'Learn',
+                                'menu'   => 'Blog',
                                 'menu_class' => 'text-white flex flex-col gap-[10px]',
                                 'container' => false,
                             ));
                             ?>
                         </div>
                         <div class="w-1/2 lg:w-1/3">
-                            <p class="text-[14px] font-semibold mb-4 text-[#D0D5DD]">Help</p>
+                            <p class="text-[14px] font-semibold mb-4 text-[#D0D5DD]">Company</p>
                             <?php
                             wp_nav_menu(array(
-                                'menu'   => 'Help',
+                                'menu'   => 'Company',
                                 'menu_class' => 'text-white flex flex-col gap-[10px]',
                                 'container' => false,
                             ));

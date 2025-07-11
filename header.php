@@ -13,8 +13,9 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header class="relative overflow-x-clip">
-        <div class=" bg-black lg:px-[167px] py-[10px]">
-            <p class="text-white text-[12px] font-semibold text-center">24/7 support Lorem ipsum dolor sit amet</p>
+        <div class="  bg-black lg:px-[167px] py-[10px]">
+            <p class="text-white text-[12px] font-semibold text-center"><?php echo get_field('banner', 'option'); ?>
+            </p>
         </div>
         <div class="block_content m-auto flex justify-between w-full px-[30px] lg:px-[50px] py-4">
             <div class="flex lg:gap-4 xl:gap-10 items-center w-[70%] md:w-[82%]">
