@@ -1,6 +1,7 @@
 <?php
 
 $image        = get_field('image');
+$background        = get_field('background');
 $hero_text    = get_field('hero_text');
 $our_team     = get_field('our_team');
 
@@ -8,7 +9,7 @@ $our_team     = get_field('our_team');
 
 <main>
     <section class="lg:min-h-[360px]"
-        style="background: linear-gradient(358deg, rgba(14, 55, 94, 0.50) 1.21%, rgba(11, 44, 74, 0.50) 98.39%), url('/wp-content/uploads/2025/04/7ac67b2fee68763562dbaaf5e43ec5bd.jpeg') no-repeat center center / cover;">
+        style="background: linear-gradient(358deg, rgba(14, 55, 94, 0.50) 1.21%, rgba(11, 44, 74, 0.50) 98.39%), url('<?php echo $background['url'] ?>') no-repeat center center / cover;">
         <div class="block_content px-[30px] lg:px-[100px] py-[60px] lg:py-[100px] flex flex-col justify-center">
             <div class="max-w-[1050px] rounded-[20px] bg-[#00000059] p-[30px] lg:p-[50px] text-white 
                 [_&_h2]:text-[30px] [_&_h2]:lg:text-[36px] [_&_h2]:font-semibold
@@ -19,7 +20,8 @@ $our_team     = get_field('our_team');
     </section>
     <section>
         <div class="block_content py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">
-            <div class="flex flex-wrap gap-[1%] gap-y-[32px]">
+            <h2 class="font-[600] text-[36px] text-rich-black">Meet the Team</h2>
+            <div class="flex flex-wrap gap-[1%] gap-y-[32px] mt-10">
                 <?php foreach ($our_team as $key => $card) : ?>
                     <article class="w-full md:w-[49.5%] lg:w-[32.6%]">
                         <figure>
@@ -28,7 +30,7 @@ $our_team     = get_field('our_team');
                         </figure>
                         <h4 class="text-rich-black text-[18px] lg:text-[20px] font-semibold mt-[24px]">
                             <?php echo $card["name"] ?></h4>
-                        <p class="text-gray-paragrah"><?php echo $card["description"] ?></p>
+                        <p class="text-gray-paragraph"><?php echo $card["description"] ?></p>
                         <div class="flex gap-[18px] mt-[24px]">
                             <a terget="_blank" href="<?php echo $card["instagram"]["url"] ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18"

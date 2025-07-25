@@ -48,15 +48,15 @@ $video_iframe = get_field('video_iframe', $post->ID);
                         </ul>
                         <div class="tab-content mt-4">
                             <div id="tab1" class="tab-pane active">
-                                <div class="text-gray-paragrah tex-[16px] lg:text-[18px] leading-[28px]">
+                                <div class="text-gray-paragraph tex-[16px] lg:text-[18px] leading-[28px]">
                                     <?php echo $details_content ?></div>
                             </div>
                             <div id="tab2" class="tab-pane hidden">
-                                <div class="text-gray-paragrah text-[18px] leading-[28px]">
+                                <div class="text-gray-paragraph text-[18px] leading-[28px]">
                                     <?php echo $flow_chart_content ?></div>
                             </div>
                             <div id="tab3" class="tab-pane hidden">
-                                <div class="text-gray-paragrah text-[18px] leading-[28px]"><?php echo $contents ?></div>
+                                <div class="text-gray-paragraph text-[18px] leading-[28px]"><?php echo $contents ?></div>
                             </div>
                         </div>
                     </div>
@@ -76,28 +76,28 @@ $video_iframe = get_field('video_iframe', $post->ID);
                     <div class="block lg:hidden mb-[30px]">
                         <?php
                         if (!empty($trailer_video)) { ?>
-                        <div class="relative cursor-pointer">
-                            <svg id="play-icon" class="absolute top-1/2 left-1/2"
-                                style="transform: translate(-50%, -50%);" xmlns="http://www.w3.org/2000/svg" width="50"
-                                height="54" viewBox="0 0 68 78" fill="none">
-                                <path d="M67.3047 39L0.847416 77.3691L0.847419 0.630879L67.3047 39Z" fill="white" />
-                            </svg>
-                            <video id="product-video" class="h-auto aspect-video object-cover rounded-[20px]" controls
-                                playsinline muted poster="<?php echo esc_url($product_image) ?>">
-                                <source src="<?php echo esc_url($trailer_video) ?>" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
+                            <div class="relative cursor-pointer">
+                                <svg id="play-icon" class="absolute top-1/2 left-1/2"
+                                    style="transform: translate(-50%, -50%);" xmlns="http://www.w3.org/2000/svg" width="50"
+                                    height="54" viewBox="0 0 68 78" fill="none">
+                                    <path d="M67.3047 39L0.847416 77.3691L0.847419 0.630879L67.3047 39Z" fill="white" />
+                                </svg>
+                                <video id="product-video" class="h-auto aspect-video object-cover rounded-[20px]" controls
+                                    playsinline muted poster="<?php echo esc_url($product_image) ?>">
+                                    <source src="<?php echo esc_url($trailer_video) ?>" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
                         <?php  } else {
                             echo '<img src="' . esc_url($product_image) . '" alt="' . esc_attr(get_the_title($product_id)) . '"
                         class="featured-image">';
                         } ?>
                     </div>
-                    <div class="text-[18px] text-gray-paragrah leading-[28px]">
+                    <div class="text-[18px] text-gray-paragraph leading-[28px]">
                         <?php echo get_the_content($post->ID); ?>
                     </div>
                     <div class="my-[30px] flex items-center">
-                        <span class="mr-4 text-[#8498AB] text-[20px] line-through"><?php echo $regular_price ?></span>
+                        <span class="mr-4 text-red-500 text-[20px] line-through"><?php echo $regular_price ?></span>
                         <span
                             class="text-[#13A513] text-[36px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                     </div>
@@ -108,23 +108,23 @@ $video_iframe = get_field('video_iframe', $post->ID);
                         <input type="hidden" name="product_id" value="<?php echo absint($product->get_id()); ?>" />
                         <input type="hidden" name="variation_id" class="variation_id" value="0" />
                     </div>
-                    <p class="py-8 text-gray-paragrah text-[18px] font-semibold"><?php echo $description_list_title ?>
+                    <p class="py-8 text-gray-paragraph text-[18px] font-semibold"><?php echo $description_list_title ?>
                     </p>
                     <ul class="flex flex-col gap-y-5">
                         <?php foreach ($description_list as $key => $item) {
 
                         ?>
-                        <li class="flex gap-3 lg:gap-2">
-                            <svg class="max-[1024px]:w-[72px] w-[4%]" xmlns="http://www.w3.org/2000/svg" width="28"
-                                height="29" viewBox="0 0 28 29" fill="none">
-                                <rect y="0.5" width="28" height="28" rx="14" fill="#0B141D" fill-opacity="0.09" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M19.9476 9.12169L11.5943 17.1834L9.37763 14.815C8.9693 14.43 8.32763 14.4067 7.86096 14.7334C7.40596 15.0717 7.27763 15.6667 7.55763 16.145L10.1826 20.415C10.4393 20.8117 10.8826 21.0567 11.3843 21.0567C11.8626 21.0567 12.3176 20.8117 12.5743 20.415C12.9943 19.8667 21.0093 10.3117 21.0093 10.3117C22.0593 9.23836 20.7876 8.29336 19.9476 9.11002V9.12169Z"
-                                    fill="#0B141D" />
-                            </svg>
-                            <div class="text-[18px] text-gray-paragrah leading-7 lg:w-[96%]">
-                                <?php echo $item["items"] ?></div>
-                        </li>
+                            <li class="flex gap-3 lg:gap-2">
+                                <svg class="max-[1024px]:w-[72px] w-[4%]" xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="29" viewBox="0 0 28 29" fill="none">
+                                    <rect y="0.5" width="28" height="28" rx="14" fill="#0B141D" fill-opacity="0.09" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M19.9476 9.12169L11.5943 17.1834L9.37763 14.815C8.9693 14.43 8.32763 14.4067 7.86096 14.7334C7.40596 15.0717 7.27763 15.6667 7.55763 16.145L10.1826 20.415C10.4393 20.8117 10.8826 21.0567 11.3843 21.0567C11.8626 21.0567 12.3176 20.8117 12.5743 20.415C12.9943 19.8667 21.0093 10.3117 21.0093 10.3117C22.0593 9.23836 20.7876 8.29336 19.9476 9.11002V9.12169Z"
+                                        fill="#0B141D" />
+                                </svg>
+                                <div class="text-[18px] text-gray-paragraph leading-7 lg:w-[96%]">
+                                    <?php echo $item["items"] ?></div>
+                            </li>
                         <?php } ?>
                     </ul>
                 </div>
@@ -137,44 +137,44 @@ $video_iframe = get_field('video_iframe', $post->ID);
                 <div class="w-1/2">
                     <div class="flex justify-between mb-10">
                         <h3 class="text-[24px] font-semibold text-rich-black">Course Content</h3>
-                        <span id="expand-all" class="text-[14px] text-gray-paragrah cursor-pointer">Expand all
+                        <span id="expand-all" class="text-[14px] text-gray-paragraph cursor-pointer">Expand all
                             Sections</span>
                     </div>
                     <div id="course-tabs" class='py-[25px] px-[40px] bg-white'>
                         <?php foreach ($volumes as $key => $volume) {  ?>
-                        <details class=" pb-[15px] last:pb-0">
-                            <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
-                                Module <?php echo $key + 1 ?>
-                            </summary>
-                            <div class="sumary content mt-2">
-                                <table class="table-fixed w-full border-collapse">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="border-r-[1px]  border-black text-left font-semibold p-[10px] text-rich-black opacity-[0.6]">
-                                                Chapter Title</th>
-                                            <th
-                                                class="text-center font-semibold p-[10px] text-rich-black opacity-[0.6]">
-                                                Start Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($volume["volumes"] as $key => $value) { ?>
-                                        <tr>
-                                            <td
-                                                class="border-r-[1px]  border-black p-[10px] opacity-[0.6] text-gray-paragrah">
-                                                <?php echo $value["chapter"] ?>
-                                            </td>
-                                            <td class=" text-gray-paragrah p-[10px] text-center">
-                                                <?php echo $value["hours"] ?>
+                            <details class=" pb-[15px] last:pb-0">
+                                <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
+                                    Module <?php echo $key + 1 ?>
+                                </summary>
+                                <div class="sumary content mt-2">
+                                    <table class="table-fixed w-full border-collapse">
+                                        <thead>
+                                            <tr>
+                                                <th
+                                                    class="border-r-[1px]  border-black text-left font-semibold p-[10px] text-rich-black opacity-[0.6]">
+                                                    Chapter Title</th>
+                                                <th
+                                                    class="text-center font-semibold p-[10px] text-rich-black opacity-[0.6]">
+                                                    Start Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($volume["volumes"] as $key => $value) { ?>
+                                                <tr>
+                                                    <td
+                                                        class="border-r-[1px]  border-black p-[10px] opacity-[0.6] text-gray-paragraph">
+                                                        <?php echo $value["chapter"] ?>
+                                                    </td>
+                                                    <td class=" text-gray-paragraph p-[10px] text-center">
+                                                        <?php echo $value["hours"] ?>
 
-                                            </td>
-                                        </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </details>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </details>
                         <?php } ?>
                     </div>
                 </div>
@@ -191,9 +191,9 @@ $video_iframe = get_field('video_iframe', $post->ID);
     <section>
         <div class="block_content py-[80px] lg:px-[60px] px-[30px]">
             <div class="[&_h3]:text-rich-black [&_h3]:font-semibold [&_h3]:text-[20px] [&_h3]:lg:text-[24px] [&_h3]:leading-[28px]
-            [&_p]:text-[16px] [&_p]:lg:text-[18px] [&_p]:text-gray-paragrah [&_p]:leading-7
+            [&_p]:text-[16px] [&_p]:lg:text-[18px] [&_p]:text-gray-paragraph [&_p]:leading-7
             [&_img]:lg:h-[570px] [&_img]:object-cover [&_img]:lg:rounded-[10px]
-            [&_li]:text-[16px] [&_li]:lg:text-[18px]  [&_li]:text-gray-paragrah">
+            [&_li]:text-[16px] [&_li]:lg:text-[18px]  [&_li]:text-gray-paragraph">
                 <?php echo $text_image_2 ?>
             </div>
         </div>
@@ -201,88 +201,86 @@ $video_iframe = get_field('video_iframe', $post->ID);
     <?php
     get_template_part('/blocks/product-slider/product-slider', null, array('best_seller_title' => $best_seller_title));
     ?>
-    <section id="reviews">
-        <div class="block_content px-[30px] lg:px-[60px] py-[80px]">
-            <?php
-            get_template_part('/template-parts/review-slider', null, array('slidesToShow' => '4'));
-            ?>
-        </div>
-    </section>
+
+    <?php
+    get_template_part('/template-parts/review-slider', null, array('slidesToShow' => '4'));
+    ?>
+
     <?php
     get_template_part('/blocks/faq/faq');
     ?>
 </main>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab-item');
-    const panes = document.querySelectorAll('.tab-pane');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            tabs.forEach(t => t.classList.remove('active-tab',
-                'border-rich-black'));
-            panes.forEach(p => p.classList.add('hidden'));
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab-item');
+        const panes = document.querySelectorAll('.tab-pane');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active-tab',
+                    'border-rich-black'));
+                panes.forEach(p => p.classList.add('hidden'));
 
-            this.classList.add('active-tab', 'border-rich-black');
-            document.getElementById(this.dataset.tab).classList.remove(
-                'hidden');
-        });
-    });
-
-
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const videos = document.querySelectorAll('#product-video');
-    const playIcons = document.querySelectorAll('#play-icon')
-    videos.forEach((video, index) => {
-        const playIcon = playIcons[index];
-
-        video.addEventListener('touchstart', function() {
-            console.log("click")
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-
-            }
-        });
-
-        video.addEventListener('play', function() {
-            if (playIcon) {
-                playIcon.style.display = 'none';
-            }
-        });
-
-        video.addEventListener('pause', function() {
-            if (playIcon) {
-                playIcon.style.display = 'block';
-            }
+                this.classList.add('active-tab', 'border-rich-black');
+                document.getElementById(this.dataset.tab).classList.remove(
+                    'hidden');
+            });
         });
 
 
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const videos = document.querySelectorAll('#product-video');
+        const playIcons = document.querySelectorAll('#play-icon')
+        videos.forEach((video, index) => {
+            const playIcon = playIcons[index];
 
-    const expandAll = document.getElementById('expand-all');
-    const modules = document.querySelectorAll('#course-tabs details');
-    expandAll.addEventListener("click", () => {
-        const allOpen = Array.from(modules).every(mod => mod.hasAttribute('open'));
-        modules.forEach((mod) => {
-            if (allOpen) {
-                mod.removeAttribute('open');
-            } else {
-                mod.setAttribute('open', '');
-            }
+            video.addEventListener('touchstart', function() {
+                console.log("click")
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+
+                }
+            });
+
+            video.addEventListener('play', function() {
+                if (playIcon) {
+                    playIcon.style.display = 'none';
+                }
+            });
+
+            video.addEventListener('pause', function() {
+                if (playIcon) {
+                    playIcon.style.display = 'block';
+                }
+            });
+
+
         });
+
+
+        const expandAll = document.getElementById('expand-all');
+        const modules = document.querySelectorAll('#course-tabs details');
+        expandAll.addEventListener("click", () => {
+            const allOpen = Array.from(modules).every(mod => mod.hasAttribute('open'));
+            modules.forEach((mod) => {
+                if (allOpen) {
+                    mod.removeAttribute('open');
+                } else {
+                    mod.setAttribute('open', '');
+                }
+            });
+        });
+
+
+
+        const volume = document.querySelector('#course-tabs details');
+        volume.setAttribute('open', '');
+
     });
-
-
-
-    const volume = document.querySelector('#course-tabs details');
-    volume.setAttribute('open', '');
-
-});
 </script>
 
 

@@ -17,13 +17,15 @@ if (function_exists('wc_get_orders') && $current_user_id) {
 }
 $purchased_products = array_slice(array_unique($purchased_products), 0, 3);
 
+
+
 if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(), $product_id)) { ?>
     <div class="flex justify-between flex-wrap lg:flex-nowrap gap-y-[20px]">
         <div class="w-full lg:w-[60%]">
             <h2 class="text-[24px] text-rich-black font-semibold mb-5">
                 <?php echo get_the_title($lessons_id[$lesson]); ?>
             </h2>
-            <span class="text-[16px] text-gray-paragrah"><?php echo get_the_title($product_id); ?></span>
+            <span class="text-[16px] text-gray-paragraph"><?php echo get_the_title($product_id); ?></span>
         </div>
         <div class="flex gap-[10px]">
             <?php if ($lesson > 0): ?>
@@ -61,11 +63,11 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
 
                     <div class="tabs mb-8"></div>
                     <ul class="flex border-b">
-                        <li class="mr-4">
+                        <!-- <li class="mr-4">
                             <button
                                 class="tab-btn py-2 px-4 font-semibold text-rich-black border-b-2 border-transparent focus:outline-none active"
                                 data-tab="overview">Overview</button>
-                        </li>
+                        </li> -->
                         <li>
                             <button
                                 class="tab-btn py-2 px-4 font-semibold text-rich-black border-b-2 border-transparent focus:outline-none"
@@ -78,7 +80,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                         </li>
                     </ul>
 
-                    <div class="tab-content hidden" id="tab-recommended">
+                    <div class="tab-content" id="tab-recommended">
                         <?php
                         // Get the most selling product except the current one
                         $best_selling_args = [
@@ -105,7 +107,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                             <li class="first:pt-[35px] flex items-center gap-5 border-t border-gray-200 py-4 first:border-t-0 ">
                                 <a href="<?php echo esc_url(get_permalink($items)); ?>">
                                     <figure class="figure-product w-[150px]">
-                                        <img class="rounded-lg !m-0 object-cover aspect-[16/10] w-full"
+                                        <img class="rounded-lg !m-0 object-cover aspect-[0.8] w-full"
                                             src="<?php echo esc_url($image); ?>">
                                     </figure>
                                 </a>
@@ -114,9 +116,9 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                                         <a class="hover:underline" href="<?php echo esc_url(get_permalink($items)); ?>">
                                             <?php echo $title ?> </a>
                                     </h4>
-                                    <p class="text-[16px] text-gray-paragrah"><?php echo esc_html($excerpt); ?></p>
+                                    <p class="text-[16px] text-gray-paragraph"><?php echo esc_html($excerpt); ?></p>
                                     <div class="flex items-center gap-[10px]">
-                                        <p class="text-[#8498AB] text-[16px]">
+                                        <p class="text-red-500 text-[16px]">
                                             <s><?php echo $regular_price ?></s>
                                         </p>
                                         <p
@@ -129,23 +131,23 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                         wp_reset_postdata(); ?>
                     </div>
 
-                    <div class="tab-content mt-6" id="tab-overview">
+                    <!-- <div class="tab-content mt-6" id="tab-overview">
                         <div class="[_&_h4]:w-full [_&_h4]lg::w-[70%] [_&_h4]:lg:text-[20px] [_&_h4]:text-[18px] [_&_h4]:font-semibold [_&_h4]:text-rich-black [_&_h4]:mb-[15px]
-    [_&_p]:text-gray-paragrah [_&_p]:lg:text-[16px] [_&_p]:text-[14px] relative">
+    [_&_p]:text-gray-paragraph [_&_p]:lg:text-[16px] [_&_p]:text-[14px] relative">
                             <div class="flex items-center gap-[10px] absolute top-[-35px] lg:top-0 right-0">
                                 <span class="stars mt-4 block"></span>
                                 <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                     Reviews)</span>
                             </div>
-                            <?php echo get_the_content(null, false, $lessons_id[$lesson]); ?>
+                            <?php get_the_content(null, false, $lessons_id[$lesson]); ?>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="tab-content hidden" id="tab-offer">
                         <?php
                         $current_user_id = get_current_user_id();
                         $cupon_code = get_user_meta($current_user_id, 'coupon_generated', true);
                         ?>
-                        <p class="text-[16px] text-gray-paragrah my-4">
+                        <p class="text-[16px] text-gray-paragraph my-4">
                             Unlock exclusive savings! Use your special coupon code below to get a discount on your next
                             purchase. This offer is available only for our valued members.
                         </p>
@@ -155,14 +157,29 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                                 <span class="text-[#13A513] font-bold text-lg"><?php echo esc_html($cupon_code); ?></span>
                             </div>
                         <?php else: ?>
-                            <p class="text-[16px] text-gray-paragrah">No special coupon available at this time. Please check back
+                            <p class="text-[16px] text-gray-paragraph">No special coupon available at this time. Please check back
                                 later!</p>
                         <?php endif; ?>
                     </div>
                 </div>
                 <div class="lg:w-[30%]">
-                    <h4 class="text-[24px] text-rich-black font-semibold mb-5">Chapters</h4>
-                    <ul id="chapter-box"></ul>
+                    <div>
+                        <h4 class="text-[24px] text-rich-black font-semibold mb-5">Chapters</h4>
+                        <ul id="chapter-box"></ul>
+                    </div>
+                    <div class="mt-16">
+                        <h4 class="text-[24px] text-rich-black font-semibold mb-5">Instruccional overview</h4>
+                        <ul id="instructional-overview-box">
+                            <?php foreach ($lessons_id as $key => $lesson_id): ?>
+                                <li class="flex items-center gap-[10px] mb-3 py-[10px] border-b-[1px] border-[#E9EAED]">
+                                    <span class="icon"></span>
+                                    <a href="?course=<?php echo $product_id; ?>&lesson=<?php echo $key; ?>" class="text-[16px]">
+                                        <?php echo get_the_title($lesson_id); ?>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
         <?php endif; ?>
@@ -180,13 +197,15 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                     $excerpt = $product->get_short_description(); ?>
                     <div class="w-full md:w-[49%] lg:w-[31.33%] gap-[5px] flex flex-col justify-between">
                         <figure>
-                            <img class="lg:!h-[215px] object-cover w-full rounded-[10px]" src="<?php echo esc_url($image); ?>">
+                            <img class="aspect-[0.8] object-cover w-full rounded-[10px]" src="<?php echo esc_url($image); ?>">
                         </figure>
                         <span class="stars"></span>
                         <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0
                             (59 Reviews)</span>
                         <h4 class="text-[20px] font-semibold text-rich-black"><?php echo esc_html($title); ?></h4>
-                        <p class="text-[16px] text-gray-paragrah"><?php echo esc_html($excerpt); ?></p>
+                        <p class="text-[16px] text-gray-paragraph"><?php echo esc_html($excerpt); ?></p>
+                        <a href="/my-account/my-lessons/?course=<?php echo esc_attr($product_id); ?>&lesson=0" class="btn w-full">
+                            See Instructionals</a>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -253,18 +272,6 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
         });
     })();
 
-    player.video.addEventListener('ended', function() {
-        console.log("termino");
-    });
-
-    player.video.removeEventListener('pause', pauseHandler);
-
-    function pauseHandler() {
-        console.log("adaf");
-    }
-
-
-
 
     // Tabs logic
     document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -277,10 +284,16 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
         });
     });
 
-    // Move the overview content into the tab
-    const overviewTab = document.getElementById('tab-overview');
-    const overviewContent = document.querySelector('div[_\\&_h4]');
-    if (overviewTab && overviewContent) {
-        overviewTab.appendChild(overviewContent);
-    }
+    window.onload = function() {
+        const activeLesson = <?php echo $lesson ?>;
+        const lessonList = document.querySelectorAll("#instructional-overview-box li")
+        lessonList.forEach((lesson, key) => {
+            if (key == activeLesson) {
+                lesson.querySelector("a").style.color = "#13A513"
+                lesson.querySelector("a").style.fontWeight = "500"
+            }
+
+        })
+
+    };
 </script>

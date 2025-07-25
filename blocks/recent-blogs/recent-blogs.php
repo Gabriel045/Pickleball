@@ -27,6 +27,13 @@ $recent_blogs = $recent_blogs->posts;
                     <p class="text-sm font-semibold text-[#47546799]">
                         <?php echo get_the_date('d M Y', $recent_blogs[0]->ID); ?>
                     </p>
+                    <?php if (!empty(get_field('read_time', $recent_blogs[0]->ID))) : ?>
+                        <span class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                        <p class="text-sm font-semibold text-[#47546799]">
+                            Read Time:
+                            <?php echo  get_field('read_time', $recent_blogs[0]->ID) ?>
+                        </p>
+                    <?php endif; ?>
                 </div>
                 <div class="flex justify-between my-3">
                     <a href="<?php echo get_permalink($recent_blogs[0]->ID); ?>"
@@ -40,7 +47,7 @@ $recent_blogs = $recent_blogs->posts;
                         </svg>
                     </a>
                 </div>
-                <p class="text-gray-paragrah text-[16px]">
+                <p class="text-gray-paragraph text-[16px]">
                     <?php echo get_the_excerpt($recent_blogs[0]->ID); ?>
                 </p>
             </div>
@@ -54,22 +61,30 @@ $recent_blogs = $recent_blogs->posts;
                             </a>
                         </figure>
                         <div class="w-full lg:w-1/2">
-                            <div class="flex gap-3">
-                                <p class="text-sm font-semibold text-[#47546799]">
+                            <div class="flex gap-2">
+                                <p class="text-xs font-semibold text-[#47546799]">
                                     <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>
                                 </p>
                                 <span
-                                    class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
-                                <p class="text-sm font-semibold text-[#47546799]">
+                                    class="text-xs font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                                <p class="text-xs font-semibold text-[#47546799]">
                                     <?php echo get_the_date('d M Y', $recent_blogs[$i]->ID); ?>
                                 </p>
+                                <?php if (!empty(get_field('read_time',  $recent_blogs[$i]->ID))) : ?>
+                                    <span
+                                        class="text-xs font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                                    <p class="text-xs font-semibold text-[#47546799]">
+                                        Read Time:
+                                        <?php echo  get_field('read_time', $recent_blogs[$i]->ID) ?>
+                                    </p>
+                                <?php endif; ?>
                             </div>
                             <h3 class="text-rich-black text-[20px] font-semibold leading-[28px] mt-2">
                                 <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>" class="hover:underline">
                                     <?php echo get_the_title($recent_blogs[$i]->ID); ?>
                                 </a>
                             </h3>
-                            <p class="text-gray-paragrah text-[16px] mt-2">
+                            <p class="text-gray-paragraph text-[18px] mt-2">
                                 <?php
                                 $excerpt = get_the_excerpt($recent_blogs[$i]->ID);
                                 $words = explode(' ', wp_strip_all_tags($excerpt));

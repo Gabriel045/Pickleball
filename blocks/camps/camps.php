@@ -11,8 +11,7 @@ $text    = get_field('text');
             <div class="flex flex-wrap lg:flex-nowrap">
                 <div class="w-full lg:w-1/2">
                     <figure class="h-full">
-                        <img src="/wp-content/uploads/2025/04/1d448b44e1669ce534a7a81d073248b2-1.jpeg" alt="Camps"
-                            class="w-full h-full object-cover">
+                        <img src="<?php echo esc_url($image); ?>" alt="Camps" class="w-full h-full object-cover">
                     </figure>
                 </div>
                 <div class="w-full lg:w-1/2 py-[60px] lg:py-24 px-[30px] lg:px-16 flex flex-col justify-center">
@@ -20,7 +19,11 @@ $text    = get_field('text');
                         <?php echo $text ?>
                     </div>
                     <div id="form" class="mt-8">
-                        <?php echo do_shortcode('[gravityform id="1" title="false" ajax="true"]')  ?>
+                        <?php if (is_page('camps')): ?>
+                            <?php echo do_shortcode('[gravityform id="1" title="false" ajax="true"]')  ?>
+                        <?php elseif (is_page('support')): ?>
+                            <?php echo do_shortcode('[gravityform id="3" title="false" ajax="true"]')  ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

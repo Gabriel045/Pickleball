@@ -1,9 +1,9 @@
 <?php get_header() ?>
 
 <main id="my-account">
-    <section>
-        <div class="block_content px-[30px] lg:px-[50px] py-[30px]">
-            <h1 class="text-[30px] lg:text-[36px] font-semibold tracking-tight ">Account Dashboard</h1>
+    <section class="bg-black">
+        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
+            <h1 class="text-[36px] text-white font-semibold tracking-tight">My Account</h1>
         </div>
     </section>
     <section>

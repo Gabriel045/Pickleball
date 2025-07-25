@@ -3,6 +3,7 @@
 function get_videos_handler($request)
 {
     $search = $request->get_param('search');
+    $skill_level = $request->get_param('skill_level');
     $category = $request->get_param('category');
 
     $args = array(
@@ -11,12 +12,22 @@ function get_videos_handler($request)
         's' => $search,
     );
 
-    if ($category && $category != 'all') {
+    if (!empty($skill_level) && $skill_level != 'all') {
         $args['meta_query'] = array(
             array(
                 'key' => 'skill_level',
-                'value' => $category,
+                'value' => $skill_level,
                 'compare' => '=',
+            ),
+        );
+    }
+
+    if (!empty($category)) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'product_cat',
+                'field'    => 'slug',
+                'terms'    => $category,
             ),
         );
     }

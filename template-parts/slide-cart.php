@@ -15,9 +15,10 @@
         <div id="items-container" class="gap-[32px] flex flex-col">
             <!-- Render the products -->
         </div>
+        <?php get_template_part('template-parts/more-products'); ?>
     </div>
 </div>
-<script>
+<!-- <script>
     jQuery(document).ready(function($) {
         "use strict";
 
@@ -61,4 +62,4 @@
             $('#slide-cart').removeClass('active');
         });
     });
-</script>
+</script> -->

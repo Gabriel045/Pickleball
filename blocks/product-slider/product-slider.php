@@ -16,10 +16,10 @@ $product_query = $product_query->posts;
 <section id="product-slider" class="">
     <div class="block_content py-[60px] lg:py-[100px] px-[30px] lg:px-[60px]">
         <div class="[_&_span]:text-[16px] [_&_span]:text-[#0C5E5D] [_&_span]:font-[600] [_&_h2]:font-[600] [_&_h2]:text-[36px] [_&_h2]:text-rich-black
-            [_&_p]:text-gray-paragrah [_&_p]:text-[20px]">
+            [_&_p]:text-gray-paragraph [_&_p]:text-[20px]">
             <?php echo $text ?>
         </div>
-        <div id="multiple-items" class="product-slider mt-[60px] ">
+        <div id="multiple-items" class="product-slider mt-[60px] flex ">
             <?php foreach ($product_query as $key => $item) :
                 global $product;
                 $product = wc_get_product($item->ID);
@@ -44,11 +44,11 @@ $product_query = $product_query->posts;
                             <?php echo $product->get_name() ?>
                         </a>
                     </h4>
-                    <p class="text-gray-paragrah text-[16px] leading-[18px]">
+                    <p class="text-gray-paragraph text-[16px] leading-[18px]">
                         <?php echo $product->get_short_description(); ?> </p>
                     <div class="flex items-center">
-                        <span class="mr-4 text-[#8498AB] text-[18px] line-through"><?php echo $regular_price ?></span>
-                        <span class="text-red-500 text-[25px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
+                        <span class="mr-4 text-red-500 text-[18px] line-through"><?php echo $regular_price ?></span>
+                        <span class="text-[#13A513] text-[25px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                     </div>
 
                     <div class="woocommerce-variation-add-to-cart variations_button">

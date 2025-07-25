@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 
 <main>
-    <section>
-        <div class="block_content px-[30px] lg:px-[50px] py-[30px]">
-            <h1 class="text-[30px] lg:text-[36px] font-semibold tracking-tight ">All Instructors</h1>
+    <section class="bg-black">
+        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
+            <h1 class="text-[36px] text-white font-semibold tracking-tight"> All Instructors</h1>
         </div>
     </section>
     <section>
         <div class="block_content py-[30px] px-[30px] lg:px-[60px]">
             <form id="search-instructors" class="relative flex gap-4">
-                <input type="text" class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
+                <input type="text" class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragraph"
                     placeholder="Search">
                 <button type="submit"
                     class="flex items-center gap-2 bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">

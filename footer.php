@@ -10,7 +10,7 @@ $facebook = get_field('facebook', 'option')['url'];
 
 <footer>
     <section>
-        <div class="block_content pb-[60px] pt-[30px] mt-[60px] border-t-[1px] border-[#767676]  px-14 lg:px-16 ">
+        <div class="block_content py-[60px] mt-[60px] border-t-[1px] border-[#767676]  px-14 lg:px-16 ">
             <div class="flex flex-wrap lg:flex-nowrap gap-[32px]">
                 <div
                     class="w-full lg:w-3/5 [_&_h3]:mb-2  [_&_h3]:text-[24px  ] lg:[_&_h3]:text-3xl [_&_h3]:font-semibold [_&_p]:text-[16px]">
@@ -146,18 +146,18 @@ $facebook = get_field('facebook', 'option')['url'];
                         </div>
                     </div>
                     <div>
-                        <p class="text-[#D0D5DD] text-[16px] mt-14  mb-7 lg:mb-1">Copyright © 2025 PBP. All Rights
-                            Reserved.
+                        <p class="text-[#D0D5DD] text-[16px] mt-14  mb-7 lg:mb-1">Copyright © 2025 Pickleball Hub. All
+                            Rights Reserved.
                         </p>
-                        <div class="">
+                        <!-- <div class="">
                             <?php
-                            wp_nav_menu(array(
-                                'menu'   => 'Policiy',
-                                'menu_class' => 'text-[#D0D5DD] flex gap-[28px] gap-7 lg:flex-no-wrap flex-wrap',
-                                'container' => false,
-                            ));
+                            // wp_nav_menu(array(
+                            //     'menu'   => 'Policiy',
+                            //     'menu_class' => 'text-[#D0D5DD] flex gap-[28px] gap-7 lg:flex-no-wrap flex-wrap',
+                            //     'container' => false,
+                            // ));
                             ?>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

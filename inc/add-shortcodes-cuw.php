@@ -76,8 +76,8 @@ function cuw_ppu_new_buttons_shortcode($atts)
 {
     ob_start() ?>
     <div class="new-buttons">
-        <a class="add btn-primary !w-[70%]">Yes, Add to my order</a>
-        <a class="no-thanks btn-primary !w-[70%]">No Thanks, I didn't need it</a>
+        <a class="add btn-primary !w-[70%]">Yes, add to my order</a>
+        <a class="no-thanks w-[70%] text-center text-[16px] underline cursor-pointer">No thanks, I don't need it</a>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

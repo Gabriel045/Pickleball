@@ -36,14 +36,15 @@ form.addEventListener("submit", function (event) {
   console.log(searchInput.value);
   fetchAndDisplayBlogs(searchInput.value);
   if (searchInput.value.trim() !== "") {
-    document
-      .querySelector("#blogs-container")
-      .scrollIntoView({ behavior: "smooth" });
+    document.querySelector("#blogs-container").scrollIntoView({ behavior: "smooth" });
   }
 });
 
 // Function to print products
 function print_Blogs(data) {
+  if (!data.readTime || data.readTime.trim() === "") {
+    data.readTime = "1 minute";
+  }
   const container = document.querySelector("#blogs-container");
   const article = document.createElement("article");
   article.classList.add("md:w-[32%]", "w-full");
@@ -54,7 +55,7 @@ function print_Blogs(data) {
                         src="${data.thumbnail}">
                 </a>
             </figure>
-            <div class="flex gap-3 mt-[20px]">
+            <div class="flex gap-2 mt-[20px]">
                 <p class="text-sm font-semibold text-[#47546799]">
                     ${data.author}
                 </p>
@@ -63,10 +64,15 @@ function print_Blogs(data) {
                 <p class="text-sm font-semibold text-[#47546799]">
                     ${data.date}
                 </p>
+                 <span
+                    class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                <p class="text-sm font-semibold text-[#47546799]">
+                    Read Time: ${data.readTime}
+                </p>
             </div>
             <div class="flex justify-between my-2">
                 <a href="${data.link}">
-                    <h3 class="text-rich-black text-[18px] font-semibold leading-[32px]">
+                    <h3 class="text-rich-black text-[20px] font-semibold leading-[28px]">
                         ${data.title}</h3>
                 </a>
                 <a href="${data.link}"
@@ -78,7 +84,7 @@ function print_Blogs(data) {
                     </svg>
                 </a>
             </div>
-            <p class="text-gray-paragrah text-[16px] mt-2">
+            <p class="text-gray-paragraph text-[18px] mt-2">
                 ${data.excerpt}
             </p>
         `;

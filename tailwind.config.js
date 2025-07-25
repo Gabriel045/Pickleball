@@ -19,7 +19,8 @@ module.exports = {
         "caribbean-green": "#0D5E5D",
         "mustard-yellow": "#FC0",
         "rich-black": "#0B141D",
-        "gray-paragrah": "#475467",
+        "gray-paragraph": "#475467",
+        "bright-blue": "#5DADF8",
       },
       height: {},
 

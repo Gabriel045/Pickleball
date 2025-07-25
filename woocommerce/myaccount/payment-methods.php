@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Payment methods
+ * Payment Methods
  *
  * Shows customer payment methods on the account page.
  *

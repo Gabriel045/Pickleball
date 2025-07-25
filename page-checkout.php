@@ -6,9 +6,10 @@
             <div class="flex flex-wrap lg:flex-nowrap lg:gap-[100px]">
                 <div class="w-full lg:w-[55%]">
                     <h2 class="text-rich-black text-[18px] font-[600] mb-10">Your Order</h2>
-                    <div id="cart-container">
+                    <div id="cart-container" class="min-h-[236px]">
                         <!-- Cart contents will be dynamically loaded here -->
                     </div>
+                    <?php get_template_part('template-parts/more-products'); ?>
                     <div class="hidden lg:block">
                         <?php get_template_part('template-parts/review-slider'); ?>
                     </div>
@@ -25,6 +26,11 @@
         </div>
     </section>
 </main>
+<style>
+    #slide-cart {
+        display: none;
+    }
+</style>
 
 <script>
     jQuery(document).ready(function($) {

@@ -30,7 +30,7 @@ defined('ABSPATH') || exit;
 		<h3 class="text-rich-black text-lg font-semibold leading-7 mb-1">
 			<?php esc_html_e('Billing Details', 'woocommerce'); ?>
 		</h3>
-		<p class="text-gray-paragrah text-[14px] mb-5">Update your billing details and address.</p>
+		<p class="text-gray-paragraph text-[14px] mb-5">Update your billing details and address.</p>
 
 	<?php endif; ?>
 

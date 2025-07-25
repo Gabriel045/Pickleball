@@ -48,20 +48,20 @@ do_action('woocommerce_before_account_navigation');
         Account</p>
     <ul id="account-settings">
         <?php foreach (wc_get_account_menu_items() as $endpoint => $label) : ?>
-        <li
-            class="p-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold [&.is-active]:shadow-sm [&.is-active]:bg-[#F9FAFB] <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
-            <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"
-                <?php echo wc_is_current_account_menu_item($endpoint) ? 'aria-current="page"' : ''; ?>>
-                <?php echo esc_html($label); ?>
-            </a>
-        </li>
+            <li
+                class="p-[10px] rounded-[5px]  text-rich-black text-[18px] font-semibold [&.is-active]:shadow-sm [&.is-active]:bg-[#F9FAFB] <?php echo wc_get_account_menu_item_classes($endpoint); ?>">
+                <a href="<?php echo esc_url(wc_get_account_endpoint_url($endpoint)); ?>"
+                    <?php echo wc_is_current_account_menu_item($endpoint) ? 'aria-current="page"' : ''; ?>>
+                    <?php echo esc_html($label); ?>
+                </a>
+            </li>
         <?php endforeach; ?>
     </ul>
     <div>
         <ul id="other-settings"
             class="[&_li]:p-[10px] [&_li]:rounded-[5px] [&_li]:text-rich-black [&_li]:text-[18px] [&_li]:font-semibold">
             <li class="woocommerce-support ">
-                <a href="/faq">Support</a>
+                <a href="/support">Support</a>
             </li>
             <li class="woocommerce-settings [&.is-active]:bg-white [&.is-active]:shadow-sm">
                 <a href="/my-account/edit-account/">Settings</a>
@@ -71,7 +71,7 @@ do_action('woocommerce_before_account_navigation');
                     <span
                         class="text-[18px] font-[600] text-rich-black"><?php echo esc_html(wp_get_current_user()->display_name); ?></span>
                     <span
-                        class="text-gray-paragrah text-[14px]"><?php echo esc_html(wp_get_current_user()->user_email); ?></span>
+                        class="text-gray-paragraph text-[14px]"><?php echo esc_html(wp_get_current_user()->user_email); ?></span>
                 </div>
                 <a href="<?php echo esc_url(wp_logout_url(home_url())); ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
@@ -86,28 +86,28 @@ do_action('woocommerce_before_account_navigation');
     </div>
 </nav>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const currentUrl = window.location.href;
-    const settingsMenuItem = document.querySelector('.woocommerce-settings');
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentUrl = window.location.href;
+        const settingsMenuItem = document.querySelector('.woocommerce-settings');
 
-    if (currentUrl.includes('/edit-account/')) {
-        settingsMenuItem.classList.add('is-active');
-    }
+        if (currentUrl.includes('/edit-account/')) {
+            settingsMenuItem.classList.add('is-active');
+        }
 
-    const accountAccordion = document.getElementById('account-accordion');
-    accountAccordion.addEventListener('click', function() {
-        accountAccordion.classList.toggle('open');
-        const accountSetting = document.getElementById('account-settings');
-        accountSetting.classList.toggle('active');
-        const accountSetting2 = document.getElementById('other-settings');
-        accountSetting2.classList.toggle('active');
+        const accountAccordion = document.getElementById('account-accordion');
+        accountAccordion.addEventListener('click', function() {
+            accountAccordion.classList.toggle('open');
+            const accountSetting = document.getElementById('account-settings');
+            accountSetting.classList.toggle('active');
+            const accountSetting2 = document.getElementById('other-settings');
+            accountSetting2.classList.toggle('active');
+        });
+
+        const toggleSidebar = document.getElementById('toogle-sidebar');
+        toggleSidebar.addEventListener('click', function() {
+            document.querySelector('.woocommerce-MyAccount-navigation').classList.toggle('collapsed');
+        });
     });
-
-    const toggleSidebar = document.getElementById('toogle-sidebar');
-    toggleSidebar.addEventListener('click', function() {
-        document.querySelector('.woocommerce-MyAccount-navigation').classList.toggle('collapsed');
-    });
-});
 </script>
 
 <?php do_action('woocommerce_after_account_navigation'); ?>

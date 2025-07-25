@@ -1,5 +1,7 @@
 function fetchAndDisplayVideos(searchQuery = "", skillLevel = "all") {
-  console.log(skillLevel);
+  const urlParts = window.location.pathname.split("/").filter(Boolean);
+  const slug = urlParts.length > 0 ? urlParts[urlParts.length - 1] : "";
+
   fetch("/wp-json/custom/v2/get_videos", {
     method: "POST",
     headers: {
@@ -8,6 +10,7 @@ function fetchAndDisplayVideos(searchQuery = "", skillLevel = "all") {
     body: JSON.stringify({
       search: searchQuery,
       skill_level: skillLevel,
+      category: slug,
     }),
   })
     .then((response) => response.json())

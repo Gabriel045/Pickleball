@@ -13,7 +13,6 @@ function fetchAndDisplayInstructors(searchQuery = "") {
       const container = document.querySelector("#instructor-container");
       container.innerHTML = ""; // Clear previous results
       data.forEach((element) => {
-        console.log(element);
         print_Instructors(element);
       });
 
@@ -33,9 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const form = document.querySelector("#search-instructors");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const searchInput = form.querySelector(
-    '#search-instructors input[type="text"]'
-  );
+  const searchInput = form.querySelector('#search-instructors input[type="text"]');
   fetchAndDisplayInstructors(searchInput.value);
 });
 
@@ -56,10 +53,10 @@ function print_Instructors(data) {
                         ${data.name}
                     </a>
                 </h4>
-                <p class="text-gray-paragrah text-[16px] leading-normal">
+                <p class="text-gray-paragraph text-[16px] leading-normal">
                     ${data.role}
                 </p>
-                <a href="${data.link}" class="btn-green mt-[24px]">Meet ${data.name} →</a>
+                <a href="${data.link}" class="btn-blue mt-[24px]">Meet ${data.name} →</a>
             </div>
         `;
   container.appendChild(article);

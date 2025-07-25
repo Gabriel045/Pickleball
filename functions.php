@@ -99,6 +99,17 @@ function af_add_theme_scripts()
             true
         );
     }
+
+    global $post;
+    if (is_page() && get_page_template_slug($post->ID) === 'template-parts/product-categories.php') {
+        wp_enqueue_script(
+            'page-best-sellers-script',
+            get_template_directory_uri() . '/resources/js/pageBestSellerScript.js',
+            ['jquery'],
+            theme_version,
+            true
+        );
+    }
 }
 
 //Register ACF blocks
@@ -237,6 +248,10 @@ function customize_account_menu_items($items)
     // Change the name of a menu item (e.g., "Dashboard")
     if (isset($items['dashboard'])) {
         $items['dashboard'] = __('My Videos', 'woocommerce');
+    }
+
+    if (isset($items['payment-methods'])) {
+        $items['payment-methods'] = __('Payment Methods', 'woocommerce');
     }
 
 

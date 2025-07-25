@@ -3,7 +3,7 @@
 
 <?php
 
-
+$text = get_field('thank_you_text');
 $args = array(
     'post_type'      => 'product',
     'posts_per_page' => 4,
@@ -14,18 +14,27 @@ $args = array(
 $recent_products = new WP_Query($args);
 $recent_products = $recent_products->posts;
 
+$video_url = get_field('video_url');
 ?>
 
 <main>
 
     <section>
         <div id="thanks-page" class="block_content py-[60px] px-[30px] lg:px-[100px]">
-            <p class="text-caribbean-green font-semibold">Lorem Ipsum</p>
-            <h2 class="text-rich-black text-[24px] lg:text-[30px] font-semibold mt-6 mb-4">Payment Successful</h2>
-            <p class="text-gray-paragrah text-[16px] lg:text-[18px]">Lorem ipsum dolor sit amet consectetur. Felis
+            <!-- <p class="text-caribbean-green font-semibold">Lorem Ipsum</p> -->
+            <!-- <h2 class="text-rich-black text-[24px] lg:text-[30px] font-semibold mt-6 mb-4">Payment Successful</h2>
+            <p class="text-gray-paragraph text-[16px] lg:text-[18px]">Lorem ipsum dolor sit amet consectetur. Felis
                 gravida lobortis
                 erat auctor. Pellentesque pellentesque
-                porta ornare risus vel nunc viverra enim. Eu sit sit urna nibh</p>
+                porta ornare risus vel nunc viverra enim. Eu sit sit urna nibh</p> -->
+            <div class="[_&_h2]:text-rich-black [_&_h2]:text-[24px] [_&_h2]:lg:text-[30px] [_&_h2]:font-semibold [_&_h2]:mt-6 
+            [_&_p]:text-gray-paragraph [_&_p]:text-[16px] [_&_p]:lg:text-[18px] mb-4"><?php echo $text; ?></div>
+            <?php if (!empty($video_url)) : ?>
+                <div class="flex justify-center mt-10">
+                    <iframe width="1024px" class="aspect-video" src="<?php echo esc_url($video_url); ?>"
+                        allowFullScreen="true" allow="autoplay;encrypted-media"></iframe>
+                </div>
+            <?php endif; ?>
         </div>
     </section>
     <section class="bg-[#FAFBFC]">
@@ -60,12 +69,12 @@ $recent_products = $recent_products->posts;
                                     <?php echo $product->get_name() ?>
                                 </a>
                             </h4>
-                            <p class="text-gray-paragrah text-[16px] leading-normal">
+                            <p class="text-gray-paragraph text-[16px] leading-normal">
                                 <?php echo $product->get_short_description(); ?>
                             </p>
                             <div class="my-[15px] flex items-center">
                                 <span
-                                    class="mr-4 text-[#8498AB] text-[18px] line-through">$<?php echo $regular_price  ?></span>
+                                    class="mr-4 text-red-500 text-[18px] line-through">$<?php echo $regular_price  ?></span>
                                 <span
                                     class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                             </div>
@@ -87,8 +96,8 @@ $recent_products = $recent_products->posts;
             </div>
         </div>
     </section>
-
 </main>
+
 
 <script>
     jQuery(document).ready(function($) {

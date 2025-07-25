@@ -17,19 +17,17 @@ $recent_blogs = $query->posts;
 ?>
 
 <main id="shop">
-    <section>
-        <div class="block_content px-[30px] lg:px-[50px]  py-[30px]">
-            <h1 class="text-[36px] font-semibold tracking-tight">Blogs</h1>
-            <p class="mt-[4px] text-[14px] font-normal leading-[30px]">
-                <?php echo get_field("hero-title") ?>
-            </p>
+    <section class="bg-black">
+        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
+            <h1 class="text-[36px] text-white font-semibold tracking-tight">All Articles</h1>
         </div>
     </section>
     <section>
         <div class="block_content">
             <div class="py-[30px] px-[30px] lg:px-[60px]">
                 <form id="search-blogs" class="relative flex gap-4">
-                    <input type="text" class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
+                    <input type="text"
+                        class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragraph"
                         placeholder="Search">
                     <button type="submit"
                         class="flex items-center gap-2  bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
@@ -46,15 +44,15 @@ $recent_blogs = $query->posts;
                     <!-- print videos -->
                 </div>
 
-                <div class="flex w-full flex-wrap md:flex-nowrap gap-[32px] lg:px-[32px] pb-[60px]">
+                <div class="flex w-full flex-wrap md:flex-nowrap gap-[32px] pb-[60px]">
                     <div class="w-full md:w-1/2">
                         <figure>
                             <a href="<?php echo get_permalink($recent_blogs[0]->ID); ?>">
-                                <img class="rounded-[20px] object-cover w-full lg:h-[300px]"
+                                <img class="rounded-[20px] object-cover w-full"
                                     src="<?php echo get_the_post_thumbnail_url($recent_blogs[0]->ID, 'full') ?>">
                             </a>
                         </figure>
-                        <div class="mt-6 flex gap-3">
+                        <div class="mt-6 flex gap-2">
                             <p class="text-sm font-semibold text-[#47546799]">
                                 <?php echo get_the_author_meta('display_name', $recent_blogs[0]->post_author); ?>
                             </p>
@@ -63,6 +61,14 @@ $recent_blogs = $query->posts;
                             <p class="text-sm font-semibold text-[#47546799]">
                                 <?php echo get_the_date('d M Y', $recent_blogs[0]->ID); ?>
                             </p>
+                            <?php if (!empty(get_field('read_time',  $recent_blogs[0]->ID))) : ?>
+                                <span
+                                    class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                                <p class="text-sm font-semibold text-[#47546799]">
+                                    Read Time:
+                                    <?php echo  get_field('read_time', $recent_blogs[0]->ID) ?>
+                                </p>
+                            <?php endif; ?>
                         </div>
                         <div class="flex justify-between my-3">
                             <a href="<?php echo get_permalink($recent_blogs[0]->ID); ?>">
@@ -78,45 +84,60 @@ $recent_blogs = $query->posts;
                                 </svg>
                             </a>
                         </div>
-                        <p class="text-gray-paragrah text-[16px]">
+                        <p class="text-gray-paragraph text-[16px]">
                             <?php echo get_the_excerpt($recent_blogs[0]->ID); ?>
                         </p>
                     </div>
                     <div class="w-full md:w-1/2 flex flex-col gap-[32px] ">
                         <?php for ($i = 1; $i < 3; $i++) : ?>
-                        <div class="flex flex-wrap md:flex-nowrap gap-[24px]">
-                            <figure class="w-full md:w-1/2">
-                                <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
-                                    <img class="rounded-[20px] object-cover"
-                                        src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
-                                </a>
-                            </figure>
-                            <div class="w-full md:w-1/2">
-                                <div class="flex gap-3">
-                                    <p class="text-sm font-semibold text-[#47546799]">
-                                        <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>
-                                    </p>
-                                    <span
-                                        class="text-sm font-semibold text-[#47546799] flex justify-center items-center">•</span>
-                                    <p class="text-sm font-semibold text-[#47546799]">
-                                        <?php echo get_the_date('d M Y', $recent_blogs[$i]->ID); ?>
+                            <div class="flex flex-wrap md:flex-nowrap gap-[24px]">
+                                <figure class="w-full md:w-1/2">
+                                    <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
+                                        <img class="rounded-[20px] object-cover"
+                                            src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
+                                    </a>
+                                </figure>
+                                <div class="w-full md:w-1/2">
+                                    <div class="flex gap-2">
+                                        <p class="text-xs font-semibold text-[#47546799]">
+                                            <?php echo get_the_author_meta('display_name', $recent_blogs[$i]->post_author); ?>
+                                        </p>
+                                        <span
+                                            class="text-xs font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                                        <p class="text-xs font-semibold text-[#47546799]">
+                                            <?php echo get_the_date('d M Y', $recent_blogs[$i]->ID); ?>
+                                        </p>
+                                        <?php if (!empty(get_field('read_time',  $recent_blogs[$i]->ID))) : ?>
+                                            <span
+                                                class="text-xs font-semibold text-[#47546799] flex justify-center items-center">•</span>
+                                            <p class="text-xs font-semibold text-[#47546799]">
+                                                Read Time:
+                                                <?php echo  get_field('read_time', $recent_blogs[$i]->ID) ?>
+                                            </p>
+                                        <?php endif; ?>
+                                    </div>
+                                    <h3 class="text-rich-black text-[20px] font-semibold leading-[28px] mt-2">
+                                        <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>"
+                                            class="hover:underline">
+                                            <?php echo get_the_title($recent_blogs[$i]->ID); ?>
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-paragraph text-[18px] mt-2">
+                                        <?php
+                                        $excerpt = get_the_excerpt($recent_blogs[$i]->ID);
+                                        $words = explode(' ', wp_strip_all_tags($excerpt));
+                                        if (count($words) > 20) {
+                                            $excerpt = implode(' ', array_slice($words, 0, 20)) . '...';
+                                        }
+                                        echo $excerpt;
+                                        ?>
                                     </p>
                                 </div>
-                                <h3 class="text-rich-black text-[20px] font-semibold leading-[28px] mt-2">
-                                    <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>"
-                                        class="hover:underline">
-                                        <?php echo get_the_title($recent_blogs[$i]->ID); ?>
-                                    </a>
-                                </h3>
-                                <p class="text-gray-paragrah text-[16px] mt-2">
-                                    <?php echo get_the_excerpt($recent_blogs[$i]->ID); ?>
-                                </p>
                             </div>
-                        </div>
                         <?php endfor ?>
                     </div>
                 </div>
-                <div id="blogs-container" class="flex flex-wrap gap-[2%] mt-[60px] gap-y-[60px]">
+                <div id="blogs-container" class="flex flex-wrap gap-[2%] md:mt-[60px] gap-y-[60px]">
 
                 </div>
             </div>

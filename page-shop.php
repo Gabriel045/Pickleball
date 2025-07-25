@@ -6,16 +6,13 @@ $categories = get_terms(array(
     'hide_empty' => true,
 ));
 
-// echo "<pre>";
-// var_dump($categories);
-// echo "</pre>";
 ?>
 
 
 <main id="shop">
-    <section>
-        <div class="block_content px-[30px] lg:px-[50px] py-[30px]">
-            <h1 class="text-[30px] lg:text-[36px] font-semibold tracking-tight ">All Videos</h1>
+    <section class="bg-black">
+        <div class="block_content px-[60px] lg:px-[100px] py-[64px]">
+            <h1 class="text-[36px] text-white font-semibold tracking-tight"> All Videos</h1>
         </div>
     </section>
     <section>
@@ -24,7 +21,7 @@ $categories = get_terms(array(
                 <!-- <div class="block lg:hidden py-[60px] px-[30px] w-full">
                     <form class="search-videos flex relative gap-4">
                         <input type="text"
-                            class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
+                            class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragraph"
                             placeholder="Search">
                         <button type="submit"
                             class="flex items-center gap-2 bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
@@ -57,14 +54,14 @@ $categories = get_terms(array(
 
                     <ul id="video-categories">
                         <li class="py-[10px]">
-                            <a value="Beginner" class="cursor-pointer text-gray-paragrah font-semibold">Beginner</a>
+                            <a value="Beginner" class="cursor-pointer text-gray-paragraph font-semibold">Beginner</a>
                         </li>
                         <li class="py-[10px]">
                             <a value="Intermediate"
-                                class="cursor-pointer text-gray-paragrah font-semibold">Intermediate</a>
+                                class="cursor-pointer text-gray-paragraph font-semibold">Intermediate</a>
                         </li>
                         <li class="py-[10px]">
-                            <a value="Advanced" class="cursor-pointer text-gray-paragrah font-semibold">Advanced</a>
+                            <a value="Advanced" class="cursor-pointer text-gray-paragraph font-semibold">Advanced</a>
                         </li>
                     </ul>
                 </div> -->
@@ -72,7 +69,7 @@ $categories = get_terms(array(
                     <div class="flex gap-8 gap-y-4 flex-wrap">
                         <form class="w-full md:w-[83%] search-videos flex relative gap-4">
                             <input type="text"
-                                class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragrah"
+                                class="w-full border border-[#D0D5DD] rounded-[8px] px-3 py-3 text-gray-paragraph"
                                 placeholder="Search">
                             <button type="submit"
                                 class="flex items-center gap-2 bg-black rounded-[8px] px-[18px] py-[10px] text-white font-semibold">
@@ -88,7 +85,7 @@ $categories = get_terms(array(
                         </form>
                         <div class="select-wrapper w-fit md:w-[14%] lg:justify-end justify-start flex relative">
                             <select id="video-categories"
-                                class="border border-[#D0D5DD] rounded-[8px] px-5 py-3 text-gray-paragrah font-semibold pr-8">
+                                class="border border-[#D0D5DD] rounded-[8px] px-5 py-3 text-gray-paragraph font-semibold pr-8">
                                 <option value="">Select Skill Level</option>
                                 <option value="Beginner">Beginner</option>
                                 <option value="Intermediate">Intermediate</option>

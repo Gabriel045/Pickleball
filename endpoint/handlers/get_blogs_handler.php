@@ -31,8 +31,9 @@ function get_blogs_handler($request)
             'excerpt' => get_the_excerpt($post->ID),
             'author' => get_the_author_meta('display_name', $post->post_author),
             'date' => get_the_date('j M Y', $post->ID),
+            'readTime' => get_field('read_time', $post->ID)
         );
-    };
+    }
 
     return  $result;
 }

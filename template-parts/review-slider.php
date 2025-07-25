@@ -11,14 +11,14 @@ $reviews_query = $reviews_query->posts;
 ?>
 
 
-<div id="review-slider" class="<?php empty($slidesToShow) ? 'border-t border-gray-200 mt-4' : '' ?>">
+<div id="review-slider" class="hidden <?php empty($slidesToShow) ? 'border-t border-gray-200 mt-4' : '' ?>">
     <?php if (empty($slidesToShow) && empty(get_field('title_reviews', $post->ID))) { ?>
         <h3 class="text-rich-black text-lg font-semibold tracking-tight pt-16 pb-10">Reviews</h3>
     <?php
     } else { ?>
         <div class="mb-[60px] [_&_span]:text-[16px] [_&_span]:text-[#0C5E5D] [_&_span]:font-[600]
          [_&_h2]:font-[600] [_&_h2]:text-[36px] [_&_h2]:text-rich-black
-[_&_p]:text-gray-paragrah [_&_p]:text-[20px]">
+[_&_p]:text-gray-paragraph [_&_p]:text-[20px]">
             <?php echo get_field('title_reviews', $post->ID) ?>
         </div>
     <?php  } ?>
@@ -27,7 +27,7 @@ $reviews_query = $reviews_query->posts;
             <?php foreach ($reviews_query as $key => $card) : ?>
                 <article class="flex flex-col items-start gap-6 py-8 px-4 rounded-lg bg-gray-50">
                     <span class="stars before:w-[117px] before:h-[20px] mt-6"></span>
-                    <p class="text-gray-paragrah text-sm font-normal leading-5 mt-4 mb-5">
+                    <p class="text-gray-paragraph text-sm font-normal leading-5 mt-4 mb-5">
                         <?php echo get_field("text", $card->ID) ?>
                     </p>
                     <div class="flex">
@@ -35,7 +35,7 @@ $reviews_query = $reviews_query->posts;
                             <p class="text-rich-black font-semibold text-[12px]">
                                 <?php echo get_field("name", $card->ID) ?>
                             </p>
-                            <p class="text-gray-paragrah text-[10px]">
+                            <p class="text-gray-paragraph text-[10px]">
                                 <?php echo get_field("company", $card->ID) ?>
                             </p>
                         </div>

@@ -118,11 +118,11 @@ function print_products(data) {
                   ${data.title}
               </a>
           </h3>
-          <p class="text-gray-paragrah text-[14px] lg:text-[18px] leading-[20px]">
+          <p class="text-gray-paragraph text-[14px] lg:text-[18px] leading-[20px]">
               ${data.description}
           </p>
           <div class="flex items-center">
-              <span class="mr-2 lg:mr-4 text-[#8498AB] text-[18px] line-through">${data.regular_price}</span>
+              <span class="mr-2 lg:mr-4 text-red-500 text-[18px] line-through">${data.regular_price}</span>
               <span class="text-[#13A513] text-[22px] lg:text-[28px] font-semibold leading-[32px]">${data.sale_price}</span>
           </div>
           <div class="woocommerce-variation-add-to-cart variations_button">

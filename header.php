@@ -75,7 +75,7 @@
             </div>
             <!-- Mobile -->
             <div class="flex gap-3 items-center">
-                <span class="block lg:hidden menu-text text-gray-paragrah text-opacity-60 font-semibold">Menu</span>
+                <span class="block lg:hidden menu-text text-gray-paragraph text-opacity-60 font-semibold">Menu</span>
                 <span class="z-[99] relative nline-block lg:hidden cursor-pointer menu-mobile">
                     <div class="" id="nav-icon4">
                         <span></span>
