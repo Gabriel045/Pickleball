@@ -389,3 +389,45 @@ function create_coupon_on_user_login($user_login, $user)
 }
 
 include_once get_template_directory() . '/inc/add-shortcodes-cuw.php';
+
+
+
+
+/**
+ * On WooCommerce order processing, checks if the first offer product is purchased.
+ * If found, inserts order and campaign details into the custom 'cuw_stats' database table.
+ */
+add_action('woocommerce_checkout_order_processed', function ($order_id, $posted_data, $order) {
+
+    global $wpdb;
+    $first_offer = $wpdb->get_row("SELECT * FROM {$wpdb->prefix}cuw_offers ORDER BY id ASC LIMIT 1");
+    $product_id = json_decode($first_offer->product)->id;
+    $found = false;
+
+
+    foreach ($order->get_items() as $item) {
+        if ($item->get_product_id() == $product_id) {
+            $found = true;
+            break;
+        }
+    }
+
+    if ($found) {
+        $wpdb->insert(
+            $wpdb->prefix . 'cuw_stats',
+            [
+                'campaign_id' => 2,
+                'campaign_type' => 'post_purchase_upsells',
+                'offer_id'    => 3,
+                'order_id'    => $order_id,
+                'order_item_id' => 0,
+                'product_id' => $product_id,
+                'product_qty' => 1,
+                'user_id' => get_current_user_id(),
+                'billing_email' => $order->get_billing_email(),
+                'order_status' => 'processing',
+                'created_at'  => current_time('timestamp')
+            ]
+        );
+    }
+}, 10, 3);
