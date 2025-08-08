@@ -431,3 +431,27 @@ add_action('woocommerce_checkout_order_processed', function ($order_id, $posted_
         );
     }
 }, 10, 3);
+
+
+$already_purchased_error = false;
+
+add_filter('woocommerce_add_to_cart_validation', function ($passed, $product_id, $quantity) {
+    global $already_purchased_error;
+    if (is_user_logged_in()) {
+        $customer_orders = wc_get_orders([
+            'customer_id' => get_current_user_id(),
+            'status' => ['wc-completed', 'wc-processing', 'wc-on-hold'],
+            'limit' => -1,
+        ]);
+        foreach ($customer_orders as $order) {
+            foreach ($order->get_items() as $item) {
+                if ($item->get_product_id() == $product_id) {
+                    $already_purchased_error = true;
+                    wc_add_notice(__('You can only purchase this product once.'), 'error');
+                    return false;
+                }
+            }
+        }
+    }
+    return $passed;
+}, 10, 3);

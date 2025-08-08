@@ -1,47 +1,34 @@
 <?php
 
 $background_image   = get_field('background_image');
-$background_video   = get_field('background_video');
+$background_video_file   = get_field('background_video_file');
 $bg_overlay         = get_field('background-overlay');
 $text               = get_field('text');
 $repeater           = get_field('repeater');
 
-if (!empty($background_video)) {
-    $parsed_url = parse_url($background_video);
-    $query = isset($parsed_url['query']) ? $parsed_url['query'] . '&' : '';
-    $query .= 'loop=true&muted=true&controls=off&autoplay=true';
-    $background_video = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parsed_url['path'] . '?' . $query;
-}
+// if (!empty($background_video)) {
+//     $parsed_url = parse_url($background_video);
+//     $query = isset($parsed_url['query']) ? $parsed_url['query'] . '&' : '';
+//     $query .= 'loop=true&muted=true&controls=off&autoplay=true';
+//     $background_video = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parsed_url['path'] . '?' . $query;
+// }
 ?>
 
 <section class="">
     <div class="video-wrapper flex w-full items-center justify-center">
-        <div class=""></div>
-        <?php
-        // Detect Safari browser
-        $is_safari = false;
-        if (isset($_SERVER['HTTP_USER_AGENT'])) {
-            $ua = $_SERVER['HTTP_USER_AGENT'];
-            if (strpos($ua, 'Safari') !== false && strpos($ua, 'Chrome') === false && strpos($ua, 'Chromium') === false) {
-                $is_safari = true;
-            }
-        }
-        ?>
-
-        <?php if ($is_safari): ?>
-            <img src="<?php echo esc_url($background_image); ?>" alt="Background"
-                style="width:100%;height:100%;object-fit:cover;">
-        <?php else: ?>
-            <iframe src="<?php echo esc_url($background_video); ?>" allowFullScreen="true"
-                allow="autoplay;encrypted-media"></iframe>
-        <?php endif; ?>
+        <video src="<?php echo esc_url($background_video_file['url']); ?>" autoplay muted loop playsinline
+            class="bg-black w-full h-full object-cover absolute top-0 left-0"></video>
+        <!-- <iframe src="<?php echo esc_url($background_video); ?>" allowFullScreen="true"
+                allow="autoplay;encrypted-media"></iframe> -->
         <div class="absolute z-20 block_content max-[1024px]:px-[30px] max-[1024px]:py-[50px] lg:p-[60px]"
             style="<?php echo !empty($bg_overlay) ? $bg_overlay : ''; ?>">
+
             <div class="max-w-[700px] p-[30px] lg:p-[50px] rounded-[20px] bg-[#0B141D80] [_&_h2]:text-white [_&_h2]:text-[30px] lg:[_&_h2]:text-[60px] [_&_h2]:font-semibold [_&_h2]:leading-normal lg:[_&_h2]:leading-[60px]
                     lg:[_&_p]:text-[20px] [_&_p]:text-[16px]  [_&_p]:text-[#FFFFFF99]">
                 <?php echo $text ?>
+
                 <a href="/shop/"
-                    class="btn2 cursor-pointer text-white text-[18px] font-semibold leading-[28px] mt-[30px] w-full lg:w-fit flex px-7 py-4 justify-center items-center gap-3 rounded-lg bg-bright-blue backdrop-blur-[6.65px]">
+                    class="btn2 cursor-pointer text-white text-[18px] font-semibold leading-[28px] mt-[30px] w-full lg:w-fit flex px-7 py-4 justify-center items-center gap-3 rounded-lg bg-bright-blue shadow-md backdrop-blur-[6.65px]">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
                             d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
@@ -52,6 +39,7 @@ if (!empty($background_video)) {
                     </svg>
                     <span>All Videos</span>
                 </a>
+
             </div>
         </div>
     </div>
@@ -79,25 +67,6 @@ if (!empty($background_video)) {
         overflow: hidden;
     }
 
-    .video-wrapper iframe {
-        border: 0;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        position: relative;
-        top: 130px;
-
-    }
-
-    .video-overlay {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        background: #424242;
-        opacity: 0.6;
-    }
-
-
     @media (max-width: 768px) {
         .video-wrapper {
             position: relative;
@@ -110,18 +79,6 @@ if (!empty($background_video)) {
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100vw;
-            min-height: 100%;
-            width: 1200px;
-            height: 440px;
-            transform: translate(-50%, -50%);
-            border: 0;
         }
     }
 </style>

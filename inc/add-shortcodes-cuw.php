@@ -135,17 +135,25 @@ function cuw_bullet_list_shortcode()
 {
 
     $product_id = $GLOBALS['cuw_offer_product_id'];
-    $bullet_list =  get_field('bullet_list', $product_id);
+    $content = get_field('text_image_2', $product_id);
+
     ob_start(); ?>
 
     <div class="bullet-container">
-        <ul>
-            <?php foreach ($bullet_list as $key => $item) : ?>
+        <?php echo $content; ?>
+        <!-- <ul>
+            <?php
+            // foreach ($bullet_list as $key => $item) : 
+            ?>
                 <li class="bullet-item">
                     <span class="bullet-icon"></span>
-                    <span class="bullet-text"><?php echo esc_html($item['items']); ?></span>
+                    <span class="bullet-text"><?php
+                                                //  echo esc_html($item['items']);
+                                                ?></span>
                 </li>
-            <?php endforeach; ?>
+            <?php
+            //  endforeach; 
+            ?> -->
         </ul>
     </div>
 

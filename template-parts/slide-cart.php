@@ -15,6 +15,7 @@
         <div id="items-container" class="gap-[32px] flex flex-col">
             <!-- Render the products -->
         </div>
+        <?php get_template_part('template-parts/aditional-info-cart'); ?>
         <?php get_template_part('template-parts/more-products'); ?>
     </div>
 </div>

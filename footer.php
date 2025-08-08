@@ -52,7 +52,7 @@ $facebook = get_field('facebook', 'option')['url'];
                                         fill="white" />
                                 </svg>
                             </a>
-                            <a target="_blank" href="<?php echo $x ?>">
+                            <!-- <a target="_blank" href="<?php echo $x ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 12 12"
                                     fill="none">
                                     <g clip-path="url(#clip0_27_9701)">
@@ -74,7 +74,7 @@ $facebook = get_field('facebook', 'option')['url'];
                                         </clipPath>
                                     </defs>
                                 </svg>
-                            </a>
+                            </a> -->
                             <a target="_blank" href="<?php echo $tiktok ?>">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 11 11"
                                     fill="none">

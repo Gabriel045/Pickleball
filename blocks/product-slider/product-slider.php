@@ -25,8 +25,11 @@ $product_query = $product_query->posts;
                 $product = wc_get_product($item->ID);
                 $regular_price = wc_price($product->get_regular_price());
                 $sale_price = wc_price($product->get_sale_price());
-                $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full'); ?>
-                <article class="!flex flex-col !h-auto gap-[5px] lg:max-w-[350px] justify-between">
+                $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full');
+                $coming_soon = get_field('coming_soon', $item->ID);
+            ?>
+                <article <?php if ($coming_soon) echo 'data-id="' . $item->ID . '" data-coming-soon="true"'; ?>
+                    class="!flex flex-col !h-auto gap-[5px] lg:max-w-[350px] justify-between">
                     <figure>
                         <a href="<?php echo get_permalink($item->ID); ?>">
                             <img class="aspect-[0.8] object-cover w-full rounded-lg"
@@ -46,9 +49,10 @@ $product_query = $product_query->posts;
                     </h4>
                     <p class="text-gray-paragraph text-[16px] leading-[18px]">
                         <?php echo $product->get_short_description(); ?> </p>
-                    <div class="flex items-center">
+                    <div class="flex items-center price">
                         <span class="mr-4 text-red-500 text-[18px] line-through"><?php echo $regular_price ?></span>
-                        <span class="text-[#13A513] text-[25px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
+                        <span
+                            class="text-[#13A513] text-[25px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                     </div>
 
                     <div class="woocommerce-variation-add-to-cart variations_button">

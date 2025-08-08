@@ -104,6 +104,11 @@ if (categorySelect) {
 function print_products(data) {
   const container = document.querySelector("#videos-container");
   const article = document.createElement("article");
+  if (data.coming_soon === true) {
+    article.setAttribute("data-coming-soon", "true");
+    article.setAttribute("data-id", data.id);
+  }
+
   article.classList.add("xl:w-[23.5%]", "md:w-[32%]", "w-[49%]", "flex", "flex-col", "gap-[10px]", "justify-between");
   article.innerHTML = `
       <figure>
@@ -123,7 +128,7 @@ function print_products(data) {
           <p class="text-gray-paragraph text-[14px] lg:text-[18px] leading-[20px]">
               ${data.description}
           </p>
-          <div class="flex items-center">
+          <div class="flex items-center price">
               <span class="mr-2 lg:mr-4 text-red-500 text-[18px] line-through">${data.regular_price}</span>
               <span class="text-[#13A513] text-[22px] lg:text-[28px] font-semibold leading-[32px]">${data.sale_price}</span>
           </div>

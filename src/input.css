@@ -172,22 +172,23 @@ h4 {
 }
 
 .btn-blue,
-#gform_submit_button_1 {
-    display: flex;
-    padding: 10px 18px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 8px;
-    background: var(--bright-blue);
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    cursor: pointer;
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
+.gform-footer input[type="submit"] {
+    display: flex !important;
+    padding: 10px 18px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border-radius: 8px !important;
+    background: var(--bright-blue) !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+    cursor: pointer !important;
+    color: #FFF !important;
+    font-family: Roboto !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+    @apply shadow-md;
 }
 
 .btn:hover,
@@ -199,6 +200,11 @@ h4 {
 .woocommerce-orders-table__cell a:hover {
     transform: translateY(-2px);
     transition: transform 0.3s ease;
+}
+
+.woocommerce-checkout .btn {
+    font-size: 14px !important;
+    padding: 5px 18px !important;
 }
 
 .woocommerce-form-login .woocommerce-button {
@@ -488,8 +494,7 @@ h4 {
 }
 
 
-#text-image ul li::before,
-#cuw-ppu-offer .bullet-container li::before {
+#text-image ul li::before {
     content: '';
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="14" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M19.9458 8.62169L11.5925 16.6834L9.37583 14.315C8.9675 13.93 8.32583 13.9067 7.85916 14.2334C7.40416 14.5717 7.27583 15.1667 7.55583 15.645L10.1808 19.915C10.4375 20.3117 10.8808 20.5567 11.3825 20.5567C11.8608 20.5567 12.3158 20.3117 12.5725 19.915C12.9925 19.3667 21.0075 9.81169 21.0075 9.81169C22.0575 8.73836 20.7858 7.79336 19.9458 8.61002V8.62169Z" fill="%238498AB"/></svg>');
     background-repeat: no-repeat;
@@ -1366,18 +1371,18 @@ text-red-500 {
     padding-top: 40px;
 }
 
-#cuw-ppu-offer .bullet-container ul {
-    max-width: 440px;
-    margin: auto;
-    list-style: none;
-    list-style-position: inside;
-}
-
-#cuw-ppu-offer .bullet-container li {
+#cuw-ppu-offer .bullet-container li,
+#cuw-ppu-offer .bullet-container p {
     font-size: 18px;
     font-weight: 500;
     margin-bottom: 8px;
     color: var(--gray-paragraph);
+}
+
+.woocommerce-checkout .coming-soon-container {
+    font-size: 14px;
+    height: 40px;
+
 }
 
 /* get access form */
@@ -1395,7 +1400,7 @@ text-red-500 {
 
 #gform_2 .gform_footer input[type="submit"] {
     margin: 0px;
-    @apply rounded-lg border bg-bright-blue text-white shadow-sm px-4 py-2 font-medium text-[16px] h-11
+    @apply shadow-md rounded-lg border bg-bright-blue text-white shadow-sm px-4 py-2 font-medium text-[16px] h-11
 }
 
 #gform_2 #input_2_1 {
@@ -1404,6 +1409,47 @@ text-red-500 {
 
 .gform_validation_errors {
     display: none !important;
+}
+
+.woocommerce-account .woocommerce-error {
+    display: none !important;
+}
+
+/* .slick-track .btn-waitlist {
+    margin-top: 40px;
+} */
+
+.woocommerce-checkout .btn-waitlist,
+#more-products-side-cart .btn-waitlist {
+    padding: 5px 18px !important;
+    margin-top: 20px;
+}
+
+/* Coming soon  */
+article figure,
+article {
+    position: relative;
+}
+
+.coming-soon-container {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    transform: translate(0, -50%);
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #13A513;
+    line-height: 30px;
+    font-family: 'DM_Sans' !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
 }
 
 @media screen and (min-width:1200px) {
@@ -1544,6 +1590,11 @@ text-red-500 {
     }
 
     .woocommerce-checkout .figure-product {
-        width: 150px;
+        width: 125px;
+    }
+
+    .cuw-ppu-product-image {
+        display: flex;
+        justify-content: center;
     }
 }

@@ -9,19 +9,15 @@
                     <div id="cart-container" class="min-h-[236px]">
                         <!-- Cart contents will be dynamically loaded here -->
                     </div>
+                    <?php get_template_part('template-parts/aditional-info-cart'); ?>
                     <?php get_template_part('template-parts/more-products'); ?>
-                    <div class="hidden lg:block">
-                        <?php get_template_part('template-parts/review-slider'); ?>
-                    </div>
                 </div>
                 <div class="w-full lg:w-[45%] pt-[60px] lg:pt-0">
                     <div id="checkout-form">
                         <?php echo do_shortcode('[woocommerce_checkout]'); ?>
                     </div>
                 </div>
-                <div class="lg:hidden block w-full">
-                    <?php get_template_part('template-parts/review-slider'); ?>
-                </div>
+
             </div>
         </div>
     </section>
@@ -67,7 +63,6 @@
 
         // Force checkout update
         function updateCheckout() {
-            console.log('in')
             $.ajax({
                 url: wc_checkout_params.ajax_url,
                 type: 'POST',

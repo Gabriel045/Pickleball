@@ -8,21 +8,25 @@
     $product_query = new WP_Query($args);
     $product_query = $product_query->posts;
     ?>
-   <div class="more-recommended bg-[#FAFBFC] px-[30px] lg:px-[40px] py-[40px] mt-[50px] rounded-[20px]">
+   <div class="more-recommended bg-[#FAFBFC] px-[10px] lg:px-[40px] py-[40px] mt-[50px] rounded-[20px]">
        <h2 class="text-[#060843] text-center text-[24px] font-semibold leading-[24px] tracking-[-0.48px]">
            Add one of these to your order to get 10% off!</h2>
        <p class="text-[#060843] text-center text-[16px] mt-3">This special price is only available right now while
            you're
            checking out</p>
 
-       <div id="" class="mt-[30px] flex-wrap lg:flex-nowrap gap-[20px] flex flex-col">
+       <div class="mt-[30px] flex-wrap lg:flex-nowrap gap-[40px] lg:gap-[20px] flex flex-col">
            <?php foreach ($product_query as $key => $item) :
                 global $product;
                 $product = wc_get_product($item->ID);
                 $regular_price = wc_price($product->get_regular_price());
                 $sale_price = wc_price($product->get_sale_price());
-                $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full'); ?>
-               <article class="flex gap-5">
+                $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full');
+                $coming_soon = get_field('coming_soon', $item->ID);
+            ?>
+               <article id="more-products-side-cart"
+                   <?php if ($coming_soon) echo 'data-id="' . $item->ID . '" data-coming-soon="true"'; ?>
+                   class="flex gap-5">
                    <figure>
                        <a href="<?php echo esc_url(get_permalink($item->ID)); ?>">
                            <?php
@@ -34,7 +38,7 @@
                    </figure>
                    <div
                        class="mt-0 flex flex-col justify-center <?php echo $current_url == "checkout" ? 'w-1/2' : 'w-[65%]' ?>">
-                       <div class="flex items-center gap-[10px]">
+                       <div class="flex items-center flex-wrap gap-[10px]">
                            <span class="stars"></span>
                            <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                Reviews)</span>
@@ -46,7 +50,7 @@
                        </h3>
                        <p class="text-gray-paragraph leading-[18px] text-[16px]">
                            <?php echo $product->get_short_description(); ?> </p>
-                       <div class="flex items-center gap-[10px]">
+                       <div class="flex items-center gap-[10px] price">
                            <span
                                class="mr-4 text-red-500 text-[16px] lg:text-[18px] line-through"><?php echo $regular_price ?></span>
                            <span

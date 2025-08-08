@@ -117,7 +117,7 @@ $current_url = $_POST['page'] ? $_POST['page'] : "";
     </ul>
 
 
-    <div class="checkout-btn woocommerce-mini-cart__buttons buttons pt-[60px] lg:px-[40px] ">
+    <div class="checkout-btn woocommerce-mini-cart__buttons buttons pt-[60px] px-[20px] lg:px-[40px] ">
         <a href="/checkout/" class="btn-primary button checkout wc-forward">Proceed to Checkout →</a>
         <figure class="mt-2 hidden lg:block">
             <svg class="m-auto" xmlns="http://www.w3.org/2000/svg" width="117" height="18" viewBox="0 0 117 18" fill="none">

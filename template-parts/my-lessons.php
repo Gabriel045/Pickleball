@@ -18,7 +18,6 @@ if (function_exists('wc_get_orders') && $current_user_id) {
 $purchased_products = array_slice(array_unique($purchased_products), 0, 3);
 
 
-
 if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(), $product_id)) { ?>
     <div class="flex justify-between flex-wrap lg:flex-nowrap gap-y-[20px]">
         <div class="w-full lg:w-[60%]">
@@ -82,11 +81,21 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
 
                     <div class="tab-content" id="tab-recommended">
                         <?php
+                        $user_orders = wc_get_orders(['customer_id' => get_current_user_id()]);
+                        $purchased_product_ids = [];
+                        foreach ($user_orders as $order) {
+                            foreach ($order->get_items() as $item) {
+                                $purchased_product_ids[] = $item->get_product_id();
+                            }
+                        }
+                        $purchased_product_ids = array_unique($purchased_product_ids);
+
+
                         // Get the most selling product except the current one
                         $best_selling_args = [
                             'post_type'      => 'product',
                             'posts_per_page' => 4,
-                            'post__not_in'   => [$product_id],
+                            'post__not_in'   => $purchased_product_ids,
                             'meta_key'       => 'total_sales',
                             'orderby'        => 'meta_value_num',
                             'order'          => 'DESC',
@@ -168,7 +177,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                         <ul id="chapter-box"></ul>
                     </div>
                     <div class="mt-16">
-                        <h4 class="text-[24px] text-rich-black font-semibold mb-5">Instruccional overview</h4>
+                        <h4 class="text-[24px] text-rich-black font-semibold mb-5">Instrucional overview</h4>
                         <ul id="instructional-overview-box">
                             <?php foreach ($lessons_id as $key => $lesson_id): ?>
                                 <li class="flex items-center gap-[10px] mb-3 py-[10px] border-b-[1px] border-[#E9EAED]">
@@ -190,11 +199,14 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
         <div>
             <h3 class="text-[24px] font-semibold text-rich-black py-10">My Videos Library</h3>
             <div class="flex gap-4 lg:flex-nowrap flex-wrap gap-y-[40px]">
-                <?php foreach ($purchased_products as $product_id):
+                <?php
+                $purchased_products = array_filter($purchased_products);
+                foreach ($purchased_products as $product_id):
                     $product = wc_get_product($product_id);
                     $image = get_the_post_thumbnail_url($product_id, 'full');
                     $title = $product->get_name();
-                    $excerpt = $product->get_short_description(); ?>
+                    $excerpt = $product->get_short_description();
+                ?>
                     <div class="w-full md:w-[49%] lg:w-[31.33%] gap-[5px] flex flex-col justify-between">
                         <figure>
                             <img class="aspect-[0.8] object-cover w-full rounded-[10px]" src="<?php echo esc_url($image); ?>">

@@ -33,8 +33,8 @@ $most_selling_products = wc_get_products(array(
             <div class="flex flex-wrap lg:flex-nowrap lg:gap-[80px]">
                 <div class="w-full lg:w-[65%]">
                     <div class="subheader">
-                        <div class="flex justify-between">
-                            <div class="flex items-center gap-[10px]">
+                        <div class="flex justify-between flex-wrap">
+                            <div class="flex flex-wrap items-center max-[768px]:gap-[5px] lg:gap-[10px]">
                                 <p class="text-sm font-semibold text-[#47546799]">
                                     <?php echo esc_html($author_name); ?>
                                 </p>
@@ -53,7 +53,7 @@ $most_selling_products = wc_get_products(array(
                                 <?php endif; ?>
 
                             </div>
-                            <div class="flex justify-end gap-[20px]">
+                            <div class="flex justify-end gap-[20px] mt-5 lg:mt-0">
                                 <button type="button"
                                     class="w-[44px] h-[44px] rounded-full bg-[#ea6645] flex justify-center items-center relative group"
                                     aria-label="Copy Link" onclick="navigator.clipboard.writeText(window.location.href); 
@@ -126,13 +126,13 @@ $most_selling_products = wc_get_products(array(
                     </div>
                 </div>
 
-                <div id="side-bar" class="w-full lg:w-[35%] flex flex-col gap-[50px]">
+                <div id="side-bar" class="w-full lg:w-[35%] flex flex-col gap-[30px]">
                     <div class="p-[30px] rounded-[15px] bg-[#FAFBFC]">
                         <h3 class="text-center text-[25px] font-[700] text-[#060843] mb-[30px]">Related Blogs</h3>
                         <div class="flex flex-col gap-[30px]">
                             <?php foreach ($random_blogs as $key => $card) : ?>
-                                <article>
-                                    <figure>
+                                <article class="">
+                                    <figure class="">
                                         <img class="rounded-[10px]"
                                             src="<?php echo get_the_post_thumbnail_url($card->ID, "full") ?>">
                                     </figure>
@@ -155,7 +155,7 @@ $most_selling_products = wc_get_products(array(
                                     </div>
                                     <div class="flex justify-between">
                                         <a href="<?php echo get_permalink($card->ID); ?>">
-                                            <h3 class="text-rich-black text-[24px] font-semibold leading-[32px]">
+                                            <h3 class="text-rich-black text-[24px] font-semibold leading-[28px] mt-2">
                                                 <?php echo get_the_title($card->ID); ?>
                                             </h3>
                                         </a>
@@ -168,15 +168,15 @@ $most_selling_products = wc_get_products(array(
                                             </svg>
                                         </a>
                                     </div>
-                                    <p class="text-gray-paragraph text-[16px]">
+                                    <!-- <p class="text-gray-paragraph text-[16px]">
                                         <?php echo get_the_excerpt($card->ID); ?>
-                                    </p>
+                                    </p> -->
                                 </article>
                             <?php endforeach ?>
                         </div>
                     </div>
                     <div class="h-full">
-                        <div class="sticky top-16 p-[30px] rounded-[15px] bg-[#FAFBFC]">
+                        <div class="sticky top-4 p-[30px] rounded-[15px] bg-[#FAFBFC]">
                             <h3 class="text-center text-[25px] font-[700] text-[#060843] mb-[30px]">
                                 Top Selling Instructional
                             </h3>
@@ -184,15 +184,18 @@ $most_selling_products = wc_get_products(array(
                                 <?php foreach ($most_selling_products as $product) :
                                     $regular_price = wc_price($product->get_regular_price());
                                     $sale_price = wc_price($product->get_sale_price());
+                                    $coming_soon = get_field('coming_soon', $product->get_id());
                                 ?>
-                                    <article class="">
-                                        <figure>
+                                    <article class="flex gap-[10px]"
+                                        <?php if ($coming_soon) echo 'data-id="' . $product->get_id() . '" data-coming-soon="true"'; ?>
+                                        class="">
+                                        <figure class="w-[45%]">
                                             <a href="<?php echo get_permalink($product->get_id()); ?>" tabindex="0">
                                                 <img decoding="async" class="rounded-xl"
                                                     src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>">
                                             </a>
                                         </figure>
-                                        <div class="mt-[24px]">
+                                        <div class="w-[65%]">
                                             <div class="flex items-center gap-[10px]">
                                                 <span class="stars"></span>
                                                 <span
@@ -200,7 +203,7 @@ $most_selling_products = wc_get_products(array(
                                                     (59
                                                     Reviews)</span>
                                             </div>
-                                            <h4 class="text-rich-black text-[20px] font-semibold leading-normal">
+                                            <h4 class="text-rich-black font-semibold leading-[18px]">
                                                 <a href="<?php echo get_permalink($product->get_id()); ?>"
                                                     class="text-rich-black hover:underline" tabindex="0">
                                                     <?php echo $product->get_name(); ?>
@@ -209,11 +212,11 @@ $most_selling_products = wc_get_products(array(
                                             <p class="text-gray-paragraph text-[16px] leading-normal">
                                                 <?php echo wp_trim_words($product->get_short_description(), 15, '...'); ?>
                                             </p>
-                                            <div class="my-[10px] flex items-center">
+                                            <div class="my-2 flex items-center price">
                                                 <span
-                                                    class="mr-4 text-red-500 text-[18px] line-through"><?php echo $regular_price ?></span>
+                                                    class="mr-4 text-red-500 text-[16px] line-through"><?php echo $regular_price ?></span>
                                                 <span
-                                                    class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
+                                                    class="text-[#13A513] text-[24px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                                             </div>
 
                                             <div class="woocommerce-variation-add-to-cart variations_button">

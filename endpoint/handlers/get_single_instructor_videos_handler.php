@@ -39,6 +39,8 @@ function get_single_instructor_videos_handler($request)
         $regular_price = wc_price($product->get_regular_price());
         $sale_price = wc_price($product->get_sale_price());
         $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full')[0];
+        $coming_soon = get_field('coming_soon', $post->ID);
+
 
         $result[] = array(
             'id' => $post->ID,
@@ -48,6 +50,7 @@ function get_single_instructor_videos_handler($request)
             'description' => wp_trim_words($product->get_description(), 12, '...'),
             'regular_price' => $regular_price,
             'sale_price' => $sale_price,
+            'coming_soon' => $coming_soon,
         );
     };
 

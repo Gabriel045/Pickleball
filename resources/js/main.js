@@ -3,6 +3,8 @@
 // request to the WooCommerce server and updates the UI accordingly.
 function addToSideCart() {
   "use strict";
+  comingSoon();
+
   jQuery(".custom_add_to_cart").click(function (e) {
     e.preventDefault();
     var id = jQuery(this).next().next().attr("value");
@@ -23,7 +25,11 @@ function addToSideCart() {
         }
         if (response.error) {
           console.log(response);
-          jQuery(".custom_add_to_cart").text("+ Add to Cart");
+          jQuery(".custom_add_to_cart")
+            .filter(function () {
+              return jQuery(this).text() === "Loading...";
+            })
+            .text("You can't add this product");
           return;
         }
         if (response) {
@@ -65,3 +71,59 @@ jQuery(document).ready(function () {
 document.querySelector("#close").addEventListener("click", function () {
   document.querySelector("#slide-cart").classList.remove("active");
 });
+
+function comingSoon() {
+  const articles = document.querySelectorAll("article[data-coming-soon='true']");
+  articles.forEach((article) => {
+    const id = article.getAttribute("data-id");
+    const comingSoonText = document.createElement("div");
+    comingSoonText.className = "coming-soon-container";
+    comingSoonText.innerHTML = "<h3>Coming Soon</h3>";
+
+    const anchor = article.querySelectorAll("a");
+    anchor.forEach((a) => {
+      a.setAttribute("href", "/coming-soon?id=" + id);
+    });
+
+    const button = article.querySelectorAll(".custom_add_to_cart");
+    button.forEach((btn) => {
+      btn.textContent = "Join the Waitlist";
+    });
+
+    const variationForm = article.querySelector(".woocommerce-variation-add-to-cart");
+    if (variationForm) {
+      variationForm.remove();
+    }
+
+    if (button) {
+      // Create Link
+      const link = document.createElement("a");
+      link.href = "/coming-soon?id=" + id;
+      link.classList.add("btn");
+      link.classList.add("btn-waitlist");
+      link.textContent = "Join the Waitlist";
+      // Replace the button with the link
+      if (window.location.pathname === "/checkout/" || article.id === "more-products-side-cart") {
+        console.log(article.querySelector(".flex-col.justify-center"));
+        article.querySelector(".flex-col.justify-center").appendChild(link);
+      } else {
+        article.appendChild(link);
+      }
+    }
+
+    article.querySelector("figure").appendChild(comingSoonText);
+
+    // hide price
+    const prices = article.querySelectorAll(".price span");
+    prices.forEach((price) => {
+      price.style.color = "transparent";
+    });
+  });
+}
+
+window.onload = function () {
+  if (window.location.href.includes("cuw_wp_template")) {
+    document.querySelector("header").style.display = "none";
+    document.querySelector("footer").style.display = "none";
+  }
+};

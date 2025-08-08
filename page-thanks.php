@@ -38,11 +38,10 @@ $video_url = get_field('video_url');
         </div>
     </section>
     <section class="bg-[#FAFBFC]">
-        <div class="block_content py-[60px] px-[30px] lg:px-[100px]">
-            <h2 class="text-caribbean-green  text-[24px] lg:text-[30px] font-semibold mb-[60px] text-center">Checkout
-                our other courses
-            </h2>
-            <div class="m-auto max-w-[768px]">
+        <div class="block_content py-[30px] lg:py-[60px] px-[30px] lg:px-[100px]">
+            <h2 class="text-[24px] lg:text-[30px] font-semibold mb-[30px] lg:mb-[60px] text-center">
+                Checkout our other instructionals </h2>
+            <div class="m-auto max-w-[768px] flex flex-col gap-[2%] flex-wrap">
                 <?php foreach ($recent_products as $key => $item) :
                     global $product;
                     $product = wc_get_product($item->ID);
@@ -52,19 +51,20 @@ $video_url = get_field('video_url');
                     $product_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'full');
 
                 ?>
-                    <article class="flex flex-wrap lg:flex-nowrap mb-10 last:mb-0  gap-[24px]">
-                        <figure class="w-full lg:w-[35%]">
-                            <a class="block h-full" href="<?php echo get_permalink($item->ID); ?>">
-                                <img class="h-full rounded-xl object-cover" src="<?php echo $product_image[0] ?>" alt="">
+                    <article
+                        class="w-full flex flex-wrap lg:flex-nowrap mb-14 lg:mb-10 last:mb-0  gap-[12px] lg:gap-[24px]">
+                        <figure class="h-fit w-[35%] lg:w-[20%]">
+                            <a class="block " href="<?php echo get_permalink($item->ID); ?>">
+                                <img class="lg:h-full rounded-xl object-cover" src="<?php echo $product_image[0] ?>" alt="">
                             </a>
                         </figure>
-                        <div class="w-full lg:w-[65%]">
-                            <div class="flex items-center gap-[10px]">
+                        <div class="w-full lg:w-[60%] lg:flex lg:flex-col lg:justify-center">
+                            <div class="flex items-center flex-wrap gap-[10px]">
                                 <span class="stars"></span>
                                 <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59
                                     Reviews)</span>
                             </div>
-                            <h4 class="text-rich-black text-[20px] font-semibold leading-normal mt-3">
+                            <h4 class="text-rich-black text-[20px] font-semibold leading-normal mt-1 lg:mt-3">
                                 <a href="<?php echo get_permalink($item->ID); ?>">
                                     <?php echo $product->get_name() ?>
                                 </a>
@@ -72,11 +72,11 @@ $video_url = get_field('video_url');
                             <p class="text-gray-paragraph text-[16px] leading-normal">
                                 <?php echo $product->get_short_description(); ?>
                             </p>
-                            <div class="my-[15px] flex items-center">
+                            <div class="my-2 lg:my-4 flex items-center price">
                                 <span
-                                    class="mr-4 text-red-500 text-[18px] line-through">$<?php echo $regular_price  ?></span>
+                                    class="mr-4 text-red-500 text-[18px] line-through"><?php echo $regular_price  ?></span>
                                 <span
-                                    class="text-[#13A513] text-[28px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
+                                    class="text-[#13A513] text-[26px] font-semibold leading-[32px]"><?php echo $sale_price ?></span>
                             </div>
 
                             <div class="woocommerce-variation-add-to-cart variations_button">
@@ -90,7 +90,7 @@ $video_url = get_field('video_url');
                         </div>
                     </article>
                 <?php endforeach  ?>
-                <div class="mt-12">
+                <div class="mt-12 flex justify-center w-full">
                     <a class="btn-primary w-fit m-auto" href="/my-account">No thanks, bring me to my course</a>
                 </div>
             </div>
