@@ -1,4 +1,5 @@
 <?php
+
 define('theme_version', time());
 function dd($data = '')
 {
@@ -43,13 +44,14 @@ function af_add_theme_scripts()
     );
 
     // slick
+    // wp_enqueue_style(
+    //     'slick-theme',
+    //     get_template_directory_uri() . '/assets/slick/slick-theme.css',
+    // );
+
     wp_enqueue_style(
         'slick-css',
         get_template_directory_uri() . '/assets/slick/slick.css',
-    );
-    wp_enqueue_style(
-        'slick-theme',
-        get_template_directory_uri() . '/assets/slick/slick-theme.css',
     );
     wp_enqueue_script(
         'slick-js',
@@ -60,6 +62,7 @@ function af_add_theme_scripts()
             'strategy' => 'defer'
         )
     );
+
     if (is_page('shop')) {
         wp_enqueue_script(
             'page-shop-script',
@@ -455,3 +458,122 @@ add_filter('woocommerce_add_to_cart_validation', function ($passed, $product_id,
     }
     return $passed;
 }, 10, 3);
+
+
+
+// --- PERFORMANCE OPTIMIZATIONS ---
+
+// 2. Lazy loading for iframes (e.g., YouTube embeds)
+add_filter('embed_oembed_html', function ($html) {
+    return str_replace('<iframe', '<iframe loading="lazy"', $html);
+}, 10, 1);
+
+// 3. Remove emojis scripts and styles
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('admin_print_styles', 'print_emoji_styles');
+remove_filter('the_content_feed', 'wp_staticize_emoji');
+remove_filter('comment_text_rss', 'wp_staticize_emoji');
+remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+
+// 4. Remove oEmbed discovery links and scripts
+remove_action('wp_head', 'wp_oembed_add_discovery_links');
+remove_action('wp_head', 'wp_oembed_add_host_js');
+
+
+// Disable Gutenberg Block Library CSS on frontend
+add_action('wp_enqueue_scripts', function () {
+    wp_dequeue_style('wp-block-library');
+    wp_dequeue_style('wp-block-library-theme');
+    wp_dequeue_style('wc-block-style'); // WooCommerce blocks
+}, 100);
+
+
+
+add_filter('script_loader_tag', function ($tag, $handle) {
+    if (in_array($handle, ['jquery', 'jquery-migrate']) && !is_admin()) {
+        return str_replace(' src', ' defer src', $tag);
+    }
+    if ($handle === 'slick-css') {
+        return str_replace("media='all'", "media='print' onload=\"this.media='all'\"", $tag);
+    }
+    return $tag;
+}, 10, 2);
+
+// Disable WooCommerce CSS on frontend
+add_filter('woocommerce_enqueue_styles', function ($styles) {
+    if (is_front_page()) {
+        return [];
+    }
+    return $styles;
+});
+
+// Disable checkout-upsell-woocommerce template.css on home page
+add_action('wp_enqueue_scripts', function () {
+    global $wp_styles;
+    if (is_front_page()) {
+        foreach ($wp_styles->queue as $handle) {
+            $src = $wp_styles->registered[$handle]->src;
+            if (strpos($src, 'checkout-upsell-woocommerce') !== false) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+                wp_dequeue_script($handle);
+                wp_deregister_script($handle);
+            }
+            if (strpos($src, 'woocommerce/assets/css/brands.css') !== false) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+            }
+
+            if (strpos($src, 'gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css') !== false) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+            }
+        }
+    }
+    // Disable Dashicons on frontend for non-logged-in users
+    if (!is_user_logged_in() && !is_admin()) {
+        wp_deregister_style('dashicons');
+    }
+
+}, 100);
+
+// Force remove Gravity Forms theme framework CSS by handle
+add_action('template_redirect', function () {
+    if (!is_admin() && is_front_page()) {
+        ob_start(function ($buffer) {
+            return preg_replace(
+                '#<link[^>]+gravity-forms-theme-framework\.min\.css[^>]+>#i',
+                '',
+                $buffer
+            );
+        });
+    }
+});
+
+
+// --- NATIVE JQUERY AND JQUERY MIGRATE OPTIMIZATION ---
+// Move jQuery and jQuery Migrate to the footer and apply defer
+add_action('wp_enqueue_scripts', function () {
+    if (!is_admin()) {
+        wp_scripts()->add_data('jquery', 'group', 1);
+        wp_scripts()->add_data('jquery-migrate', 'group', 1);
+    }
+}, 100);
+
+add_filter('script_loader_tag', function ($tag, $handle) {
+    if (in_array($handle, ['jquery', 'jquery-migrate']) && !is_admin()) {
+        return str_replace(' src', ' defer src', $tag);
+    }
+    return $tag;
+}, 10, 2);
+
+
+// Force jQuery and jQuery Migrate to the footer even if a plugin moves them to the head
+add_action('wp_print_scripts', function() {
+    if (!is_admin()) {
+        wp_scripts()->add_data('jquery', 'group', 1);
+        wp_scripts()->add_data('jquery-migrate', 'group', 1);
+    }
+}, 100);

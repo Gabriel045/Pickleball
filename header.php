@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/src/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/output.css"></noscript>
+
 
     <title><?php echo wp_get_document_title(); ?></title>
     <?php wp_head(); ?>
@@ -13,7 +16,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     <header class="relative overflow-x-clip">
-        <div class="  bg-black lg:px-[167px] py-[10px]">
+        <div class="  bg-black px-[30px] lg:px-[167px] py-[10px]">
             <p class="text-white text-[12px] font-semibold text-center"><?php echo get_field('banner', 'option'); ?>
             </p>
         </div>
@@ -22,7 +25,7 @@
                 <div class="text-berkley-blue font-bold text-[30px] tracking-[-0.6px] leading-[30px] flex items-center">
                     <a href="/">
                         <figure>
-                            <img class="w-[200px] lg:w-[300px]" src="<?php echo get_field('header_logo', 'option'); ?>">
+                            <img loading="lazy" class="w-[200px] lg:w-[300px]" src="<?php echo get_field('header_logo', 'option'); ?>">
                         </figure>
                     </a>
                 </div>
@@ -75,9 +78,10 @@
             </div>
             <!-- Mobile -->
             <div class="flex gap-3 items-center">
-                <span class="block lg:hidden menu-text text-gray-paragraph text-opacity-60 font-semibold">Menu</span>
+                <span
+                    class="block nav-icon4 lg:hidden menu-text text-gray-paragraph text-opacity-60 font-semibold">Menu</span>
                 <span class="z-[99] relative nline-block lg:hidden cursor-pointer menu-mobile">
-                    <div class="" id="nav-icon4">
+                    <div id="nav-icon4" class="nav-icon4">
                         <span></span>
                         <span></span>
                         <span></span>

@@ -16,7 +16,7 @@ $recent_blogs = $recent_blogs->posts;
         <div class="flex flex-wrap lg:flex-nowrap w-full gap-[32px]">
             <div class="w-full lg:w-1/2">
                 <figure>
-                    <img class="rounded-[20px]"
+                    <img loading="lazy" class="rounded-[20px]"
                         src="<?php echo get_the_post_thumbnail_url($recent_blogs[0]->ID, 'full') ?>">
                 </figure>
                 <div class="mt-6 flex gap-3">
@@ -56,7 +56,7 @@ $recent_blogs = $recent_blogs->posts;
                     <div class="flex lg:flex-nowrap flex-wrap gap-[24px]">
                         <figure class="w-full lg:w-1/2">
                             <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
-                                <img class="rounded-[20px]"
+                                <img loading="lazy" class="rounded-[20px]"
                                     src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
                             </a>
                         </figure>

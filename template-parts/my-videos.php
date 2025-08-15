@@ -47,7 +47,7 @@ foreach ($product_ids as $product_id) {
             <div class="w-[49%] md:w-[31.33%] lg:w-[23.5%] gap-[5px] flex flex-col justify-between">
                 <a href="/my-account/my-lessons/?course=<?php echo $video['id'] ?>&lesson=0">
                     <figure>
-                        <img class="w-fullm aspect-[0.8] object-cover rounded-[10px]" src="<?php echo $video['image'] ?>">
+                        <img loading="lazy" class="w-fullm aspect-[0.8] object-cover rounded-[10px]" src="<?php echo $video['image'] ?>">
                     </figure>
                     <span class="stars mt-4 block"></span>
                     <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59

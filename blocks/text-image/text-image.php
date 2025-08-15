@@ -9,7 +9,7 @@ $cta = get_field('cta');
         <div class="flex flex-wrap lg:flex-nowrap items-center h-full pt-16">
             <div class="w-full lg:w-1/2 lg:h-full">
                 <figure class="lg:h-full">
-                    <img class="lg:h-full object-cover" src="<?php echo $image ?>">
+                    <img loading="lazy" class="lg:h-full object-cover" src="<?php echo $image ?>">
                 </figure>
             </div>
             <div class="w-full lg:w-1/2  py-[60px] lg:py-24 px-[30px] lg:px-16 [_&_h2]:text-[#0B141D] 

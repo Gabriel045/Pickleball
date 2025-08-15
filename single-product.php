@@ -28,7 +28,7 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
 <main>
     <section class="bg-[#F9FAFB]">
         <div class="block_content">
-            <div class="flex lg:flex-nowrap flex-wrap lg:flex-row flex-col-reverse">
+            <div class="flex lg:flex-nowrap flex-wrap lg:flex-row flex-col-reverse py-[64px]">
                 <!-- left Side  -->
                 <div class="w-full lg:w-1/2">
                     <div class="hidden lg:block">
@@ -37,13 +37,13 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                             echo $trailer_video;
                         } elseif (!empty($add_video_optional)) {
                             if ($add_video_optional["mime_type"] == "video/mp4") {
-                                echo '<video class="h-auto aspect-video object-cover" controls autoplay playsinline muted>
+                                echo '<video class="h-auto aspect-video object-cover" preload="metadata" loop autoplay playsinline muted poster="' . get_stylesheet_directory_uri() . '/assets/images/Rectangle.webp">
                                 <source src="' . esc_url($add_video_optional["url"]) . '" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>';
                             }
                         } else {
-                            echo '<img src="' . esc_url($product_image) . '" alt="' . esc_attr(get_the_title($product_id)) . '"
+                            echo '<img loading="lazy" src="' . esc_url($product_image) . '" alt="' . esc_attr(get_the_title($product_id)) . '"
                         class="featured-image">';
                         } ?>
                     </div>
@@ -119,7 +119,7 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                     </div>
                 </div>
                 <!-- right Side -->
-                <div class="w-full lg:w-1/2 py-[64px] px-[30px] lg:px-[60px]">
+                <div class="w-full lg:w-1/2 px-[30px] lg:px-[60px]">
                     <h1 class="text-[30px] lg:text-[36px] font-[600] text-rich-black leading-[38px]">
                         <?php echo esc_html(get_the_title($post->ID)); ?>
                     </h1>
@@ -136,13 +136,13 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                             echo $trailer_video;
                         } elseif (!empty($add_video_optional)) {
                             if ($add_video_optional["mime_type"] == "video/mp4") {
-                                echo '<video class="h-auto aspect-video object-cover" controls autoplay playsinline muted>
+                                echo '<video class="h-auto aspect-video object-cover" preload="metadata" loop autoplay playsinline muted poster="' . get_stylesheet_directory_uri() . '/assets/images/Rectangle.webp">
                                 <source src="' . esc_url($add_video_optional["url"]) . '" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>';
                             }
                         } else {
-                            echo '<img src="' . esc_url($product_image) . '" alt="' . esc_attr(get_the_title($product_id)) . '"
+                            echo '<img loading="lazy" src="' . esc_url($product_image) . '" alt="' . esc_attr(get_the_title($product_id)) . '"
                         class="featured-image">';
                         } ?>
                     </div>
@@ -186,7 +186,7 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                         <?php echo  $text_image ?>
                         <?php
                         if (!empty($add_video_optional_2)) {
-                            echo '<img src="' . esc_url($add_video_optional_2["url"]) . '" alt="Optional Image" class="">';
+                            echo '<img loading="lazy" src="' . esc_url($add_video_optional_2["url"]) . '" alt="Optional Image" class="">';
                         } else {
                             echo $video_iframe;
                         } ?>
@@ -195,7 +195,7 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
             </div>
         </div>
     </section>
-    <section class="bg-[#F9FAFB] hidden lg:flex">
+    <!-- <section class="bg-[#F9FAFB] hidden lg:flex">
         <div class="block_content py-[80px] px-[60px]">
             <div class="gap-[100px] flex">
                 <div class="w-1/2">
@@ -205,7 +205,7 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <section>
         <div class="block_content py-[80px] lg:px-[60px] px-[30px]">
             <div class="[&_h3]:text-rich-black [&_h3]:font-semibold [&_h3]:text-[20px] [&_h3]:lg:text-[24px] [&_h3]:leading-[28px]

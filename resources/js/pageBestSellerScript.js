@@ -16,12 +16,13 @@ function fetchAndDisplayVideos(searchQuery = "", skillLevel = "all") {
     .then((response) => response.json())
     .then((data) => {
       const container = document.querySelector("#videos-container");
-      container.innerHTML = ""; // Clear previous results
+  container.innerHTML = ""; // Clear previous results
       data.forEach((element) => {
         print_products(element);
       });
-
-      // console.log('Response from server:', data);
+      // Trigger custom event when loading and rendering is complete
+      const event = new CustomEvent("videosLoaded", { detail: { count: data.length } });
+      document.dispatchEvent(event);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -31,12 +32,12 @@ function fetchAndDisplayVideos(searchQuery = "", skillLevel = "all") {
 // Fetch videos on page load
 document.addEventListener("DOMContentLoaded", function () {
   fetchAndDisplayVideos();
-  // Adds an item to the side cart. located on /resources/js/main.js
+  // Adds an item to the side cart. Located in /resources/js/main.js
   const observer = new MutationObserver((mutationsList, observer) => {
     const container = document.querySelector("#videos-container");
     if (container.children.length > 0) {
       addToSideCart();
-      observer.disconnect(); // Stop observing once the condition is met
+  observer.disconnect(); // Stop observing once the condition is met
     }
   });
 
@@ -62,12 +63,12 @@ forms.forEach((form) => {
     event.preventDefault();
     const searchInput = form.querySelector('input[type="text"]');
     fetchAndDisplayVideos(searchInput.value);
-    // Adds an item to the side cart. located on /resources/js/main.js
+  // Adds an item to the side cart. Located in /resources/js/main.js
     const observer = new MutationObserver((mutationsList, observer) => {
       const container = document.querySelector("#videos-container");
       if (container.children.length > 0) {
         addToSideCart();
-        observer.disconnect(); // Stop observing once the condition is met
+  observer.disconnect(); // Stop observing once the condition is met
       }
     });
 
@@ -84,7 +85,7 @@ if (categorySelect) {
     const categoryValue = this.value;
 
     fetchAndDisplayVideos("", categoryValue);
-    // Adds an item to the side cart. located on /resources/js/main.js
+    // Adds an item to the side cart. Located in /resources/js/main.js
     const observer = new MutationObserver((mutationsList, observer) => {
       const container = document.querySelector("#videos-container");
       if (container.children.length > 0) {
@@ -113,30 +114,37 @@ function print_products(data) {
   article.innerHTML = `
       <figure>
           <a href="${data.link}">
-              <img class="rounded-xl aspect-[0.8] object-cover" src="${data.thumbnail}" alt="">
+              <img loading="lazy" class="rounded-xl aspect-[0.8] object-cover" src="${data.thumbnail}" alt="">
           </a>
       </figure>
+         <div class="flex justify-between flex-col h-full">
+        <div class="flex flex-col gap-[6px]">
           <div class="flex items-center gap-[10px] flex-wrap ">
-              <span class="stars"></span>
-              <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59 Reviews)</span>
+                  <span class="stars"></span>
+                  <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0 (59 Reviews)</span>
+              </div>
+              <h3 class="text-rich-black text-[16px] lg:text-[20px] font-semibold leading-[20px]">
+                  <a href="${data.link}" class="text-rich-black hover:underline">
+                      ${data.title}
+                  </a>
+              </h3>
+              <div class="text-gray-paragraph text-[14px] lg:text-[18px] leading-[20px]">
+                  ${data.description}
+              </div>
+              <div class="flex items-center price">
+                  <span class="mr-2 lg:mr-4 text-red-500 text-[18px] line-through">${data.regular_price}</span>
+                  <span class="text-[#13A513] text-[22px] lg:text-[28px] font-semibold leading-[32px]">${data.sale_price}</span>
+              </div>
           </div>
-          <h3 class="text-rich-black text-[16px] lg:text-[20px] font-semibold leading-[20px]">
-              <a href="${data.link}" class="text-rich-black hover:underline">
-                  ${data.title}
-              </a>
-          </h3>
-          <p class="text-gray-paragraph text-[14px] lg:text-[18px] leading-[20px]">
-              ${data.description}
-          </p>
-          <div class="flex items-center price">
-              <span class="mr-2 lg:mr-4 text-red-500 text-[18px] line-through">${data.regular_price}</span>
-              <span class="text-[#13A513] text-[22px] lg:text-[28px] font-semibold leading-[32px]">${data.sale_price}</span>
+
+          <div class="button-container">
+            <div class="woocommerce-variation-add-to-cart variations_button">
+                <button type="submit" class="custom_add_to_cart btn !w-full single_add_to_cart_button button">+ Add to Cart</button>
+                <input type="hidden" name="add-to-cart" value="${data.id}" />
+                <input type="hidden" name="product_id" value="${data.id}" />
+                <input type="hidden" name="variation_id" class="variation_id" value="0" />
+            </div>
           </div>
-          <div class="woocommerce-variation-add-to-cart variations_button">
-              <button type="submit" class="custom_add_to_cart btn !w-full single_add_to_cart_button button">+ Add to Cart</button>
-              <input type="hidden" name="add-to-cart" value="${data.id}" />
-              <input type="hidden" name="product_id" value="${data.id}" />
-              <input type="hidden" name="variation_id" class="variation_id" value="0" />
-          </div>`;
+      </div>`;
   container.appendChild(article);
 }

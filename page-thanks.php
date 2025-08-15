@@ -39,9 +39,10 @@ $video_url = get_field('video_url');
     </section>
     <section class="bg-[#FAFBFC]">
         <div class="block_content py-[30px] lg:py-[60px] px-[30px] lg:px-[100px]">
-            <h2 class="text-[24px] lg:text-[30px] font-semibold mb-[30px] lg:mb-[60px] text-center">
-                Checkout our other instructionals </h2>
-            <div class="m-auto max-w-[768px] flex flex-col gap-[2%] flex-wrap">
+            <!-- <h2 class="text-[24px] lg:text-[30px] font-semibold mb-[30px] lg:mb-[60px] text-center"> -->
+                <!-- Checkout our other instructionals 
+            </h2> -->
+            <!-- <div class="m-auto max-w-[768px] flex flex-col gap-[2%] flex-wrap">
                 <?php foreach ($recent_products as $key => $item) :
                     global $product;
                     $product = wc_get_product($item->ID);
@@ -55,7 +56,7 @@ $video_url = get_field('video_url');
                         class="w-full flex flex-wrap lg:flex-nowrap mb-14 lg:mb-10 last:mb-0  gap-[12px] lg:gap-[24px]">
                         <figure class="h-fit w-[35%] lg:w-[20%]">
                             <a class="block " href="<?php echo get_permalink($item->ID); ?>">
-                                <img class="lg:h-full rounded-xl object-cover" src="<?php echo $product_image[0] ?>" alt="">
+                                <img loading="lazy" class="lg:h-full rounded-xl object-cover" src="<?php echo $product_image[0] ?>" alt="">
                             </a>
                         </figure>
                         <div class="w-full lg:w-[60%] lg:flex lg:flex-col lg:justify-center">
@@ -89,9 +90,9 @@ $video_url = get_field('video_url');
                             </div>
                         </div>
                     </article>
-                <?php endforeach  ?>
-                <div class="mt-12 flex justify-center w-full">
-                    <a class="btn-primary w-fit m-auto" href="/my-account">No thanks, bring me to my course</a>
+                <?php endforeach  ?> -->
+                <div class="flex justify-center w-full">
+                    <a class="btn-primary w-fit m-auto" href="/my-account">Bring me to my course</a>
                 </div>
             </div>
         </div>

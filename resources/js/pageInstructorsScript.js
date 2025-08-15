@@ -44,7 +44,7 @@ function print_Instructors(data) {
   article.innerHTML = `
             <figure>
                 <a href="${data.link}">
-                    <img class="rounded-xl" src="${data.thumbnail}" alt="">
+                    <img loading="lazy" class="rounded-xl" src="${data.thumbnail}" alt="">
                 </a>
             </figure>
             <div class="mt-[24px]">

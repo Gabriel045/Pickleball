@@ -1,0 +1,1517 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/inter/Inter-VariableFont.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+/* @font-face {
+    font-family: 'Geom_Graphic';
+    src: url('../assets/fonts/Geom_Graphic/Geom_Graphic_Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geom_Graphic';
+    src: url('../assets/fonts/Geom_Graphic/Geom_Graphic_SemiBold.otf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+} */
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto/Roboto-VariableFont_wdth.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DM_Sans';
+    src: url('../assets/fonts/DM_Sans/DMSans-VariableFontwght.ttf');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --berkley-blue: #0D375E;
+    --caribbean-green: #0D5E5D;
+    --mustard-yellow: #FC0;
+    --rich-black: #0B141D;
+    --gray-paragrah: #475467;
+
+}
+
+body {
+    font-family: 'Roboto';
+    font-weight: normal;
+    overflow-x: hidden;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+
+h1 {
+    font-family: 'DM_Sans' !important;
+}
+
+h2 {
+    font-family: 'DM_Sans' !important;
+}
+
+h3 {
+    font-family: 'DM_Sans' !important;
+}
+
+h4 {
+    font-family: 'DM_Sans' !important;
+}
+
+
+.block_content {
+    max-width: 1440px;
+    width: 100%;
+}
+
+.order-again {
+    display: none !important;
+}
+
+.woocommerce-EditAccountForm .woocommerce-Button {
+    margin-top: 30px !important;
+}
+
+.btn,
+.btn-primary,
+#gform_submit_button_1,
+.woocommerce-form-login .woocommerce-button,
+.woocommerce-form-register .woocommerce-button,
+.woocommerce-ResetPassword .woocommerce-Button,
+.woocommerce-EditAccountForm .woocommerce-Button,
+.woocommerce-orders-table__cell-order-actions a,
+.woocommerce-button--next,
+.woocommerce-button--previous {
+    cursor: pointer !important;
+    display: flex !important;
+    padding: 10px 18px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    border-radius: 8px !important;
+    background: var(--mustard-yellow) !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+    color: var(--rich-black) !important;
+    font-size: 16px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 24px !important;
+}
+
+.add_to_cart_checkout {
+    padding: 5px 18px !important;
+}
+
+.woocommerce-orders-table__cell a {
+    width: fit-content !important;
+    font-size: 12px !important;
+    padding: 4px 12px !important;
+
+}
+
+.woocommerce-button--next,
+.woocommerce-button--previous,
+.order-again a {
+    width: fit-content !important;
+}
+
+.woocommerce-form-login .woocommerce-button,
+.woocommerce-form-register .woocommerce-button {
+    margin-top: 20px !important;
+}
+
+.woocommerce-pagination--without-numbers {
+    display: flex !important;
+    gap: 20px !important;
+}
+
+.btn-green {
+    display: flex;
+    padding: 10px 18px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--caribbean-green);
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    cursor: pointer;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.btn:hover,
+.btn-primary:hover,
+.btn-2:hover,
+.btn-green:hover,
+.woocommerce-form-login .woocommerce-button:hover,
+.woocommerce-form-register .woocommerce-button:hover,
+.woocommerce-orders-table__cell a:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+.woocommerce-form-login .woocommerce-button {
+    margin-bottom: 20px !important;
+    width: fit-content !important;
+}
+
+.woocommerce-form-login .form-row .woocommerce-form__label {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.woocommerce-LostPassword {
+    font-weight: 600 !important;
+}
+
+.woocommerce-customer-details .woocommerce-column__title,
+.woocommerce-order-details .woocommerce-order-details__title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+}
+
+.woocommerce-order-details .woocommerce-order-details__title {
+    margin-top: 30px;
+
+}
+
+.menu_header li a {
+    color: rgba(71, 84, 103, 0.60);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.menu_header>li {
+    position: relative;
+    @apply py-[15px];
+    @apply px-[12px];
+}
+
+.woocommerce-ResetPassword {
+    @apply py-[40px] !important;
+    @apply lg:py-[80px] !important;
+    @apply px-[30px] !important;
+    @apply lg:px-[60px] !important;
+}
+
+.menu_header .menu-item-has-children::after {
+    position: absolute;
+    top: 18px;
+    right: -8px;
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="%23475467" stroke-opacity="0.6" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu-mobile .arrow::after {
+    content: '';
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="%23475467" stroke-opacity="0.6" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.menu-mobile .menu-item-has-children .arrow {
+    width: 60%;
+    top: 4px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+
+.menu_header .menu-item-has-children:hover::after {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.menu_header .menu-item-has-children>ul {
+    min-width: 130px;
+    margin-top: 10px;
+    /* margin-left: 10px; */
+    padding: 10px 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.06);
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.menu_header .menu-item-has-children:hover>ul {
+    z-index: 9999;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+
+
+.menu-mobile li a {
+    color: rgba(71, 84, 103, 0.60);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+
+.menu-mobile>li {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.menu-mobile .menu-item-has-children ul {
+    opacity: 0;
+    padding: 0px;
+    max-height: 0px;
+    visibility: hidden;
+    transition: all .3s ease;
+}
+
+.menu-mobile .menu-item-has-children.active ul {
+    padding: 5px 15px;
+    opacity: 1;
+    max-height: 500px;
+    visibility: visible;
+    transition: all .3s ease;
+}
+
+
+#product-slider,
+#recent-blog_posts,
+#cart,
+#faq,
+#reviews {
+    background-color: #F6F6F6;
+}
+
+/* #thanks-page {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1222" height="362" viewBox="0 0 1222 362" fill="none"><path d="M62.4848 197.969L90.6025 201.537C117.811 205.27 173.137 212.571 225.555 205.979C278.883 199.223 328.395 178.738 378.487 161.032C428.58 143.326 479.254 128.398 531.092 119.028C582.929 109.657 636.838 105.68 692.164 112.981C747.49 120.282 805.142 138.697 861.049 148.777C916.956 158.856 971.119 160.6 1021.54 139.951C1071.05 119.466 1115.91 76.7527 1137.89 55.4782L1160.77 34.0393" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M0.530275 234.882L31.3193 238.789C61.1125 242.876 121.695 250.871 179.093 243.653C237.488 236.255 291.703 213.824 346.555 194.435C401.407 175.047 456.896 158.701 513.658 148.44C570.42 138.18 629.451 133.824 690.033 141.819C750.615 149.814 813.744 169.978 874.963 181.016C936.182 192.053 995.491 193.963 1050.7 171.352C1104.92 148.921 1154.04 102.149 1178.1 78.8533L1203.16 55.3776" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></svg>');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+
+} */
+
+/* the slides */
+.slick-slide {
+    margin: 0 8px !important;
+}
+
+/* the parent */
+.slick-list {
+    margin: 0 -8px !important;
+}
+
+#multiple-items .slick-next {
+    right: -10px !important;
+    top: 205px !important;
+}
+
+
+#multiple-items .slick-prev {
+    left: -25px !important;
+    top: 205px !important;
+}
+
+#multiples-items .slick-next {
+    right: 16px !important;
+    top: auto !important;
+    bottom: -100px !important;
+}
+
+.multiples-items .slick-next {
+    right: -8px !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    content: "" !important;
+}
+
+#multiples-items .slick-prev {
+    left: 0px !important;
+    top: auto !important;
+    bottom: -100px !important;
+}
+
+
+/* Cart styles */
+
+#cart-container .woocommerce-mini-cart {
+    padding: 0px !important;
+}
+
+#cart-container .woocommerce-mini-cart-item .remove-button {
+    width: 30%;
+    display: flex;
+    justify-content: end;
+}
+
+#multiple-items {
+    display: flex;
+    gap: 20px;
+}
+
+#cart-container .woocommerce-mini-cart__buttons {
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+#cart-container .woocommerce-mini-cart__buttons figure {
+    position: absolute;
+    bottom: -25px;
+    left: 90px;
+}
+
+#cart-container .woocommerce-mini-cart__buttons .back-shoping {
+    margin: 0;
+    border-radius: 8px;
+    background: #FAFBFC;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    display: flex;
+    padding: 16px 28px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+#cart-container .woocommerce-mini-cart__buttons .back-shoping:hover {
+    transform: translateY(-2px);
+}
+
+/*  */
+
+.stars::before {
+    content: "";
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="88" height="14" viewBox="0 0 88 14" fill="none"><path d="M6.78711 0L9.14881 3.5365L13.242 4.68978L10.6084 8.02873L10.7765 12.278L6.78711 10.8051L2.79775 12.278L2.96579 8.02873L0.332185 4.68978L4.42541 3.5365L6.78711 0Z" fill="%23FFBF0F"/><path d="M25.3613 0L27.723 3.5365L31.8163 4.68978L29.1826 8.02873L29.3507 12.278L25.3613 10.8051L21.372 12.278L21.54 8.02873L18.9064 4.68978L22.9996 3.5365L25.3613 0Z" fill="%23FFBF0F"/><path d="M43.9355 0L46.2972 3.5365L50.3905 4.68978L47.7569 8.02873L47.9249 12.278L43.9355 10.8051L39.9462 12.278L40.1142 8.02873L37.4806 4.68978L41.5738 3.5365L43.9355 0Z" fill="%23FFBF0F"/><path d="M62.5098 0L64.8715 3.5365L68.9647 4.68978L66.3311 8.02873L66.4991 12.278L62.5098 10.8051L58.5204 12.278L58.6885 8.02873L56.0548 4.68978L60.1481 3.5365L62.5098 0Z" fill="%23FFBF0F"/><path d="M81.084 0L83.4457 3.5365L87.5389 4.68978L84.9053 8.02873L85.0733 12.278L81.084 10.8051L77.0946 12.278L77.2627 8.02873L74.6291 4.68978L78.7223 3.5365L81.084 0Z" fill="%23FFBF0F"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 90px;
+    display: block;
+    height: 14px;
+}
+
+#white-stars::before {
+    content: "";
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="88" height="14" viewBox="0 0 88 14" fill="none"><path d="M6.78711 0L9.14881 3.5365L13.242 4.68978L10.6084 8.02873L10.7765 12.278L6.78711 10.8051L2.79775 12.278L2.96579 8.02873L0.332185 4.68978L4.42541 3.5365L6.78711 0Z" fill="%23FFF"/><path d="M25.3613 0L27.723 3.5365L31.8163 4.68978L29.1826 8.02873L29.3507 12.278L25.3613 10.8051L21.372 12.278L21.54 8.02873L18.9064 4.68978L22.9996 3.5365L25.3613 0Z" fill="%23FFF"/><path d="M43.9355 0L46.2972 3.5365L50.3905 4.68978L47.7569 8.02873L47.9249 12.278L43.9355 10.8051L39.9462 12.278L40.1142 8.02873L37.4806 4.68978L41.5738 3.5365L43.9355 0Z" fill="%23FFF"/><path d="M62.5098 0L64.8715 3.5365L68.9647 4.68978L66.3311 8.02873L66.4991 12.278L62.5098 10.8051L58.5204 12.278L58.6885 8.02873L56.0548 4.68978L60.1481 3.5365L62.5098 0Z" fill="%23FFF"/><path d="M81.084 0L83.4457 3.5365L87.5389 4.68978L84.9053 8.02873L85.0733 12.278L81.084 10.8051L77.0946 12.278L77.2627 8.02873L74.6291 4.68978L78.7223 3.5365L81.084 0Z" fill="%23FFF"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 90px;
+    display: block;
+    height: 14px;
+}
+
+
+#slide-cart.active {
+    transform: translate(0);
+    transition: transform 0.5s ease;
+}
+
+#slide-cart {
+    transition: transform 0.5s ease;
+}
+
+#text-image {
+    /* background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="295" viewBox="0 0 1440 295" fill="none"><mask id="mask0_2_6" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="295"><rect width="1440" height="295" fill="%23D9D9D9"/></mask><g mask="url(%23mask0_2_6)"><path fill-rule="evenodd" clip-rule="evenodd" d="M1440.49 83.9219L1405.69 95.6232C1372.09 107.325 1303.69 130.727 1235.29 134.628C1165.69 138.528 1097.29 122.926 1028.89 111.225C960.492 99.5236 892.092 91.7227 823.692 91.7227C755.292 91.7227 685.692 99.5236 617.292 122.926C548.892 146.329 480.492 185.333 412.092 212.636C343.692 239.939 275.292 255.541 205.692 239.939C137.292 224.337 68.892 177.532 35.292 154.13L0.49208 130.727L0.492065 294.545L35.292 294.545C68.892 294.545 137.292 294.545 205.692 294.545C275.292 294.545 343.692 294.545 412.092 294.545C480.492 294.545 548.892 294.545 617.292 294.545C685.692 294.545 755.292 294.545 823.692 294.545C892.092 294.545 960.492 294.545 1028.89 294.545C1097.29 294.545 1165.69 294.545 1235.29 294.545C1303.69 294.545 1372.09 294.545 1405.69 294.545L1440.49 294.545L1440.49 83.9219Z" fill="%230E375E" fill-opacity="0.02"/><path d="M1511.38 163.576L1485.25 160.008C1459.96 156.275 1408.54 148.974 1359.82 155.566C1310.25 162.322 1264.24 182.807 1217.68 200.513C1171.12 218.22 1124.02 233.147 1075.85 242.518C1027.67 251.888 977.562 255.866 926.141 248.565C874.719 241.264 821.136 222.848 769.175 212.769C717.213 202.689 666.873 200.945 620.011 221.594C573.994 242.079 532.3 284.793 511.876 306.067L490.606 327.506" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M1568.96 126.664L1540.35 122.756C1512.66 118.669 1456.35 110.674 1403 117.892C1348.73 125.291 1298.34 147.721 1247.36 167.11C1196.38 186.498 1144.8 202.844 1092.05 213.105C1039.29 223.366 984.427 227.721 928.121 219.726C871.814 211.732 813.141 191.567 756.242 180.53C699.344 169.492 644.221 167.583 592.906 190.194C542.517 212.625 496.863 259.396 474.498 282.692L451.208 306.168" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: bottom right; */
+}
+
+
+#text-image ul li::before,
+#cuw-ppu-offer .bullet-container li::before {
+    content: '';
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="14" fill="white"/><path fill-rule="evenodd" clip-rule="evenodd" d="M19.9458 8.62169L11.5925 16.6834L9.37583 14.315C8.9675 13.93 8.32583 13.9067 7.85916 14.2334C7.40416 14.5717 7.27583 15.1667 7.55583 15.645L10.1808 19.915C10.4375 20.3117 10.8808 20.5567 11.3825 20.5567C11.8608 20.5567 12.3158 20.3117 12.5725 19.915C12.9925 19.3667 21.0075 9.81169 21.0075 9.81169C22.0575 8.73836 20.7858 7.79336 19.9458 8.61002V8.62169Z" fill="%238498AB"/></svg>');
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+
+/*  */
+
+
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider-item {
+    display: none;
+    position: relative;
+}
+
+.slider-item.active {
+    display: flex;
+}
+
+.nav-dot.active .line::before {
+    position: absolute;
+    background: white;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-radius: 200px;
+    animation: line-load 0.3s ease-in-out;
+}
+
+.nav-dot.active button {
+    color: white;
+}
+
+@keyframes line-load {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+
+#three-cols ul li::before {
+    content: '';
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="14" fill="%230C5E5D"/><path fill-rule="evenodd" clip-rule="evenodd" d="M19.9458 8.62169L11.5925 16.6834L9.3758 14.315C8.96747 13.93 8.3258 13.9067 7.85913 14.2334C7.40413 14.5717 7.2758 15.1667 7.5558 15.645L10.1808 19.915C10.4375 20.3117 10.8808 20.5567 11.3825 20.5567C11.8608 20.5567 12.3158 20.3117 12.5725 19.915C12.9925 19.3667 21.0075 9.81169 21.0075 9.81169C22.0575 8.73836 20.7858 7.79336 19.9458 8.61002V8.62169Z" fill="white"/></svg>');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 25px;
+    background-size: contain;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+/* Checkout fields */
+
+/* #checkout-page .more-recommended, */
+#checkout-page .checkout-btn {
+    display: none;
+}
+
+/* #checkout-page .more-recommended #multiple-items {
+    gap: 20px;
+    flex-direction: column;
+} */
+
+/* #checkout-page .more-recommended #multiple-items article {
+    display: flex;
+    gap: 15px;
+} */
+
+#checkout-page .woocommerce-mini-cart {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.w-\[150px\] {
+    width: 150px;
+}
+
+.w-\[49\%\] {
+    width: 49%;
+}
+
+.mr-2 {
+    margin-right: 8px;
+}
+
+#checkout-page .woocommerce-mini-cart-item .remove-button {
+    width: 30%;
+    display: flex;
+    justify-content: end;
+}
+
+.thwcfd-field-email {
+    padding-top: 24px !important;
+    @apply border-t;
+    @apply border-gray-200;
+}
+
+.woocommerce-checkout label {
+    color: var(--gray-paragrah);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.woocommerce-checkout .figure-product {
+    width: 160px;
+}
+
+/* .woocommerce-checkout .product-name {
+    font-size: 18px;
+} */
+
+form.woocommerce-checkout input {
+    border-radius: 8px !important;
+    border: 1px solid #D0D5DD !important;
+    background: #FFF !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+    padding: 10px 14px !important;
+    color: var(--rich-black) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+}
+
+form.woocommerce-checkout .select2-selection__rendered {
+    padding: 10px 14px !important;
+    color: var(--rich-black) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+}
+
+
+form.woocommerce-checkout .select2-selection {
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+    border-radius: 8px !important;
+    border: 1px solid #D0D5DD !important;
+    background: #FFF !important;
+}
+
+form.woocommerce-checkout #billing_email {
+    position: relative;
+    padding-left: 40px !important;
+    position: relative !important;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M1.6665 5.83334L8.4706 10.5962C9.02158 10.9819 9.29707 11.1747 9.59672 11.2494C9.86142 11.3154 10.1383 11.3154 10.403 11.2494C10.7026 11.1747 10.9781 10.9819 11.5291 10.5962L18.3332 5.83334M5.6665 16.6667H14.3332C15.7333 16.6667 16.4334 16.6667 16.9681 16.3942C17.4386 16.1545 17.821 15.7721 18.0607 15.3017C18.3332 14.7669 18.3332 14.0668 18.3332 12.6667V7.33334C18.3332 5.93321 18.3332 5.23315 18.0607 4.69837C17.821 4.22796 17.4386 3.84551 16.9681 3.60583C16.4334 3.33334 15.7333 3.33334 14.3332 3.33334H5.6665C4.26637 3.33334 3.56631 3.33334 3.03153 3.60583C2.56112 3.84551 2.17867 4.22796 1.93899 4.69837C1.6665 5.23315 1.6665 5.93321 1.6665 7.33334V12.6667C1.6665 14.0668 1.6665 14.7669 1.93899 15.3017C2.17867 15.7721 2.56112 16.1545 3.03153 16.3942C3.56631 16.6667 4.26637 16.6667 5.6665 16.6667Z" stroke="%23667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: 10px center !important;
+}
+
+form.woocommerce-checkout #billing_first_name_field {
+    padding-top: 24px !important;
+}
+
+form.woocommerce-checkout #billing_last_name_field {
+    padding-top: 50px !important;
+}
+
+form.woocommerce-checkout #billing_city_field {
+    padding-top: 32px !important;
+}
+
+form.woocommerce-checkout #billing_state_field {
+    padding-top: 32px !important;
+}
+
+
+form.woocommerce-checkout #billing_phone {
+    padding-left: 40px !important;
+    position: relative !important;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none"><path d="M11.1 4.93331C11.9139 5.09211 12.662 5.49019 13.2484 6.07659C13.8348 6.66299 14.2328 7.41103 14.3916 8.22498M11.1 1.59998C12.791 1.78784 14.368 2.54512 15.5718 3.74748C16.7757 4.94984 17.535 6.52582 17.725 8.21664M7.91413 11.4859C6.91281 10.4846 6.12216 9.35235 5.54216 8.14433C5.49227 8.04043 5.46732 7.98847 5.44816 7.92273C5.38006 7.6891 5.42897 7.40222 5.57065 7.20436C5.61052 7.14868 5.65815 7.10105 5.75341 7.00579C6.04475 6.71445 6.19042 6.56879 6.28565 6.4223C6.64482 5.86989 6.64482 5.15774 6.28565 4.60534C6.19042 4.45885 6.04475 4.31319 5.75341 4.02185L5.59102 3.85945C5.14815 3.41659 4.92671 3.19515 4.6889 3.07486C4.21593 2.83564 3.65738 2.83564 3.18441 3.07486C2.94659 3.19515 2.72516 3.41659 2.28229 3.85945L2.15092 3.99082C1.70957 4.43217 1.4889 4.65285 1.32036 4.95287C1.13334 5.28579 0.998871 5.80287 1.00001 6.18472C1.00103 6.52884 1.06778 6.76403 1.20129 7.2344C1.91877 9.76223 3.27249 12.1475 5.26248 14.1375C7.25246 16.1275 9.63776 17.4812 12.1656 18.1987C12.636 18.3322 12.8711 18.399 13.2153 18.4C13.5971 18.4011 14.1142 18.2667 14.4471 18.0796C14.7471 17.9111 14.9678 17.6904 15.4092 17.2491L15.5405 17.1177C15.9834 16.6748 16.2048 16.4534 16.3251 16.2156C16.5644 15.7426 16.5644 15.1841 16.3251 14.7111C16.2048 14.4733 15.9834 14.2518 15.5405 13.809L15.3781 13.6466C15.0868 13.3552 14.9411 13.2096 14.7947 13.1143C14.2422 12.7552 13.5301 12.7552 12.9777 13.1143C12.8312 13.2096 12.6855 13.3552 12.3942 13.6466C12.2989 13.7418 12.2513 13.7895 12.1956 13.8293C11.9978 13.971 11.7109 14.0199 11.4773 13.9518C11.4115 13.9327 11.3596 13.9077 11.2557 13.8578C10.0476 13.2778 8.91544 12.4872 7.91413 11.4859Z" stroke="%23344054" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>') !important;
+    background-repeat: no-repeat !important;
+    background-position: 10px center !important;
+
+}
+
+form.woocommerce-checkout #billing_phone_field {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+}
+
+/* .woocommerce-checkout .more-recommended article figure img {
+    width: 150px;
+} */
+
+.woocommerce-checkout .more-recommended article div {
+    margin-top: 0px;
+}
+
+
+.woocommerce-checkout .\!text-\[14px\] {
+    font-size: 14px !important;
+}
+
+/*  */
+
+
+.search-videos input[type="text"] {
+    padding-left: 40px !important;
+    position: relative;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"%3E%3Cg id="search-lg"%3E%3Cpath id="Icon" d="M17.5 17.5L14.5834 14.5833M16.6667 9.58333C16.6667 13.4954 13.4954 16.6667 9.58333 16.6667C5.67132 16.6667 2.5 13.4954 2.5 9.58333C2.5 5.67132 5.67132 2.5 9.58333 2.5C13.4954 2.5 16.6667 5.67132 16.6667 9.58333Z" stroke="%23667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: no-repeat !important;
+    background-position: 10px center !important;
+
+}
+
+
+.woocommerce a.remove:hover {
+    background-color: transparent !important;
+}
+
+
+#blog-background {
+    position: relative;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="1440" height="247" viewBox="0 0 1440 247" fill="none"%3E%3Cmask id="mask0_1_9" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="247"%3E%3Crect width="1440" height="247" fill="%23D9D9D9"/%3E%3C/mask%3E%3Cg mask="url(%23mask0_1_9)"%3E%3Cpath fill-rule="evenodd" clip-rule="evenodd" d="M1439.75 36.0363L1404.95 47.7376C1371.35 59.4389 1302.95 82.8415 1234.55 86.7419C1164.95 90.6424 1096.55 75.0406 1028.15 63.3393C959.749 51.638 891.349 43.8371 822.949 43.8371C754.549 43.8371 684.949 51.638 616.549 75.0406C548.149 98.4432 479.749 137.448 411.349 164.751C342.949 192.054 274.549 207.655 204.949 192.054C136.549 176.452 68.1491 129.647 34.5491 106.244L-0.250897 82.8414L-0.250912 246.66L34.5491 246.66C68.1491 246.66 136.549 246.66 204.949 246.66C274.549 246.66 342.949 246.66 411.349 246.66C479.749 246.66 548.149 246.66 616.549 246.66C684.949 246.66 754.549 246.66 822.949 246.66C891.349 246.66 959.749 246.66 1028.15 246.66C1096.55 246.66 1164.95 246.66 1234.55 246.66C1302.95 246.66 1371.35 246.66 1404.95 246.66L1439.75 246.66L1439.75 36.0363Z" fill="%230E375E" fill-opacity="0.02"/%3E%3Cpath d="M1510.64 115.691L1484.5 112.122C1459.22 108.39 1407.79 101.089 1359.08 107.68C1309.51 114.437 1263.49 134.922 1216.94 152.628C1170.38 170.334 1123.28 185.262 1075.1 194.632C1026.92 204.002 976.819 207.98 925.398 200.679C873.976 193.378 820.394 174.963 768.432 164.883C716.47 154.803 666.13 153.06 619.268 173.709C573.251 194.193 531.557 236.907 511.133 258.181L489.863 279.62" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/%3E%3Cpath d="M1568.22 78.778L1539.6 74.8707C1511.91 70.7833 1455.61 62.7886 1402.26 70.0067C1347.98 77.4049 1297.6 99.8359 1246.61 119.224C1195.63 138.613 1144.06 154.959 1091.31 165.219C1038.55 175.48 983.684 179.836 927.378 171.841C871.071 163.846 812.398 143.681 755.499 132.644C698.601 121.607 643.478 119.697 592.164 142.308C541.775 164.739 496.12 211.511 473.755 234.806L450.465 258.282" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/%3E%3C/g%3E%3C/svg%3E');
+    background-repeat: no-repeat !important;
+    background-position: bottom center !important;
+}
+
+.rounded-\[16px\] {
+    border-radius: 16px !important;
+}
+
+
+/* hamburguer menu */
+
+#nav-icon4 {
+    width: 15px;
+    height: 11px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+#nav-icon4 span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 15px;
+    background: #8F97A4;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+/* Icon 4 */
+#nav-icon4 span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    width: 100%;
+}
+
+#nav-icon4 span:nth-child(2) {
+    top: 4px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+#nav-icon4 span:nth-child(3) {
+    top: 8px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+    width: 100%;
+}
+
+#nav-icon4.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 100%;
+}
+
+#nav-icon4.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+#nav-icon4.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 11px;
+    left: 0px;
+    width: 100%;
+    margin-left: 0px;
+}
+
+/*  */
+
+/* Header */
+#mobile-side-menu.active {
+    transform: translate(0);
+    transition: transform 0.5s ease;
+}
+
+#mobile-side-menu {
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+/*  */
+
+.woocommerce-mini-cart-item::before,
+.woocommerce-mini-cart-item::after {
+    content: none !important;
+}
+
+
+#open-close.active {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+#open-close {
+    transition: transform 0.3s ease;
+}
+
+/* #video-categories {
+    opacity: 1;
+    visibility: visible;
+    max-height: 1000px;
+    transition: all 0.6s ease;
+}
+
+#video-categories.hidde {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0px;
+    transition: all 0.3s ease;
+} */
+
+#video-categories {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    background-color: #fff;
+    position: relative;
+}
+
+.select-wrapper::before {
+    content: '';
+    background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 10L12 15L17 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') no-repeat center center;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #000;
+    z-index: 99;
+}
+
+#form .gform-theme--foundation .gform_fields {
+    row-gap: 20px;
+}
+
+#form .gform-field-label,
+.woocommerce-form-login label,
+.woocommerce-form-register label,
+.woocommerce-ResetPassword label,
+.woocommerce-EditAccountForm label {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.woocommerce-form-register,
+.woocommerce-form-login,
+.woocommerce-ResetPassword p {
+    color: #475467;
+}
+
+
+
+.woocommerce-form-register input,
+.woocommerce-form-login input,
+.woocommerce-EditAccountForm input,
+#form .ginput_container_text input,
+#form .ginput_container_email input,
+#form .ginput_container_select select {
+    font-size: 14px !important;
+    color: var(--rich-black) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 24px !important;
+
+    display: flex !important;
+    padding: 5px 14px !important;
+    align-items: center !important;
+    gap: 8px !important;
+    align-self: stretch !important;
+    border-radius: 8px !important;
+    border: 1px solid #D0D5DD !important;
+    background: #FFF !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+}
+
+#form .ginput_container_email {
+    position: relative;
+}
+
+#form .ginput_container_email input {
+    padding-left: 40px !important;
+}
+
+#form .ginput_container_email::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none"%3E%3Cpath d="M1.66602 5.83331L8.47012 10.5962C9.02109 10.9819 9.29658 11.1747 9.59624 11.2494C9.86093 11.3154 10.1378 11.3154 10.4025 11.2494C10.7021 11.1747 10.9776 10.9819 11.5286 10.5962L18.3327 5.83331M5.66602 16.6666H14.3327C15.7328 16.6666 16.4329 16.6666 16.9677 16.3942C17.4381 16.1545 17.8205 15.772 18.0602 15.3016C18.3327 14.7668 18.3327 14.0668 18.3327 12.6666V7.33331C18.3327 5.93318 18.3327 5.23312 18.0602 4.69834C17.8205 4.22793 17.4381 3.84548 16.9677 3.6058C16.4329 3.33331 15.7328 3.33331 14.3327 3.33331H5.66602C4.26588 3.33331 3.56582 3.33331 3.03104 3.6058C2.56063 3.84548 2.17818 4.22793 1.9385 4.69834C1.66602 5.23312 1.66602 5.93318 1.66602 7.33331V12.6666C1.66602 14.0668 1.66602 14.7668 1.9385 15.3016C2.17818 15.772 2.56063 16.1545 3.03104 16.3942C3.56582 16.6666 4.26588 16.6666 5.66602 16.6666Z" stroke="%23667085" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+#faq summary::marker,
+#course-tabs summary::marker {
+    content: none;
+}
+
+#faq summary,
+#course-tabs summary {
+    position: relative;
+    padding-right: 30px;
+    /* Add padding to make space for the icon */
+}
+
+#faq summary::after,
+#course-tabs summary::after,
+#account-accordion::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    width: 25px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="24" y="24" width="24" height="24" rx="12" transform="rotate(180 24 24)" fill="%23E9EAED" fill-opacity="0.866667"/><path d="M17 14L12 9L7 14" stroke="%23404D61" stroke-opacity="0.6" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s ease;
+
+}
+
+#faq details[open] summary::after,
+#course-tabs details[open] summary::after,
+#account-accordion.open::after {
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+
+/* My Account users*/
+/* .woocommerce-MyAccount-navigation-link--dashboard::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M8.5 17H16.5M11.5177 2.76403L4.73539 8.03916C4.28202 8.39178 4.05534 8.56809 3.89203 8.78889C3.74737 8.98447 3.6396 9.20481 3.57403 9.43908C3.5 9.70355 3.5 9.99073 3.5 10.5651V17.8C3.5 18.9201 3.5 19.4802 3.71799 19.908C3.90973 20.2843 4.21569 20.5903 4.59202 20.782C5.01984 21 5.57989 21 6.7 21H18.3C19.4201 21 19.9802 21 20.408 20.782C20.7843 20.5903 21.0903 20.2843 21.282 19.908C21.5 19.4802 21.5 18.9201 21.5 17.8V10.5651C21.5 9.99073 21.5 9.70355 21.426 9.43908C21.3604 9.20481 21.2526 8.98447 21.108 8.78889C20.9447 8.56809 20.718 8.39178 20.2646 8.03916L13.4823 2.76403C13.131 2.49078 12.9553 2.35415 12.7613 2.30163C12.5902 2.25529 12.4098 2.25529 12.2387 2.30163C12.0447 2.35415 11.869 2.49078 11.5177 2.76403Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+} */
+
+.woocommerce-MyAccount-navigation-link--dashboard a::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M8.5 15V17M12.5 11V17M16.5 7V17M8.3 21H16.7C18.3802 21 19.2202 21 19.862 20.673C20.4265 20.3854 20.8854 19.9265 21.173 19.362C21.5 18.7202 21.5 17.8802 21.5 16.2V7.8C21.5 6.11984 21.5 5.27976 21.173 4.63803C20.8854 4.07354 20.4265 3.6146 19.862 3.32698C19.2202 3 18.3802 3 16.7 3H8.3C6.61984 3 5.77976 3 5.13803 3.32698C4.57354 3.6146 4.1146 4.07354 3.82698 4.63803C3.5 5.27976 3.5 6.11984 3.5 7.8V16.2C3.5 17.8802 3.5 18.7202 3.82698 19.362C4.1146 19.9265 4.57354 20.3854 5.13803 20.673C5.77976 21 6.61984 21 8.3 21Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.woocommerce-MyAccount-navigation-link--orders a::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M2.5 12L12.1422 16.8211C12.2734 16.8867 12.339 16.9195 12.4078 16.9324C12.4687 16.9438 12.5313 16.9438 12.5922 16.9324C12.661 16.9195 12.7266 16.8867 12.8578 16.8211L22.5 12M2.5 17L12.1422 21.8211C12.2734 21.8867 12.339 21.9195 12.4078 21.9324C12.4687 21.9438 12.5313 21.9438 12.5922 21.9324C12.661 21.9195 12.7266 21.8867 12.8578 21.8211L22.5 17M2.5 7L12.1422 2.17889C12.2734 2.1133 12.339 2.0805 12.4078 2.0676C12.4687 2.05616 12.5313 2.05616 12.5922 2.0676C12.661 2.0805 12.7266 2.1133 12.8578 2.17889L22.5 7L12.8578 11.8211C12.7266 11.8867 12.661 11.9195 12.5922 11.9324C12.5313 11.9438 12.4687 11.9438 12.4078 11.9324C12.339 11.9195 12.2734 11.8867 12.1422 11.8211L2.5 7Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.woocommerce-MyAccount-navigation-link--payment-methods a::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 24px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none"><path d="M22.5 21V19C22.5 17.1362 21.2252 15.5701 19.5 15.126M16 3.29076C17.4659 3.88415 18.5 5.32131 18.5 7C18.5 8.67869 17.4659 10.1159 16 10.7092M17.5 21C17.5 19.1362 17.5 18.2044 17.1955 17.4693C16.7895 16.4892 16.0108 15.7105 15.0307 15.3045C14.2956 15 13.3638 15 11.5 15H8.5C6.63623 15 5.70435 15 4.96927 15.3045C3.98915 15.7105 3.21046 16.4892 2.80448 17.4693C2.5 18.2044 2.5 19.1362 2.5 21M14 7C14 9.20914 12.2091 11 10 11C7.79086 11 6 9.20914 6 7C6 4.79086 7.79086 3 10 3C12.2091 3 14 4.79086 14 7Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.woocommerce-support a::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><path d="M9.63626 9.85894L5.42893 5.65161M5.42893 19.7937L9.66797 15.5547M15.3611 15.5864L19.5684 19.7937M19.5684 5.65161L15.3287 9.89127M22.5 12.7227C22.5 18.2455 18.0228 22.7227 12.5 22.7227C6.97715 22.7227 2.5 18.2455 2.5 12.7227C2.5 7.19981 6.97715 2.72266 12.5 2.72266C18.0228 2.72266 22.5 7.19981 22.5 12.7227ZM16.5 12.7227C16.5 14.9318 14.7091 16.7227 12.5 16.7227C10.2909 16.7227 8.5 14.9318 8.5 12.7227C8.5 10.5135 10.2909 8.72266 12.5 8.72266C14.7091 8.72266 16.5 10.5135 16.5 12.7227Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    margin-bottom: -3px;
+    vertical-align: text-bottom;
+}
+
+.woocommerce-settings a::before {
+    content: '';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none"><path d="M12.5 15.7227C14.1569 15.7227 15.5 14.3795 15.5 12.7227C15.5 11.0658 14.1569 9.72266 12.5 9.72266C10.8431 9.72266 9.5 11.0658 9.5 12.7227C9.5 14.3795 10.8431 15.7227 12.5 15.7227Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19.2273 15.4499C19.1063 15.7241 19.0702 16.0283 19.1236 16.3232C19.1771 16.6181 19.3177 16.8902 19.5273 17.1045L19.5818 17.159C19.7509 17.3279 19.885 17.5284 19.9765 17.7491C20.068 17.9699 20.1151 18.2064 20.1151 18.4454C20.1151 18.6843 20.068 18.9209 19.9765 19.1416C19.885 19.3624 19.7509 19.5629 19.5818 19.7317C19.413 19.9008 19.2124 20.0349 18.9917 20.1264C18.771 20.2179 18.5344 20.265 18.2955 20.265C18.0565 20.265 17.8199 20.2179 17.5992 20.1264C17.3785 20.0349 17.178 19.9008 17.0091 19.7317L16.9545 19.6772C16.7403 19.4676 16.4682 19.327 16.1733 19.2736C15.8784 19.2201 15.5742 19.2562 15.3 19.3772C15.0311 19.4924 14.8018 19.6838 14.6403 19.9277C14.4788 20.1716 14.3921 20.4574 14.3909 20.7499V20.9045C14.3909 21.3867 14.1994 21.8491 13.8584 22.1901C13.5174 22.5311 13.0549 22.7227 12.5727 22.7227C12.0905 22.7227 11.6281 22.5311 11.2871 22.1901C10.9461 21.8491 10.7545 21.3867 10.7545 20.9045V20.8227C10.7475 20.5218 10.6501 20.2299 10.475 19.9851C10.2999 19.7403 10.0552 19.5538 9.77273 19.4499C9.49853 19.3289 9.19437 19.2928 8.89947 19.3463C8.60456 19.3998 8.33244 19.5404 8.11818 19.7499L8.06364 19.8045C7.89478 19.9735 7.69425 20.1076 7.47353 20.1991C7.2528 20.2906 7.01621 20.3377 6.77727 20.3377C6.53834 20.3377 6.30174 20.2906 6.08102 20.1991C5.86029 20.1076 5.65977 19.9735 5.49091 19.8045C5.32186 19.6356 5.18775 19.4351 5.09626 19.2144C5.00476 18.9936 4.95766 18.757 4.95766 18.5181C4.95766 18.2792 5.00476 18.0426 5.09626 17.8219C5.18775 17.6011 5.32186 17.4006 5.49091 17.2317L5.54545 17.1772C5.75503 16.9629 5.89562 16.6908 5.9491 16.3959C6.00257 16.101 5.96647 15.7969 5.84545 15.5227C5.73022 15.2538 5.53887 15.0245 5.29497 14.8629C5.05107 14.7014 4.76526 14.6147 4.47273 14.6136H4.31818C3.83597 14.6136 3.37351 14.422 3.03253 14.081C2.69156 13.7401 2.5 13.2776 2.5 12.7954C2.5 12.3132 2.69156 11.8507 3.03253 11.5097C3.37351 11.1688 3.83597 10.9772 4.31818 10.9772H4.4C4.7009 10.9702 4.99273 10.8728 5.23754 10.6977C5.48236 10.5226 5.66883 10.2779 5.77273 9.99538C5.89374 9.72119 5.92984 9.41703 5.87637 9.12212C5.8229 8.82722 5.68231 8.55509 5.47273 8.34084L5.41818 8.28629C5.24913 8.11743 5.11503 7.91691 5.02353 7.69618C4.93203 7.47546 4.88493 7.23887 4.88493 6.99993C4.88493 6.76099 4.93203 6.5244 5.02353 6.30367C5.11503 6.08295 5.24913 5.88243 5.41818 5.71357C5.58704 5.54452 5.78757 5.41041 6.00829 5.31891C6.22901 5.22741 6.46561 5.18032 6.70455 5.18032C6.94348 5.18032 7.18008 5.22741 7.4008 5.31891C7.62152 5.41041 7.82205 5.54452 7.99091 5.71357L8.04545 5.76811C8.25971 5.97769 8.53183 6.11828 8.82674 6.17175C9.12164 6.22522 9.4258 6.18912 9.7 6.06811H9.77273C10.0416 5.95287 10.2709 5.76153 10.4324 5.51762C10.594 5.27372 10.6807 4.98792 10.6818 4.69538V4.54084C10.6818 4.05863 10.8734 3.59616 11.2144 3.25519C11.5553 2.91421 12.0178 2.72266 12.5 2.72266C12.9822 2.72266 13.4447 2.91421 13.7856 3.25519C14.1266 3.59616 14.3182 4.05863 14.3182 4.54084V4.62266C14.3193 4.91519 14.406 5.201 14.5676 5.4449C14.7291 5.6888 14.9584 5.88014 15.2273 5.99538C15.5015 6.1164 15.8056 6.1525 16.1005 6.09902C16.3954 6.04555 16.6676 5.90496 16.8818 5.69538L16.9364 5.64084C17.1052 5.47179 17.3057 5.33768 17.5265 5.24618C17.7472 5.15469 17.9838 5.10759 18.2227 5.10759C18.4617 5.10759 18.6983 5.15469 18.919 5.24618C19.1397 5.33768 19.3402 5.47179 19.5091 5.64084C19.6781 5.8097 19.8122 6.01022 19.9037 6.23095C19.9952 6.45167 20.0423 6.68826 20.0423 6.9272C20.0423 7.16614 19.9952 7.40273 19.9037 7.62346C19.8122 7.84418 19.6781 8.04471 19.5091 8.21357L19.4545 8.26811C19.245 8.48236 19.1044 8.75449 19.0509 9.04939C18.9974 9.3443 19.0335 9.64846 19.1545 9.92266V9.99538C19.2698 10.2643 19.4611 10.4936 19.705 10.6551C19.9489 10.8166 20.2347 10.9033 20.5273 10.9045H20.6818C21.164 10.9045 21.6265 11.096 21.9675 11.437C22.3084 11.778 22.5 12.2404 22.5 12.7227C22.5 13.2049 22.3084 13.6673 21.9675 14.0083C21.6265 14.3493 21.164 14.5408 20.6818 14.5408H20.6C20.3075 14.542 20.0217 14.6287 19.7778 14.7902C19.5339 14.9517 19.3425 15.181 19.2273 15.4499Z" stroke="%230C5E5D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 8px;
+    margin-bottom: -3px;
+    vertical-align: top;
+}
+
+
+.logged-in #my-account .woocommerce {
+    display: flex !important;
+    width: 100% !important;
+}
+
+#my-account .woocommerce::before,
+#my-account .woocommerce::after {
+    content: none !important
+}
+
+#my-account .woocommerce-MyAccount-navigation {
+    width: 20% !important;
+    transition: all 0.5s ease;
+}
+
+#my-account .woocommerce-MyAccount-navigation.collapsed {
+    width: 110px !important;
+    transition: all 0.5s ease;
+
+}
+
+#my-account .woocommerce-MyAccount-navigation.collapsed #account-settings li,
+#my-account .woocommerce-MyAccount-navigation.collapsed #other-settings li {
+    height: 45px !important;
+}
+
+
+#my-account .woocommerce-MyAccount-navigation.collapsed #account-settings a,
+#my-account .woocommerce-MyAccount-navigation.collapsed #other-settings a {
+    font-size: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#my-account .woocommerce-MyAccount-navigation.collapsed #account-settings a::before,
+#my-account .woocommerce-MyAccount-navigation.collapsed #other-settings a::before {
+    margin-right: 0px;
+}
+
+#my-account .woocommerce-MyAccount-navigation #account-settings a,
+#my-account .woocommerce-MyAccount-navigation #other-settings a {
+    font-size: 16px !important;
+    transition: all 0.3s ease;
+}
+
+#my-account .woocommerce-MyAccount-navigation.collapsed .logout-name {
+    opacity: 0;
+    visibility: hidden;
+    width: 0px;
+    transition: all 0.3s ease;
+}
+
+#my-account .woocommerce-MyAccount-navigation.collapsed #toogle-sidebar svg {
+    transform: rotate(0deg);
+    margin-right: -4px;
+    transition: all 0.3s ease;
+}
+
+#my-account .woocommerce-MyAccount-navigation.collapsed .woocommerce-logout svg {
+    margin-left: -36px;
+}
+
+#my-account .woocommerce-MyAccount-navigation #toogle-sidebar svg {
+    transform: rotate(180deg);
+    margin-left: -2px;
+    transition: all 0.3s ease;
+}
+
+#my-account .woocommerce-MyAccount-navigation .logout-name {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
+
+
+
+#my-account .woocommerce-MyAccount-content {
+    width: 100% !important;
+}
+
+.woocommerce-MyAccount-content {
+
+    @apply py-[30px];
+    @apply lg:py-[60px];
+    @apply px-[30px];
+    @apply lg:px-[60px];
+}
+
+
+.woocommerce-order-details,
+.woocommerce-customer-details {
+    display: block !important;
+}
+
+.product-featured-video iframe {
+    width: 100%;
+    aspect-ratio: 1 / 0.6;
+    height: auto;
+}
+
+.active-tab {
+    font-weight: 600;
+}
+
+.leading-\[20px\] {
+    line-height: 20px;
+}
+
+.lg\:\!h-\[150px\] {
+    height: 150px !important;
+}
+
+
+.woocommerce-EditAccountForm fieldset legend {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    padding-top: 30px !important;
+
+}
+
+ol {
+    list-style: number inside;
+}
+
+.product-slider .slick-track {
+    display: flex;
+}
+
+.chapter-item {
+    padding: 10px 0px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #E9EAED;
+
+}
+
+.chapter-item span:nth-child(2) {
+    width: 65%;
+}
+
+.chapter-item span:last-child {
+    width: 25%;
+}
+
+.chapter-item .icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="18" width="18" viewBox="0 0 142.448 142.448" fill="%230D375E" stroke="%230D375E"><g><path style="fill:%230D375E;" d="M142.411,68.9C141.216,31.48,110.968,1.233,73.549,0.038c-20.361-0.646-39.41,7.104-53.488,21.639C6.527,35.65-0.584,54.071,0.038,73.549c1.194,37.419,31.442,67.667,68.861,68.861c0.779,0.025,1.551,0.037,2.325,0.037c19.454,0,37.624-7.698,51.163-21.676C135.921,106.799,143.033,88.377,142.411,68.9z M111.613,110.336c-10.688,11.035-25.032,17.112-40.389,17.112c-0.614,0-1.228-0.01-1.847-0.029c-29.532-0.943-53.404-24.815-54.348-54.348c-0.491-15.382,5.122-29.928,15.806-40.958c10.688-11.035,25.032-17.112,40.389-17.112c0.614,0,1.228,0.01,1.847,0.029c29.532,0.943,53.404,24.815,54.348,54.348C127.91,84.76,122.296,99.306,111.613,110.336z"/><path style="fill:%230D375E;" d="M94.585,67.086L63.001,44.44c-3.369-2.416-8.059-0.008-8.059,4.138v45.293c0,4.146,4.69,6.554,8.059,4.138l31.583-22.647C97.418,73.331,97.418,69.118,94.585,67.086z"/></g></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+}
+
+
+
+/* Upsale page */
+#cuw-ppu-offer {
+    max-width: 1024px !important;
+    width: 100% !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    padding-bottom: 100px !important;
+    padding-top: 50px !important;
+    margin: auto !important;
+}
+
+#cuw-ppu-offer h3 {
+    color: #111827 !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+    font-size: 20px !important;
+}
+
+#cuw-ppu-offer h2 {
+    color: #111827 !important;
+    font-weight: 700 !important;
+    line-height: 46px !important;
+    font-size: 36px !important;
+    margin-bottom: 12px !important;
+}
+
+text-red-500 {
+    @apply text-red-500 !important;
+    font-size: 18px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-price ins .woocommerce-Price-amount {
+    color: #13A513 !important;
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    line-height: 32px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-price ins {
+    text-decoration: none !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-product-image img {
+    border-radius: 10px !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-order-totals-table tr th {
+    display: flex;
+    padding: 10px 0px !important;
+}
+
+#cuw-ppu-offer .wp-container-core-group-is-layout-9649a0d9 {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#cuw-ppu-offer .cuw-ppu-order-details {
+    display: none !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-offer-description {
+    display: none !important;
+}
+
+
+#cuw-ppu-offer .title-price {
+    font-size: 30px !important;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+#cuw-ppu-offer .title-price .offer-arrow::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10.605" height="15.555"><path d="m2.828 15.555 7.777-7.779L2.828 0 0 2.828l4.949 4.948L0 12.727l2.828 2.828z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+#cuw-ppu-offer .new-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 85px 0px 30px 0px;
+}
+
+#cuw-ppu-offer .cuw-ppu-button {
+    display: none !important;
+}
+
+#cuw-ppu-offer .cuw-ppu-offer-timer {
+    justify-content: center !important;
+    padding: 26px !important;
+    font-size: 22px !important;
+    margin-bottom: 60px !important;
+}
+
+#cuw-ppu-offer .wp-container-core-group-is-layout-9649a0d9 {
+    display: none !important;
+}
+
+#cuw-ppu-offer .wp-container-core-columns-is-layout-9d6595d7 {
+    margin-bottom: 0px !important;
+}
+
+.\!w-\[70\%\] {
+    width: 70% !important;
+}
+
+.w-\[250px\] {
+    width: 250px;
+}
+
+#cuw-ppu-offer .wp-block-spacer {
+    height: 0px !important;
+}
+
+
+#cuw-ppu-offer .bullet-container {
+    padding-top: 40px;
+}
+
+#cuw-ppu-offer .bullet-container ul {
+    max-width: 440px;
+    margin: auto;
+    list-style: none;
+    list-style-position: inside;
+}
+
+#cuw-ppu-offer .bullet-container li {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--gray-paragrah);
+}
+
+/* get access form */
+
+#gform_2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+#gform_2 .gform_footer {
+    margin: 0px;
+}
+
+#gform_2 .gform_footer input[type="submit"] {
+    margin: 0px;
+    @apply rounded-lg border bg-black text-white shadow-sm px-4 py-2 font-medium text-[16px] h-11
+}
+
+#gform_2 #input_2_1 {
+    @apply w-full lg:w-[280px] rounded-lg bg-white/20 border-[1px] border-black shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none px-4 py-2 h-11 placeholder-black text-[16px]
+}
+
+.gform_validation_errors {
+    display: none !important;
+}
+
+@media screen and (min-width:1200px) {
+    .xl\:w-\[23\.5\%\] {
+        width: 23.5% !important;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .lg\:w-\[49\%\] {
+        width: 49%;
+    }
+
+    .lg\:min-h-\[150px\] {
+        min-height: 150px;
+    }
+
+    .lg\:mr-4 {
+        margin-right: 16px;
+    }
+
+}
+
+@media screen and (min-width:768px) {
+
+    .md\:w-\[32\%\] {
+        width: 32%;
+    }
+}
+
+@media screen and (max-width:1023px) {
+
+    #product-slider,
+    #recent-blog_posts,
+    #cart,
+    #text-image {
+        background-image: none;
+    }
+
+    #cart-container .woocommerce-mini-cart-item .remove-button {
+        width: 6%;
+    }
+
+    #cart-container .woocommerce-mini-cart__buttons {
+        flex-wrap: wrap;
+    }
+
+    #cart-container .woocommerce-mini-cart__buttons a {
+        width: 100%;
+    }
+
+    #review-slider .slick-next {
+        right: 10px !important;
+        bottom: -70px !important;
+        top: auto !important;
+    }
+
+    #review-slider .slick-prev {
+        left: 0px !important;
+        bottom: -90px !important;
+        top: auto !important;
+    }
+
+    #form #gform_submit_button_1 {
+        width: 100% !important;
+    }
+
+    .logged-in #my-account .woocommerce {
+        flex-wrap: wrap;
+    }
+
+    #my-account .woocommerce-MyAccount-navigation {
+        width: 100% !important;
+    }
+
+    #my-account .woocommerce-MyAccount-content {
+        width: 100% !important;
+    }
+
+
+    #account-settings {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0px;
+        transition: all 0.3s ease;
+    }
+
+    #account-settings.active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 1000px;
+        transition: all 0.6s ease;
+    }
+
+    #other-settings {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0px;
+        transition: all 0.3s ease;
+    }
+
+    #other-settings.active {
+        opacity: 1;
+        visibility: visible;
+        max-height: 1000px;
+        transition: all 0.6s ease;
+    }
+
+
+    #cuw-ppu-offer {
+        padding: 50px 30px !important;
+    }
+
+
+    #cuw-ppu-offer h2 {
+        line-height: 30px !important;
+        font-size: 25px !important;
+    }
+
+    #cuw-ppu-offer .title-price {
+        font-size: 20px !important;
+
+    }
+
+    #cuw-ppu-offer .bullet-container li {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .woocommerce-orders-table__cell-order-actions {
+        display: flex !important;
+        justify-content: space-between !important;
+    }
+
+    #checkout-page .more-recommended #multiple-items article {
+        flex-direction: column;
+    }
+
+    .woocommerce-checkout .figure-product {
+        width: 150px;
+    }
+}

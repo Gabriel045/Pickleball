@@ -122,7 +122,7 @@ function cuw_logo_shortcode($atts)
 ?>
 
     <figure>
-        <img class="w-[250px] pb-5 m-auto" src="<?php echo get_field('header_logo', 'option'); ?>">
+    <img loading="lazy" class="w-[250px] pb-5 m-auto" src="<?php echo get_field('header_logo', 'option'); ?>">
     </figure>
 
 <?php

@@ -17,10 +17,10 @@ $product_id = $_GET['id'] ?? null;
                             $thumbnail_id = get_post_thumbnail_id($product_id);
                             if ($thumbnail_id) {
                                 $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'full');
-                                echo '<img src="' . esc_url($thumbnail_url) . '" alt="Product Thumbnail" class="w-full h-auto object-cover">';
+                                echo '<img loading="lazy" src="' . esc_url($thumbnail_url) . '" alt="Product Thumbnail" class="w-full h-auto object-cover">';
                             } ?>
                         <?php else: ?>
-                        <img src="<?php echo esc_url($image); ?>" alt="Camps" class="w-full lg:h-full object-cover">
+                        <img loading="lazy" src="<?php echo esc_url($image); ?>" alt="Camps" class="w-full lg:h-full object-cover">
                         <?php endif; ?>
                     </figure>
                 </div>

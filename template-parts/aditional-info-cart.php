@@ -6,8 +6,8 @@
     </div>
     <div class="flex gap-4 mt-8">
         <figure class="w-[24%]">
-            <img class="w-[80px] h-[80px]"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/logo money back.png"
+            <img loading="lazy" class="w-[80px] h-[80px]"
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/logo money back.webp"
                 alt="Money Back Guarantee">
         </figure>
         <div class="w-[76%]">
@@ -19,7 +19,7 @@
 
     <div class="flex gap-4 mt-6">
         <figure class="w-[24%]">
-            <img class="w-[80px] h-[80px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/unlock.png"
+            <img loading="lazy" class="w-[80px] h-[80px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/unlock.webp"
                 alt="Unlock">
         </figure>
         <div class="w-[76%]">

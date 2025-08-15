@@ -51,7 +51,7 @@ function print_Blogs(data) {
   article.innerHTML = `
             <figure>
                 <a href="${data.link}">
-                    <img class="rounded-[16px] object-cover w-full h-[228px]"
+                    <img loading="lazy" class="rounded-[16px] object-cover w-full h-[228px]"
                         src="${data.thumbnail}">
                 </a>
             </figure>

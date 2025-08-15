@@ -52,7 +52,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
     <div class="mt-10 mb-[50px]">
         <?php if (empty($video_iframe)): ?>
             <figure>
-                <img src="/wp-content/uploads/2025/05/Frame-1000006416.png">
+                <img loading="lazy" src="/wp-content/uploads/2025/05/Frame-1000006416.png">
             </figure>
         <?php else: ?>
             <script src="https://player.vdocipher.com/v2/api.js"></script>
@@ -116,7 +116,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                             <li class="first:pt-[35px] flex items-center gap-5 border-t border-gray-200 py-4 first:border-t-0 ">
                                 <a href="<?php echo esc_url(get_permalink($items)); ?>">
                                     <figure class="figure-product w-[150px]">
-                                        <img class="rounded-lg !m-0 object-cover aspect-[0.8] w-full"
+                                        <img loading="lazy" class="rounded-lg !m-0 object-cover aspect-[0.8] w-full"
                                             src="<?php echo esc_url($image); ?>">
                                     </figure>
                                 </a>
@@ -209,7 +209,7 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
                 ?>
                     <div class="w-full md:w-[49%] lg:w-[31.33%] gap-[5px] flex flex-col justify-between">
                         <figure>
-                            <img class="aspect-[0.8] object-cover w-full rounded-[10px]" src="<?php echo esc_url($image); ?>">
+                            <img loading="lazy" class="aspect-[0.8] object-cover w-full rounded-[10px]" src="<?php echo esc_url($image); ?>">
                         </figure>
                         <span class="stars"></span>
                         <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">5.0

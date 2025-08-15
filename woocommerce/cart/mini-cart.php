@@ -62,7 +62,7 @@ $current_url = $_POST['page'] ? $_POST['page'] : "";
                                 <?php
                                 $medium_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($product->get_id()), 'medium');
                                 ?>
-                                <img class='rounded-lg !m-0 object-cover aspect-[0.8] !w-full'
+                                <img loading='lazy' class='rounded-lg !m-0 object-cover aspect-[0.8] !w-full'
                                     src='<?php echo esc_url($medium_thumbnail[0]); ?>'>
                             </figure>
                         </a>

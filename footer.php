@@ -3,7 +3,7 @@ $logo = get_field('logo', 'option');
 $text_blue_section = get_field('text', 'option');
 $logos = get_field('logos', 'option');
 $instagram = get_field('instagram', 'option')['url'];
-$x = get_field('x', 'option')['url'];
+// $x = get_field('x', 'option')['url'];
 $tiktok = get_field('tiktok', 'option')['url'];
 $facebook = get_field('facebook', 'option')['url'];
 ?>
@@ -38,7 +38,7 @@ $facebook = get_field('facebook', 'option')['url'];
                 <div class="w-full lg:w-1/4 flex flex-col justify-between gap-7 mr-[65px]">
                     <a href="/">
                         <figure>
-                            <img class="w-[280px]" src="<?php echo $logo ?>">
+                            <img loading="lazy" class="w-[280px]" src="<?php echo $logo ?>">
                         </figure>
                     </a>
                     <div class="">
@@ -104,7 +104,7 @@ $facebook = get_field('facebook', 'option')['url'];
                     <div class="flex gap-[14px]">
                         <?php foreach ($logos as $key => $logo) : ?>
                             <figure>
-                                <img class="w-[72px]" src="<?php echo $logo["image"] ?>">
+                                <img loading="lazy" class="w-[72px]" src="<?php echo $logo["image"] ?>">
                             </figure>
                         <?php endforeach; ?>
 

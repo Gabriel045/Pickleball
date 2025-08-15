@@ -359,6 +359,13 @@ h4 {
     background-color: #F6F6F6;
 }
 
+/* #product-slider .btn.btn-waitlist{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+} */
+
+
 /* #thanks-page {
     background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="1222" height="362" viewBox="0 0 1222 362" fill="none"><path d="M62.4848 197.969L90.6025 201.537C117.811 205.27 173.137 212.571 225.555 205.979C278.883 199.223 328.395 178.738 378.487 161.032C428.58 143.326 479.254 128.398 531.092 119.028C582.929 109.657 636.838 105.68 692.164 112.981C747.49 120.282 805.142 138.697 861.049 148.777C916.956 158.856 971.119 160.6 1021.54 139.951C1071.05 119.466 1115.91 76.7527 1137.89 55.4782L1160.77 34.0393" stroke="%230E375E" stroke-opacity="0.02" stroke-width="7"/><path d="M0.530275 234.882L31.3193 238.789C61.1125 242.876 121.695 250.871 179.093 243.653C237.488 236.255 291.703 213.824 346.555 194.435C401.407 175.047 456.896 158.701 513.658 148.44C570.42 138.18 629.451 133.824 690.033 141.819C750.615 149.814 813.744 169.978 874.963 181.016C936.182 192.053 995.491 193.963 1050.7 171.352C1104.92 148.921 1154.04 102.149 1178.1 78.8533L1203.16 55.3776" stroke="%230E375E" stroke-opacity="0.05" stroke-width="7"/></svg>');
     background-repeat: no-repeat;
@@ -378,10 +385,14 @@ h4 {
 }
 
 #multiple-items .slick-next {
-    right: -10px !important;
+    right: -20px !important;
     top: 205px !important;
 }
 
+
+#multiple-items .slick-arrow{
+    cursor: pointer;
+}
 
 #multiple-items .slick-prev {
     left: -25px !important;
@@ -1404,7 +1415,33 @@ text-red-500 {
 }
 
 #gform_2 #input_2_1 {
-    @apply w-full lg:w-[280px] rounded-lg bg-white/20 border-[1px] border-black shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none px-4 py-2 h-11 placeholder-black text-[16px]
+    width: 100% !important;
+    border-radius: 8px !important;
+    background-color: rgba(255,255,255,0.2) !important;
+    border: 1px solid #000 !important;
+    box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05) !important;
+    outline: none !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+    color: #000 !important;
+    /* Placeholder color */
+    &::placeholder {
+        color: #000 !important;
+    }
+}
+
+#gform_2 #input_2_1:focus {
+    box-shadow: 0 0 0 2px #3b82f6 !important; /* blue-500 */
+}
+
+@media (min-width: 1024px) {
+    #gform_2 #input_2_1 {
+        width: 280px !important;
+    }
 }
 
 .gform_validation_errors {
@@ -1422,10 +1459,14 @@ text-red-500 {
 .woocommerce-checkout .btn-waitlist,
 #more-products-side-cart .btn-waitlist {
     padding: 5px 18px !important;
-    margin-top: 20px;
 }
 
 /* Coming soon  */
+#more-products-side-cart .coming-soon-container{
+    font-size: 16px !important;
+}
+
+
 article figure,
 article {
     position: relative;

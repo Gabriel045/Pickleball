@@ -25,7 +25,7 @@ $our_team     = get_field('our_team');
                 <?php foreach ($our_team as $key => $card) : ?>
                     <article class="w-full md:w-[49.5%] lg:w-[32.6%]">
                         <figure>
-                            <img class="lg:h-[415px] w-full object-cover rounded-[10px]"
+                            <img loading="lazy" class="lg:h-[415px] w-full object-cover rounded-[10px]"
                                 src="<?php echo $card["image"]  ?>">
                         </figure>
                         <h4 class="text-rich-black text-[18px] lg:text-[20px] font-semibold mt-[24px]">

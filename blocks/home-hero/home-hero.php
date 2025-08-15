@@ -6,24 +6,19 @@ $bg_overlay         = get_field('background-overlay');
 $text               = get_field('text');
 $repeater           = get_field('repeater');
 
-// if (!empty($background_video)) {
-//     $parsed_url = parse_url($background_video);
-//     $query = isset($parsed_url['query']) ? $parsed_url['query'] . '&' : '';
-//     $query .= 'loop=true&muted=true&controls=off&autoplay=true';
-//     $background_video = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parsed_url['path'] . '?' . $query;
-// }
 ?>
 
 <section class="">
     <div class="video-wrapper flex w-full items-center justify-center">
         <video src="<?php echo esc_url($background_video_file['url']); ?>" autoplay muted loop playsinline
+            poster="<?php echo esc_url($background_image['url']); ?>"
             class="bg-black w-full h-full object-cover absolute top-0 left-0"></video>
         <!-- <iframe src="<?php echo esc_url($background_video); ?>" allowFullScreen="true"
                 allow="autoplay;encrypted-media"></iframe> -->
         <div class="absolute z-20 block_content max-[1024px]:px-[30px] max-[1024px]:py-[50px] lg:p-[60px]"
             style="<?php echo !empty($bg_overlay) ? $bg_overlay : ''; ?>">
 
-            <div class="max-w-[700px] p-[30px] lg:p-[50px] rounded-[20px] bg-[#0B141D80] [_&_h2]:text-white [_&_h2]:text-[30px] lg:[_&_h2]:text-[60px] [_&_h2]:font-semibold [_&_h2]:leading-normal lg:[_&_h2]:leading-[60px]
+            <div class="max-w-[700px] p-[30px] lg:p-[50px] rounded-[20px] bg-[#0B141D80] [_&_h2]:text-white [_&_h2]:text-[30px] lg:[_&_h2]:text-[60px] [_&_h2]:font-semibold [_&_h2]:leading-[32px] lg:[_&_h2]:leading-[60px]
                     lg:[_&_p]:text-[20px] [_&_p]:text-[16px]  [_&_p]:text-[#FFFFFF99]">
                 <?php echo $text ?>
 
@@ -50,7 +45,7 @@ $repeater           = get_field('repeater');
         <?php foreach ($repeater as $item) : ?>
             <article class="lg:w-1/3 w-full  m-auto">
                 <figure>
-                    <img class="w-auto lg:w-12 h-12 m-auto" src="<?php echo $item['icon'] ?>" alt="">
+                    <img loading="lazy" class="w-auto lg:w-12 h-12 m-auto" src="<?php echo $item['icon'] ?>" alt="">
                 </figure>
                 <div
                     class="mt-[15px] [_&_h4]:font-[600] [_&_h4]:text-[20px] [_&_p]:text-[16px] [_&_p]:lfont-regular [_&_p]:text-[#0B141D99]">

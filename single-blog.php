@@ -133,7 +133,7 @@ $most_selling_products = wc_get_products(array(
                             <?php foreach ($random_blogs as $key => $card) : ?>
                                 <article class="">
                                     <figure class="">
-                                        <img class="rounded-[10px]"
+                                        <img loading="lazy" class="rounded-[10px]"
                                             src="<?php echo get_the_post_thumbnail_url($card->ID, "full") ?>">
                                     </figure>
                                     <div class="mt-2 flex gap-3">
@@ -176,7 +176,7 @@ $most_selling_products = wc_get_products(array(
                         </div>
                     </div>
                     <div class="h-full">
-                        <div class="sticky top-4 p-[30px] rounded-[15px] bg-[#FAFBFC]">
+                        <div class="sticky hidden top-4 p-[30px] rounded-[15px] bg-[#FAFBFC]">
                             <h3 class="text-center text-[25px] font-[700] text-[#060843] mb-[30px]">
                                 Top Selling Instructional
                             </h3>
@@ -191,7 +191,7 @@ $most_selling_products = wc_get_products(array(
                                         class="">
                                         <figure class="w-[45%]">
                                             <a href="<?php echo get_permalink($product->get_id()); ?>" tabindex="0">
-                                                <img decoding="async" class="rounded-xl"
+                                                <img loading="lazy" decoding="async" class="rounded-xl"
                                                     src="<?php echo wp_get_attachment_url($product->get_image_id()); ?>">
                                             </a>
                                         </figure>

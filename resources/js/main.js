@@ -3,8 +3,6 @@
 // request to the WooCommerce server and updates the UI accordingly.
 function addToSideCart() {
   "use strict";
-  comingSoon();
-
   jQuery(".custom_add_to_cart").click(function (e) {
     e.preventDefault();
     var id = jQuery(this).next().next().attr("value");
@@ -54,17 +52,22 @@ function addToSideCart() {
 
 jQuery(document).ready(function () {
   addToSideCart();
+  comingSoon();
 
-  document.querySelector("#nav-icon4").addEventListener("click", function () {
-    this.classList.toggle("open");
-    document.querySelector("#mobile-side-menu").classList.toggle("active");
-    if (this.classList.contains("open")) {
-      document.querySelector(".menu-text").innerHTML = "Close";
-      document.body.style.overflow = "hidden";
-    } else {
-      document.querySelector(".menu-text").innerHTML = "Menu";
-      document.body.style.overflow = "auto";
-    }
+  const openMenu = document.querySelectorAll(".nav-icon4");
+  const bars = document.querySelector("#nav-icon4");
+  openMenu.forEach((menu) => {
+    menu.addEventListener("click", function () {
+      bars.classList.toggle("open");
+      document.querySelector("#mobile-side-menu").classList.toggle("active");
+      if (bars.classList.contains("open")) {
+        document.querySelector(".menu-text").innerHTML = "Close";
+        document.body.style.overflow = "hidden";
+      } else {
+        document.querySelector(".menu-text").innerHTML = "Menu";
+        document.body.style.overflow = "auto";
+      }
+    });
   });
 });
 
@@ -73,29 +76,30 @@ document.querySelector("#close").addEventListener("click", function () {
 });
 
 function comingSoon() {
-  const articles = document.querySelectorAll("article[data-coming-soon='true']");
-  articles.forEach((article) => {
-    const id = article.getAttribute("data-id");
-    const comingSoonText = document.createElement("div");
-    comingSoonText.className = "coming-soon-container";
-    comingSoonText.innerHTML = "<h3>Coming Soon</h3>";
+  if (!window.comingSoonCounter) {
+    window.comingSoonCounter = 1;
+  } else {
+    window.comingSoonCounter++;
+  }
 
-    const anchor = article.querySelectorAll("a");
-    anchor.forEach((a) => {
-      a.setAttribute("href", "/coming-soon?id=" + id);
-    });
+  function code() {
+    const articles = document.querySelectorAll("article[data-coming-soon='true']");
+    articles.forEach((article) => {
+      const id = article.getAttribute("data-id");
+      const comingSoonText = document.createElement("div");
+      comingSoonText.className = "coming-soon-container";
+      comingSoonText.innerHTML = "<h3>Coming Soon</h3>";
 
-    const button = article.querySelectorAll(".custom_add_to_cart");
-    button.forEach((btn) => {
-      btn.textContent = "Join the Waitlist";
-    });
+      const anchor = article.querySelectorAll("a");
+      anchor.forEach((a) => {
+        a.setAttribute("href", "/coming-soon?id=" + id);
+      });
 
-    const variationForm = article.querySelector(".woocommerce-variation-add-to-cart");
-    if (variationForm) {
-      variationForm.remove();
-    }
+      const variationForm = article.querySelector(".woocommerce-variation-add-to-cart");
+      if (variationForm) {
+        variationForm.remove();
+      }
 
-    if (button) {
       // Create Link
       const link = document.createElement("a");
       link.href = "/coming-soon?id=" + id;
@@ -103,22 +107,33 @@ function comingSoon() {
       link.classList.add("btn-waitlist");
       link.textContent = "Join the Waitlist";
       // Replace the button with the link
-      if (window.location.pathname === "/checkout/" || article.id === "more-products-side-cart") {
-        console.log(article.querySelector(".flex-col.justify-center"));
+      if (window.location.pathname === "/checkout/") {
         article.querySelector(".flex-col.justify-center").appendChild(link);
       } else {
-        article.appendChild(link);
+        article.querySelector(".button-container").appendChild(link);
       }
-    }
 
-    article.querySelector("figure").appendChild(comingSoonText);
+      article.querySelector("figure").appendChild(comingSoonText);
 
-    // hide price
-    const prices = article.querySelectorAll(".price span");
-    prices.forEach((price) => {
-      price.style.color = "transparent";
+      // hide price
+      const prices = article.querySelectorAll(".price span");
+      prices.forEach((price) => {
+        price.style.color = "transparent";
+      });
     });
-  });
+  }
+
+  if (
+    window.location.pathname === "/shop/" ||
+    window.location.pathname.includes("instructor") ||
+    window.location.pathname === "/best-sellers/"
+  ) {
+    document.addEventListener("videosLoaded", function (e) {
+       code();
+    });
+  } else {
+    code();
+  }
 }
 
 window.onload = function () {

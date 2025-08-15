@@ -32,7 +32,7 @@
                            <?php
                             $medium_image = wp_get_attachment_image_src(get_post_thumbnail_id($item->ID), 'medium');
                             ?>
-                           <img class="rounded-xl aspect-[0.8] object-cover w-[136px]"
+                           <img loading="lazy" class="rounded-xl aspect-[0.8] object-cover w-[136px]"
                                src="<?php echo esc_url($medium_image[0]); ?>" alt="">
                        </a>
                    </figure>
@@ -56,14 +56,17 @@
                            <span
                                class="text-[#13A513] font-semibold leading-[32px] text-[22px]"><?php echo $sale_price ?></span>
                        </div>
-                       <div class="woocommerce-variation-add-to-cart variations_button">
-                           <button type="submit"
-                               class="add_to_cart_checkout custom_add_to_cart btn !w-full single_add_to_cart_button button !text-[14px]">+
-                               Add to Cart</button>
-                           <input type="hidden" name="add-to-cart" value="<?php echo absint($product->get_id()); ?>" />
-                           <input type="hidden" name="product_id" value="<?php echo absint($product->get_id()); ?>" />
-                           <input type="hidden" name="variation_id" class="variation_id" value="0" />
-                       </div>
+
+                       <div class="button-container">
+                           <div class="woocommerce-variation-add-to-cart variations_button">
+                               <button type="submit"
+                                   class="add_to_cart_checkout custom_add_to_cart btn !w-full single_add_to_cart_button button !text-[14px]">+
+                                   Add to Cart</button>
+                               <input type="hidden" name="add-to-cart" value="<?php echo absint($product->get_id()); ?>" />
+                               <input type="hidden" name="product_id" value="<?php echo absint($product->get_id()); ?>" />
+                               <input type="hidden" name="variation_id" class="variation_id" value="0" />
+                           </div>
+                        </div>
                    </div>
                </article>
            <?php endforeach; ?>

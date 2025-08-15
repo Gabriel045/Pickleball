@@ -48,7 +48,7 @@ $recent_blogs = $query->posts;
                     <div class="w-full md:w-1/2">
                         <figure>
                             <a href="<?php echo get_permalink($recent_blogs[0]->ID); ?>">
-                                <img class="rounded-[20px] object-cover w-full"
+                                <img loading="lazy" class="rounded-[20px] object-cover w-full"
                                     src="<?php echo get_the_post_thumbnail_url($recent_blogs[0]->ID, 'full') ?>">
                             </a>
                         </figure>
@@ -93,7 +93,7 @@ $recent_blogs = $query->posts;
                             <div class="flex flex-wrap md:flex-nowrap gap-[24px]">
                                 <figure class="w-full md:w-1/2">
                                     <a href="<?php echo get_permalink($recent_blogs[$i]->ID); ?>">
-                                        <img class="rounded-[20px] object-cover"
+                                        <img loading="lazy" class="rounded-[20px] object-cover"
                                             src="<?php echo get_the_post_thumbnail_url($recent_blogs[$i]->ID, 'full') ?>">
                                     </a>
                                 </figure>

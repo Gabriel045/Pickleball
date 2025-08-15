@@ -33,7 +33,7 @@ $social_media = get_field('social_media');
             <div class="flex flex-wrap lg:flex-nowrap lg:gap-[64px]">
                 <div class="w-full lg:w-1/5  max-[1024px]:mb-14">
                     <figure>
-                        <img class="max-[1024px]:w-[150px] max-[1024px]:h-[150px]"
+                        <img loading="lazy" class="max-[1024px]:w-[150px] max-[1024px]:h-[150px]"
                             src="<?php echo get_the_post_thumbnail_url($post, 'full') ?>" alt="intructor_imagen"
                             class="w-[300px] rounded-[15px]">
                     </figure>
