@@ -1,0 +1,22 @@
+{
+    "name": "acf/pro-drill",
+    "title": "Pro Drill",
+    "description": "A custom Pro Drill for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Pro Drill"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "pro-drill.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/pro-drill/screenshot.png"
+            }
+        }
+    }
+}

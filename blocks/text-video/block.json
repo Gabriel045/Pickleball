@@ -1,0 +1,22 @@
+{
+    "name": "acf/text-video",
+    "title": "Text Video",
+    "description": "A custom Text Video for the normal pages.",
+    "category": "custom",
+    "icon": "block-default",
+    "keywords": [
+        "Text Video"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "text-video.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "preview_image_my_acf_block": "/blocks/text-video/screenshot.png"
+            }
+        }
+    }
+}

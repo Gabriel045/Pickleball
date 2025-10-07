@@ -14,4 +14,6 @@ function register_acf_blocks()
     register_block_type(__DIR__ . '/blocks/about-us');
     register_block_type(__DIR__ . '/blocks/faq');
     register_block_type(__DIR__ . '/blocks/three-cols');
+    register_block_type(__DIR__ . '/blocks/pro-drill');
+    register_block_type(__DIR__ . '/blocks/text-video');
 }

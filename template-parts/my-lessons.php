@@ -257,11 +257,11 @@ if (!empty($lessons_id) && wc_customer_bought_product('', get_current_user_id(),
 
     (async function() {
         const meta = await player.api.getMetaData();
+           console.log(meta);
         meta.chapters.forEach(({
             title,
             startTime
         }) => {
-
             const chapterLine = document.createElement('li');
             chapterLine.classList.add('chapter-item');
             // Formatea el tiempo en mm:ss

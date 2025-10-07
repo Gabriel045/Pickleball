@@ -81,39 +81,39 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                         </div>
                         <div id="course-tabs" class='py-[25px] px-[40px] bg-white'>
                             <?php foreach ($volumes as $key => $volume) {  ?>
-                            <details class=" pb-[15px] last:pb-0">
-                                <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
-                                    Module <?php echo $key + 1 ?>
-                                </summary>
-                                <div class="sumary content mt-2">
-                                    <table class="table-fixed w-full border-collapse">
-                                        <thead>
-                                            <tr>
-                                                <th
-                                                    class="border-r-[1px]  border-black text-left font-semibold p-[10px] text-rich-black opacity-[0.6]">
-                                                    Chapter Title</th>
-                                                <th
-                                                    class="text-center font-semibold p-[10px] text-rich-black opacity-[0.6]">
-                                                    Start Time</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php foreach ($volume["volumes"] as $key => $value) { ?>
-                                            <tr>
-                                                <td
-                                                    class="border-r-[1px]  border-black p-[10px] opacity-[0.6] text-gray-paragraph">
-                                                    <?php echo $value["chapter"] ?>
-                                                </td>
-                                                <td class=" text-gray-paragraph p-[10px] text-center">
-                                                    <?php echo $value["hours"] ?>
+                                <details class=" pb-[15px] last:pb-0">
+                                    <summary class="font-semibold text-[18px] text-rich-black cursor-pointer">
+                                        Module <?php echo $key + 1 ?>
+                                    </summary>
+                                    <div class="sumary content mt-2">
+                                        <table class="table-fixed w-full border-collapse">
+                                            <thead>
+                                                <tr>
+                                                    <th
+                                                        class="border-r-[1px]  border-black text-left font-semibold p-[10px] text-rich-black opacity-[0.6]">
+                                                        Chapter Title</th>
+                                                    <th
+                                                        class="text-center font-semibold p-[10px] text-rich-black opacity-[0.6]">
+                                                        Start Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($volume["volumes"] as $key => $value) { ?>
+                                                    <tr>
+                                                        <td
+                                                            class="border-r-[1px]  border-black p-[10px] opacity-[0.6] text-gray-paragraph">
+                                                            <?php echo $value["chapter"] ?>
+                                                        </td>
+                                                        <td class=" text-gray-paragraph p-[10px] text-center">
+                                                            <?php echo $value["hours"] ?>
 
-                                                </td>
-                                            </tr>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </details>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </details>
                             <?php } ?>
                         </div>
                     </div>
@@ -123,12 +123,18 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                     <h1 class="text-[30px] lg:text-[36px] font-[600] text-rich-black leading-[38px]">
                         <?php echo esc_html(get_the_title($post->ID)); ?>
                     </h1>
-                    <div class="flex items-center gap-[10px] my-4">
-                        <span class="stars"></span>
-                        <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">
-                            5.0 based on 543 reviews
+                    <a href="#comments" class="flex items-center gap-[10px] my-4">
+                        <?php
+                        $average = $product->get_average_rating();
+                        $count = $product->get_review_count();
+                        ?>
+                        <span class="">
+                            <?php echo wc_get_rating_html($average, $count); ?>
                         </span>
-                    </div>
+                        <span class="text-[14px] text-[rgba(71,84,103,0.60)] font-medium leading-[24px]">
+                            <?php echo number_format($average, 1); ?> based on <?php echo $count; ?> review<?php echo ($count == 1) ? '' : 's'; ?>
+                        </span>
+                    </a>
                     <!-- video mobile -->
                     <div class="block lg:hidden mb-[30px]">
                         <?php
@@ -167,17 +173,17 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
                         <?php foreach ($description_list as $key => $item) {
 
                         ?>
-                        <li class="flex gap-3 lg:gap-2">
-                            <svg class="max-[1024px]:w-[72px] w-[4%]" xmlns="http://www.w3.org/2000/svg" width="28"
-                                height="29" viewBox="0 0 28 29" fill="none">
-                                <rect y="0.5" width="28" height="28" rx="14" fill="#0B141D" fill-opacity="0.09" />
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M19.9476 9.12169L11.5943 17.1834L9.37763 14.815C8.9693 14.43 8.32763 14.4067 7.86096 14.7334C7.40596 15.0717 7.27763 15.6667 7.55763 16.145L10.1826 20.415C10.4393 20.8117 10.8826 21.0567 11.3843 21.0567C11.8626 21.0567 12.3176 20.8117 12.5743 20.415C12.9943 19.8667 21.0093 10.3117 21.0093 10.3117C22.0593 9.23836 20.7876 8.29336 19.9476 9.11002V9.12169Z"
-                                    fill="#0B141D" />
-                            </svg>
-                            <div class="text-[18px] text-gray-paragraph leading-7 lg:w-[96%]">
-                                <?php echo $item["items"] ?></div>
-                        </li>
+                            <li class="flex gap-3 lg:gap-2">
+                                <svg class="max-[1024px]:w-[72px] w-[4%]" xmlns="http://www.w3.org/2000/svg" width="28"
+                                    height="29" viewBox="0 0 28 29" fill="none">
+                                    <rect y="0.5" width="28" height="28" rx="14" fill="#0B141D" fill-opacity="0.09" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M19.9476 9.12169L11.5943 17.1834L9.37763 14.815C8.9693 14.43 8.32763 14.4067 7.86096 14.7334C7.40596 15.0717 7.27763 15.6667 7.55763 16.145L10.1826 20.415C10.4393 20.8117 10.8826 21.0567 11.3843 21.0567C11.8626 21.0567 12.3176 20.8117 12.5743 20.415C12.9943 19.8667 21.0093 10.3117 21.0093 10.3117C22.0593 9.23836 20.7876 8.29336 19.9476 9.11002V9.12169Z"
+                                        fill="#0B141D" />
+                                </svg>
+                                <div class="text-[18px] text-gray-paragraph leading-7 lg:w-[96%]">
+                                    <?php echo $item["items"] ?></div>
+                            </li>
                         <?php } ?>
                     </ul>
 
@@ -216,6 +222,8 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
             </div>
         </div>
     </section>
+
+
     <?php
     get_template_part('/blocks/product-slider/product-slider', null, array('best_seller_title' => $best_seller_title));
     ?>
@@ -227,79 +235,213 @@ $add_video_optional_2 = get_field('add_video_optional_2', $post->ID);
     <?php
     get_template_part('/blocks/faq/faq');
     ?>
+
+
+    <!-- WooCommerce Reviews Form -->
+    <?php
+    ?>
+    <section class="woocommerce-reviews-form">
+        <div class="block_content py-[60px] lg:px-[60px] px-[30px]">
+            <h2 class="font-[600] text-[36px] text-rich-black">Customer Reviews</h2>
+            <div class="hidden-section">
+                <?php comments_template(); ?>
+            </div>
+
+            <div id="reviews" class="woocommerce-Reviews mt-14">
+                <div id="comments">
+                    <?php
+                    // Obtener solo las 3 reviews más recientes
+                    $args = array(
+                        'post_id' => $post->ID,
+                        'status' => 'approve',
+                        'type' => 'review',
+                        'number' => 4,
+                        'orderby' => 'comment_date',
+                        'order' => 'DESC',
+                    );
+                    $reviews = get_comments($args);
+
+                    if ($reviews) {
+                        echo '<ol class="commentlist">';
+                        foreach ($reviews as $review) {
+                            $rating = intval(get_comment_meta($review->comment_ID, 'rating', true));
+                            $author = esc_html($review->comment_author);
+                            $date = date_i18n(get_option('date_format'), strtotime($review->comment_date));
+                            $avatar = get_avatar_url($review->comment_author_email, array('size' => 60));
+                            $content = esc_html($review->comment_content);
+                            $comment_id = (int)$review->comment_ID;
+                            $datetime = esc_attr(get_comment_date('c', $review));
+                            $rating_percent = $rating > 0 ? (20 * $rating) : 0;
+                            echo '<li class="review byuser comment-author-' . strtolower($author) . ' bypostauthor even thread-even depth-1" id="li-comment-' . $comment_id . '">';
+                            echo '<div id="comment-' . $comment_id . '" class="comment_container">';
+                            echo '<img alt="" src="' . esc_url($avatar) . '" srcset="' . esc_url($avatar) . ' 2x" class="avatar avatar-60 photo" height="60" width="60" decoding="async">';
+                            echo '<div class="comment-text">';
+                            if ($rating > 0) {
+                                echo '<div class="star-rating" role="img" aria-label="Rated ' . $rating . ' out of 5">';
+                                echo '<span style="width:' . $rating_percent . '%">Rated <strong class="rating">' . $rating . '</strong> out of 5</span>';
+                                echo '</div>';
+                            }
+                            echo '<p class="meta">';
+                            echo '<strong class="woocommerce-review__author">' . $author . ' </strong>';
+                            echo '<span class="woocommerce-review__dash">–</span> <time class="woocommerce-review__published-date" datetime="' . $datetime . '">' . $date . '</time>';
+                            echo '</p>';
+                            echo '<div class="description"><p>' . $content . '</p></div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</li>';
+                        }
+                        echo '</ol>';
+                    } else {
+                        echo '<p>There are no reviews yet.</p>';
+                    } ?>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const tabs = document.querySelectorAll('.tab-item');
-    const panes = document.querySelectorAll('.tab-pane');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            tabs.forEach(t => t.classList.remove('active-tab',
-                'border-rich-black'));
-            panes.forEach(p => p.classList.add('hidden'));
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab-item');
+        const panes = document.querySelectorAll('.tab-pane');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                tabs.forEach(t => t.classList.remove('active-tab',
+                    'border-rich-black'));
+                panes.forEach(p => p.classList.add('hidden'));
 
-            this.classList.add('active-tab', 'border-rich-black');
-            document.getElementById(this.dataset.tab).classList.remove(
-                'hidden');
-        });
-    });
-
-
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const videos = document.querySelectorAll('#product-video');
-    const playIcons = document.querySelectorAll('#play-icon')
-    videos.forEach((video, index) => {
-        const playIcon = playIcons[index];
-
-        video.addEventListener('touchstart', function() {
-            console.log("click")
-            if (video.paused) {
-                video.play();
-            } else {
-                video.pause();
-
-            }
-        });
-
-        video.addEventListener('play', function() {
-            if (playIcon) {
-                playIcon.style.display = 'none';
-            }
-        });
-
-        video.addEventListener('pause', function() {
-            if (playIcon) {
-                playIcon.style.display = 'block';
-            }
+                this.classList.add('active-tab', 'border-rich-black');
+                document.getElementById(this.dataset.tab).classList.remove(
+                    'hidden');
+            });
         });
 
 
     });
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const videos = document.querySelectorAll('#product-video');
+        const playIcons = document.querySelectorAll('#play-icon')
+        videos.forEach((video, index) => {
+            const playIcon = playIcons[index];
 
-    const expandAll = document.getElementById('expand-all');
-    const modules = document.querySelectorAll('#course-tabs details');
-    expandAll.addEventListener("click", () => {
-        const allOpen = Array.from(modules).every(mod => mod.hasAttribute('open'));
-        modules.forEach((mod) => {
-            if (allOpen) {
-                mod.removeAttribute('open');
-            } else {
-                mod.setAttribute('open', '');
-            }
+            video.addEventListener('touchstart', function() {
+                console.log("click")
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+
+                }
+            });
+
+            video.addEventListener('play', function() {
+                if (playIcon) {
+                    playIcon.style.display = 'none';
+                }
+            });
+
+            video.addEventListener('pause', function() {
+                if (playIcon) {
+                    playIcon.style.display = 'block';
+                }
+            });
+
+
         });
+
+
+        const expandAll = document.getElementById('expand-all');
+        const modules = document.querySelectorAll('#course-tabs details');
+        expandAll.addEventListener("click", () => {
+            const allOpen = Array.from(modules).every(mod => mod.hasAttribute('open'));
+            modules.forEach((mod) => {
+                if (allOpen) {
+                    mod.removeAttribute('open');
+                } else {
+                    mod.setAttribute('open', '');
+                }
+            });
+        });
+
+
+
+        const volume = document.querySelector('#course-tabs details');
+        volume.setAttribute('open', '');
+
     });
-
-
-
-    const volume = document.querySelector('#course-tabs details');
-    volume.setAttribute('open', '');
-
-});
 </script>
+
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .woocommerce-Reviews-title {
+        display: none;
+    }
+
+    #reviews {
+        background-color: white;
+    }
+
+    #reviews textarea {
+        border: 1px solid gray;
+        border-radius: 10px;
+    }
+
+    .star-rating span {
+        color: var(--mustard-yellow);
+    }
+
+    #commentform .stars::before {
+        background-image: none !important;
+        height: 0px !important;
+    }
+
+    .form-submit input[type="submit"] {
+        cursor: pointer !important;
+        display: flex !important;
+        padding: 10px 18px !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important;
+        border-radius: 8px !important;
+        background: var(--mustard-yellow) !important;
+        box-shadow: 0 1px 2px 0 rgba(16, 24, 40, .05) !important;
+        color: var(--rich-black) !important;
+        font-size: 16px !important;
+        font-style: normal !important;
+        font-weight: 600 !important;
+        line-height: 24px !important;
+        width: 200px !important;
+    }
+
+    #reply-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 40px;
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    .stars.selected a::before {
+        color: var(--mustard-yellow);
+    }
+
+    .woocommerce-pagination {
+        display: none;
+    }
+
+    .commentlist {
+        list-style: none;
+    }
+
+    .hidden-section .commentlist {
+        display: none;
+    }
+</style>
 
 
 <?php get_footer() ?>

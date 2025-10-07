@@ -1,3 +1,4 @@
+
 <?php
 
 define('theme_version', time());
@@ -18,6 +19,14 @@ add_action('wp_enqueue_scripts', 'af_add_theme_scripts');
 
 function af_add_theme_scripts()
 {
+
+    wp_enqueue_style(
+        'theme-style',
+        get_stylesheet_uri(),
+        [],
+        theme_version
+    );
+
 
     wp_enqueue_script(
         'theme-main-script',
@@ -460,6 +469,10 @@ add_filter('woocommerce_add_to_cart_validation', function ($passed, $product_id,
 }, 10, 3);
 
 
+add_filter('woocommerce_email_footer_text', function($text) {
+    return '';
+});
+
 
 // --- PERFORMANCE OPTIMIZATIONS ---
 
@@ -577,3 +590,36 @@ add_action('wp_print_scripts', function() {
         wp_scripts()->add_data('jquery-migrate', 'group', 1);
     }
 }, 100);
+
+
+
+
+// --- Force enable reviews and star ratings in WooCommerce ---
+add_filter('woocommerce_product_review_list_args', function($args) {
+    $args['callback'] = 'woocommerce_comments';
+    return $args;
+});
+
+add_action('after_setup_theme', function() {
+    add_theme_support('woocommerce');
+    add_theme_support('wc-product-reviews');
+    add_post_type_support('product', 'comments');
+});
+
+add_filter('woocommerce_product_tabs', function($tabs) {
+    if (!isset($tabs['reviews'])) {
+        $tabs['reviews'] = array(
+            'title'    => __('Reviews'),
+            'callback' => 'comments_template',
+        );
+    }
+    return $tabs;
+});
+
+// Force all new reviews to be set as pending, allowing them to be approved later
+add_filter('pre_comment_approved', function($approved, $commentdata) {
+    if (isset($commentdata['comment_type']) && $commentdata['comment_type'] === 'review') {
+        return 0; // Always pending
+    }
+    return $approved;
+}, 99, 2);
